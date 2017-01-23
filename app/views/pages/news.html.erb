@@ -1,0 +1,46 @@
+<div id="header-row" class="row">
+  <div class='col-md-2'></div>
+  <div class='col-md-11'>
+    <blockquote>
+    <h1 class="blockquote-font">Welcome to Bitcoin Cafe</h1>
+    </blockquote>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-9 left">
+    <div class="bitcoin-wrap">
+      <h2 class="bitcoin-header">Latest Updates</h2>
+      <div class="bitcoin-description">
+        <p><%= @posts[0]['author'] %></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 right">
+    <div class="bitcoin-twitter-wrap row">
+      <a href="https://twitter.com/Bitcoin"
+      class="twitter-follow-button"
+      data-show-count="true"
+      data-size="large">Follow @Bitcoin</a>
+      <a class="twitter-timeline"
+      href="https://twitter.com/Bitcoin"
+      data-tweet-limit="10">Bitcoin Twitter</a>
+    </div>
+  </div>
+</div>
+</div>
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+  t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
