@@ -11,18 +11,26 @@
     <div class="bitcoin-wrap">
       <h2 class="bitcoin-header">Latest Updates</h2>
       <div class="bitcoin-description">
-        <p><%= @posts[0]['author'] %></p>
+      <% @posts.each do |post| %>
+        <p><%= post['author'] %></p>
+        <p><%= post['title'] %></p>
+        <p><%= post['published'] %></p>
+        <p><%= post['text'] %></p>
+        <p><%= post['thread']['site_full'] %></p>
+        <p><%= image_tag("#{post['thread']['main_image']}",size: "500") %></p>
+      <% end %>
+
       </div>
     </div>
   </div>
   <div class="col-md-3 right">
     <div class="bitcoin-twitter-wrap row">
-      <a href="https://twitter.com/Bitcoin"
+      <a href="https://twitter.com/Bitcoinnews6"
       class="twitter-follow-button"
       data-show-count="true"
-      data-size="large">Follow @Bitcoin</a>
+      data-size="large">Follow @BitcoinCaffe</a>
       <a class="twitter-timeline"
-      href="https://twitter.com/Bitcoin"
+      href="https://twitter.com/Bitcoinnews6"
       data-tweet-limit="10">Bitcoin Twitter</a>
     </div>
   </div>
