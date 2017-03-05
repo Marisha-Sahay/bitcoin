@@ -1,0 +1,57 @@
+<div id="header-row" class="row">
+  <div class='col-md-2'></div>
+  <div class='col-md-11'>
+    <blockquote>
+    <h1 class="blockquote-font">Welcome to Bitcoin Cafe</h1>
+    </blockquote>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-7 left">
+    <div class="bitcoin-wrap">
+      <h2 class="bitcoin-header">Latest Updates</h2>
+      <div class="bitcoin-description">
+      <% @posts.each do |post| %>
+        <div class="col-md-4">
+          <div class="bitcoin-news-container">
+            <% a = post['published'] %>
+            <p><%= image_tag("#{post['thread']['main_image']}",class: "bitcoin-image") %></p>
+            <p><%= post['author'] %> | <%= a[0..9]%></p>
+            <h2 class="bitcoin-title"><%= link_to post['title'], "#{post['url']}", target: :_blank %></h2>
+          </div>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 right">
+    <div class="bitcoin-twitter-wrap row">
+      <a href="https://twitter.com/Bitcoinnews6"
+      class="twitter-follow-button"
+      data-show-count="true"
+      data-size="large">Follow @BitcoinCaffe</a>
+      <a class="twitter-timeline"
+      href="https://twitter.com/Bitcoinnews6"
+      data-tweet-limit="10">Bitcoin Twitter</a>
+    </div>
+  </div>
+  <div class="col-md-1 right"></div>
+</div>
+</div>
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+  t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
