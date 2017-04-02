@@ -1,41 +1,49 @@
-<div id="header-row" class="row">
-  <div class='col-md-2'></div>
-  <div class='col-md-11'>
+<body>
     <blockquote>
-    <h1 class="blockquote-font">Welcome to Bitcoin Cafe</h1>
+    <h1 class="blockquote-font">Latest Articles</h1>
     </blockquote>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-9 left">
-    <div class="bitcoin-wrap">
-      <h2 class="bitcoin-header">Latest Updates</h2>
-      <div class="bitcoin-description">
-      <% @posts.each do |post| %>
-        <p><%= post['author'] %></p>
-        <p><%= post['title'] %></p>
-        <p><%= post['published'] %></p>
-        <p><%= post['text'] %></p>
-        <p><%= post['thread']['site_full'] %></p>
-        <p><%= image_tag("#{post['thread']['main_image']}",size: "500") %></p>
-      <% end %>
-
+<!-- BEGIN wrapper -->
+<div id="wrapper">
+  <!-- BEGIN content -->
+  <div id="content">
+    <!-- begin post -->
+    <% @posts.each do |post| %>
+    <div class="post">
+      <p class="details1"><%= post['published'][0..9]%> / <a href="#"><%= post['author'].partition(" ")[0] %></a></p>
+      <div class="buffer">
+        <div class="content"> <%= link_to image_tag("#{post['thread']['main_image']}"), "#{post['url']}", target: :_blank%>
+          <h2><a href="#"><%= link_to post['title'], "#{post['url']}", target: :_blank %></p>
+        </div>
+        <!-- <p class="details2"><a href="#">8 Comments</a> / <a href="#">Read More</a></p> -->
       </div>
     </div>
+    <!-- end post -->
+      <% end %>
   </div>
-  <div class="col-md-3 right">
-    <div class="bitcoin-twitter-wrap row">
+  <!-- END content -->
+  <!-- BEGIN sidebar -->
+  <div id="sidebar">
+    <!-- begin popular articles -->
+    <div class="box">
       <a href="https://twitter.com/Bitcoinnews6"
       class="twitter-follow-button"
       data-show-count="true"
       data-size="large">Follow @BitcoinCaffe</a>
       <a class="twitter-timeline"
       href="https://twitter.com/Bitcoinnews6"
-      data-tweet-limit="10">Bitcoin Twitter</a>
+      data-tweet-limit="20">Bitcoin Twitter</a>
     </div>
+    <!-- end popular articles -->
   </div>
+  <!-- END sidebar -->
 </div>
+<!-- END wrapper -->
+<!-- BEGIN footer -->
+<div id="footer">
 </div>
+<!-- END footer -->
+</body>
+
 <script>window.twttr = (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0],
   t = window.twttr || {};
