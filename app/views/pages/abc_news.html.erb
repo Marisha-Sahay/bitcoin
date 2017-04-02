@@ -1,6 +1,6 @@
 <body>
     <blockquote>
-    <h1 class="blockquote-font">Latest Articles</h1>
+    <h1 class="blockquote-font">Latest Articles & Tweets</h1>
     </blockquote>
 <!-- BEGIN wrapper -->
 <div id="wrapper">
@@ -9,16 +9,20 @@
     <!-- begin post -->
     <% @posts.each do |post| %>
     <div class="post">
-      <p class="details1"><%= post['published'][0..9]%> / <a href="#"><%= post['author'].partition(" ")[0] %></a></p>
+      <p class="details1"><%= post['published'][0..9]%> / <%= post['author'].partition(" ")[0] %></p>
       <div class="buffer">
-        <div class="content"> <%= link_to image_tag("#{post['thread']['main_image']}"), "#{post['url']}", target: :_blank%>
-          <h2><a href="#"><%= link_to post['title'], "#{post['url']}", target: :_blank %></p>
+        <div class="content"> 
+        <% if post['thread']['main_image'] %>
+          <%= link_to image_tag("#{post['thread']['main_image']}"), "#{post['url']}", target: :_blank%>
+        <% else %>
+          <%= link_to image_tag("bitcoins-default.jpg"), "#{post['url']}", target: :_blank %>
+        <% end %>
+          <h2><%= link_to post['title'], "#{post['url']}", target: :_blank %></h2>
         </div>
-        <!-- <p class="details2"><a href="#">8 Comments</a> / <a href="#">Read More</a></p> -->
       </div>
     </div>
     <!-- end post -->
-      <% end %>
+    <% end %>
   </div>
   <!-- END content -->
   <!-- BEGIN sidebar -->
