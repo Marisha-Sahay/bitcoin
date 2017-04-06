@@ -42,6 +42,11 @@ img {
   margin: auto auto;
   text-align: left;
 }
+#newswrapper{
+  margin: auto auto;
+  text-align: left;
+  padding: 10px 10px 10px 10px;
+}
 /** END wrapper **/
 
 /** BEGIN header **/
@@ -106,7 +111,7 @@ img {
 /** BEGIN content **/
 #content {
   float: left;
-  width: 655px;
+  width: 950px;
   overflow: hidden;
   padding-bottom: 11px;
 }
@@ -226,7 +231,8 @@ img {
 
 /** BEGIN sidebar **/
 #sidebar {
-  width: 320px;
+  // width: 320px;
+  width: 300px;
   float: right;
   padding: 11px 0 20px;
 }

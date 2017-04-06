@@ -23,6 +23,6 @@ class PagesController < ApplicationController
   
   def abc_news
     response = Unirest.get("http://webhose.io/search?token=c015c400-6e3b-4540-a2c0-d643354db3cc&format=json&q=bitcoin%20cryptocurrency&sort=relevancy").body
-    @posts = response['posts'].first(30)
+    @posts = response['posts'].first(51)
   end
 end
