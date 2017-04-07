@@ -7,8 +7,7 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-md-1"></div>
-  <div class="col-md-7 left">
+  <div class="col-md-8 left">
     <div class="bitcoin-wrap">
       <!-- <h2 class="bitcoin-header">Latest Updates</h2> -->
       <div class="bitcoin-description">
@@ -16,7 +15,11 @@
         <div class="col-md-4">
           <div class="bitcoin-news-container">
             <% a = post['published'] %>
-            <p><%= image_tag("#{post['thread']['main_image']}",class: "bitcoin-image") %></p>
+            <% if post['thread']['main_image'] %>
+              <p><%= image_tag("#{post['thread']['main_image']}",class: "bitcoin-image") %></p>
+            <% else %>
+              <%= link_to image_tag("bitcoins-default.jpg",class: "bitcoin-image"), "#{post['url']}", target: :_blank %>
+            <% end %>
             <p><%= post['author'] %> | <%= a[0..9]%></p>
             <h2 class="bitcoin-title"><%= link_to post['title'], "#{post['url']}", target: :_blank %></h2>
           </div>
