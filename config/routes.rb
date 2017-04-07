@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get '/hotshots', to: "pages#hotshots"
   get '/resources', to: "pages#resources"
   get '/news', to: 'pages#news_index'
+  get '/cafe', to: 'pages#cafe'
 end
