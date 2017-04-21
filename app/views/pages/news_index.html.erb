@@ -12,7 +12,7 @@
       <!-- <h2 class="bitcoin-header">Latest Updates</h2> -->
       <div class="bitcoin-description">
       <% @posts.each do |post| %>
-        <div class="col-md-4">
+        <div class="col-md-5">
           <div class="bitcoin-news-container">
             <% a = post['published'] %>
             <% if post['thread']['main_image'] %>
@@ -39,7 +39,6 @@
       data-tweet-limit="10">Bitcoin Twitter</a>
     </div>
   </div>
-  <div class="col-md-1 right"></div>
 </div>
 <script>window.twttr = (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0],

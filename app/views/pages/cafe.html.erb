@@ -3,6 +3,9 @@
     <h1 class="blockquote-font">Discussion Board</h1>
   </blockquote>
   <div class="cafe-portal">
-    
+    <% @posts.each do |post| %>
+      <%= link_to post['description'],post['url'] %>
+      <br>
+    <% end %>
   </div>
 </div>
