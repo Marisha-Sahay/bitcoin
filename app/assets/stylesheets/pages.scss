@@ -149,6 +149,12 @@
   color: white;
   font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
 }
+.subscribe-header-axm {
+  text-align: left;
+  color: black;
+  text-decoration: underline;
+  font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
+}
 .subscribe-para{
   text-align: center;
   color: white;
@@ -171,6 +177,7 @@
   border: solid 1px #dcdcdc;
   transition: box-shadow 0.3s, border 0.3s;
   text-align: center;
+  color: black;
 }
 
 .sub-news-container {
@@ -185,7 +192,7 @@
   color: #051845;
   text-align: center;
   font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
-  padding-bottom: 5px;
+  padding-bottom: 20px;
 }
 .sub-news-block {
   font-size: 15px;

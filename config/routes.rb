@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post "/email_subscriptions", to: "email_subscriptions#create"
   get "/hotshots", to: "pages#hotshots"
   get "/resources", to: "pages#resources"
-  get "/news", to: "pages#news_index"
+  get "/news", to: "pages#abc_news"
   get "/cafe", to: "pages#cafe"
   
   #user routes  

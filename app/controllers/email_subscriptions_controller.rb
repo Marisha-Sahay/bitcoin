@@ -1,7 +1,7 @@
 class EmailSubscriptionsController < ApplicationController
 
   def create
-    @subscriber = EmailSubscription.new(email_params)
+    @subscriber = EmailSubscription.new(email: params[:email])
     if @subscriber.valid?
       @subscriber.save
       respond_to do |format|

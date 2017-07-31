@@ -1,19 +1,17 @@
 <div class="subscribe-container">
   <h1 class="subscribe-header">Weekend coffee with Bitcoin - an article a day!</h1>
   <h3 class="subscribe-header">Sign-up to get a curated list of the best essays and most relevant news item to your inbox.</h3><br>
-  <p class="subscribe-para">Seven essays a week, an article a day to keep you on top of the crypto world. After all, you have a role to play in the new brave world of decentralized economy.
-<br>The world of blockchain and Crypto currency is growing every day. There is a lot of content out there. But, noise to signal ratio is extremely high.
-<br>We are a group of crypto nerds who are deep into the world. Help us mine the gem for you.
-<br>Sign-up for the weekly newsletter to stay on top of the crypto world.</p>
+  <p class="subscribe-para">  Seven essays a week, an article a day to keep you on top of the crypto world. After all, you have a role to play in the new brave world of decentralized economy.
+    <br>The world of blockchain and Crypto currency is growing every day. There is a lot of content out there. But, noise to signal ratio is extremely high.
+    <br>We are a group of crypto nerds who are deep into the world. Help us mine the gem for you.
+    <br>Sign-up for the weekly newsletter to stay on top of the crypto world.
+  </p>
   <div class="subscribe-para">
-  <br>
-    <p>
-      <%= text_field_tag 'search', nil, placeholder: 'Email Address', class: "subscribe-text" %>
-    </p>
-    <p>
-      <br>
-      <%= button_tag "Subscribe now",class:"subscribe-button"%>
-    </p>
+    <input type="email" class="subscribe-text black-text footer-email-bar" placeholder="Email Address" name="email">
+    <div class="footer-button-container">
+      <p class="js-subscribe-response subscribe-response"></p>
+      <button class="footer-form-submit">Subscribe</button>
+    </div>
   </div>
 </div>
 <div class="sub-news-container">
@@ -47,9 +45,16 @@
     </div>
     <div class="col-md-4">
       <div class="sub-news-block">
+        <h4 class="subscribe-header-axm">Business</h4>
         <%= link_to "A hacker stole $31M of Ether — how it happened, and what it means for Ethereum", "https://medium.freecodecamp.org/a-hacker-stole-31m-of-ether-how-it-happened-and-what-it-means-for-ethereum-9e5dc29e33ce" %>
         <p class="editors-para">Yesterday, a hacker pulled off the second biggest heist in the history of digital currencies. <br>
         Around 12:00 PST, an unknown attacker exploited a critical flaw in the Parity multi-signature wallet on the Ethereum network, draining three massive wallets of over $31,000,000 worth of Ether in a matter of minutes. Given a couple more hours, the hacker could’ve made off with over $180,000,000 from vulnerable wallets... <%= link_to "continue reading...","https://medium.freecodecamp.org/a-hacker-stole-31m-of-ether-how-it-happened-and-what-it-means-for-ethereum-9e5dc29e33ce"%></p>
+      </div>
+      <div class="sub-news-block">
+        <h4 class="subscribe-header-axm">Technical</h4>
+        <%= link_to "Could SPV Support a Billion Bitcoin Users? Sizing up a Scaling Claim", "https://www.coindesk.com/spv-support-billion-bitcoin-users-sizing-scaling-claim/" %>
+        <p class="editors-para">A new claim is being perpetuated in the bitcoin scaling debate. <br>
+        We're hearing that it is safe to remove the block size limit because bitcoin can easily scale to huge block sizes that would support billions of users via existing "simplified payment verification" (SPV) methods. Supposedly, SPV is very scalable due to the small amount of data it requires an SPV client to store, send and receive...<%= link_to "continue reading...","https://www.coindesk.com/spv-support-billion-bitcoin-users-sizing-scaling-claim/"%></p>
       </div>
     </div>
     <div class="col-md-4">
