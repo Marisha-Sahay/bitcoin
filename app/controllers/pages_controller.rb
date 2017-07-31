@@ -1,8 +1,13 @@
 class PagesController < ApplicationController
 
+  def subscribe
+    response = Unirest.get("http://webhose.io/search?token=c015c400-6e3b-4540-a2c0-d643354db3cc&format=json&q=bitcoin%20cryptocurrency&sort=relevancy").body
+    @posts = response['posts'].first(9)
+  end
+
   def news_index
     response = Unirest.get("http://webhose.io/search?token=c015c400-6e3b-4540-a2c0-d643354db3cc&format=json&q=bitcoin%20cryptocurrency&sort=relevancy").body
-    @posts = response['posts'].first(6)
+    @posts = response['posts'].first(20)
   end
 
   def till_now
@@ -23,7 +28,7 @@ class PagesController < ApplicationController
   
   def abc_news
     response = Unirest.get("http://webhose.io/search?token=c015c400-6e3b-4540-a2c0-d643354db3cc&format=json&q=bitcoin%20cryptocurrency&sort=relevancy").body
-    @posts = response['posts'].first(3)
+    @posts = response['posts']
   end
   def cafe
     response = Unirest.get("https://newsapi.org/v1/sources?category=technology").body
