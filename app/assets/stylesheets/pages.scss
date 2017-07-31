@@ -46,11 +46,24 @@
   text-align: left;
   display: inline-block;
 }
-
-.footer-button-content-container{
+.footer-button-container{
   display: inline-block;
-  width: 100%;
-  text-align: right;
+  padding: 8px 25px;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: black;
+  background-color: #57706D;
+}
+.footer-button-content-container{
+    display: inline-block;
+    padding: 8px 25px;
+    border: 2px solid transparent;
+    border-radius: 1.1em;
+    font-size: 1.4rem;
+    line-height: 1;
+    border-color: white;
+    color: white;
+    background-color: #57706D;
 }
 .bitcoin-wrap{
   padding: 10px 10px 10px 10px;
