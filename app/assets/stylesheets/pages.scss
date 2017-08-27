@@ -196,8 +196,8 @@
   padding-top: 20px;
   padding-bottom: 20px;
   background-color: #F3F3F3;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 .sub-news-head {
   font-size: 25px;
@@ -207,6 +207,13 @@
   padding-bottom: 20px;
 }
 .sub-news-block {
+  font-size: 15px;
+  color: black;
+  font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
+  padding-left: 10px;
+  display: inline-block;
+}
+.sub-tweet-block{
   font-size: 15px;
   color: black;
   font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;

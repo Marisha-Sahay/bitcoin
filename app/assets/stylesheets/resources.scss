@@ -1,0 +1,48 @@
+// Place all the styles related to the resources controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.resource-head{
+  background-color: #57706D;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+.resource-head-text{
+  font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
+  text-align: center;
+  color: white;
+}
+.resource-container{
+  background-color: #F3F3F3;
+}
+.resource-block-container {
+  padding-bottom: 20px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  align: center;
+  display: inline-block;
+}
+.resource-block{
+  width: max;
+  height: 300px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  text-align: center;
+  background-color: #019CDE;
+  color: white;
+  display: block;
+  padding: 20px 20px 20px 20px;
+}
+
+.resource-title {
+  font-size: 30px;
+  padding: 40px 20px 20px 20px;
+  font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
+}
+
+// .blockquote {
+//   background-color: #57706D;
+//   color: white;
+//   }
