@@ -40,7 +40,7 @@ Rails.application.routes.draw do
   get '/orders/:id', to: 'orders#show'
   patch '/orders/:id', to: 'orders#update'
 
-  # #resources routes
+  # # #resources routes
   # get '/resources', to: 'resources#index'
   # get '/resources/:id', to: 'resources#show'
   
