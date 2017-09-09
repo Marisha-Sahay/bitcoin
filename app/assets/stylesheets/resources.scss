@@ -2,14 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .resource-head{
-  background-color: #57706D;
-  padding-top: 30px;
-  padding-bottom: 40px;
+  // background-color: #57706D;
+  background-color: #F3F3F3;
+  padding-top: 0px;
+  // padding-bottom: 40px;
 }
 .resource-head-text{
   font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
   text-align: center;
-  color: white;
+  color: black;
 }
 .resource-container{
   background-color: #F3F3F3;
@@ -24,7 +25,7 @@
 }
 .resource-block{
   width: max;
-  height: 300px;
+  height: 150px;
   margin-bottom: 20px;
   margin-left: 20px;
   margin-right: 20px;
@@ -37,8 +38,8 @@
 }
 
 .resource-title {
-  font-size: 30px;
-  padding: 40px 20px 20px 20px;
+  font-size: 15px;
+  // padding: 40px 20px 20px 20px;
   font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
 }
 
@@ -46,3 +47,16 @@
 //   background-color: #57706D;
 //   color: white;
 //   }
+
+// .res-container {
+//   margin-bottom: 5px;
+//   margin-left: 5px;
+//   margin-right: 5px;
+//   margin-top: 5px;
+//   width: auto;
+//   height: 180px;
+//   border: none;
+//   padding: 0px 0px 0px 0px;
+//   background-color: #C3543B;
+//   color: white;
+// }
