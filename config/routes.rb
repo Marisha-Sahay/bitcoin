@@ -43,5 +43,8 @@ Rails.application.routes.draw do
   # resources routes
   get '/resources', to: 'resource_categories#index'
   get '/resources/:id', to: 'resource_categories#show'
-  
+  get '/resource_categories/new', to: 'resource_categories#new'
+  post '/resource_categories', to: 'resource_categories#create'
+  get '/resource/new', to: 'resources#new'
+  post '/resources', to: 'resources#create'
 end
