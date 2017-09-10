@@ -7,7 +7,7 @@
         <div class="col-md-2">
           <div class="resource-block">
             <div class="resource-title">
-              <%= resource.name %>
+              <%= link_to "#{resource.name}", "/resources/#{resource.id}"%>
               <i class="fa fa-arrow-right" aria-hidden="true"></i>
             </div>
           </div>

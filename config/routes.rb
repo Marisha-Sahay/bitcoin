@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get "/till_now", to: "pages#till_now"
   post "/email_subscriptions", to: "email_subscriptions#create"
   get "/hotshots", to: "pages#hotshots"
-  # get "/resources", to: "pages#resources"
+  get "/resources", to: "pages#resources"
   get "/news", to: "pages#abc_news"
   get "/cafe", to: "pages#cafe"
   
@@ -40,8 +40,8 @@ Rails.application.routes.draw do
   get '/orders/:id', to: 'orders#show'
   patch '/orders/:id', to: 'orders#update'
 
-  # # #resources routes
-  get '/resources', to: 'resources#index'
-  # get '/resources/:id', to: 'resources#show'
+  # resources routes
+  # get '/resources', to: 'resource_categories#index'
+  # get '/resources/:id', to: 'resource_categories#show'
   
 end
