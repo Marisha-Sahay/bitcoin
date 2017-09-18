@@ -100,7 +100,12 @@
     line-height: 1;
     border-color: white;
     color: white;
-    background-color: #57706D;
+    background-color: #237AA0;
+}
+.footer-button-content-container a .footer-button-content-container a:hover{
+  color: white;
+  underline: none;
+  background-color: #237AA0;
 }
 .bitcoin-wrap{
   padding: 10px 10px 10px 10px;
@@ -190,10 +195,45 @@
 }
 
 //////////////////////////SUBSCRIBE - PAGE//////////////////////////////////////////
+.coinbase-container{
+  background-color: #724ABC;
+  padding-bottom: 0px;
+}
+.coinbase-text{
+  text-align: center;
+  font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
+  font-size: 20px;
+  color: white;
+}
+.coinbase-text  a:hover, .coinbase-text  a, .coinbase-text  a:visited{
+  color: white;
+  underline: none;
+}
+.coinbase-add{
+  padding-top: 10px;
+  text-align: center;
+  font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
+  font-size: 30px;
+  color: white;
+}
+.coinbase-add a:hover, .coinbase-add a, .coinbase-add a:visited{
+  color: white;
+  underline: none;
+}
+.add{
+  padding-top: 10px;
+  font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
+  font-size: 10px;
+  color: white;
+}
+.add a:hover, .add a, .add a:visited{
+  color: white;
+  underline: none;
+}
 .subscribe-container{
   padding-top: 50px;
   padding-bottom: 50px;
-  background-color: #57706D;
+  background-color: #237AA0;
 }
 .subscribe-header{
   text-align: center;
@@ -221,8 +261,12 @@
     line-height: 1;
     border-color: white;
     color: white;
-    background-color: #57706D;
+    background-color: #237AA0;
 }
+.subscribe-button a:hover, .subscribe-button a, .subscribe-button a:visited{
+    color: white;
+    background-color: #237AA0;
+  }
 .subscribe-text{
   padding: 10px;
   border: solid 1px #dcdcdc;
