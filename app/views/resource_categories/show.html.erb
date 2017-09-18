@@ -3,9 +3,8 @@
   <% @resouce.resources.each do |resource| %>
     <div class="res-block">
       <p class="res-name"> <%= resource.name %> </p>
-      <div class="res-link"><%= resource.resource_link %>
+      <p class="res-link"><%= link_to "#{resource.resource_link}", "#{resource.resource_link}", target: :_blank%></p>
 <!--         <iframe src="#{<%= resource.resource_link %>}" width = "500px" height = "500px"> </iframe>< -->
-      </div>
       <p class="res-description"><%= resource.description %></p>
     </div>
   <% end %>
