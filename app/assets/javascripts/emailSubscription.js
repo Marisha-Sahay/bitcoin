@@ -14,6 +14,8 @@ $(document).ready(function(){
           $(".js-subscribe-response").html("");
           $(".js-subscribe-response").html(data["message"]);
         }
+        $(".footer-email-bar").val('');
+        // $(".footer-form-submit").hide();
       },
       error  : function(data) {
         console.log("failure");

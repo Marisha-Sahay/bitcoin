@@ -5,10 +5,48 @@
   font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
   background-color: #F3F3F3;
 }
+.head{
+  position: fixed;
+}
+.logo {
+  width: auto;
+  height: 50px;
+  padding-bottom: 10px;
+  // opacity: 0.7;
+}
+.nav{
+  background-color: #FEC32E;
+  color: black;
+  font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
+  font-size: 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+.nav a:hover{
+  background-color: #F3F3F3;
+  padding-bottom: 17px;
+  padding-top: 17px;
+  underline: none;
+}
+.nav a{
+  color: black;
+  underline: none;
+}
+.nav-links{
+  padding-left: 20px;
+  padding-right: 20px;
+}
 .blockquote-font{
   font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
   text-align: center;
   padding-bottom: 20px;
+}
+.subscribe-response {
+  color: white;
+  font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
+  font-size: 20px;
 }
 #main-footer {
   padding-top: 50px;
@@ -234,3 +272,39 @@
   font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
 }
 ////////////////////////////////////////////////////////////////////////////////////////////
+
+// NEWS STYLE
+.news-post {
+color: #3B5998;
+border-bottom: dashed;
+border-color: #F1F1F1;
+padding: 25px 50px 25px 50px;
+font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
+}
+.news-image{
+  height: 200px;
+  width: auto;
+  border: solid black;
+}
+.news-block {
+  display: block;
+}
+.news-para{
+  text-align: justify;
+  text-justify: inter-word;
+  color: black;
+  font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
+}
+.news-author {    
+  // background-color: #ECEBEB;
+  color: #3B5998;
+  font-size: 0.8em;
+  font-family: Verdana;
+  font-weight: bold;
+  padding: 8px 7px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.news-icons {
+  color: #3B5998;
+}

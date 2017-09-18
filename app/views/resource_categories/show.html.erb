@@ -1,1 +1,12 @@
-<h1>Hello</h1>
+<div class="res-container">
+<p class="res-nav"><%= link_to "Resources", "/resources" %> > <%= @resouce.name %> </p>
+  <% @resouce.resources.each do |resource| %>
+    <div class="res-block">
+      <p class="res-name"> <%= resource.name %> </p>
+      <div class="res-link"><%= resource.resource_link %>
+<!--         <iframe src="#{<%= resource.resource_link %>}" width = "500px" height = "500px"> </iframe>< -->
+      </div>
+      <p class="res-description"><%= resource.description %></p>
+    </div>
+  <% end %>
+</div>

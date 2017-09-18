@@ -7,6 +7,7 @@ class ResourceCategoriesController < ApplicationController
   def create
     @resource_category = ResourceCategory.new(name: params[:name])
     @resource_category.save
+    redirect_to '/resources'
   end
 
   def index

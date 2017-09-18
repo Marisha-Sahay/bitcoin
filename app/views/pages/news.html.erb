@@ -1,0 +1,30 @@
+<div class="news-container">
+  <div class="news-content">
+    <% @posts.each do |post| %>
+      <div class="news-post">
+        <h2><%= post['title'] %></h2>
+        <br>
+        <p class="news-icons">
+          <div class="addthis_inline_share_toolbox"></div>
+          <i class="fa fa-facebook" aria-hidden="true"></i> : <%= post['thread']['social']['facebook']['shares'] %>
+          <i class="fa fa-linkedin" aria-hidden="true"></i> : <%= post['thread']['social']['linkedin']['shares'] %>
+          <i class="fa fa-google-plus" aria-hidden="true"></i> : <%= post['thread']['social']['gplus']['shares'] %>
+         </p>
+        <div class="news-block">
+          <p class="news-img">
+            <% if post['thread']['main_image'] %>
+              <%= link_to image_tag("#{post['thread']['main_image']}",class: "news-image"), "#{post['url']}", target: :_blank%>
+            <% else %>
+              <%= link_to image_tag("bitcoins-default.jpg",class: "news-image"), "#{post['url']}", target: :_blank %>
+            <% end %>
+          </p>
+          <p class="news-author"><%= post['published'][0..9]%> / <%= post['author'] %></p>
+          <p class="news-para"><%= post['text'] %> <%= link_to "Read More", "#{post['url']}", target: :_blank %></p>
+        </div>
+      </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59bf0f900e22530f"></script> 

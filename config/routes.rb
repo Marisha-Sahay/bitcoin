@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   get "/till_now", to: "pages#till_now"
   post "/email_subscriptions", to: "email_subscriptions#create"
   get "/hotshots", to: "pages#hotshots"
-  get "/resources", to: "pages#resources"
-  get "/news", to: "pages#abc_news"
+  # get "/resources", to: "pages#resources"
+  get "/news", to: "pages#news"
   get "/cafe", to: "pages#cafe"
   
   #user routes  
@@ -41,7 +41,7 @@ Rails.application.routes.draw do
   patch '/orders/:id', to: 'orders#update'
 
   # resources routes
-  # get '/resources', to: 'resource_categories#index'
+  get '/resources', to: 'resource_categories#index'
   get '/resources/:id', to: 'resource_categories#show'
   get '/resource_categories/new', to: 'resource_categories#new'
   post '/resource_categories', to: 'resource_categories#create'
