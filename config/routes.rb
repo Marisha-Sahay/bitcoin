@@ -47,4 +47,6 @@ Rails.application.routes.draw do
   post '/resource_categories', to: 'resource_categories#create'
   get '/resource/new', to: 'resources#new'
   post '/resources', to: 'resources#create'
+  get '/resource/:id/edit', to: 'resources#edit'
+  patch '/resources/:id', to: 'resources#update'
 end

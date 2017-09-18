@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <h1>Edit Resource</h1>
+    <%= form_tag "/resources/#{@resource.id}", method: :patch do%>
+    <form class="form-horizontal">
+      <div class="form-group">
+        <%= label_tag :name%>
+        <%= text_field_tag :name, @resource.name, class:"form-control"%>
+      </div>
+      <div class="form-group">
+        <%= label_tag :description%>
+        <%= text_area_tag :description, @resource.description, rows: 10, cols: 25, class:"form-control"%>
+      </div>
+      <div class="form-group">
+        <%= label_tag :resource_link%>
+        <%= text_field_tag :resource_link, @resource.resource_link, class:"form-control"%>
+      </div>
+      <div class="form-group">
+        <%= label_tag :resource_category%>
+        <%= collection_select :resource_category, :resource_category_id, ResourceCategory.all, :id, :name %>
+      </div>
+      <div class="form-group">
+        <%= submit_tag "Edit Record"%>
+      </div>
+    </form>
+    <%end%>
+  </div>
+</div>

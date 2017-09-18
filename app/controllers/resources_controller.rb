@@ -12,5 +12,19 @@ class ResourcesController < ApplicationController
     end
   end
 
+  def edit 
+    @resource = Resource.find_by(id: params[:id])
+  end
+
+  def update
+    resource = Resource.find_by(id: params[:id])
+    binding.pry
+    resource.name = params[:name]
+    resource.description = params[:description]
+    resource.resource_link = params[:resource_link]
+    resource.save
+    flash[:success] = "Product updated"
+    redirect_to "/resources"
+  end
 
 end
