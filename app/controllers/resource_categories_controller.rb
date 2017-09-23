@@ -11,7 +11,7 @@ class ResourceCategoriesController < ApplicationController
   end
 
   def index
-    @resouces = ResourceCategory.all
+    @resouces = ResourceCategory.order(updated_at: :desc)
   end
 
   def show
