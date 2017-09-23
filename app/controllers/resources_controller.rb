@@ -18,12 +18,19 @@ class ResourcesController < ApplicationController
 
   def update
     resource = Resource.find_by(id: params[:id])
-    binding.pry
+    # binding.pry
     resource.name = params[:name]
     resource.description = params[:description]
     resource.resource_link = params[:resource_link]
     resource.save
-    flash[:success] = "Product updated"
+    flash[:success] = "Resource updated"
+    redirect_to "/resources"
+  end
+
+  def destroy
+    resource = Resource.find_by(id: params[:id])
+    resource.delete
+    flash[:danger] = "Resource deleted"
     redirect_to "/resources"
   end
 
