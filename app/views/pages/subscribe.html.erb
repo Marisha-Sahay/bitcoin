@@ -1,7 +1,14 @@
 <div class="coinbase-container">
-  <p class="add"><%= link_to "Advertisement","https://www.coinbase.com/join/56d7437a25cbc8005d000647", target: :_blank%></p>
-  <p class="coinbase-add"><%= link_to "Get $10! Sign-up for Coinbase","https://www.coinbase.com/join/56d7437a25cbc8005d000647", target: :_blank %></p>
-  <p class="coinbase-text"><%= link_to "Buy your first Bitcoin, Ether, Litecoin","https://www.coinbase.com/join/56d7437a25cbc8005d000647", target: :_blank %></p>
+  <div id="myElem">
+    <p class="add"><%= link_to "Advertisement","https://www.coinbase.com/join/56d7437a25cbc8005d000647", target: :_blank%></p>
+    <p class="coinbase-add"><%= link_to "Get $10! Sign-up for Coinbase","https://www.coinbase.com/join/56d7437a25cbc8005d000647", target: :_blank %></p>
+    <p class="coinbase-text"><%= link_to "Buy your first Bitcoin, Ether, Litecoin","https://www.coinbase.com/join/56d7437a25cbc8005d000647", target: :_blank %></p>
+  </div>
+  <div class="stock-prices">
+    <% @prices.each do |price| %>
+      <%= "#{price['name']}: $#{price['price_usd'].to_f.round(2)}" %>
+    <% end %>
+  </div>
   <div class="subscribe-container">
     <h1 class="subscribe-header">Bitcaffe! Join the mailing list now</h1>
     <br>
@@ -118,3 +125,7 @@
   return t;
 
 }(document, "script", "twitter-wjs"));</script>
+<script type="text/javascript">
+$("#myElem").show();
+setTimeout(function() { $("#myElem").hide(); }, 15000);
+</script>

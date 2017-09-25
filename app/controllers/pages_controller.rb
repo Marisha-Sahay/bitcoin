@@ -3,6 +3,7 @@ class PagesController < ApplicationController
   def subscribe
     response = Unirest.get("http://webhose.io/search?token=d8031f4d-87f0-4722-aef6-180d877ebc6d&format=json&q=bitcoin%20cryptocurrency&sort=relevancy").body
     @posts = response['posts'].first(13)
+    @prices = Unirest.get("https://api.coinmarketcap.com/v1/ticker/?limit=10").body
   end
 
   def news_index
