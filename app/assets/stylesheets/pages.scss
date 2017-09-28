@@ -203,7 +203,7 @@
   text-align: center;
   font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
   font-size: 13px;
-  padding: 20px 10px 10px 10px;
+  padding: 10px 10px 10px 10px;
   background-color: black;
   color: #FEC32E;
 }
@@ -229,7 +229,7 @@
   underline: none;
 }
 .add{
-  padding-top: 10px;
+  // padding-top: 10px;
   font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
   font-size: 10px;
   color: white;
@@ -238,10 +238,20 @@
   color: white;
   underline: none;
 }
+.add-button{
+  padding-top: 10px;
+  font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
+  font-size: 10px;
+  color: black;
+}
 .subscribe-container{
   padding-top: 50px;
   padding-bottom: 50px;
   background-color: #237AA0;
+}
+.sub-container{
+  padding-top: 5px;
+  background-color: black;
 }
 .subscribe-header{
   text-align: center;
