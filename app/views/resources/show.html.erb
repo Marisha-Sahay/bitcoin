@@ -7,7 +7,7 @@
   <% if @resouce.resource_link.include? "youtube" %>
     <% str1 = "#{@resouce.resource_link}" %>
     <% str2 = str1.split("=") %>
-    <%= content_tag(:iframe,'', width: 420, height: 315, src: "https://www.youtube.com/embed/#{str2[1]}") %>
+    <%= content_tag(:iframe,'', width: 840, height: 630, src: "https://www.youtube.com/embed/#{str2[1]}") %>
     <% end %>
 </div>
 
