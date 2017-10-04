@@ -2,10 +2,10 @@
 <p class="res-nav"><%= link_to "Resources", "/resources" %> > <%= @resouce.name %> </p>
   <% @resouce.resources.each do |resource| %>
     <div class="res-block">
-    <p class="res-name"><%= link_to "#{resource.name}", "#{resource.resource_link}", target: :_blank%>
+    <p class="res-name"><%= link_to "#{resource.name}", "/resource/#{resource.id}" %>
 <!--         <iframe src="#{<%= resource.resource_link %>}" width = "500px" height = "500px"> </iframe>< -->
       <p class="res-description"><%= resource.description %></p>
-      <!-- <li><%= link_to "Edit", "/resources/#{resource.id}/edit" %></li>  -->
+      <!-- <li><%= link_to "Edit", "/resources/#{resource.id}/edit" %></li> -->
       <!-- <li><%= link_to "Delete", "/resources/#{resource.id}", method: :delete %></li> -->
     </div>
   <% end %>

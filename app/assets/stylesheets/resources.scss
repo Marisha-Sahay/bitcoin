@@ -1,3 +1,16 @@
 // Place all the styles related to the resources controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.res-show-container{
+  padding: 20px 20px 20px 20px;
+}
+.res-name-head{
+  font-size: 30px;
+  font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
+  color: #297B9E;
+}
+.res-name-para{
+  font-size: 15px;
+  font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
+  color: black;
+}

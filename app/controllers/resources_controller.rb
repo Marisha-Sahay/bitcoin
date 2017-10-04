@@ -34,4 +34,7 @@ class ResourcesController < ApplicationController
     redirect_to "/resources"
   end
 
+  def show
+    @resouce = Resource.find_by(id: params[:id])
+  end
 end

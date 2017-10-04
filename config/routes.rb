@@ -50,5 +50,7 @@ Rails.application.routes.draw do
   get '/resources/:id/edit', to: 'resources#edit'
   patch '/resources/:id', to: 'resources#update'
   delete 'resources/:id',to: 'resources#destroy'
+  get '/resource/:id', to: 'resources#show'
+
 
 end
