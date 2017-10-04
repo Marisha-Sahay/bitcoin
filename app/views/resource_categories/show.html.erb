@@ -1,4 +1,8 @@
 <div class="res-container">
+<% if current_user && current_user.admin %>
+  <br>
+  <li><%= link_to "New resource", "/resource/new" %></li>
+<% end %>
 <p class="res-nav"><%= link_to "Resources", "/resources" %> > <%= @resouce.name %> </p>
   <% @resouce.resources.each do |resource| %>
     <div class="res-block">
@@ -7,8 +11,10 @@
       <%= link_to "downvote", "/resources/#{resource.id}/dislike", method: :put, class: "fa fa-thumbs-down" %>
       <br><br>
       <p class="res-description"><%= resource.description %></p>
-      <!-- <li><%= link_to "Edit", "/resources/#{resource.id}/edit" %></li> -->
-      <!-- <li><%= link_to "Delete", "/resources/#{resource.id}", method: :delete %></li> -->
+      <% if current_user && current_user.admin %>
+        <li><%= link_to "Edit", "/resources/#{resource.id}/edit" %></li>
+        <li><%= link_to "Delete", "/resources/#{resource.id}", method: :delete %></li>
+      <% end %>
     </div>
   <% end %>
 </div>

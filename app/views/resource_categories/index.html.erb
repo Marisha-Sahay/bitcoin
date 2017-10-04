@@ -1,4 +1,8 @@
 <div class="resource-container">
+<% if current_user && current_user.admin %>
+  <br>
+  <li><%= link_to "New resource", "/resource_categories/new" %></li>
+<% end %>
 <div class="search-bar">
   <script>
     (function() {
