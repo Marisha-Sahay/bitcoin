@@ -51,6 +51,7 @@ Rails.application.routes.draw do
   patch '/resources/:id', to: 'resources#update'
   delete 'resources/:id',to: 'resources#destroy'
   get '/resource/:id', to: 'resources#show'
-
+  put 'resources/:id/like', to: "resources#upvote"
+  put 'resources/:id/dislike', to: "resources#downvote"
 
 end

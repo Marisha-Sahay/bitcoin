@@ -1,5 +1,6 @@
 <div class="res-show-container">
   <h1 class="res-name-head"><%= link_to "#{@resouce.name}", "#{@resouce.resource_link}", target: :_blank%></h1>
+  <p><i class="fa fa-thumbs-up" aria-hidden="true"></i> : <%= @resouce.get_likes.size %> <i class="fa fa-thumbs-down" aria-hidden="true"></i> : <%= @resouce.get_dislikes.size %></p>
   <br>
   <div class="addthis_inline_share_toolbox"></div>
   <p class="res-name-para"><%= @resouce.description%></p>

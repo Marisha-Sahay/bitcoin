@@ -37,4 +37,14 @@ class ResourcesController < ApplicationController
   def show
     @resouce = Resource.find_by(id: params[:id])
   end
+
+  def upvote
+    @resouce = Resource.find(params[:id])
+    @resouce.vote_by :voter => current_user
+  end
+
+  def downvote
+    @resouce = Resource.find(params[:id])
+    @resouce.downvote_from current_user
+  end
 end
