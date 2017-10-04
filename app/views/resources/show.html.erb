@@ -1,4 +1,13 @@
 <div class="res-show-container">
   <h1 class="res-name-head"><%= link_to "#{@resouce.name}", "#{@resouce.resource_link}", target: :_blank%></h1>
   <p class="res-name-para"><%= @resouce.description%></p>
+  <% if @resouce.resource_link.include? "youtube" %>
+    <% str1 = "#{@resouce.resource_link}" %>
+    <% str2 = str1.split("=") %>
+    <iframe width="420" height="315"
+      src="https://www.youtube.com/embed/#{str2[1]}">
+    </iframe>
+    <!-- src="https://www.youtube.com/embed/XGSy3_Czz8k" -->
+    <!-- https://www.youtube.com/watch?v=66SaEDzlmP4 -->
+  <% end %>
 </div>
