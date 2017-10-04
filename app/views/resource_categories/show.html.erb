@@ -2,7 +2,7 @@
 <p class="res-nav"><%= link_to "Resources", "/resources" %> > <%= @resouce.name %> </p>
   <% @resouce.resources.each do |resource| %>
     <div class="res-block">
-      <p class="res-name"><%= link_to "#{resource.name}", "/resource/#{resource.id}" %>
+      <p class="res-name"><%= link_to "#{resource.name}", url_for("/resource/#{resource.id}"), :data => { :reload => true } %></p>
       <p class="res-description"><%= resource.description %></p>
       <!-- <li><%= link_to "Edit", "/resources/#{resource.id}/edit" %></li> -->
       <!-- <li><%= link_to "Delete", "/resources/#{resource.id}", method: :delete %></li> -->

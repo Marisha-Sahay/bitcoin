@@ -1,5 +1,7 @@
 <div class="res-show-container">
   <h1 class="res-name-head"><%= link_to "#{@resouce.name}", "#{@resouce.resource_link}", target: :_blank%></h1>
+  <br>
+  <div class="addthis_inline_share_toolbox"></div>
   <p class="res-name-para"><%= @resouce.description%></p>
   <% if @resouce.resource_link.include? "youtube" %>
     <% str1 = "#{@resouce.resource_link}" %>
@@ -7,3 +9,5 @@
     <%= content_tag(:iframe,'', width: 420, height: 315, src: "https://www.youtube.com/embed/#{str2[1]}") %>
     <% end %>
 </div>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59bf0f900e22530f"></script> 
