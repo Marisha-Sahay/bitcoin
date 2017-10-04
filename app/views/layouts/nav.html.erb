@@ -20,27 +20,19 @@
   </head>
 
   <body>
-<nav class="nav">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <!-- Collect the nav links, forms, and other content for toggling -->
-      <ul class="nav navbar-nav">
-        <li><%= image_tag("logo.jpg",class: "logo") %></li>
-        <li><%= link_to "Home", url_for("/"), class: "nav-links", :data => { :reload => true } %></li>
-        <li><%= link_to "News", url_for("/news"), class: "nav-links", :data => { :reload => true } %></li>
-        <li><%= link_to "Resources", url_for("/resources"), class: "nav-links", :data => { :reload => true } %></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <% if current_user %>
-              <li><%= link_to "Logout", "/logout", class: "nav-links fa fa-sign-out", :data => { :reload => true } %></li>
-            <% else %>
-              <li><%= link_to "Sign-Up", "/signup" , class: "nav-links glyphicon glyphicon-user", :data => { :reload => true } %></li>
-              <li><%= link_to "Login", "/login" , class: "nav-links fa fa-sign-in", :data => { :reload => true } %></li>
-            <% end %>
-          </ul>
-        </li>
-      </ul>
-  </nav>
+    <div class="nav">
+      <%= image_tag("logo.jpg",class: "logo") %>
+      <%= link_to "Home", url_for("/"), class: "nav-links", :data => { :reload => true } %>
+      <%= link_to "News", url_for("/news"), class: "nav-links", :data => { :reload => true } %>
+      <%= link_to "Resources", url_for("/resources"), class: "nav-links", :data => { :reload => true } %>
+      <%= link_to "", "#", class: "fa fa-caret-down" %>
+      <% if current_user %>
+        <%= link_to "Logout", "/logout", class: "nav-links fa fa-sign-out", :data => { :reload => true } %>
+      <% else %>
+        <%= link_to "Sign-Up", "/signup" , class: "nav-links glyphicon glyphicon-user", :data => { :reload => true } %>
+        <%= link_to "Login", "/login" , class: "nav-links fa fa-sign-in", :data => { :reload => true } %>
+      <% end %>
+    </div>
     <br><br>
     <%= yield %>
     <footer id="main-footer">
