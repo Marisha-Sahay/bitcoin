@@ -19,7 +19,7 @@
             <% end %>
           </p>
           <p class="news-author"><%= post['published'][0..9]%> / <%= post['author'] %></p>
-          <p class="news-para"><%= post['text'] %> <%= link_to "Read More", "#{post['url']}", target: :_blank %></p>
+          <p class="news-para"><%= post['text'][0..100] %> <%= link_to "Read More", "#{post['url']}", target: :_blank %></p>
         </div>
       </div>
       </div>
