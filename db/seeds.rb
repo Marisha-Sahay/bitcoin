@@ -22,7 +22,6 @@
 # ResourceCategory.create([{name: "Privacy"}])
 # ResourceCategory.create([{name: "The Lightning Network"}])
 User.create!(name:  "admin",
-             surname: "admin",
              email: "admin@bitcoincaffe.com",
              password:              "password",
              password_confirmation: "password",
