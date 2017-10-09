@@ -21,8 +21,8 @@
 # ResourceCategory.create([{name: "Vendors accepting Bitcoin"}])
 # ResourceCategory.create([{name: "Privacy"}])
 # ResourceCategory.create([{name: "The Lightning Network"}])
-User.create!(name:  "admin",
-             email: "admin@bitcoincaffe.com",
-             password:              "password",
-             password_confirmation: "password",
-             admin: true)
+# User.create!(name:  "admin",
+#              email: "admin@bitcoincaffe.com",
+#              password:              "password",
+#              password_confirmation: "password",
+#              admin: true)
