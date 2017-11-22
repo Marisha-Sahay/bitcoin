@@ -5,105 +5,25 @@
     <p class="coinbase-text"><%= link_to "Buy your first Bitcoin, Ether, Litecoin","https://www.coinbase.com/join/56d7437a25cbc8005d000647", target: :_blank %></p>
   </div>
   <div class="stock-prices">
+  <br>
     <% @prices.each do |price| %>
       <%= "#{price['name']}: $#{price['price_usd'].to_f.round(2)}" %>
     <% end %>
   </div>
-  <div class="subscribe-container">
-    <h1 class="subscribe-header">Bitcaffe! Join the mailing list now</h1>
-    <br>
-    <h4 class="subscribe-header">Stay on top of the fast growing Crypto world. Get the most relevant news item and insightful essays to your inbox.</h4><br>
-  <!--    <p class="subscribe-para">  A couple of articles a week to keep pace with the . After all, you have a role to play in the new brave world of decentralized economy. 
-      <br>The world of blockchain and Crypto currency is growing every day. There is a lot of content out there. But, noise to signal ratio is extremely high.
-      <br>We are a group of crypto nerds who are deep into the world. Help us mine the gem for you.
-      <br>Sign-up for the weekly newsletter to stay on top of the crypto world.
-    </p> -->
-    
-    <div class="subscribe-para">
-      <!-- <input type="email" class="subscribe-text black-text footer-email-bar" placeholder="Email Address" name="email"> -->
-      <!-- <br> -->
-      <div class="footer-button-container">
-        <!-- <p class="js-subscribe-response subscribe-response"></p> -->
-  <!--       <button class="footer-button-content-container footer-form-submit">Subscribe</button> -->
-        <%= link_to "Subscribe Here", "https://www.getrevue.co/profile/BitCaffe", class: "footer-button-content-container footer-form-submit", target: :_blank %>
-        </div>
+</div>
+<div class="slider-wrap">
+  <div class="slider" id="slider">
+    <div class="holder">
+      <div class="slide" id="slide-0"></div>
+      <div class="slide" id="slide-1"></div>
+      <div class="slide" id="slide-2"></div>
     </div>
   </div>
-  <div class="sub-news-container">
-    <div class="row">
-      <div class="sub-news-head">
-        <div class="col-md-4">
-          Trending News
-        </div>
-        <div class="col-md-4">
-          Featured Content 
-        </div>
-        <div class="col-md-4">
-          Latest Tweets
-        </div>
-      </div>
-    </div>
-    <br><br>
-    <div class="row">
-      <div class="col-md-4">
-        <div class="sub-news-block">
-          <% @posts.each do |post| %>
-            <p class="subscribe-news">
-              <% if post['thread']['main_image'] %>
-                <%= link_to image_tag("#{post['thread']['main_image']}", class: "sub-image"), "#{post['url']}", target: :_blank, class: "sub-image"%>
-              <% else %>
-                <%= link_to image_tag("bitcoins-default.jpg", class: "sub-image"), "#{post['url']}", target: :_blank %>
-              <% end %>
-              <%= link_to post['title'], "#{post['url']}", target: :_blank %>
-            </p>
-          <% end %>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="sub-news-block">
-          <!-- <h4 class="subscribe-header-axm">Business</h4> -->
-          <%= link_to "YES, BITCOIN HAS NO INTRINSIC VALUE. NEITHER DOES A $1 BILL", "https://www.wired.com/story/bitcoin-has-no-intrinsic-value-neither-does-a-dollar1-bill/" %>
-          <p class="editors-para">BITCOIN: FAD OR the future? The question has dogged the digital currency since its inception nearly a decade ago, and recent developments raise it anew. Last week, a new variant of bitcoin emerged via a “fork” in its underlying code, threatening to confuse and divide the still-small world of bitcoin adherents....<%= link_to "continue reading...","https://www.wired.com/story/bitcoin-has-no-intrinsic-value-neither-does-a-dollar1-bill/"%></p>
-        </div>
-        <br><br>
-        <div class="sub-news-block">
-          <!-- <h4 class="subscribe-header-axm">Business</h4> -->
-          <%= link_to "Quantifying Decentralization", "https://news.21.co/quantifying-decentralization-e39db233c28e" %>
-          <p class="editors-para">We must be able to measure blockchain decentralization before we can improve it.<br>
-          <%= link_to "continue reading...","https://news.21.co/quantifying-decentralization-e39db233c28e"%></p>
-        </div>
-        <br><br>
-        <div class="sub-news-block">
-          <!-- <h4 class="subscribe-header-axm">Business</h4> -->
-          <%= link_to "Is NEO the One?", "https://hackernoon.com/is-neo-the-one-67799886b78f" %>
-          <p class="editors-para">There’s a new crypto platform on the scene and it’s a blockbuster. <br>
-          Meet NEO. Dubbed the “Ethereum of China” it’s up over 400% in the last week alone. It rocketed into the top five of coin market caps, blowing past the veteran Litecoin.... <%= link_to "continue reading...","https://hackernoon.com/is-neo-the-one-67799886b78f"%></p>
-        </div>
-        <br><br>
-        <div class="sub-news-block">
-          <!-- <h4 class="subscribe-header-axm">Business</h4> -->
-          <%= link_to "A hacker stole $31M of Ether — how it happened, and what it means for Ethereum", "https://medium.freecodecamp.org/a-hacker-stole-31m-of-ether-how-it-happened-and-what-it-means-for-ethereum-9e5dc29e33ce" %>
-          <p class="editors-para">Yesterday, a hacker pulled off the second biggest heist in the history of digital currencies. <br>
-          Around 12:00 PST, an unknown attacker exploited a critical flaw in the Parity multi-signature wallet on the Ethereum network, draining three massive wallets of over $31,000,000 worth of Ether in a matter of minutes. Given a couple more hours, the hacker could’ve made off with over $180,000,000 from vulnerable wallets... <%= link_to "continue reading...","https://medium.freecodecamp.org/a-hacker-stole-31m-of-ether-how-it-happened-and-what-it-means-for-ethereum-9e5dc29e33ce"%></p>
-        </div>
-        <br><br>
-        <div class="sub-news-block">
-          <!-- <h4 class="subscribe-header-axm">Technical</h4> -->
-          <%= link_to "Could SPV Support a Billion Bitcoin Users? Sizing up a Scaling Claim", "https://www.coindesk.com/spv-support-billion-bitcoin-users-sizing-scaling-claim/" %>
-          <p class="editors-para">A new claim is being perpetuated in the bitcoin scaling debate. <br>
-          We're hearing that it is safe to remove the block size limit because bitcoin can easily scale to huge block sizes that would support billions of users via existing "simplified payment verification" (SPV) methods. Supposedly, SPV is very scalable due to the small amount of data it requires an SPV client to store, send and receive...<%= link_to "continue reading...","https://www.coindesk.com/spv-support-billion-bitcoin-users-sizing-scaling-claim/"%></p>
-        </div>
-        <br><br>
-      </div>
-      <div class="col-md-4">
-        <div class="sub-tweet-block">
-        <a class="twitter-timeline"
-        href="https://twitter.com/bitcaffe256"
-        data-tweet-limit="3">BitCaffe Twitter</a>
-        </div>
-      </div>
-    </div>
-  </div>
+  <nav class="slider-nav">
+    <a href="#slide-0" class="active">Slide 0</a> 
+    <a href="#slide-1">Slide 1</a> 
+    <a href="#slide-2">Slide 2</a> 
+  </nav>
 </div>
 
 
@@ -133,4 +53,60 @@ setTimeout(function() { $("#myElem").fadeOut(1600); }, 5000);
 //     // Animation complete.
 //   });
 // });
+</script>
+<script type="text/javascript">
+  var slider = {
+  el: {
+    slider: $("#slider"),
+    allSlides: $(".slide"),
+    sliderNav: $(".slider-nav"),
+    allNavButtons: $(".slider-nav > a")
+  },
+  
+  timing: 800,
+  slideWidth: 300, 
+  init: function() {
+    this.bindUIEvents();
+  },
+  
+  bindUIEvents: function() {
+    // You can either manually scroll...
+    this.el.slider.on("scroll", function(event) {
+      slider.moveSlidePosition(event);
+    });
+    // ... or click a thing
+    this.el.sliderNav.on("click", "a", function(event) {
+      slider.handleNavClick(event, this);
+    });
+    // What would be cool is if it had touch
+    // events where you could swipe but it
+    // also kinda snapped into place.
+  },
+  
+  moveSlidePosition: function(event) {
+    // Magic Numbers =(
+    this.el.allSlides.css({
+      "background-position": $(event.target).scrollLeft()/6-100+ "px 0"
+    });  
+  },
+  
+  handleNavClick: function(event, el) {
+    event.preventDefault();
+    var position = $(el).attr("href").split("-").pop();
+    
+    this.el.slider.animate({
+      scrollLeft: position * this.slideWidth
+    }, this.timing);
+    
+    this.changeActiveNav(el);
+  },
+  
+  changeActiveNav: function(el) {
+    this.el.allNavButtons.removeClass("active");
+    $(el).addClass("active");
+  }
+  
+};
+
+slider.init();
 </script>
