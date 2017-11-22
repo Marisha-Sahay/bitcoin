@@ -54,7 +54,7 @@
         <div class="sub-news-block">
           <% @posts.each do |post| %>
             <p class="subscribe-news">
-              <% if post.main_image.length > 1 %>
+              <% if post.main_image %>
                 <%= link_to image_tag("#{post.main_image}", class: "sub-image"), "#{post.news_url}", target: :_blank, class: "sub-image"%>
               <% else %>
                 <%= link_to image_tag("bitcoins-default.jpg", class: "sub-image"), "#{post.news_url}", target: :_blank %>
