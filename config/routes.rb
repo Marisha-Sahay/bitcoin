@@ -54,4 +54,10 @@ Rails.application.routes.draw do
   put 'resources/:id/like', to: "resources#upvote"
   put 'resources/:id/dislike', to: "resources#downvote"
 
+  namespace :api do
+    namespace :v1 do
+      get '/news', to: 'news#index'
+      get '/news/:id', to: 'news#show'
+    end
+  end
 end
