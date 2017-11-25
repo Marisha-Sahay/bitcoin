@@ -1,0 +1,2 @@
+class FeaturedContent < ApplicationRecord
+end

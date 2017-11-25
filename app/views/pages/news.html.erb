@@ -18,7 +18,7 @@
             <% end %>
           </p>
           <p class="news-author"><%= post.published%> / <%= post.author %></p>
-          <p class="news-para"><%= post.description %> <%= link_to "Read More", "#{post.news_url}", target: :_blank %></p>
+          <p class="news-para"><%= post.description[0..1000] %> <%= link_to "Read More", "#{post.news_url}", target: :_blank %></p>
         </div>
       </div>
       </div>

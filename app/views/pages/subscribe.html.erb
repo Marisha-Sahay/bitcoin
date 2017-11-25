@@ -65,40 +65,14 @@
         </div>
       </div>
       <div class="col-md-4">
+        <% @contents.each do |content| %>
         <div class="sub-news-block">
           <!-- <h4 class="subscribe-header-axm">Business</h4> -->
-          <%= link_to "YES, BITCOIN HAS NO INTRINSIC VALUE. NEITHER DOES A $1 BILL", "https://www.wired.com/story/bitcoin-has-no-intrinsic-value-neither-does-a-dollar1-bill/" %>
-          <p class="editors-para">BITCOIN: FAD OR the future? The question has dogged the digital currency since its inception nearly a decade ago, and recent developments raise it anew. Last week, a new variant of bitcoin emerged via a “fork” in its underlying code, threatening to confuse and divide the still-small world of bitcoin adherents....<%= link_to "continue reading...","https://www.wired.com/story/bitcoin-has-no-intrinsic-value-neither-does-a-dollar1-bill/"%></p>
+          <%= link_to content.title, "#{content.news_url}" %>
+          <p class="editors-para"><%= content.description[0..500] %><%= link_to " continue reading...","#{content.news_url}"%></p>
         </div>
         <br><br>
-        <div class="sub-news-block">
-          <!-- <h4 class="subscribe-header-axm">Business</h4> -->
-          <%= link_to "Quantifying Decentralization", "https://news.21.co/quantifying-decentralization-e39db233c28e" %>
-          <p class="editors-para">We must be able to measure blockchain decentralization before we can improve it.<br>
-          <%= link_to "continue reading...","https://news.21.co/quantifying-decentralization-e39db233c28e"%></p>
-        </div>
-        <br><br>
-        <div class="sub-news-block">
-          <!-- <h4 class="subscribe-header-axm">Business</h4> -->
-          <%= link_to "Is NEO the One?", "https://hackernoon.com/is-neo-the-one-67799886b78f" %>
-          <p class="editors-para">There’s a new crypto platform on the scene and it’s a blockbuster. <br>
-          Meet NEO. Dubbed the “Ethereum of China” it’s up over 400% in the last week alone. It rocketed into the top five of coin market caps, blowing past the veteran Litecoin.... <%= link_to "continue reading...","https://hackernoon.com/is-neo-the-one-67799886b78f"%></p>
-        </div>
-        <br><br>
-        <div class="sub-news-block">
-          <!-- <h4 class="subscribe-header-axm">Business</h4> -->
-          <%= link_to "A hacker stole $31M of Ether — how it happened, and what it means for Ethereum", "https://medium.freecodecamp.org/a-hacker-stole-31m-of-ether-how-it-happened-and-what-it-means-for-ethereum-9e5dc29e33ce" %>
-          <p class="editors-para">Yesterday, a hacker pulled off the second biggest heist in the history of digital currencies. <br>
-          Around 12:00 PST, an unknown attacker exploited a critical flaw in the Parity multi-signature wallet on the Ethereum network, draining three massive wallets of over $31,000,000 worth of Ether in a matter of minutes. Given a couple more hours, the hacker could’ve made off with over $180,000,000 from vulnerable wallets... <%= link_to "continue reading...","https://medium.freecodecamp.org/a-hacker-stole-31m-of-ether-how-it-happened-and-what-it-means-for-ethereum-9e5dc29e33ce"%></p>
-        </div>
-        <br><br>
-        <div class="sub-news-block">
-          <!-- <h4 class="subscribe-header-axm">Technical</h4> -->
-          <%= link_to "Could SPV Support a Billion Bitcoin Users? Sizing up a Scaling Claim", "https://www.coindesk.com/spv-support-billion-bitcoin-users-sizing-scaling-claim/" %>
-          <p class="editors-para">A new claim is being perpetuated in the bitcoin scaling debate. <br>
-          We're hearing that it is safe to remove the block size limit because bitcoin can easily scale to huge block sizes that would support billions of users via existing "simplified payment verification" (SPV) methods. Supposedly, SPV is very scalable due to the small amount of data it requires an SPV client to store, send and receive...<%= link_to "continue reading...","https://www.coindesk.com/spv-support-billion-bitcoin-users-sizing-scaling-claim/"%></p>
-        </div>
-        <br><br>
+        <% end %>
       </div>
       <div class="col-md-4">
         <div class="sub-tweet-block">
