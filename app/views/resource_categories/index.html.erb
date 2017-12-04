@@ -5,8 +5,8 @@
 <% end %>
     <%= form_tag "/resources/search", method: :post do %>
       <div class="search-container">
-        <%= label_tag :"" %>
         <i class="fa fa-search" aria-hidden="true"></i>
+        <%= label_tag :"" %>
         <%= text_field_tag :user_search, nil, placeholder:"Type what do you want to learn today?", class: "submissionfield" %>
       <%= submit_tag "Search", class:"btn-primary" %>
       </div>
