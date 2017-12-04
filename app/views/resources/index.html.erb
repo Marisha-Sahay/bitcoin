@@ -1,0 +1,23 @@
+<div class="res-container">
+  <%= form_tag "/resources/search", method: :post do %>
+    <div class="search-container">
+      <%= label_tag :"" %>
+      <i class="fa fa-search" aria-hidden="true"></i>
+      <%= text_field_tag :user_search, nil, placeholder:"Type what do you want to learn today?", class: "submissionfield" %>
+      <%= submit_tag "Search", class:"btn-primary" %>
+    </div>
+  <% end %>
+<% @resources.each do |resource| %>
+    <div class="res-block">
+      <p class="res-name"><%= link_to "#{resource.name}", url_for("/resource/#{resource.id}"), :data => { :reload => true } %></p>
+      <%= link_to "upvote", "/resources/#{resource.id}/like", method: :put, class: "fa fa-thumbs-up" %>
+      <%= link_to "downvote", "/resources/#{resource.id}/dislike", method: :put, class: "fa fa-thumbs-down" %>
+      <br><br>
+      <p class="res-description"><%= resource.description %></p>
+      <% if current_user && current_user.admin %>
+        <li><%= link_to "Edit", "/resources/#{resource.id}/edit" %></li>
+        <li><%= link_to "Delete", "/resources/#{resource.id}", method: :delete %></li>
+      <% end %>
+    </div>
+  <% end %>
+</div>
