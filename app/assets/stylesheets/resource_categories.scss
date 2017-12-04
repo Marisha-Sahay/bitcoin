@@ -92,13 +92,29 @@
   border-bottom: dotted;
   padding: 10px 20px 0px 30px;
 }
-.search-container {
-  padding-left: 100px;
-  // padding-top: 30px;
+
+.search-bar {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  background-color: #F3F3F3;
 }
+// .box {
+//   display: none;
+//   width: 100%;
+// }
+// a:hover + .box,.box:hover {
+//   display: block;
+//   position: relative;
+//   z-index: 100;
+// }
 .submissionfield{ 
-  width: 900px; 
+  width: 80%; 
   height: 30px; 
   border: 1px solid #999999; 
   padding: 5px; 
+}
+.search-container {
+  padding-left: 100px;
+  padding-top: 30px;
 }
