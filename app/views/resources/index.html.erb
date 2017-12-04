@@ -7,6 +7,14 @@
       <%= submit_tag "Search", class:"btn-primary" %>
     </div>
   <% end %>
+<% if @resources.length == 0 %>
+  <br>
+  <div class="blank-search">
+    <p>Sorry we couldn't understand you. Can you please re-frame your question</p>
+    <p>Here is a video which we think you will enjoy.</p>
+    <%= content_tag(:iframe,'', width: 840, height: 630, src: "https://www.youtube.com/embed/l9jOJk30eQs") %>
+  </div>
+<% end %>
 <% @resources.each do |resource| %>
     <div class="res-block">
       <p class="res-name"><%= link_to "#{resource.name}", url_for("/resource/#{resource.id}"), :data => { :reload => true } %></p>
@@ -21,3 +29,4 @@
     </div>
   <% end %>
 </div>
+
