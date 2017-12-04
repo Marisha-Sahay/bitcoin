@@ -9,7 +9,7 @@ class ResourcesController < ApplicationController
   end
 
   def create
-    @resource = Resource.new(name: params[:name], description: params[:description], resource_link: params[:resource_link])
+    @resource = Resource.new(name: params[:name], short_desc: params[:short_desc], description: params[:description], resource_link: params[:resource_link])
     if @resource.save
       @categorized_resource = CategorizedResource.create(resource_id: @resource.id,resource_category_id: params[:resource_category][:resource_category_id])
       redirect_to "/resource/new"
@@ -26,9 +26,11 @@ class ResourcesController < ApplicationController
     resource.name = params[:name]
     resource.description = params[:description]
     resource.resource_link = params[:resource_link]
-    resource.save
-    flash[:success] = "Resource updated"
-    redirect_to "/resources"
+    resource.short_desc = params[:short_desc]
+    if resource.save
+      flash[:success] = "Resource updated"
+      redirect_to "/resources"
+    end
   end
 
   def destroy
