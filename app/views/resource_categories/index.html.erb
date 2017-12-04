@@ -1,22 +1,16 @@
 <div class="resource-container">
 <% if current_user && current_user.admin %>
-  <br>
-  <li><%= link_to "New resource", "/resource_categories/new" %></li>
+  <br><br>
+  <li><%= link_to "Add new resource category", "/resource_categories/new" %></li>
 <% end %>
-<div class="search-bar">
-  <script>
-    (function() {
-      var cx = '010400067382746048872:j2iznotq-x0';
-      var gcse = document.createElement('script');
-      gcse.type = 'text/javascript';
-      gcse.async = true;
-      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(gcse, s);
-    })();
-  </script>
-  <gcse:search></gcse:search>
-</div>
+    <%= form_tag "/resources/search", method: :post do %>
+      <div class="search-container">
+        <%= label_tag :"" %>
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <%= text_field_tag :user_search, nil, placeholder:"Type what do you want to learn today?", class: "submissionfield" %>
+      <%= submit_tag "Search", class:"btn-primary" %>
+      </div>
+    <% end %>   
   <div class="row">  
     <div class="resource-block-container">
       <% @resouces.each do |resource| %>
