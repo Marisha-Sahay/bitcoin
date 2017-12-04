@@ -1,5 +1,9 @@
 class ResourcesController < ApplicationController
   
+  def index
+    @resources = Resource.all 
+  end
+
   def new
     @resource = Resource.new
   end
@@ -46,5 +50,10 @@ class ResourcesController < ApplicationController
   def downvote
     @resouce = Resource.find(params[:id])
     @resouce.downvote_from current_user
+  end
+
+  def search
+    @resources = Resource.where("lower(name) LIKE ? OR lower(description) LIKE ? OR lower(short_desc) LIKE ?", "%#{params[:user_search].downcase}%", "%#{params[:user_search].downcase}%", "%#{params[:user_search].downcase}%")
+    render :index
   end
 end
