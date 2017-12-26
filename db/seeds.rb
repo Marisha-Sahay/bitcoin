@@ -41,4 +41,3 @@
 # Video.create(category: 'Technical', link: 'https://www.youtube.com/watch?v=GmOzih6I1zs', currency: 'Bitcoin', score: '1', length: '2', video_type: 'Fundamental')
 # Video.create(category: 'Technical', link: 'https://www.youtube.com/watch?v=j23HnORQXvs', currency: 'Ethereum', score: '1', length: '2', video_type: 'Fundamental')
 # Video.create(category: 'Talking Points', link: 'https://www.youtube.com/watch?v=r43LhSUUGTQ', currency: 'Blockchain', score: '1', length: '3', video_type: 'Fundamental')
-
