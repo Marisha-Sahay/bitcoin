@@ -1,1 +1,0 @@
-json.partial! 'resource.json.jbuilder', resource: @resource

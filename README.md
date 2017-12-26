@@ -22,3 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+* 
+
+* Server run
+sudo service postgresql start 
