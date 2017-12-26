@@ -1,89 +1,343 @@
-<div class="sub-container">
-  <div class="coinbase-container">
-    <div class="sub-show-hide" id="clickme">
-      <p class="add-button">Advertisement Show/Hide</p>
-    </div>
-    <div id="myElem">
-      <!-- <p class="add">Advertisement</p> -->
-      <p class="coinbase-add"><%= link_to "Get $10! Sign-up for Coinbase","https://www.coinbase.com/join/56d7437a25cbc8005d000647", target: :_blank %></p>
-      <p class="coinbase-text"><%= link_to "Buy your first Bitcoin, Ether, Litecoin","https://www.coinbase.com/join/56d7437a25cbc8005d000647", target: :_blank %></p>
-    </div>
-  </div>
-  <div class="stock-prices">
-    <% @prices.each do |price| %>
-      <%= "#{price['name']}: $#{price['price_usd'].to_f.round(2)}" %>
-    <% end %>
-  </div>
-  <div class="subscribe-container">
-    <h1 class="subscribe-header">Bitcaffe! Join the mailing list now</h1>
-    <br>
-    <h4 class="subscribe-header">Stay on top of the fast growing Crypto world. Get the most relevant news item and insightful essays to your inbox.</h4><br>
-  <!--    <p class="subscribe-para">  A couple of articles a week to keep pace with the . After all, you have a role to play in the new brave world of decentralized economy. 
-      <br>The world of blockchain and Crypto currency is growing every day. There is a lot of content out there. But, noise to signal ratio is extremely high.
-      <br>We are a group of crypto nerds who are deep into the world. Help us mine the gem for you.
-      <br>Sign-up for the weekly newsletter to stay on top of the crypto world.
-    </p> -->
+ <!-- Start: Header Section
+    ================================ -->
+    <section class="header-section-1 relative">
+        <div class="carousel-home-slider ">
+            
+            <div class="carousel-home-wrapper owl-carousel">
+
+                <div class="item">
+                    <div class="slider-background"></div>
+                    <div class="container">
+                        <div class="row section-separator">
+
+                            <div class="cd-content-animation text-center">
+                                <!-- Start: Section Header -->
+                                <div class="section-header light-text relative col-md-10 col-md-offset-1 col-sm-12" >
+                                
+                                    <h1 class="section-heading">Bitcaffe! Join the mailing list now</h1>
+                                    <p class="tag-line margin-t-25">Stay on top of the fast growing Crypto world. Get the most relevant news item and insightful essays to your inbox.</p>
+                                    
+                                </div> <!-- End: Section Header -->
+
+                                <div class="clearfix">  </div>
+
+                                <div class="btn-form margin-t-40 col-xs-12">
+                                    <a href="https://www.getrevue.co/profile/BitCaffe" target="_blank" class="btn btn-fill btn-color right-icon">Subscribe Here</a>
+                                    <!--<a href="#" class="btn btn-fill-big btn-dark">Contact us</a>-->
+                                </div>
+                            </div>
+
+
+                        </div> <!-- End: .row -->
+                    </div> <!-- End: .container -->
+                </div> <!-- End: .item -->
+                <div class="item">
+                    <div class="slider-background"></div>
+                    <div class="container">
+                        <div class="row section-separator">
+
+                             <div class="cd-content-animation text-center">
+                                <!-- Start: Section Header -->
+                                <div class="section-header light-text relative col-md-10 col-md-offset-1 col-sm-12" >
+                                
+                                    <h1 class="section-heading">Interested to Learn about Cryptocurrency?</h1>
+                                    <p class="tag-line margin-t-25">Join the mailing list now</p>
+                                    
+                                </div> <!-- End: Section Header -->
+
+                                <div class="clearfix">  </div>
+
+                                <div class="btn-form margin-t-40 col-xs-12">
+                                    <a href="https://www.getrevue.co/profile/BitCaffe" target="_blank" class="btn btn-fill btn-color right-icon">Subscribe Here</a>
+                                    <!--<a href="#" class="btn btn-fill-big btn-dark">Contact us</a>-->
+                                </div>
+                            </div>
+
+                        </div> <!-- End: .row -->
+                    </div> <!-- End: .container -->
+                </div>
+            </div>
+            
+            <div class="stock-prices light-text text-center">
+                <% @prices.each do |price| %>
+                  <%= "#{price['name']}: $#{price['price_usd'].to_f.round(2)}" %>
+                <% end %>
+            </div>
+
+        </div>
+    </section>
+    <!-- End: Header Section
+    ================================ -->
+
+
+
+    <!-- Start: Header Section
+    ================================ -->
+    <section class="features-section relative background-2 subscrive-section">
+        <div class="container">
+            <div class="row matchHeight features-item section-separator-small sp-top">
+                
+                <div class="each-item business-item col-md-4 col-sm-12">
+                  
+                    <!-- Start: Section Header -->
+                    <div class="section-header text-left">
+                        <h2 class="section-heading">Trending News</h2>
+                        <!--<hr class="lines">-->
+                    </div> <!-- End: Section Header -->
     
-    <div class="subscribe-para">
-      <!-- <input type="email" class="subscribe-text black-text footer-email-bar" placeholder="Email Address" name="email"> -->
-      <!-- <br> -->
-      <div class="footer-button-container">
-        <!-- <p class="js-subscribe-response subscribe-response"></p> -->
-  <!--       <button class="footer-button-content-container footer-form-submit">Subscribe</button> -->
-        <%= link_to "Subscribe Here", "https://www.getrevue.co/profile/BitCaffe", class: "footer-button-content-container footer-form-submit", target: :_blank %>
+                    <div class="carousel-container margin-b-50 features-content">
+                        <div class="carousel-wrapper owl-carousel inner-small shadow">
+                            
+                            <% count = 1 %> 
+                            <% @posts.each do |post| %>
+                            
+                            <% if count  <= 12
+                            if count % 4 == 1  %>
+                            <div class="item">
+                                <div class="item-inner ">
+                                  <ul class="nav recent-post text-left">
+                                    
+                                  <% end  %>
+                                    <li>
+                                        <a href="<%= post.news_url %>">
+                                            <div class="media">
+                                                <div class="media-left">
+                                                  <% if post.main_image %>
+                                                    <div class="image-container bg-cover" style="background-image: url(<%= post.main_image %>); height: 80px;width: 110px; "></div>
+                                                  <% else %>
+                                                    <div class="image-container bg-cover" style="background-image: url(<%= asset_path 'bitcoins-default.jpg' %>); height: 80px;width: 110px;"></div>
+                                                  <% end %>
+                                                </div>
+                                                <div class="media-body">
+                                                    <p class="post-title"><%= post.title %></p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                      
+                                  <% 
+                                    if count % 4 == 0 
+                                      # count = 1
+                                  %>
+                                  
+                                  </ul>
+                                </div>
+                            </div> <!-- End: .item -->
+                            <% 
+                              end 
+                              end 
+                              count += 1
+                              
+                            end %>
+                            
+                        </div> <!-- End: .carousel-wrapper -->
+                    </div> <!-- End: .carousel-container -->
+                    
+                </div> <!-- End: .each-item -->
+                <div class="each-item business-item col-md-4 col-sm-12">
+                  
+                    <!-- Start: Section Header -->
+                    <div class="section-header text-left">
+                        <h2 class="section-heading">Featured Content</h2>
+                        <!--<hr class="lines">-->
+                    </div> <!-- End: Section Header -->
+    
+                    <div class="carousel-container margin-b-50 features-content">
+                        <div class="carousel-wrapper owl-carousel inner-small shadow">
+                          
+                            <% count = 1
+                            @contents.each do |content| 
+                            if count <= 3 %>
+                            <div class="item">
+                                <div class="item-inner text-left">
+                                    
+                                  <!-- Start: Section Header -->
+                                  <div class="section-header">
+                                      <a href="<%= content.news_url %>"><h3><%= content.title %></h3></a>
+                                      <!--<p class="post-meta">-->
+                                      <!--    By <a href="#">thomas been</a>, <a href="#">May 15, 2015</a> -->
+                                      <!--</p>-->
+                                  </div>
+                                  <!-- End: Section Header -->
+    
+                                  <div class="detail">
+                                      <p><%= content.description[0..400] %></p>
+                                  </div>
+    
+                                  <!-- Button Area -->
+                                  <div class="btn-form ">
+                                      <a href="<%= content.news_url %>" class="btn right-icon read-more">CONTINUE READING <i class="fa fa-long-arrow-right"></i></a>
+                                  </div>
+    
+                                </div>
+                            </div> <!-- End: .item -->
+                            <%  end 
+                            count += 1
+                            end %>
+                            
+                        </div> <!-- End: .carousel-wrapper -->
+                    </div> <!-- End: .carousel-container -->
+                    
+                </div> <!-- End: .each-item -->
+                <div class="each-item business-item col-md-4 col-sm-12">
+                    
+                    <%
+                    videos = [ 
+                        [ 
+                            "The Bitcoin Doco", 
+                            "https://player.vimeo.com/video/112223859",
+                            '<p>This video explains how Bitcoin works in 3 minutes. See more of our videos about cryptocurrencies here https://vimeo.com/album/4322275?ref=tw-share</p><p>Directed, Designed and Animated by Duncan Elms.</p>'
+                        ],
+                        [ 
+                            "Bitcoin Explained", 
+                            "https://player.vimeo.com/video/63502573",
+                            '<p>A fascinating story focusing on the emergence of a new world wide currency - now being accepted in Australia and elsewhere around the globe.  This is a snapshot of a time in history that could be very significant in the future.</p>'
+                        ],
+                        [ 
+                            "What is Bitcoin", 
+                            "https://player.vimeo.com/video/225926695",
+                            '<p><strong>Client: Wondros</strong><br /><br />A short commissioned by Wondros in 2015, explaining the history and application of Bitcoin.</p></p>'
+                        ],
+                    ]
+                    %>
+                  
+                    <!-- Start: Section Header -->
+                    <div class="section-header text-left">
+                        <h2 class="section-heading">Latest Videos</h2>
+                        <!--<hr class="lines">-->
+                    </div> <!-- End: Section Header -->
+    
+                    <div class="carousel-container margin-b-50 features-content">
+                        <div class="carousel-wrapper owl-carousel padding-b-15 background-1 shadow">
+                          
+                            <% count = 1
+                            videos.each do |video| 
+                            if count <= 3 %>
+                            <div class="item">
+                                <div class="item-inner text-left">
+                                    
+                                    <!--  Start: Video Area  "PASTE YOUR VIDEO LINK HERE " -->
+                                    <div class="video background-2">
+                                       <iframe class="video-async" data-source="vimeo"  data-color="ffc300" src="<%= video[1] %>?color=ffc300&title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <!--  Video Link Goes Here--> 
+                                    </div>
+                                    <!--  End: Video Area  -->
+                                    <div class="col-xs-12 margin-t-20">
+                                        <h3><%= video[0] %></h3>
+                                        <div class="details">
+                                            <% video_content = video[2].html_safe %>
+                                            <%= video_content %>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                            </div> <!-- End: .item -->
+                            <%  end 
+                            count += 1
+                            end %>
+                            
+                        </div> <!-- End: .carousel-wrapper -->
+                    </div> <!-- End: .carousel-container -->
+                    
+                </div> <!-- End: .each-item -->
+                        
+            </div> <!-- End: .row -->
+        </div> <!-- End: .container -->
+    </section>
+    <!-- End: Header Section
+    ================================ -->
+    
+    
+    
+    <!-- Start: Section
+    ================================ -->
+    <section class="relative video-panel-section bg-cover bg-overlay-dark" style="background-image: url(<%= asset_path 'bitcoins-default.jpg' %>);">
+        <div class="container">
+            
+            <%
+            secVideos = [ 
+                [ 
+                    "https://www.incimages.com/uploaded_files/image/284x160/1940_334982.jpg", 
+                    "https://player.vimeo.com/video/225926695",
+                    'How to Wrap Holiday Gifts Using Only Office Supplie',
+                    '#',
+                    true
+                ],
+                [ 
+                    "https://www.incimages.com/uploaded_files/image/284x160/Inc_Standalone_Gift_Wrapping_Pano_123963.jpg", 
+                    "https://player.vimeo.com/video/112223859",
+                    'Meet the Real-Life Business Woman Behind the Hit Jennifer Lawrence Movie',
+                    '#',
+                    false
+                ],
+                [ 
+                    "https://www.incimages.com/uploaded_files/image/284x160/Inc_Standalone_Gift_Wrapping_Pano_123963.jpg", 
+                    "https://player.vimeo.com/video/63502573",
+                    'You Can\'t Survive on 4 Hours of Sleep and Other Sleep Myths Debunked',
+                    '#',
+                    false
+                ],
+                [ 
+                    "https://www.incimages.com/uploaded_files/image/284x160/1_8prtwi5j_334941.jpg", 
+                    "https://player.vimeo.com/video/225926695",
+                    '4 Holiday Party Tips for Introverts',
+                    '#',
+                    false
+                ],
+                
+            ]
+            %>
+                    
+            <div class="row video-panel homepage-section-inner">
+                <div class="player-row clearfix">
+                    <div class="col-sm-6">
+                        <div class="main-video-meta">
+                            <div class="desktop-subheadline">BitCaffe Video</div>
+                            <h2 class="main-headline">
+                                <a href="<%= secVideos[0][3] %>"><%= secVideos[0][2] %></a>
+                            </h2>
+                            <!--<div class="watch-button"></div>-->
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="mobile-subheadline">BitCaffe Video</div>
+                        <div class="main-video-player">
+                            <!--  Start: Video Area  "PASTE YOUR VIDEO LINK HERE " -->
+                            <div class="video" style="background-image: url(<%= asset_path 'spinner.svg' %>);">
+                               <iframe class="video-async" data-source="vimeo"  data-color="ffc300" src="<%= secVideos[0][1] %>?color=ffc300&title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <!--  Video Link Goes Here--> 
+                            </div>
+                            <!--  End: Video Area  -->
+                        </div>
+                    </div>
+                </div>
+                <div class="videoPanels col-xs-12">
+                    
+                    <% count = 1
+                    secVideos.each do |video| 
+                    if count <= 4 %>
+                            
+                    <div class="videoPanelThumb <% if video[4] == true %> <%= 'now-playing' %> <% end %>" data-video-id="<%= video[1] %>?color=ffc300&title=0&byline=0&portrait=0">
+                        <div class="relative bg-overlay-dark">
+                            <img src="<%= video[0] %>">
+                        </div>
+                        <div class="video-color-bar"></div>
+                        <div class="thumb-meta light-text" data-url="<%= video[3] %>">
+                            <h3><%= video[2] %></h3>
+                        </div>
+                        <i class="fa fa-play hover-play" aria-hidden="true"></i>
+                    </div>
+                    
+                    <%  end 
+                    count += 1
+                    end %>
+                
+                </div>
+            </div>
         </div>
-    </div>
-  </div>
-  <div class="sub-news-container">
-    <div class="row">
-      <div class="sub-news-head">
-        <div class="col-md-4">
-          Trending News
-        </div>
-        <div class="col-md-4">
-          Featured Content 
-        </div>
-        <div class="col-md-4">
-          Latest Tweets
-        </div>
-      </div>
-    </div>
-    <br><br>
-    <div class="row">
-      <div class="col-md-4">
-        <div class="sub-news-block">
-          <% @posts.each do |post| %>
-            <p class="subscribe-news">
-              <% if post.main_image %>
-                <%= link_to image_tag("#{post.main_image}", class: "sub-image"), "#{post.news_url}", target: :_blank, class: "sub-image"%>
-              <% else %>
-                <%= link_to image_tag("bitcoins-default.jpg", class: "sub-image"), "#{post.news_url}", target: :_blank %>
-              <% end %>
-              <%= link_to post.title, "#{post.news_url}", target: :_blank %>
-            </p>
-          <% end %>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <% @contents.each do |content| %>
-        <div class="sub-news-block">
-          <!-- <h4 class="subscribe-header-axm">Business</h4> -->
-          <%= link_to content.title, "#{content.news_url}" %>
-          <p class="editors-para"><%= content.description[0..500] %><%= link_to " continue reading...","#{content.news_url}"%></p>
-        </div>
-        <br><br>
-        <% end %>
-      </div>
-      <div class="col-md-4">
-        <div class="sub-tweet-block">
-        <a class="twitter-timeline"
-        href="https://twitter.com/bitcaffe256"
-        data-tweet-limit="3">BitCaffe Twitter</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+    </section>
+    <!-- End: Section
+    ================================ -->
+
+
 
 
 
@@ -95,14 +349,11 @@
   js.id = id;
   js.src = "https://platform.twitter.com/widgets.js";
   fjs.parentNode.insertBefore(js, fjs);
-
   t._e = [];
   t.ready = function(f) {
     t._e.push(f);
   };
-
   return t;
-
 }(document, "script", "twitter-wjs"));</script>
 
 
@@ -113,4 +364,9 @@ $( "#clickme" ).click(function() {
   $( "#myElem" ).toggle();
   setTimeout(function() { $("#myElem").fadeOut(1600); }, 5000);
 });
+</script>
+
+<script type="text/javascript">
+// $('#twitter-widget-0').contents().find('body').find('head').append('<style></style>').children('style').text('.timeline-Tweet-media{display: none;}');
+    
 </script>

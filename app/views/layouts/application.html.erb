@@ -14,58 +14,231 @@
 
     <title>BitCaffe</title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700|Open+Sans:300,400,600,700" rel="stylesheet">
+   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'less/application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-<nav class="nav">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <!-- Collect the nav links, forms, and other content for toggling -->
-      <ul class="nav navbar-nav">
-        <li><%= image_tag("logo.jpg",class: "logo") %></li>
-        <li><%= link_to "Home", url_for("/"), class: "nav-links", :data => { :reload => true } %></li>
-        <li><%= link_to "News", url_for("/news"), class: "nav-links", :data => { :reload => true } %></li>
-        <li><%= link_to "Resources", url_for("/resources"), class: "nav-links", :data => { :reload => true } %></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <% if current_user %>
-              <li><%= link_to "Logout", "/logout", class: "nav-links fa fa-sign-out", :data => { :reload => true } %></li>
-            <% else %>
-              <li><%= link_to "Sign-Up", "/signup" , class: "nav-links glyphicon glyphicon-user", :data => { :reload => true } %></li>
-              <li><%= link_to "Login", "/login" , class: "nav-links fa fa-sign-in", :data => { :reload => true } %></li>
-            <% end %>
-          </ul>
-        </li>
-      </ul>
+  
+  <!-- Start: Navbar Area
+  ============================= -->
+  <nav class="navbar nav-theme-4 navbar-fixed-top main-navbar-top"> <!-- id="main-navbar-top" > -->
+    <div class="container relative">
+      <div class="navbar-header">
+
+          <!-- Menu Button show Mobile view -->
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-menu" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar icon-bar-top"></span>
+              <span class="icon-bar icon-bar-middle"></span>
+              <span class="icon-bar icon-bar-bottom"></span>
+          </button>
+
+          <!-- TEMPLATE LOGO LIGHT -->
+          <a class="navbar-brand light-logo " href="/"><%= image_tag("bitcaffe-white.png",class: "logo") %></a>
+  
+      </div> <!-- End: .container -->
+  
+      <div class="collapse navbar-collapse" id="js-navbar-menu">
+        <ul id="nav" class="nav navbar-right navbar-nav">
+            <li class="nav-def social-inline text-center">
+                <h6 class="title">Follow Us</h6>
+                <hr/>
+                <div class="">
+                  <a href="http://www.linkedin.com/company/18200105" target="_blank">
+                      <i class="fa fa-linkedin"></i>
+                  </a> 
+                  <a href="//twitter.com/bitcaffe256" target="_blank">
+                      <i class="fa fa-twitter"></i>
+                  </a>
+                  <a href="http://www.facebook.com/bitcaffe" target="_blank">
+                      <i class="fa fa-facebook"></i>
+                  </a>
+                </div>
+            </li>
+            <li class="active">
+                <%= link_to "Home", url_for("/"), class: "nav-links", :data => { :reload => true } %>
+            </li>
+            <li>
+              <%= link_to "News", url_for("/news"), class: "nav-links", :data => { :reload => true } %>
+            </li>
+            <li>
+              <%= link_to "Resources", url_for("/resources"), class: "nav-links", :data => { :reload => true } %>
+            </li>
+            <!--<% if current_user %>-->
+            <!--<li>-->
+            <!--  <a class="nav-links" data-reload="true" href="/logout"><i class='fa fa-sign-out'></i> &nbsp; Logout</a>-->
+            <!--</li>-->
+            <!--<% else %>-->
+            <!--<li>-->
+            <!--  <a class="nav-links" data-reload="true" href="/signup"><i class='fa fa-user'></i> &nbsp; Sign-Up</a>-->
+            <!--</li>-->
+            <!--<li>-->
+            <!--  <a class="nav-links" data-reload="true" href="/login"><i class='fa fa-sign-in'></i> &nbsp; Login</a>-->
+            <!--</li>-->
+            <!--<% end %>-->
+        </ul>
+      </div> <!-- End: .navbar-collapse -->
+    </div> <!-- End: .navbar-header-outer -->
   </nav>
-    <br><br>
+  <!-- End: Navbar Area
+  ============================= -->
+    
+    
+    
     <%= yield %>
-    <footer id="main-footer">
-    <div id="sub-footer">
-      <div>
-        <div class="col-md-2"></div>
+    
+    
+  <section class="features-section relative footer-top-section" style="background-color: #1d1d1d;    /*background-color: #3D4C6F;*/ "> 
+    <div class="container">
+        <div class="row section-separator">
+            
+            <div class="features-item"> 
+  
+                <div class="each-item subscribe-form-area light col-md-6 col-sm-12">
+                    <div class="subscribe-form-area-inner light-text">
+                        
+                        <!-- Start: Section Header -->
+                        <div class="section-header text-center">
+                        
+                            <h2 class="section-heading">Sign up for our newsletter</h2>
+                            <!--<p class="sub-heading">Stay current with our latest insights</p>-->
+                            
+                        </div> 
+                        <!-- End: Section Header -->
+  
+                        <div class="subscribe-form">
+  
+                            <!-- Mailchimp Subscriber Form Goes Here  -->
+                            <form id="mailchimp-subscribe" method="post" class="single-form text-center" novalidate="true">
+                                <div class="container-fluid">
+  
+                                    <div class="row">
+                                        <p class="subscription-success"></p>
+                                        <p class="subscription-failed"></p>
+                                    </div>
+  
+                                    <div class="row">
+                                        <div class="input-group">
+  
+                                            <div class="outer">
+                                                <input type="email" class="black-text footer-email-bar form-control" placeholder="Email" name="email">
+                                            </div>
+  
+                                            <div class="input-group-btn outer">
+                                                <button class="footer-form-submit btn btn-fill">Subscribe</button>
+                                            </div>
+  
+                                        </div>
+  
+                                    </div>
+                                    <div class="row">
+                                      <p class="js-subscribe-response subscribe-response"></p>
+                                    </div>
+                                </div>
+                            </form>
+                            
+                            
+                        </div> <!-- End: .subscribe-form -->
+                    </div> <!-- End: .subscribe-form-area-inner -->
+                </div> <!-- End: .subscribe-form-area -->
+  
+                <div class="each-item social-icon-area col-md-3 col-sm-6 col-xs-12">
+                    <div class="social-icon-area-inner padding-l-40">
+                        
+                        <div class="section-header text-left light-text">
+                            
+                            <h3 class="section-heading">Follow</h3>
+                            <!--<p class="sub-heading">Stay current with our latest insights</p>-->
+                            
+                        </div>
+                        
+                        <ul class="nav social-icon light">
+                            <li>
+                                <a href="http://www.linkedin.com/company/18200105" target="_blank">
+                                    <i class="fa fa-linkedin"></i>
+                                    <span class="name">LINKDIN</span>
+                                </a>
+                                
+                            </li>
+                            <li>
+                                <a href="http://www.facebook.com/bitcaffe" target="_blank">
+                                    <i class="fa fa-facebook"></i>
+                                    <span class="name">FACEBOOK</span>
+                                </a>                                    
+                            </li>
+                            <li>
+                                <a href="//twitter.com/bitcaffe256" target="_blank">
+                                    <i class="fa fa-twitter"></i>
+                                    <span class="name">TWITTER</span>
+                                </a>                                    
+                            </li>
+                        </ul>
+  
+                    </div>
+                </div>
 
-        <div class="footer-content-container">
-          <div class="col-md-4 footer-left-col">
-            <div class="title-container">
-              <h1 class="footer-form-title">Sign up for our newsletter</h1>
+                <div class="each-item side-navbar-area col-md-3 col-sm-6 col-xs-12">
+                    <div class="side-navbar-area-inner padding-l-40">
+                        
+                        <div class="section-header text-left light-text">
+                        
+                            <h3 class="section-heading">Quick Links</h3>
+                            <!--<p class="sub-heading">Stay current with our latest insights</p>-->
+                            
+                        </div>
+                        
+                        <ul class="nav side-navbar light">
+                            <li>
+                                <%= link_to "Home", url_for("/"), class: "nav-links", :data => { :reload => true } %>
+                            </li>
+                            <li>
+                                <%= link_to "News", url_for("/news"), class: "nav-links", :data => { :reload => true } %>
+                            </li>
+                            <li>
+                                <%= link_to "Resources", url_for("/resources"), class: "nav-links", :data => { :reload => true } %>
+                            </li>
+                        </ul>
+  
+                    </div>
+                </div>
+                <!--<div class="each-item side-navbar-area col-md-3 col-sm-6 col-xs-12">-->
+                <!--    <div class="side-navbar-area-inner padding-l-40">-->
+                        
+                <!--        <ul class="nav side-navbar light">-->
+                <!--            <% if current_user %>-->
+                <!--              <li><%= link_to "Logout", "/logout", class: "nav-links fa fa-sign-out", :data => { :reload => true } %></li>-->
+                <!--            <% else %>-->
+                <!--              <li><%= link_to "Sign-Up", "/signup" , class: "nav-links glyphicon glyphicon-user", :data => { :reload => true } %></li>-->
+                <!--              <li><%= link_to "Login", "/login" , class: "nav-links fa fa-sign-in", :data => { :reload => true } %></li>-->
+                <!--            <% end %>-->
+                <!--        </ul>-->
+  
+                <!--    </div>-->
+                <!--</div>-->
+                
             </div>
+            
+        </div> <!-- End: .row .section-separator  -->
+    </div> <!-- End: .container  -->
+  </section>
+  <footer class="footer-section-1 background-3">
+    <div class="container">
+        <div class="row section-separator-smallest light-text">
 
-            <input type="email" class="black-text footer-email-bar" placeholder="Email" name="email">
+            <div class="col-md-12 col-sm-12 text-center">
 
-            <div class="footer-button-container">
-              <p class="js-subscribe-response subscribe-response"></p>
-              <button class="footer-form-submit">Subscribe</button>
-            </div>
-          </div>
-          </div>
-        </div>
-        <div class="col-md-2"></div>
-      </div>
-    </footer>
+                <p class="text">&copy; BitCaffe LLC, <%= Time.current.year %> </p>
+
+            </div> <!-- End: .col-md-4 -->
+            
+        </div><!-- End: .row .footer-body .section-separator  -->
+    </div> <!-- End: .container  -->
+  </footer>
+  
     <!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59bf0f900e22530f"></script> 
   </body>
   </html>
@@ -86,11 +259,106 @@
         }
       });
     }); 
-
     $(function(){
       $('a[data-reload="true"').on('click', function(e) {
         window.location = $(e.target).attr('href');
         window.location.reload(true);
       });
     });
+    
+    
+    
+    /**
+     * -----------------------------
+     * TESTIMONIAL SYNC WITH CLIENTS
+     * -----------------------------
+     */
+    var testimonialSlider = $(".carousel-wrapper"); // client's message
+    testimonialSlider.owlCarousel({
+      margin: 30,
+      autoPlay : 30000,
+      stopOnHover : true,
+      pagination: true,
+      singleItem : true
+    });
+    
+    
+    
+    /**
+     * -----------------------------
+     * TESTIMONIAL SYNC WITH CLIENTS
+     * -----------------------------
+     */
+    var testimonialHomeSlider = $(".carousel-home-slider .carousel-home-wrapper"); // client's message
+    testimonialHomeSlider.owlCarousel({
+      margin: 30,
+      autoPlay : 10000,
+      stopOnHover : true,
+      singleItem : true,
+      pagination:false,
+      slideSpeed : 900,
+      responsiveRefreshRate : 100,
+      afterInit : function(el){
+        el.find(".owl-item").eq(0).addClass("synced");
+      },
+      transitionStyle:"fade",
+      afterAction : syncPosition,
+      navigation : true,
+      navigationText : ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+      dragBeforeAnimFinish : false,
+      mouseDrag : false,
+      touchDrag : false
+    });
+    function syncPosition(el){
+      var current = this.currentItem;
+      testimonialHomeSlider
+        .find(".owl-item")
+        .removeClass("synced")
+        .eq(current)
+        .addClass("synced")
+    }
+    
+    $(document).ready(function() {
+      $('.header-section-1').find('.carousel-home-slider').css('margin-top', $('.navbar-header').height());
+    });
+    $(window).resize(function() {
+      $('.header-section-1').find('.carousel-home-slider').css('margin-top', $('.navbar-header').height());
+    });
+    
+    
+    
+    $('.video-panel').find('.videoPanelThumb').on('click', function(e) {
+      e.preventDefault();
+      
+      var selector = $(this),
+          mainArea = selector.closest('.video-panel'),
+          videoSection = '.videoPanelThumb',
+          video = selector.attr('data-video-id'),
+          title = selector.find('h3').text(),
+          url = selector.find('h3').attr('data-url');
+          
+      mainArea.find(videoSection).removeClass('now-playing');
+      selector.addClass('now-playing');
+        
+      var iframeID = mainArea.find('iframe'),
+          contentID = mainArea.find('.main-video-meta');
+          
+      $content = '<div class="desktop-subheadline">BitCaffe. Video</div>\
+                  <h2 class="main-headline">\
+                      <a href="' + url + '">' + title + '</a>\
+                  </h2>';
+                  //<div class="watch-button" data-video-id="' + video + '"></div>';
+      
+      iframeID.attr('src', video);
+      contentID.html($content);
+      
+    });
+    
+    
+    /**
+     * -----------------
+     * INIT match height
+     * -----------------
+     */
+    $('.matchHeight .each-item .owl-wrapper-outer').matchHeight();
   </script>

@@ -1,120 +1,120 @@
-// Place all the styles related to the resource_categories controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// // Place all the styles related to the resource_categories controller here.
+// // They will automatically be included in application.css.
+// // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.resource-head-text{
-  font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
-  text-align: center;
-  color: black;
-}
-.resource-container{
-  background-color: #F3F3F3;
-}
-.resource-block-container {
-  padding-bottom: 20px;
-  padding-top: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-  align: center;
-  display: inline-block;
-}
-.resource-block{
-  width: max;
-  height: 150px;
-  margin-bottom: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-top: 20px;
-  text-align: center;
-  background-color: #237AA0;
-  color: white;
-  display: block;
-  padding: 20px 20px 20px 20px;
-}
-
-.resource-title a{
-  font-size: 15px;
-  // padding: 40px 20px 20px 20px;
-  font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
-  color: white;
-}
-
-// .blockquote {
-//   background-color: #57706D;
-//   color: white;
-//   }
-
-// .res-container {
-//   margin-bottom: 5px;
-//   margin-left: 5px;
-//   margin-right: 5px;
-//   margin-top: 5px;
-//   width: auto;
-//   height: 180px;
-//   border: none;
-//   padding: 0px 0px 0px 0px;
-//   background-color: #C3543B;
-//   color: white;
+// .resource-head-text{
+//   font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
+//   text-align: center;
+//   color: black;
 // }
-
-// SHOW PAGE
-.res-container {
-
-}
-.res-nav {
-  padding-top: 50px;
-  padding-left: 30px;
-  font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
-  font-size: 15px;
-  color: black;
-}
-.res-nav a{
-  font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
-  font-size: 15px;
-  color: black;
-}
-.res-name{
-  font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
-  font-size: 30px;
-  color: #3B5998;
-}
-.res-link {
-  font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
-  font-size: 15px;
-}
-.res-description{
-  font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
-  font-size: 15px;
-  color: black;
-  padding-bottom: 30px;
-}
-.res-block {
-  border-bottom: dotted;
-  padding: 10px 20px 0px 30px;
-}
-
-.search-bar {
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 10px;
-  background-color: #F3F3F3;
-}
-// .box {
-//   display: none;
-//   width: 100%;
+// .resource-container{
+//   background-color: #F3F3F3;
 // }
-// a:hover + .box,.box:hover {
+// .resource-block-container {
+//   padding-bottom: 20px;
+//   padding-top: 20px;
+//   padding-left: 20px;
+//   padding-right: 20px;
+//   align: center;
+//   display: inline-block;
+// }
+// .resource-block{
+//   width: max;
+//   height: 150px;
+//   margin-bottom: 20px;
+//   margin-left: 20px;
+//   margin-right: 20px;
+//   margin-top: 20px;
+//   text-align: center;
+//   background-color: #237AA0;
+//   color: white;
 //   display: block;
-//   position: relative;
-//   z-index: 100;
+//   padding: 20px 20px 20px 20px;
 // }
-.submissionfield{ 
-  width: 80%; 
-  height: 30px; 
-  border: 1px solid #999999; 
-  padding: 5px; 
-}
-.search-container {
-  padding-left: 100px;
-  padding-top: 30px;
-}
+
+// .resource-title a{
+//   font-size: 15px;
+//   // padding: 40px 20px 20px 20px;
+//   font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
+//   color: white;
+// }
+
+// // .blockquote {
+// //   background-color: #57706D;
+// //   color: white;
+// //   }
+
+// // .res-container {
+// //   margin-bottom: 5px;
+// //   margin-left: 5px;
+// //   margin-right: 5px;
+// //   margin-top: 5px;
+// //   width: auto;
+// //   height: 180px;
+// //   border: none;
+// //   padding: 0px 0px 0px 0px;
+// //   background-color: #C3543B;
+// //   color: white;
+// // }
+
+// // SHOW PAGE
+// .res-container {
+
+// }
+// .res-nav {
+//   padding-top: 50px;
+//   padding-left: 30px;
+//   font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
+//   font-size: 15px;
+//   color: black;
+// }
+// .res-nav a{
+//   font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
+//   font-size: 15px;
+//   color: black;
+// }
+// .res-name{
+//   font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
+//   font-size: 30px;
+//   color: #3B5998;
+// }
+// .res-link {
+//   font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
+//   font-size: 15px;
+// }
+// .res-description{
+//   font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif!important;
+//   font-size: 15px;
+//   color: black;
+//   padding-bottom: 30px;
+// }
+// .res-block {
+//   border-bottom: dotted;
+//   padding: 10px 20px 0px 30px;
+// }
+
+// .search-bar {
+//   padding-left: 30px;
+//   padding-right: 30px;
+//   padding-top: 10px;
+//   background-color: #F3F3F3;
+// }
+// // .box {
+// //   display: none;
+// //   width: 100%;
+// // }
+// // a:hover + .box,.box:hover {
+// //   display: block;
+// //   position: relative;
+// //   z-index: 100;
+// // }
+// .submissionfield{ 
+//   width: 80%; 
+//   height: 30px; 
+//   border: 1px solid #999999; 
+//   padding: 5px; 
+// }
+// .search-container {
+//   padding-left: 100px;
+//   padding-top: 30px;
+// }
