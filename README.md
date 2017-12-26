@@ -26,3 +26,7 @@ rake import:content
 * Deployment instructions
 
 * ...
+* 
+
+* Server run
+sudo service postgresql start 

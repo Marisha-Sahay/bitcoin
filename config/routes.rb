@@ -60,10 +60,6 @@ Rails.application.routes.draw do
     namespace :v1 do
       get '/news', to: 'news#index'
       get '/news/:id', to: 'news#show'
-      get '/contents', to: 'featured_contents#index'
-      get '/contents/:id', to: 'featured_contents#show'
-      get '/resources', to: 'studies#index'
-      get '/resources/:id', to: 'studies#show'
     end
   end
 end

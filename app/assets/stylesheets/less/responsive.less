@@ -3,6 +3,7 @@
 
 
 
+<<<<<<< HEAD
   /**
    * ----------- 
    * Navigation
@@ -84,6 +85,89 @@
           margin-top: 10px;
       }
   }
+=======
+	/**
+	 * ----------- 
+	 * Navigation
+	 * -----------
+	 */
+	.main-navbar-top {
+		.navbar-brand {
+			// padding: 27px 0;
+    		margin-right: 29px;
+    		max-width: 95px;
+		}
+	}
+	
+	
+	
+	.footer-top-section {
+	    .each-item {
+	    	margin-top: 30px;
+	    	
+	    	&:first-child {
+	    		margin-top: 0px;
+	    	}
+	    }
+	}
+
+
+
+
+	/** 
+	 * --------------------
+	 * Blog Side Item Style
+	 * --------------------
+	 */
+	.blog-side-item {
+		>.inner {
+			max-width: 480px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+
+
+	/** 
+	 * ---------------------------------
+	 * Two Column Vertical Section Style
+	 * ---------------------------------
+	 */
+	.two-column-vertical {
+	    .two-column-content,
+	    .two-column-image {
+	        display: block;
+	        margin-bottom: 30px;
+
+	        &:last-child {
+	        	margin-bottom: 0px;
+	        }
+	    }
+
+	    .two-column-image {
+	        min-height: 400px;
+	    }
+	}
+
+
+
+
+	/** 
+	 * --------------------
+	 * Footer Section Style
+	 * --------------------
+	 */
+	.footer-section-1 {
+	    .template-logo {
+	        text-align: center;
+	    }
+
+	    .text {
+    	    margin-top: 10px;
+	    }
+	}
+>>>>>>> 1ecee022342d7e6199c4767786f826a69e99981b
 
 }
 
@@ -91,6 +175,7 @@
 @media (max-width: @screen-xs-max) {
 
 
+<<<<<<< HEAD
   /** 
    * --------------------------
    * Features Item Defual Style
@@ -151,6 +236,68 @@
   }
 
   /**
+=======
+	/** 
+	 * --------------------------
+	 * Features Item Defual Style
+	 * --------------------------
+	 */
+	.features-item {
+	    .each-item {
+	        &:last-child {
+	            margin-bottom: 30px
+	        }
+	    }
+	}
+
+
+	/**
+	 * -----------
+	 * Navigation
+	 * -----------
+	 */
+	.main-navbar-top {
+		.navbar-brand {
+		    height: 60px;
+		    margin-right: 30px;
+		    padding: 7px 15px;
+		}
+
+		.navbar-collapse {
+			padding: 0px;
+			border-top: 1px solid darken(@main-color-1, 4%);
+		}
+
+		.navbar-nav {
+    		margin-top: 0;
+    		margin-bottom: 0;
+    		margin-right: 0px !important;
+			
+			> li,
+	        > li:not(.nav-def) {
+	            float: none;
+	            border-bottom: 1px solid fade(@light-color, 10%);
+	            margin-top: 0px;
+	            padding-top: 10px;
+	            
+	            > a {
+	            	padding-bottom: 10px;
+	            }
+	        }
+	    }
+	    
+	    .social-inline {
+	    	padding-right: 0px;
+    	    background-color: #1d1d1d;
+	        margin: 0 6px;
+		    font-size: 1.3em;
+	    }
+
+
+	}
+
+	/**
+>>>>>>> 1ecee022342d7e6199c4767786f826a69e99981b
      * ---------------------
      *   Defult Button Style
      * ---------------------
@@ -159,12 +306,17 @@
         margin: 10px;
 
         &:last-child {
+<<<<<<< HEAD
           margin-right: 10px;
+=======
+        	margin-right: 10px;
+>>>>>>> 1ecee022342d7e6199c4767786f826a69e99981b
         }
     }
 
 
 
+<<<<<<< HEAD
   /**
    * --------------
    * Header Style 1
@@ -562,11 +714,411 @@
 
 
   
+=======
+	/**
+	 * --------------
+	 * Header Style 1
+	 * --------------
+	*/
+	.header-section-1 {
+		.section-separator-big,
+		.section-separator {
+	        padding-top: 60px;
+    		padding-bottom: 60px;
+		}
+	}
+
+
+
+	/** 
+	 * -------------------------
+	 * Business Item Oute Style
+	 * -------------------------
+	 */
+	.business-item {
+		>.each-item-inner {
+			max-width: 480px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+
+	
+	/** 
+	 * -------------------------
+	 * Business Item Area
+	 * -------------------------
+	 */
+	.business-item {
+		.features-image {
+			&.vertical-middle {
+				height: 250px;
+			}
+		}
+
+		.features-content { 
+			.inner {
+			    padding: 40px 20px;
+			}
+		}
+
+		.triangle-left {
+			&::before {
+				top: auto;
+		        bottom: 100%;
+		        left: 50%;
+		        transform: translate3d(-50%, 50%, 0) rotate(45deg);
+		    }
+		}
+
+		.triangle-right {
+			&::before {
+				bottom: auto;
+				top: 100%;
+				left: 50%;
+				transform: translate3d(-50%, -50%, 0) rotate(45deg);
+		    }
+		}
+
+		 ol {
+	        li {
+	            text-align: left;
+	            list-style: inherit;
+	        }
+	    }
+	}
+
+
+	.signature {
+	    text-align: center;
+	}
+
+
+
+
+	/** 
+	 * -------------------
+	 * Testmonial Item Style
+	 * -------------------
+	 */
+	.testmonial-item {
+	    .inner {
+	        padding: 40px 20px;
+	    }
+	}
+
+
+	
+	/** 
+	 * -------------------
+	 * Services Item Style
+	 * -------------------
+	 */
+	.services-item {
+		>.inner {
+			max-width: 480px;
+			margin-left: auto;
+			margin-right: auto;
+			padding: 28px 20px;
+		}
+	}
+	.minHeight {
+	    .each-item {
+	        .inner {
+	            min-height: auto;
+	        }
+	    }
+	}
+
+
+
+
+
+	/**
+	 * -------------------
+	 * Video Section Style
+	 * -------------------
+	 */
+	.video-section {
+	    .play-button {
+	        width: 100%;
+	        .img-play {
+	            width: 50px;
+	        }
+	    }
+
+	    .play-text {
+	    	margin-top: 10px;
+	    }
+	}
+
+
+
+
+	/** 
+	 * -------------------
+	 * Testmonial Item Style
+	 * -------------------
+	 */
+	.testmonial-item {
+		>.inner {
+			max-width: 480px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+
+	
+	
+
+	/** 
+	 * -------------------------
+	 * Subscribe Form Outer Area
+	 * -------------------------
+	 */
+	.subscribe-form-area {
+	    .subscribe-form-area-inner {
+	        padding: 20px;
+	        max-width: 480px;
+			margin-left: auto;
+			margin-right: auto;
+	    }
+	}
+
+
+	
+	/** 
+	 * ---------------------
+	 * Subsctibe Form Style
+	 * ---------------------
+	 */
+	.subscribe-form {
+		.input-group {
+			display: block;
+		}
+	    
+	}
+
+
+
+	/** 
+	 * -----------------
+	 * Social Icon Style
+	 * -----------------
+	 */
+	.social-icon-area {
+		.social-icon-area-inner {
+	        max-width: 480px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.padding-l-40 {
+			padding-left: 0;
+		}
+	}
+
+
+
+
+	
+	/** 
+	 * ----------------------
+	 * Side Navigation  Style
+	 * ----------------------
+	 */
+	.side-navbar-area {
+		.side-navbar-area-inner {
+			max-width: 480px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.padding-l-40 {
+			padding-left: 0;
+		}
+	}
+
+	.side-navbar {
+	    li {
+	        a {   
+	            padding-bottom: 2px;
+	            margin-bottom: 10px;
+	        }
+	    }
+	}
+	.each-item.social-icon-area:last-child,
+	.each-item.side-navbar-area:last-child {
+		margin-bottom: 0px;
+	}
+
+
+
+
+	/**
+	 * ------------------------------
+	 * Contact Form Ponup Model Style
+	 * ------------------------------
+	 */
+	.contact-us-model {
+	    .model-image {
+	    	height: 200px;
+	    }
+	}
+
+
+
+
+
+	/** 
+	 * ------------------------
+	 * Contact Form Show Button
+	 * ------------------------
+	 */
+	.contact-button {
+	    span {
+	        display: block;
+	        margin-bottom: 25px;
+	        margin-right: 0px;
+	    }
+	}
+
+
+
+
+	/**
+	 * ------------------
+	 * Team Section Style
+	 * ------------------
+	 */
+	.team-member {
+	    .inner {
+	        max-width: 480px;
+			margin-left: auto;
+			margin-right: auto;
+	    }
+	}
+
+
+
+
+	/**
+	 * ----------------
+	 * Error 404 Style
+	 * ----------------
+	 */
+	.error-404 {
+	    .section-heading {
+	        font-size: 100px;
+	    }
+	}
+
+
+
+
+	/** 
+	 * ------------------
+	 * Post Comment Style
+	 * ------------------
+	 */
+	.post-comment {
+
+	    .media-heading {
+	        float: none;
+	    }
+
+	    .media {
+	        img {
+	            width: 40px;
+	        }
+
+	        .media {
+	            img {
+	                width: 30px;
+	            }
+	        }
+	    }
+
+	    .pull-left {
+	        padding-right: 10px;
+	    }
+	}
+
+
+
+
+	/** 
+	 * ---------------------------------
+	 * Two Column Vertical Section Style
+	 * ---------------------------------
+	 */
+	.two-column-vertical {
+	    .two-column-content,
+	    .two-column-image {
+	        .inner,
+	        .inner-small {
+	        	max-width: 480px;
+	        	margin-left: auto;
+	        	margin-right: auto;
+	        }
+	    }
+	}
+
+
+
+
+	/** 
+	 * ----------------------
+	 * More Button Item Style
+	 * ----------------------
+	 */
+	.more-button-section {
+	    &.section-separator-small {
+	        padding-top: 0px;
+	        padding-bottom: 100px;
+	    }
+	}
+
+	.more-services {
+		&.section-separator-small {
+	        padding-top: 0px;
+	    }
+	}
+	
+	
+	
+	
+	
+	
+	/** 
+	 * --------------------
+	 * Footer Section Style
+	 * --------------------
+	 */
+	.footer-top-section {
+	    .section-heading {
+			text-align: center;
+		}
+	}
+	
+	
+	.subscrive-section {
+		.section-heading {
+			text-align: center;
+		}
+	}
+
+
+	
+>>>>>>> 1ecee022342d7e6199c4767786f826a69e99981b
 }
 
 
 @media (max-width: 480px) {
 
+<<<<<<< HEAD
   /** 
    * -------------------------
    * Business Item Area
@@ -618,10 +1170,64 @@
   }
 
   
+=======
+	/** 
+	 * -------------------------
+	 * Business Item Area
+	 * -------------------------
+	 */
+	.business-item {
+		.features-image {
+			&.vertical-middle {
+				height: 200px;
+			}
+		}
+	}
+
+
+	/**
+	 * ----------------
+	 * Count Down Style
+	 * ----------------
+	 */
+	.count-down {
+
+	    .each-item {
+	        width: 50%;
+	    }
+
+	    .lines {
+    	    margin-top: 5px;
+    		margin-bottom: 5px;
+	    }
+	}
+
+
+
+
+	/** 
+	 * -----------------------
+	 * Registration Form Style
+	 * -----------------------
+	 */
+	.registration-form {
+	    
+	    > .registration-form-outer {
+	        padding: 30px 0px;
+	    } 
+
+	    .btn {
+	        margin: 0 !important;
+	    }
+	}
+
+	
+>>>>>>> 1ecee022342d7e6199c4767786f826a69e99981b
 }
 
 
 @media (max-width: 320px) {
+<<<<<<< HEAD
     
   /**
    * ----------------
@@ -635,10 +1241,26 @@
       }
   }
   
+=======
+		
+	/**
+	 * ----------------
+	 * Count Down Style
+	 * ----------------
+	 */
+	.count-down {
+
+	    .each-item {
+	        width: 100%;
+	    }
+	}
+	
+>>>>>>> 1ecee022342d7e6199c4767786f826a69e99981b
 }
 
 
 @media (max-height: 330px) {
+<<<<<<< HEAD
     
   /**
    * -----------
@@ -652,3 +1274,21 @@
   }
   
 }
+=======
+		
+	/**
+	 * -----------
+	 * Navigation
+	 * -----------
+	 */
+	.main-navbar-top {
+		.navbar-collapse {
+			max-height: 255px;
+		}
+	}
+	
+}
+
+
+
+>>>>>>> 1ecee022342d7e6199c4767786f826a69e99981b
