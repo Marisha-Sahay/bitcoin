@@ -14,50 +14,193 @@
 
     <title>BitCaffe</title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag 'favicon.ico' %>
+  
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700|Open+Sans:300,400,600,700" rel="stylesheet">
+   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'less/application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="less/application-responsive.css">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <div class="nav">
-      <%= image_tag("logo.jpg",class: "logo") %>
-      <%= link_to "Home", url_for("/"), class: "nav-links", :data => { :reload => true } %>
-      <%= link_to "News", url_for("/news"), class: "nav-links", :data => { :reload => true } %>
-      <%= link_to "Resources", url_for("/resources"), class: "nav-links", :data => { :reload => true } %>
-      <%= link_to "", "#", class: "fa fa-caret-down" %>
-      <% if current_user %>
-        <%= link_to "Logout", "/logout", class: "nav-links fa fa-sign-out", :data => { :reload => true } %>
-      <% else %>
-        <%= link_to "Sign-Up", "/signup" , class: "nav-links glyphicon glyphicon-user", :data => { :reload => true } %>
-        <%= link_to "Login", "/login" , class: "nav-links fa fa-sign-in", :data => { :reload => true } %>
-      <% end %>
-    </div>
-    <br><br>
+  
+  <!-- Start: Navbar Area
+  ============================= -->
+  <nav class="navbar nav-theme-4 navbar-fixed-top main-navbar-top"> <!-- id="main-navbar-top" > -->
+    <div class="container relative">
+      <div class="navbar-header">
+
+          <!-- Menu Button show Mobile view -->
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-menu" aria-expanded="true">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar icon-bar-top"></span>
+              <span class="icon-bar icon-bar-middle"></span>
+              <span class="icon-bar icon-bar-bottom"></span>
+          </button>
+
+          <!-- TEMPLATE LOGO LIGHT -->
+          <a class="navbar-brand light-logo " href="index.html"><%= image_tag("bitcaffe-black.png",class: "logo") %></a>
+  
+      </div> <!-- End: .container -->
+  
+      <div class="collapse navbar-collapse" id="js-navbar-menu">
+        <ul id="navbar-nav" class="nav navbar-nav navbar-right">
+            <li class="active">
+                <%= link_to "Home", url_for("/"), class: "nav-links", :data => { :reload => true } %>
+            </li>
+            <li>
+              <%= link_to "News", url_for("/news"), class: "nav-links", :data => { :reload => true } %>
+            </li>
+            <li>
+              <%= link_to "Resources", url_for("/resources"), class: "nav-links", :data => { :reload => true } %>
+            </li>
+        </ul>
+      </div> <!-- End: .navbar-collapse -->
+    </div> <!-- End: .navbar-header-outer -->
+  </nav>
+  <!-- End: Navbar Area
+  ============================= -->
+ 
+    
+    
+    
     <%= yield %>
-    <footer id="main-footer">
-    <div id="sub-footer">
-      <div>
-        <div class="col-md-2"></div>
 
-        <div class="footer-content-container">
-          <div class="col-md-4 footer-left-col">
-            <div class="title-container">
-              <h1 class="footer-form-title">Sign up for our newsletter</h1>
+
+  <section class="features-section relative footer-top-section" style="background-color: #1d1d1d;    /*background-color: #3D4C6F;*/ "> 
+    <div class="container">
+        <div class="row section-separator">
+            
+            <div class="features-item"> 
+  
+                <div class="each-item subscribe-form-area light col-md-6 col-sm-12">
+                    <div class="subscribe-form-area-inner light-text">
+                        
+                        <!-- Start: Section Header -->
+                        <div class="section-header">
+                        
+                            <h2 class="section-heading">Sign up for our newsletter</h2>
+                            <!--<p class="sub-heading">Stay current with our latest insights</p>-->
+                            
+                        </div> 
+                        <!-- End: Section Header -->
+  
+                        <div class="subscribe-form">
+  
+                            <!-- Mailchimp Subscriber Form Goes Here  -->
+                            <form id="mailchimp-subscribe" method="post" class="single-form text-center" novalidate="true">
+                                <div class="container-fluid">
+  
+                                    <div class="row">
+                                        <p class="subscription-success"></p>
+                                        <p class="subscription-failed"></p>
+                                    </div>
+  
+                                    <div class="row">
+                                        <div class="input-group">
+  
+                                            <div class="outer">
+                                                <input type="email" class="black-text footer-email-bar form-control" placeholder="Email" name="email">
+                                            </div>
+  
+                                            <div class="input-group-btn outer">
+                                                <button class="footer-form-submit btn btn-fill">Subscribe</button>
+                                            </div>
+  
+                                        </div>
+  
+                                    </div>
+                                    <div class="row">
+                                      <p class="js-subscribe-response subscribe-response"></p>
+                                    </div>
+                                </div>
+                            </form>
+                            
+                            
+                        </div> <!-- End: .subscribe-form -->
+                    </div> <!-- End: .subscribe-form-area-inner -->
+                </div> <!-- End: .subscribe-form-area -->
+  
+                <div class="each-item social-icon-area col-md-3 col-sm-6 col-xs-12">
+                    <div class="social-icon-area-inner padding-l-40">
+                        
+                        <ul class="nav social-icon light">
+                            <li>
+                                <a href="http://www.linkedin.com/company/18200105" target="_blank">
+                                    <i class="fa fa-linkedin"></i>
+                                    <span class="name">LINKDIN</span>
+                                </a>
+                                
+                            </li>
+                            <li>
+                                <a href="http://www.facebook.com/bitcaffe" target="_blank">
+                                    <i class="fa fa-facebook"></i>
+                                    <span class="name">Facebook</span>
+                                </a>                                    
+                            </li>
+                            <li>
+                                <a href="//twitter.com/bitcaffe256" target="_blank">
+                                    <i class="fa fa-twitter"></i>
+                                    <span class="name">TWITTER</span>
+                                </a>                                    
+                            </li>
+                        </ul>
+  
+                    </div>
+                </div>
+
+                <div class="each-item side-navbar-area col-md-3 col-sm-6 col-xs-12">
+                    <div class="side-navbar-area-inner padding-l-40">
+                        
+                        <ul class="nav side-navbar light">
+                            <li>
+                                <%= link_to "Home", url_for("/"), class: "nav-links", :data => { :reload => true } %>
+                            </li>
+                            <li>
+                                <%= link_to "News", url_for("/news"), class: "nav-links", :data => { :reload => true } %>
+                            </li>
+                            <li>
+                                <%= link_to "Resources", url_for("/resources"), class: "nav-links", :data => { :reload => true } %>
+                            </li>
+                        </ul>
+  
+                    </div>
+                </div>
+                <!--<div class="each-item side-navbar-area col-md-3 col-sm-6 col-xs-12">-->
+                <!--    <div class="side-navbar-area-inner padding-l-40">-->
+                        
+                <!--        <ul class="nav side-navbar light">-->
+                <!--            <% if current_user %>-->
+                <!--              <li><%= link_to "Logout", "/logout", class: "nav-links fa fa-sign-out", :data => { :reload => true } %></li>-->
+                <!--            <% else %>-->
+                <!--              <li><%= link_to "Sign-Up", "/signup" , class: "nav-links glyphicon glyphicon-user", :data => { :reload => true } %></li>-->
+                <!--              <li><%= link_to "Login", "/login" , class: "nav-links fa fa-sign-in", :data => { :reload => true } %></li>-->
+                <!--            <% end %>-->
+                <!--        </ul>-->
+  
+                <!--    </div>-->
+                <!--</div>-->
+                
             </div>
+            
+        </div> <!-- End: .row .section-separator  -->
+    </div> <!-- End: .container  -->
+  </section>
+  <footer class="footer-section-1 background-3">
+    <div class="container">
+        <div class="row section-separator-smallest light-text">
 
-            <input type="email" class="black-text footer-email-bar" placeholder="Email" name="email">
+            <div class="col-md-12 col-sm-12 text-center">
 
-            <div class="footer-button-container">
-              <p class="js-subscribe-response subscribe-response"></p>
-              <button class="footer-form-submit">Subscribe</button>
-            </div>
-          </div>
-          </div>
-        </div>
-        <div class="col-md-2"></div>
-      </div>
-    </footer>
+                <p class="text">&copy; BitCaffe LLC <%= Time.current.year %></p>
+
+            </div> <!-- End: .col-md-4 -->
+            
+        </div><!-- End: .row .footer-body .section-separator  -->
+    </div> <!-- End: .container  -->
+  </footer>
+  
     <!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59bf0f900e22530f"></script> 
   </body>
   </html>

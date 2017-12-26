@@ -1,1 +1,0 @@
-json.partial! 'news.json.jbuilder', news: @news
