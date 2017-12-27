@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171204003603) do
+ActiveRecord::Schema.define(version: 20171227181658) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,18 @@ ActiveRecord::Schema.define(version: 20171204003603) do
     t.integer  "resource_category_id"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+  end
+
+  create_table "coins", force: :cascade do |t|
+    t.string   "name"
+    t.string   "symbol"
+    t.string   "coin_url"
+    t.string   "image_url"
+    t.string   "TotalCoinSupply"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "reddit_link"
+    t.string   "twitter_link"
   end
 
   create_table "email_subscriptions", force: :cascade do |t|
@@ -145,6 +157,17 @@ ActiveRecord::Schema.define(version: 20171204003603) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.boolean  "admin"
+  end
+
+  create_table "videos", force: :cascade do |t|
+    t.string   "category"
+    t.string   "link"
+    t.string   "currency"
+    t.integer  "score"
+    t.integer  "length"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "video_type"
   end
 
   create_table "votes", force: :cascade do |t|

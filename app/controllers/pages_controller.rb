@@ -41,6 +41,7 @@ class PagesController < ApplicationController
     # response = Unirest.get("http://webhose.io/search?token=c015c400-6e3b-4540-a2c0-d643354db3cc&format=json&q=bitcoin%20cryptocurrency&sort=relevancy").body
     # @posts = response['posts']
     @posts = News.distinct(:title).order('published DESC, performance_score DESC')
+    @coins = Coin.all
   end
   def cafe
     response = Unirest.get("https://newsapi.org/v1/sources?category=technology").body

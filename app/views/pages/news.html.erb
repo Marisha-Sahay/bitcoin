@@ -1,5 +1,19 @@
 <div class="news-container">
   <div class="news-content">
+
+  <!-- Coin display -->
+  <!-- Display all the coins -->
+  <% @coins.each do |coin| %>
+      <!-- div class for styling image is - news-image -->
+    <%= image_tag("#{coin.image_url}", class: "news-image") %>
+    <%= link_to "#{coin.symbol}", "#{coin.coin_url}", target: :_blank %>
+  <!-- Twitter links -->
+    <%= "#{coin.twitter_link}" %>
+    <!-- Reddit link -->
+    <%= "#{coin.reddit_link}" %>
+  <% end %>
+
+
     <% @posts.each do |post| %>
       <div class="news-post">
         <h2><%= post.title %></h2>
