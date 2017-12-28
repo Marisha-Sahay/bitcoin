@@ -64,7 +64,7 @@
                                 <!-- Start: Section Header -->
                                 <div class="section-header light-text margin-b-30 relative col-md-5 col-sm-12" >
                                 
-                                    <h4 class="section-heading">Wecome to Bitcaffe. Congrates on your journey to master the technology of bitcoin, blockchian and decentralized world.</h4>
+                                    <h4 class="section-heading">Wecome to Bitcaffe. Congrats on your journey to master the technology of bitcoin, blockchian and decentralized world.</h4>
                                     <!--<p class="tag-line margin-t-25">Stay on top of the fast growing Crypto world. Get the most relevant news item and insightful essays to your inbox.</p>-->
                                     
                                 </div> <!-- End: Section Header -->
@@ -72,9 +72,9 @@
                                 <div class="col-md-6 btn-form col-md-offset-1 col-sm-12">
                                     <div class="note-area">
                                         <ul class="nav">
-                                            <li><a href="#">Are you an investor – Visit Bitcaffe  investor-starter kit</a></li>
-                                            <li><a href="#">Are to you looking to understand the basics – Visit Bitcaffe Tech-starter kit</a></li>
-                                            <li><a href="#">Are you looking to understand the business impact – Visit Bitcaffe Biz-starter kit </a></li>
+                                            <li><%= link_to "Are you an investor – Visit Bitcaffe  investor-starter kit","/trader_investor_lp" %></li>
+                                            <li><%= link_to "Are to you looking to understand the basics – Visit Bitcaffe Tech-starter kit", "/beginner_knowledge_base" %></li>
+                                            <li><%= link_to "Are you looking to understand the business impact – Visit Bitcaffe Biz-starter kit", "/beginner_knowledge_base" %></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -115,15 +115,7 @@
                         </div> <!-- End: .row -->
                     </div> <!-- End: .container -->
                 </div>
-                
             </div>
-            
-            <div class="stock-prices light-text text-center">
-                <% @prices.each do |price| %>
-                  <%= "#{price['name']}: $#{price['price_usd'].to_f.round(2)}" %>
-                <% end %>
-            </div>
-
         </div>
     </section>
     <!-- End: Header Section
