@@ -9,6 +9,11 @@ Things you may want to cover:
 
 * Rails version - Rails 5.0.1
 
+* Initial Command 
+bundle install [ or if you want update then use ] bundle update 
+
+createuser --skip-
+
 * System dependencies
 
 * Configuration
@@ -19,6 +24,7 @@ Things you may want to cover:
 rake db:seed
 rake import:data
 rake import:content
+rake import:coins
 
 * How to run the test suite
 

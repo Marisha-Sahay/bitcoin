@@ -23,6 +23,12 @@ class PagesController < ApplicationController
   def home
   end
   
+  def beginner_knowledge_base
+  end
+  
+  def trader_investor_lp
+  end
+
   def news_show
   end
 

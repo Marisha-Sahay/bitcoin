@@ -1,0 +1,406 @@
+<!-- Start: Header Section
+================================ -->
+<section class="default-home relative">
+    <div class="container">
+        <div class="row section-separator">
+
+             <div class="cd-content-animation text-center">
+                <!-- Start: Section Header -->
+                <div class="section-header relative col-md-10 col-md-offset-1 col-sm-12" >
+                
+                    <h4 class="section-heading">Well done! You have taken a step towards understanding the potential of decentralization. It is going to be huge <i class="fa fa-smile-o" aria-hidden="true"></i></h4>
+                    <h4 class="section-heading margin-t-25">Please go through the video/essay below, and ponder over it. We guarantee, you will know more than 99% of your colleagues.</h4>
+                    
+                </div> <!-- End: Section Header -->
+
+                <div class="clearfix">  </div>
+
+                <!--<div class="btn-form margin-t-40 col-xs-12">-->
+                <!--    <a href="/beginner_lp" class="btn btn-fill btn-color right-icon">Learn More</a>-->
+                    <!--<a href="#" class="btn btn-fill-big btn-dark">Contact us</a>-->
+                <!--</div>-->
+            </div>
+
+        </div> <!-- End: .row -->
+    </div> <!-- End: .container -->
+</section>
+<!-- End: Header Section
+================================ -->
+
+
+
+<!-- Start: Features Section
+================================== -->
+<section class="features-section relative background-2">
+    <div class="container">
+        <div class="row section-separator-small">
+
+            <div class="features-item col-xs-12">
+                <div class="row">
+
+                    <div class="each-item-big tab-item margin-b-20 col-md-6 col-sm-12">
+                        <div class="tab-inner">
+
+                            <!-- Start: Section Header -->
+                            <div class="section-header margin-b-40" >
+                            
+                                <h2 class="section-heading">Video</h2>
+                                
+                            </div> <!-- End: Section Header -->
+                            
+                            <div role="tabpanel">
+
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#2m-video" data-toggle="tab">2 minutes</a></li>
+                                    <li role="presentation"><a href="#5m-video" data-toggle="tab">5 minutes</a></li>
+                                    <li role="presentation"><a href="#10m-video" data-toggle="tab">10 minutes</a></li>
+                                </ul>
+                                
+                                
+                                <%
+                                
+                                # videos[0] -> 2min Videos
+                                # videos[1] -> 5min Videos
+                                # videos[2] -> 10min Videos
+                                
+                                
+                                videos = [ 
+                                    [
+                                        [ "The Bitcoin Doco","https://player.vimeo.com/video/112223859" ],
+                                        [ "Bitcoin Explained", "https://player.vimeo.com/video/63502573" ],
+                                        [ "What is Bitcoin", "https://player.vimeo.com/video/225926695" ],
+                                    ],
+                                    [
+                                        [ "Bitcoin Explained", "https://player.vimeo.com/video/63502573" ],
+                                        [ "The Bitcoin Doco","https://player.vimeo.com/video/112223859" ],
+                                        [ "What is Bitcoin", "https://player.vimeo.com/video/225926695" ],
+                                    ],
+                                    [
+                                        [ "What is Bitcoin", "https://player.vimeo.com/video/225926695" ],
+                                        [ "Bitcoin Explained", "https://player.vimeo.com/video/63502573" ],
+                                        [ "The Bitcoin Doco","https://player.vimeo.com/video/112223859" ],
+                                    ]
+                                ]
+                                %>
+
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active" id="2m-video">
+                                        
+                                        <div class="carousel-container features-content">
+                                            <div class="carousel-wrapper owl-carousel">
+                                              
+                                                <% videos[0].each do |video| %>
+                                                <div class="item">
+                                                    <div class="item-inner text-center">
+                                    
+                                                        <!--  Start: Video Area  "PASTE YOUR VIDEO LINK HERE " -->
+                                                        <div class="video background-2">
+                                                           <iframe class="video-async" data-source="vimeo"  data-color="ffc300" src="<%= video[1] %>?color=ffc300&title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <!--  Video Link Goes Here--> 
+                                                        </div>
+                                                        <!--  End: Video Area  -->
+                                                        <div class="margin-t-20">
+                                                            <h4><%= video[0] %></h4>
+                                                        </div>
+                                                       
+                                                    </div>
+                                                </div> <!-- End: .item -->
+                                                <% end %>
+                                                
+                                            </div> <!-- End: .carousel-wrapper -->
+                                        </div> <!-- End: .carousel-container -->
+                                        
+                                    </div> <!-- End: .tab-pane -->
+                                    <div role="tabpanel" class="tab-pane" id="5m-video">
+                                        
+                                        <div class="carousel-container features-content">
+                                            <div class="carousel-wrapper owl-carousel">
+                                              
+                                                <% videos[1].each do |video| %>
+                                                <div class="item">
+                                                    <div class="item-inner text-center">
+                                    
+                                                        <!--  Start: Video Area  "PASTE YOUR VIDEO LINK HERE " -->
+                                                        <div class="video background-2">
+                                                           <iframe class="video-async" data-source="vimeo"  data-color="ffc300" src="<%= video[1] %>?color=ffc300&title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <!--  Video Link Goes Here--> 
+                                                        </div>
+                                                        <!--  End: Video Area  -->
+                                                        <div class="margin-t-20">
+                                                            <h4><%= video[0] %></h4>
+                                                        </div>
+                                                       
+                                                    </div>
+                                                </div> <!-- End: .item -->
+                                                <% end %>
+                                                
+                                            </div> <!-- End: .carousel-wrapper -->
+                                        </div> <!-- End: .carousel-container -->
+                                        
+                                    </div> <!-- End: .tab-pane -->
+                                    <div role="tabpanel" class="tab-pane" id="10m-video">
+                                        
+                                        <div class="carousel-container features-content">
+                                            <div class="carousel-wrapper owl-carousel">
+                                              
+                                                <% videos[2].each do |video| %>
+                                                <div class="item">
+                                                    <div class="item-inner text-center">
+                                    
+                                                        <!--  Start: Video Area  "PASTE YOUR VIDEO LINK HERE " -->
+                                                        <div class="video background-2">
+                                                           <iframe class="video-async" data-source="vimeo"  data-color="ffc300" src="<%= video[1] %>?color=ffc300&title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <!--  Video Link Goes Here--> 
+                                                        </div>
+                                                        <!--  End: Video Area  -->
+                                                        <div class="margin-t-20">
+                                                            <h4><%= video[0] %></h4>
+                                                        </div>
+                                                       
+                                                    </div>
+                                                </div> <!-- End: .item -->
+                                                <% end %>
+                                                
+                                            </div> <!-- End: .carousel-wrapper -->
+                                        </div> <!-- End: .carousel-container -->
+                                        
+                                    </div> <!-- End: .tab-pane -->
+                                </div> <!-- End: .tab-content -->
+
+                            </div>
+
+                        </div>
+                    </div> <!-- End: .each-item -->
+
+                    <div class="each-item-big tab-item margin-b-20 col-md-6 col-sm-12">
+                        <div class="tab-inner">
+
+                            <!-- Start: Section Header -->
+                            <div class="section-header margin-b-40" >
+                            
+                                <h2 class="section-heading">Essays</h2>
+                                
+                            </div> <!-- End: Section Header -->
+                            
+                            <div role="tabpanel">
+
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#business" data-toggle="tab">Business</a></li>
+                                    <li role="presentation"><a href="#technical" data-toggle="tab">Technical</a></li>
+                                </ul>
+
+                                <!-- Tab panes -->
+                                <div class="tab-content business-item">
+                                    
+                                    <div role="tabpanel" class="tab-pane active" id="business">
+                                        
+                                        <div class="carousel-container features-content">
+                                            <div class="carousel-wrapper owl-carousel">
+                                              
+                                                <div class="item">
+                                                    <div class="item-inner text-left">
+                                                        
+                                                        <div class="thumbnail bg-cover" style="background-image: url(https://www.incimages.com/uploaded_files/image/284x160/1940_334982.jpg); height: 180px;"></div>
+                                    
+                                                        <!-- Start: Section Header -->
+                                                        <div class="section-header">
+                                                            <h4 class="section-heading"><a href="blog-details.html">Tax impacts of lease acounting change</a></h4>
+                                                            <p class="post-meta">
+                                                                By <a href="#">thomas been</a>, <a href="#">May 15, 2015</a> 
+                                                            </p>
+                                                        </div>
+                                                        <!-- End: Section Header -->
+        
+                                                        <div class="detail small-spacing">
+                                                            <p>On 9 August 2016, HMRC released a consultation document to   flag some potential tax impacts that a forthcoming change in lease accounting may have on the funding of plant and machinery.From 2019, lessees using IFRS..</p>
+                                                        </div>
+        
+                                                        <!-- Button Area -->
+                                                        <div class="btn-form btn-interest">
+                                                            <a href="#" class="btn right-icon">READ MORE <i class="fa fa-long-arrow-right"></i></a>
+                                                        </div>
+                                                       
+                                                    </div>
+                                                </div> <!-- End: .item -->
+                                                <div class="item">
+                                                    <div class="item-inner text-left">
+                                                        
+                                                        <div class="thumbnail bg-cover" style="background-image: url(https://www.incimages.com/uploaded_files/image/284x160/Inc_Standalone_Gift_Wrapping_Pano_123963.jpg); height: 180px;"></div>
+                                    
+                                                        <!-- Start: Section Header -->
+                                                        <div class="section-header">
+                                                            <h4 class="section-heading"><a href="blog-details.html">What brexit means for data protection law</a></h4>
+                                                            <p class="post-meta">
+                                                                By <a href="#">thomas been</a>, <a href="#">May 15, 2015</a> 
+                                                            </p>
+                                                        </div>
+                                                        <!-- End: Section Header -->
+        
+                                                        <div class="detail small-spacing">
+                                                            <p>Assuming that the referendum is not ignored completely, there are two possible futures for the UK: </p>
+                                                        </div>
+        
+                                                        <!-- Button Area -->
+                                                        <div class="btn-form btn-interest">
+                                                            <a href="#" class="btn right-icon">READ MORE <i class="fa fa-long-arrow-right"></i></a>
+                                                        </div>
+                                                       
+                                                    </div>
+                                                </div> <!-- End: .item -->
+                                                <div class="item">
+                                                    <div class="item-inner text-left">
+                                                        
+                                                        <div class="thumbnail bg-cover" style="background-image: url(https://www.incimages.com/uploaded_files/image/284x160/1_8prtwi5j_334941.jpg); height: 180px;"></div>
+                                    
+                                                        <!-- Start: Section Header -->
+                                                        <div class="section-header">
+                                                            <h4 class="section-heading"><a href="blog-details.html">Tax impacts of lease acounting change</a></h4>
+                                                            <p class="post-meta">
+                                                                By <a href="#">thomas been</a>, <a href="#">May 15, 2015</a> 
+                                                            </p>
+                                                        </div>
+                                                        <!-- End: Section Header -->
+        
+                                                        <div class="detail small-spacing">
+                                                            <p>On 9 August 2016, HMRC released a consultation document to   flag some potential tax impacts that a forthcoming change in lease accounting may have on the funding of plant and machinery.From 2019, lessees using IFRS..</p>
+                                                        </div>
+        
+                                                        <!-- Button Area -->
+                                                        <div class="btn-form btn-interest">
+                                                            <a href="#" class="btn right-icon">READ MORE <i class="fa fa-long-arrow-right"></i></a>
+                                                        </div>
+                                                       
+                                                    </div>
+                                                </div> <!-- End: .item -->
+                                                
+                                            </div> <!-- End: .carousel-wrapper -->
+                                        </div> <!-- End: .carousel-container -->
+                                    </div> <!-- End: .tab-pane -->
+                                    <div role="tabpanel" class="tab-pane" id="technical">
+                                        
+                                        <div class="carousel-container features-content">
+                                            <div class="carousel-wrapper owl-carousel">
+                                              
+                                                <div class="item">
+                                                    <div class="item-inner text-left">
+                                                        
+                                                        <div class="thumbnail bg-cover" style="background-image: url(https://www.incimages.com/uploaded_files/image/284x160/1_8prtwi5j_334941.jpg); height: 180px;"></div>
+                                    
+                                                        <!-- Start: Section Header -->
+                                                        <div class="section-header">
+                                                            <h4 class="section-heading"><a href="blog-details.html">What brexit means for data protection law</a></h4>
+                                                            <p class="post-meta">
+                                                                By <a href="#">thomas been</a>, <a href="#">May 15, 2015</a> 
+                                                            </p>
+                                                        </div>
+                                                        <!-- End: Section Header -->
+        
+                                                        <div class="detail small-spacing">
+                                                            <p>Assuming that the referendum is not ignored completely, there are two possible futures for the UK: </p>
+                                                        </div>
+        
+                                                        <!-- Button Area -->
+                                                        <div class="btn-form btn-interest">
+                                                            <a href="#" class="btn right-icon">READ MORE <i class="fa fa-long-arrow-right"></i></a>
+                                                        </div>
+                                                       
+                                                    </div>
+                                                </div> <!-- End: .item -->
+                                                <div class="item">
+                                                    <div class="item-inner text-left">
+                                                        
+                                                        <div class="thumbnail bg-cover" style="background-image: url(https://www.incimages.com/uploaded_files/image/284x160/1940_334982.jpg); height: 180px;"></div>
+                                    
+                                                        <!-- Start: Section Header -->
+                                                        <div class="section-header">
+                                                            <h4 class="section-heading"><a href="blog-details.html">Tax impacts of lease acounting change</a></h4>
+                                                            <p class="post-meta">
+                                                                By <a href="#">thomas been</a>, <a href="#">May 15, 2015</a> 
+                                                            </p>
+                                                        </div>
+                                                        <!-- End: Section Header -->
+        
+                                                        <div class="detail small-spacing">
+                                                            <p>On 9 August 2016, HMRC released a consultation document to   flag some potential tax impacts that a forthcoming change in lease accounting may have on the funding of plant and machinery.From 2019, lessees using IFRS..</p>
+                                                        </div>
+        
+                                                        <!-- Button Area -->
+                                                        <div class="btn-form btn-interest">
+                                                            <a href="#" class="btn right-icon">READ MORE <i class="fa fa-long-arrow-right"></i></a>
+                                                        </div>
+                                                       
+                                                    </div>
+                                                </div> <!-- End: .item -->
+                                                <div class="item">
+                                                    <div class="item-inner text-left">
+                                                        
+                                                        <div class="thumbnail bg-cover" style="background-image: url(https://www.incimages.com/uploaded_files/image/284x160/Inc_Standalone_Gift_Wrapping_Pano_123963.jpg); height: 180px;"></div>
+                                    
+                                                        <!-- Start: Section Header -->
+                                                        <div class="section-header">
+                                                            <h4 class="section-heading"><a href="blog-details.html">Tax impacts of lease acounting change</a></h4>
+                                                            <p class="post-meta">
+                                                                By <a href="#">thomas been</a>, <a href="#">May 15, 2015</a> 
+                                                            </p>
+                                                        </div>
+                                                        <!-- End: Section Header -->
+        
+                                                        <div class="detail small-spacing">
+                                                            <p>On 9 August 2016, HMRC released a consultation document to   flag some potential tax impacts that a forthcoming change in lease accounting may have on the funding of plant and machinery.From 2019, lessees using IFRS..</p>
+                                                        </div>
+        
+                                                        <!-- Button Area -->
+                                                        <div class="btn-form btn-interest">
+                                                            <a href="#" class="btn right-icon">READ MORE <i class="fa fa-long-arrow-right"></i></a>
+                                                        </div>
+                                                       
+                                                    </div>
+                                                </div> <!-- End: .item -->
+                                                
+                                            </div> <!-- End: .carousel-wrapper -->
+                                        </div> <!-- End: .carousel-container -->
+                                    </div> <!-- End: .tab-pane -->
+                                    
+                                </div> <!-- End: .tab-content -->
+
+                            </div>
+                        </div>
+                    </div> <!-- End: .each-item -->  
+                    
+                    <div class="clearfix"></div>
+                    
+                    <div class="col-xs-12 text-center">
+                        <h3>Want to learn more. Visit <a href="/resources">Resources</a> page.</h3>
+                    </div>
+
+                </div> <!-- End: .row -->
+            </div> <!-- End: .features-item -->
+            
+
+        </div> <!-- End: .row -->
+    </div> <!-- End: .container -->
+</section>
+<!-- End: Features Section
+================================== -->
+
+
+
+
+<!-- Start: Features Section
+================================== -->
+<section class="features-section background-1"> 
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-xs-12"> 
+                <h2 class="contact-button text-center">
+                    <span>Fun Facts</span>
+                    <!--<button class="btn btn-fill-big" data-toggle="modal" data-target=".contact-us-model">Contact Us</button>-->
+                </h2>
+            </div>
+            
+        </div> <!-- End: .row .section-separator  -->
+    </div> <!-- End: .container  -->
+</section>
+<!-- End: Features Section
+================================== -->

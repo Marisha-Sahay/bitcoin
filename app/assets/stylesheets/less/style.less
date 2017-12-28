@@ -378,6 +378,42 @@
     }
 }
 
+.note-area {
+    background-color: #0000002e;
+    padding: 30px;
+    color: #fff;
+    
+    a {
+        color: #fff;
+        
+        &:hover {
+            color: @main-color-3 !important;
+        }
+    }
+    
+    .nav {
+        padding-left: 30px;
+        
+        li {
+            position: relative;
+            margin-bottom: 5px;
+            
+            &:last-child {
+                margin-bottom: 0px;
+            }
+            
+            &:before {
+                content: "\f0a4";
+                font: normal normal normal 14px/1 FontAwesome;
+                position: absolute;
+                left: -29px;
+                top: 5px;
+                color: @main-color-3;
+            }
+        }
+    }
+}
+
 
 /** 
  * -------------------
@@ -846,7 +882,7 @@ blockquote {
 
     span {
         margin-right: 20px;
-        font-size: 21px;
+        // font-size: 21px;
         position: relative;
         top: 6px;
         line-height: 45px;

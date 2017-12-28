@@ -38,7 +38,7 @@
           </button>
 
           <!-- TEMPLATE LOGO LIGHT -->
-          <a class="navbar-brand light-logo " href="index.html"><%= image_tag("bitcaffe-white.png",class: "logo") %></a>
+          <a class="navbar-brand light-logo " href="/"><%= image_tag("bitcaffe-white.png",class: "logo") %></a>
   
       </div> <!-- End: .container -->
   
@@ -68,18 +68,18 @@
             <li>
               <%= link_to "Resources", url_for("/resources"), class: "nav-links", :data => { :reload => true } %>
             </li>
-            <!--<% if current_user %>-->
-            <!--<li>-->
-            <!--  <a class="nav-links" data-reload="true" href="/logout"><i class='fa fa-sign-out'></i> &nbsp; Logout</a>-->
-            <!--</li>-->
-            <!--<% else %>-->
-            <!--<li>-->
-            <!--  <a class="nav-links" data-reload="true" href="/signup"><i class='fa fa-user'></i> &nbsp; Sign-Up</a>-->
-            <!--</li>-->
-            <!--<li>-->
-            <!--  <a class="nav-links" data-reload="true" href="/login"><i class='fa fa-sign-in'></i> &nbsp; Login</a>-->
-            <!--</li>-->
-            <!--<% end %>-->
+            <% if current_user %>
+            <li>
+              <a class="nav-links" data-reload="true" href="/logout"><i class='fa fa-sign-out'></i> &nbsp; Logout</a>
+            </li>
+            <% else %>
+            <li>
+              <a class="nav-links" data-reload="true" href="/signup"><i class='fa fa-user'></i> &nbsp; Sign-Up</a>
+            </li>
+            <li>
+              <a class="nav-links" data-reload="true" href="/login"><i class='fa fa-sign-in'></i> &nbsp; Login</a>
+            </li>
+            <% end %>
         </ul>
       </div> <!-- End: .navbar-collapse -->
     </div> <!-- End: .navbar-header-outer -->

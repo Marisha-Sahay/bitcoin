@@ -55,6 +55,9 @@ Rails.application.routes.draw do
   put 'resources/:id/dislike', to: "resources#downvote"
   post '/resources/search', to: 'resources#search'
 
+  get '/beginner_knowledge_base', to: 'pages#beginner_knowledge_base'
+  get '/trader_investor_lp', to: 'pages#trader_investor_lp'
+
 
   namespace :api do
     namespace :v1 do
