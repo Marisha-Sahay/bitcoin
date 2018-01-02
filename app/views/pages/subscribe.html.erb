@@ -6,7 +6,7 @@
             <div class="carousel-home-wrapper owl-carousel">
 
                 <div class="item">
-                    <div class="slider-background"></div>
+                    <div class="slider-background bg-cover bg-overlay-3" style="background-image: url(<%= asset_path 'bg-2.jpg' %>);"></div>
                     <div class="container">
                         <div class="row section-separator">
 
@@ -31,7 +31,7 @@
                     </div> <!-- End: .container -->
                 </div> <!-- End: .item -->
                 <div class="item">
-                    <div class="slider-background"></div>
+                    <div class="slider-background bg-cover bg-overlay-3" style="background-image: url(<%= asset_path 'bg-1.jpg' %>);"></div>
                     <div class="container">
                         <div class="row section-separator">
 
@@ -56,7 +56,7 @@
                     </div> <!-- End: .container -->
                 </div>
                 <div class="item">
-                    <div class="slider-background"></div>
+                    <div class="slider-background bg-cover bg-overlay-3" style="background-image: url(<%= asset_path 'bg-3.jpg' %>);"></div>
                     <div class="container">
                         <div class="row section-separator">
 
@@ -79,11 +79,6 @@
                                     </div>
                                 </div>
 
-                                <!--<div class="clearfix">  </div>-->
-
-                                <!--<div class="btn-form margin-t-40 col-xs-12">-->
-                                <!--    <a href="/beginner_knowledge_base" class="btn btn-fill btn-color right-icon">Learn More</a>-->
-                                <!--</div>-->
                             </div>
 
 
@@ -91,7 +86,7 @@
                     </div> <!-- End: .container -->
                 </div> <!-- End: .item -->
                 <div class="item">
-                    <div class="slider-background"></div>
+                    <div class="slider-background bg-cover bg-overlay-3" style="background-image: url(<%= asset_path 'bg-4.jpg' %>);"></div>
                     <div class="container">
                         <div class="row section-separator">
 
@@ -116,6 +111,13 @@
                     </div> <!-- End: .container -->
                 </div>
             </div>
+            
+            <div class="stock-prices light-text text-center">
+                <% @prices.each do |price| %>
+                  <%= "#{price['name']}: $#{price['price_usd'].to_f.round(2)}" %>
+                <% end %>
+            </div>
+            
         </div>
     </section>
     <!-- End: Header Section
@@ -204,7 +206,7 @@
                                 <div class="item-inner text-left">
                                     
                                   <!-- Start: Section Header -->
-                                  <div class="section-header">
+                                  <div class="section-header no-margin">
                                       <a href="<%= content.news_url %>"><h3><%= content.title %></h3></a>
                                       <!--<p class="post-meta">-->
                                       <!--    By <a href="#">thomas been</a>, <a href="#">May 15, 2015</a> -->
@@ -263,22 +265,22 @@
                         <div class="carousel-wrapper owl-carousel padding-b-15 background-1 shadow">
                           
                             <% count = 1
-                            videos.each do |video| 
+                            @videos = Video.all
+                            @videos.each do |video| 
                             if count <= 3 %>
                             <div class="item">
                                 <div class="item-inner text-left">
                                     
                                     <!--  Start: Video Area  "PASTE YOUR VIDEO LINK HERE " -->
                                     <div class="video background-2">
-                                       <iframe class="video-async" data-source="vimeo"  data-color="ffc300" src="<%= video[1] %>?color=ffc300&title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <!--  Video Link Goes Here--> 
+                                        <%= content_tag(:iframe,'', src: "#{video.link}", class: "video-async") %>
                                     </div>
                                     <!--  End: Video Area  -->
                                     <div class="col-xs-12 margin-t-20">
-                                        <h3><%= video[0] %></h3>
-                                        <div class="details">
-                                            <% video_content = video[2].html_safe %>
-                                            <%= video_content %>
-                                        </div>
+                                        <!--<h3><%= video.currency %></h3>-->
+                                        <p><strong>Category: </strong><%= video.category %></p>
+                                        <p><strong>Video Type: </strong><%= video.video_type %></p>
+                                        <p><strong>Currency: </strong><%= video.currency %></p>
                                     </div>
                                    
                                 </div>
@@ -337,6 +339,8 @@
                 ],
                 
             ]
+            
+            @videos = Video.all
             %>
                     
             <div class="row video-panel homepage-section-inner">
@@ -345,7 +349,7 @@
                         <div class="main-video-meta">
                             <div class="desktop-subheadline">BitCaffe Video</div>
                             <h2 class="main-headline">
-                                <a href="<%= secVideos[0][3] %>"><%= secVideos[0][2] %></a>
+                                <a href="<%= @videos[0].link %>" target="_blank"><%= @videos[0].video_type %></a>
                             </h2>
                             <!--<div class="watch-button"></div>-->
                         </div>
@@ -355,7 +359,7 @@
                         <div class="main-video-player">
                             <!--  Start: Video Area  "PASTE YOUR VIDEO LINK HERE " -->
                             <div class="video" style="background-image: url(<%= asset_path 'spinner.svg' %>);">
-                               <iframe class="video-async" data-source="vimeo"  data-color="ffc300" src="<%= secVideos[0][1] %>?color=ffc300&title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <!--  Video Link Goes Here--> 
+                               <iframe class="video-async" data-color="ffc300" src="<%= @videos[0].link %>"></iframe> <!--  Video Link Goes Here--> 
                             </div>
                             <!--  End: Video Area  -->
                         </div>
@@ -364,16 +368,20 @@
                 <div class="videoPanels col-xs-12">
                     
                     <% count = 1
-                    secVideos.each do |video| 
+                    @videos.each do |video| 
                     if count <= 4 %>
                             
-                    <div class="videoPanelThumb <% if video[4] == true %> <%= 'now-playing' %> <% end %>" data-video-id="<%= video[1] %>?color=ffc300&title=0&byline=0&portrait=0">
+                    <div class="videoPanelThumb <% if count == 1 %> <%= 'now-playing' %> <% end %>" data-video-id="<%= video.link %>">
                         <div class="relative bg-overlay-dark">
-                            <img src="<%= video[0] %>">
+                            <!--  Start: Video Area  "PASTE YOUR VIDEO LINK HERE " -->
+                            <div class="video">
+                               <iframe class="video-async" data-color="ffc300" src="<%= video.link %>"></iframe> 
+                            </div>
+                            <!--  End: Video Area  -->
                         </div>
                         <div class="video-color-bar"></div>
-                        <div class="thumb-meta light-text" data-url="<%= video[3] %>">
-                            <h3><%= video[2] %></h3>
+                        <div class="thumb-meta light-text" data-url="<%= video.link %>">
+                            <h3><%= video.video_type %></h3>
                         </div>
                         <i class="fa fa-play hover-play" aria-hidden="true"></i>
                     </div>

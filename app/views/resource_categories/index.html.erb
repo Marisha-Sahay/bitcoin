@@ -1,119 +1,84 @@
-<div class="resource-container">
-<% if current_user && current_user.admin %>
-  <br><br>
-  <li><%= link_to "Add new resource category", "/resource_categories/new" %></li>
-<% end %>
-    <%= form_tag "/resources/search", method: :post do %>
-      <div class="search-container">
-        <i class="fa fa-search" aria-hidden="true"></i>
-        <%= label_tag :"" %>
-        <%= text_field_tag :user_search, nil, placeholder:"Type what do you want to learn today?", class: "submissionfield" %>
-      <%= submit_tag "Search", class:"btn-primary" %>
-      </div>
-    <% end %>   
-  <div class="row">  
-    <div class="resource-block-container">
-      <% @resouces.each do |resource| %>
-        <div class="col-md-2">
-          <div class="resource-block">
-            <div class="resource-title">
-              <%= link_to "#{resource.name}", "/resources/#{resource.id}"%>
-              <i class="fa fa-arrow-right" aria-hidden="true"></i>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  </div>
-
-
-              <div id="social" class="tab-pane">
-                <div class="tab-header">
-                    <h2 class="pull-left">Bitcoin Social Media Feeds</h2>
-                    <div class="clear"></div>
+<!-- Start: Header Section
+================================ -->
+<section class="features-section relative subscrive-section background-2">
+    <div class="container">
+        <div class="row features-item section-separator">
+            
+            <% if current_user && current_user.admin %>
+            <div class="each-item col-sm-8 col-sm-offset-2 col-xs-12 text-center">
+                <div class="inner">
+                      <%= link_to "Add new resource category", "/resource_categories/new", class: "btn btn-fill btn-color" %>
                 </div>
+            </div>
+            <% end %>
+          
+            <div class="each-item-big col-sm-8 col-sm-offset-2 col-xs-12">
+                <div class="inner">
+                    
+                    <%= form_tag "/resources/search", class: "single-form search-form search-big", method: :post do %>
+                      <div class="input-group">
+                          <%= text_field_tag :user_search, nil, placeholder:"Type what do you want to learn today?", class: "form-control" %>
+                          <span class="input-group-btn">
+                              <button class="btn" type="submit" name="commit" data-disable-with="Search"><i class="fa fa-search"></i></button>
+                          </span>
+                      </div><!-- /.input-group -->
+                    <% end %> 
+
+                </div>
+            </div>
+
+            
+            <div class="clearfix"></div>
+            
+            <div class="tag-list light-text matchHeight text-left">
+                <% @resouces.each do |resource| %>
+                <div class="each-item col-md-3 col-sm-4 col-xs-12">
+                    <a href="/resources/<%= resource.id %>" title="<%= resource.name %>">
+                        <div class="inner relative bg-cover bg-overlay-dark" style="background-image: url(<%= asset_path 'resources.png' %>);">
+                            <h4 class="title"><%= resource.name %> <small>&nbsp;&nbsp;&nbsp;<i class="fa fa-long-arrow-right"></i></small></h4>
+                        </div>
+                    </a>
+                </div>
+                <% end %>
+            
+            </div>
+            
+            <div class="col-xs-12 margin-t-50">
                 <div class="row">
-                    
-                    
-                    <div class="col-sm-6 text-left">
-                        <a class="twitter-timeline" href="https://twitter.com/bitcoin">Tweets by @bitcoin</a>
+                  
+                    <div class="each-item-big business-item col-md-6 col-sm-12">
+                        <!--<div class="inner">-->
+                        
+                        <!-- Start: Section Header -->
+                        <div class="section-header text-left">
+                            <h2 class="section-heading">Bitcoin Social Media Feeds</h2>
+                        </div> <!-- End: Section Header -->
+                        
+                        <div class="shadow">
+                            <a class="twitter-timeline" href="https://twitter.com/bitcoin">Tweets by @bitcoin</a>
+                        </div>
                         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-                        </script>                        
+                        </script> 
+        
+                        <!--</div>-->
                     </div>
-                    
-                    
-                    <div id="reddit" class="col-sm-6 text-left">
-                               
+                    <div class="each-item-big business-item col-md-6 col-sm-12">
+                        <!--<div class="inner">-->
+                        
+                        <!-- Start: Section Header -->
+                        <div class="section-header text-left">
+                            <h2 class="section-heading">Reddit</h2>
+                        </div> <!-- End: Section Header -->
+                        
+                        <div id="reddit" class="text-left shadow"> </div> 
+        
+                        <!--</div>-->
                     </div>
-                    
                 </div>
             </div>
-
-</div>
-<script>
-$(document).ready(function() {
-    
-        /* Reddit lazy load hack */
-        var oScript = document.createElement("script");
-        document.write = function(text) {
-            document.getElementById("reddit").innerHTML += text;
-        };
-        oScript.src = "https://www.reddit.com/r/bitcoin.embed?limit=9";
-        document.body.appendChild(oScript);
-    
-
-    setTimeout(function() {
-        document.title = "Bitcoin (BTC) $16247.40 (16.32%) | CoinMarketCap";
-    }, 10000);
-
-
-});
-
-const PHRASES = {
-    contextButtonTitle: "Chart context menu",
-    downloadCSV: "Download CSV",
-    downloadJPEG: "Download JPEG image",
-    downloadPDF: "Download PDF document",
-    downloadPNG: "Download PNG image",
-    downloadSVG: "Download SVG vector image",
-    downloadXLS: "Download XLS",
-    drillUpText: "Back to {series.name}",
-    loading: "Loading...",
-    noData: "No data to display",
-    printChart: "Print chart",
-    resetZoom: "Reset zoom",
-    resetZoomTitle: "Reset zoom level 1:1",
-    viewData: "View data table",
-    '1d': "1d",
-    '7d': "7d",
-    '1m': "1m",
-    '3m': "3m",
-    '1y': "1y",
-    'ytd': "YTD",
-    'all': "ALL",
-    dateFormat: "%A, %b %d %Y, %H:%M:%S UTC",
-    months: {
-        full: {mar: 'March',feb: 'February',aug: 'August',sep: 'September',apr: 'April',jun: 'June',jul: 'July',jan: 'January',may: 'May',nov: 'November',dec: 'December',oct: 'October'},
-        short: {mar: 'Mar',feb: 'Feb',aug: 'Aug',sep: 'Sep',apr: 'Apr',jun: 'Jun',jul: 'Jul',jan: 'Jan',may: 'May',nov: 'Nov',dec: 'Dec',oct: 'Oct'}
-    },
-    weekdays: {
-        full: {wed: 'Wednesday',sun: 'Sunday',thu: 'Thursday',mon: 'Monday',fri: 'Friday',tue: 'Tuesday',sat: 'Saturday'},
-        short: {wed: 'Wed',sun: 'Sun',thu: 'Thu',mon: 'Mon',fri: 'Fri',tue: 'Tue',sat: 'Sat'}
-    },
-    emptyTable: "No data available in table",
-    zeroRecords: "No matching records found",
-    sortAscending: ": activate to sort column ascending",
-    sortDescending: ": activate to sort column descending",
-    'K': "K",
-    'M': "M",
-    'B': "B",
-    'T': "T",
-    chartTitle: "Bitcoin Charts",
-    marketCap: "Market Cap",
-    priceUSD: "Price (USD)",
-    priceBTC: "Price (BTC)",
-    
-    volume: "24h Vol"
-};
-var polyglot = new Polyglot({phrases: PHRASES});
-</script>
+                    
+        </div> <!-- End: .row -->
+    </div> <!-- End: .container -->
+</section>
+<!-- End: Header Section
+================================ -->

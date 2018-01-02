@@ -239,7 +239,8 @@
     </div> <!-- End: .container  -->
   </footer>
   
-    <!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59bf0f900e22530f"></script> 
+    <!-- Go to www.addthis.com/dashboard to customize your tools --> 
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59bf0f900e22530f"></script> 
   </body>
   </html>
 
@@ -293,6 +294,7 @@
     testimonialHomeSlider.owlCarousel({
       margin: 30,
       autoPlay : 10000,
+      autoHeight : true,
       stopOnHover : true,
       singleItem : true,
       pagination:false,
@@ -360,5 +362,74 @@
      * INIT match height
      * -----------------
      */
-    $('.matchHeight .each-item .owl-wrapper-outer').matchHeight();
+    $('.matchHeight .each-item .owl-wrapper-outer,\
+    .matchHeight .each-item .inner').matchHeight();
   </script>
+  
+  <script>
+$(document).ready(function() {
+    
+        /* Reddit lazy load hack */
+        var oScript = document.createElement("script");
+        document.write = function(text) {
+            document.getElementById("reddit").innerHTML += text;
+        };
+        oScript.src = "https://www.reddit.com/r/bitcoin.embed?limit=9";
+        document.body.appendChild(oScript);
+    
+
+    setTimeout(function() {
+        document.title = "Bitcoin (BTC) $16247.40 (16.32%) | CoinMarketCap";
+    }, 10000);
+
+
+});
+
+const PHRASES = {
+    contextButtonTitle: "Chart context menu",
+    downloadCSV: "Download CSV",
+    downloadJPEG: "Download JPEG image",
+    downloadPDF: "Download PDF document",
+    downloadPNG: "Download PNG image",
+    downloadSVG: "Download SVG vector image",
+    downloadXLS: "Download XLS",
+    drillUpText: "Back to {series.name}",
+    loading: "Loading...",
+    noData: "No data to display",
+    printChart: "Print chart",
+    resetZoom: "Reset zoom",
+    resetZoomTitle: "Reset zoom level 1:1",
+    viewData: "View data table",
+    '1d': "1d",
+    '7d': "7d",
+    '1m': "1m",
+    '3m': "3m",
+    '1y': "1y",
+    'ytd': "YTD",
+    'all': "ALL",
+    dateFormat: "%A, %b %d %Y, %H:%M:%S UTC",
+    months: {
+        full: {mar: 'March',feb: 'February',aug: 'August',sep: 'September',apr: 'April',jun: 'June',jul: 'July',jan: 'January',may: 'May',nov: 'November',dec: 'December',oct: 'October'},
+        short: {mar: 'Mar',feb: 'Feb',aug: 'Aug',sep: 'Sep',apr: 'Apr',jun: 'Jun',jul: 'Jul',jan: 'Jan',may: 'May',nov: 'Nov',dec: 'Dec',oct: 'Oct'}
+    },
+    weekdays: {
+        full: {wed: 'Wednesday',sun: 'Sunday',thu: 'Thursday',mon: 'Monday',fri: 'Friday',tue: 'Tuesday',sat: 'Saturday'},
+        short: {wed: 'Wed',sun: 'Sun',thu: 'Thu',mon: 'Mon',fri: 'Fri',tue: 'Tue',sat: 'Sat'}
+    },
+    emptyTable: "No data available in table",
+    zeroRecords: "No matching records found",
+    sortAscending: ": activate to sort column ascending",
+    sortDescending: ": activate to sort column descending",
+    'K': "K",
+    'M': "M",
+    'B': "B",
+    'T': "T",
+    chartTitle: "Bitcoin Charts",
+    marketCap: "Market Cap",
+    priceUSD: "Price (USD)",
+    priceBTC: "Price (BTC)",
+    
+    volume: "24h Vol"
+};
+var polyglot = new Polyglot({phrases: PHRASES});
+</script>

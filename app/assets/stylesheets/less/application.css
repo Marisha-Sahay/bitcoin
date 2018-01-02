@@ -492,12 +492,10 @@ h2 {
 h3 {
   font-size: 1.799em;
   font-weight: 400;
-  line-height: 1.4;
 }
 h4 {
   font-size: 1.414em;
   font-weight: 400;
-  line-height: 1.4;
 }
 small,
 .font_small {
@@ -1224,6 +1222,7 @@ small,
 .light-text a,
 .light-text p,
 .light-text span,
+.light-text i,
 .light-text .sub-heading {
   color: #fafafa;
 }
@@ -1967,11 +1966,9 @@ small,
 .business-item .each-item-inner {
   overflow: hidden;
   display: block;
-  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12) ;
-  -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12) ;
-  -ms-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12) ;
-  -o-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12) ;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12) ;
+}
+.business-item .features-image {
+  border-radius: 10px;
 }
 .business-item .features-content .inner {
   background-color: #FFFFFF;
@@ -1989,6 +1986,7 @@ small,
 }
 .business-item .section-heading {
   font-weight: 700;
+  font-size: 18px;
 }
 .business-item .section-heading-2 {
   font-family: 'Open Sans', sans-serif;
@@ -2037,6 +2035,7 @@ small,
 .post-meta a {
   color: #8a8484;
   font-weight: 400;
+  font-size: 14px;
 }
 .post-meta a:hover {
   color: #8a8484;
@@ -2783,7 +2782,7 @@ blockquote {
  * -------------------------
  */
 .recent-post li {
-  margin-bottom: 22px;
+  margin-bottom: 10px;
 }
 .recent-post li:last-child {
   margin-bottom: 0px;
@@ -2879,6 +2878,10 @@ blockquote {
 .search-form .btn {
   font-size: 17px;
   padding: 0 16px;
+}
+.search-form.search-big .form-control,
+.search-form.search-big .btn {
+  height: 40px;
 }
 .quick-search-form {
   padding: 9px 0;
@@ -3131,6 +3134,13 @@ blockquote {
 .tab-item .tab-content .tab-pane {
   padding: 40px;
   background-color: #FFFFFF;
+}
+.tab-item .tab-content .tab-pane.twitter-feed {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.tab-item .tab-content .tab-pane.tab-small {
+  padding: 15px;
 }
 .tab-item .tab-content p {
   font-size: 15px;
@@ -3600,6 +3610,13 @@ blockquote {
   left: 20px;
   z-index: 11;
 }
+.video-panel .videoPanels .videoPanelThumb .video {
+  padding-top: none !important;
+  height: 0 !important;
+}
+.video-panel .videoPanels .videoPanelThumb .video .video-async {
+  position: inherit !important;
+}
 @media (max-width: 767px) {
   .video-panel .videoPanels .videoPanelThumb .thumb-meta {
     display: flex;
@@ -3704,6 +3721,155 @@ blockquote {
   width: 100%;
   top: 0px;
   left: 0px;
+}
+.tag-list .tag {
+  display: inline-block;
+  border-radius: 10px !important;
+  overflow: hidden;
+  text-transform: uppercase;
+  margin: 3px;
+}
+.tag-list .tag > a {
+  font-weight: 600;
+  line-height: 1.1;
+  font-size: 16px;
+  padding: 15px 20px;
+  min-width: 80px;
+  -webkit-text-shadow: 0px 1px 1px rgba(35, 35, 35, 0.6) ;
+  -moz-text-shadow: 0px 1px 1px rgba(35, 35, 35, 0.6) ;
+  -ms-text-shadow: 0px 1px 1px rgba(35, 35, 35, 0.6) ;
+  -o-text-shadow: 0px 1px 1px rgba(35, 35, 35, 0.6) ;
+  text-shadow: 0px 1px 1px rgba(35, 35, 35, 0.6) ;
+}
+.tag-list .tag:nth-of-type(1n):before {
+  background-color: rgba(255, 82, 82, 0.9);
+}
+.tag-list .tag:nth-of-type(2n):before {
+  background-color: rgba(82, 184, 255, 0.9);
+}
+.tag-list .tag:nth-of-type(3n):before {
+  background-color: rgba(255, 200, 82, 0.9);
+}
+.tag-list .each-item .inner {
+  padding: 30px 25px;
+  border-radius: 10px !important;
+  overflow: hidden;
+  line-height: 1.1;
+}
+.tag-list .each-item .inner .title {
+  font-weight: 500;
+  margin: 0px;
+  font-size: 20px;
+  -webkit-text-shadow: 0px 1px 1px rgba(35, 35, 35, 0.6) ;
+  -moz-text-shadow: 0px 1px 1px rgba(35, 35, 35, 0.6) ;
+  -ms-text-shadow: 0px 1px 1px rgba(35, 35, 35, 0.6) ;
+  -o-text-shadow: 0px 1px 1px rgba(35, 35, 35, 0.6) ;
+  text-shadow: 0px 1px 1px rgba(35, 35, 35, 0.6) ;
+}
+.tag-list .each-item:nth-of-type(1n) .inner:before {
+  background-color: rgba(255, 82, 82, 0.84);
+}
+.tag-list .each-item:nth-of-type(2n) .inner:before {
+  background-color: rgba(82, 184, 255, 0.84);
+}
+.tag-list .each-item:nth-of-type(3n) .inner:before {
+  background-color: rgba(255, 200, 82, 0.84);
+}
+.tag-list .each-item > a {
+  display: block;
+}
+.tag-list .each-item .meta-option {
+  padding-top: 11px;
+  margin-top: 11px;
+}
+.tag-list .each-item .meta-option a {
+  display: inline-block;
+  margin-right: 10px;
+}
+.tag-list .each-item .meta-option a.err-hide {
+  display: none !important;
+}
+.tag-list .each-item .meta-option a:before {
+  margin-right: 5px;
+}
+.tag-list .each-item .meta-option.user-option {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+.tag-list .each-item .meta-option.user-option a {
+  float: right;
+}
+.share {
+  /* border: 1px solid #ddd; */
+  display: inline-block;
+  color: #fff;
+  border-radius: 5px;
+  padding: 0px 13px 0px 0px;
+  font-size: 14px;
+}
+.share.facebook {
+  background-color: #3b5998;
+  border-color: #3b5998;
+}
+.share.linkedin {
+  background-color: #0077B5;
+  border-color: #0077B5;
+}
+.share.twitter {
+  background-color: #1da1f2;
+  border-color: #1da1f2;
+}
+.share .fa {
+  padding: 6px 8px 6px 8px;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-right: 5px;
+}
+.share-link a {
+  width: 50%;
+  margin: 0;
+  padding: 3px 4px;
+  float: left;
+  background-color: rgba(0, 0, 0, 0.2);
+  text-align: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 14px;
+}
+.share-link a .fa {
+  color: rgba(255, 255, 255, 0.85);
+}
+.share-link a:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.share-link a:last-child {
+  border-right: 0px solid;
+}
+#reddit.no-header .reddit-header {
+  display: none !important;
+}
+.rembeddit {
+  border: 0px solid !important;
+  font-family: 'Montserrat', sans-serif !important;
+}
+.rembeddit .reddit-header {
+  padding: 11px 5px 6px 5px !important;
+}
+.rembeddit .reddit-link-title {
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  color: #2a3855 !important;
+}
+.rembeddit .reddit-link {
+  border-bottom: 1px solid rgba(15, 70, 100, 0.12);
+  padding: 12px 10px 12px 10px;
+}
+.rembeddit .reddit-link:last-child {
+  border-bottom: 0px solid !important;
+}
+.rembeddit .rembeddit-content {
+  padding: 5px 0px !important;
+}
+.rembeddit .rembeddit-content > div {
+  margin-left: 0 !important;
+  margin-top: 0px !important;
 }
 @media (max-width: 991px) {
   /**
