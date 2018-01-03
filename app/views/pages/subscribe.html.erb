@@ -6,7 +6,7 @@
             <div class="carousel-home-wrapper owl-carousel">
 
                 <div class="item">
-                    <div class="slider-background"></div>
+                    <div class="slider-background bg-cover bg-overlay-3" style="background-image: url(<%= asset_path 'bg-2.jpg' %>);"></div>
                     <div class="container">
                         <div class="row section-separator">
 
@@ -31,7 +31,7 @@
                     </div> <!-- End: .container -->
                 </div> <!-- End: .item -->
                 <div class="item">
-                    <div class="slider-background"></div>
+                    <div class="slider-background bg-cover bg-overlay-3" style="background-image: url(<%= asset_path 'bg-1.jpg' %>);"></div>
                     <div class="container">
                         <div class="row section-separator">
 
@@ -56,7 +56,7 @@
                     </div> <!-- End: .container -->
                 </div>
                 <div class="item">
-                    <div class="slider-background"></div>
+                    <div class="slider-background bg-cover bg-overlay-3" style="background-image: url(<%= asset_path 'bg-3.jpg' %>);"></div>
                     <div class="container">
                         <div class="row section-separator">
 
@@ -79,11 +79,6 @@
                                     </div>
                                 </div>
 
-                                <!--<div class="clearfix">  </div>-->
-
-                                <!--<div class="btn-form margin-t-40 col-xs-12">-->
-                                <!--    <a href="/beginner_knowledge_base" class="btn btn-fill btn-color right-icon">Learn More</a>-->
-                                <!--</div>-->
                             </div>
 
 
@@ -91,7 +86,7 @@
                     </div> <!-- End: .container -->
                 </div> <!-- End: .item -->
                 <div class="item">
-                    <div class="slider-background"></div>
+                    <div class="slider-background bg-cover bg-overlay-3" style="background-image: url(<%= asset_path 'bg-4.jpg' %>);"></div>
                     <div class="container">
                         <div class="row section-separator">
 
@@ -116,6 +111,14 @@
                     </div> <!-- End: .container -->
                 </div>
             </div>
+
+            <!-- Price as a row -->
+            <!--<div class="stock-prices light-text text-center">
+                <% @prices.each do |price| %>
+                  <%= "#{price['name']}: $#{price['price_usd'].to_f.round(2)}" %>
+                <% end %>
+            </div> -->
+            
         </div>
     </section>
     <!-- End: Header Section
@@ -204,7 +207,7 @@
                                 <div class="item-inner text-left">
                                     
                                   <!-- Start: Section Header -->
-                                  <div class="section-header">
+                                  <div class="section-header no-margin">
                                       <a href="<%= content.news_url %>"><h3><%= content.title %></h3></a>
                                       <!--<p class="post-meta">-->
                                       <!--    By <a href="#">thomas been</a>, <a href="#">May 15, 2015</a> -->
@@ -232,27 +235,6 @@
                     
                 </div> <!-- End: .each-item -->
                 <div class="each-item business-item col-md-4 col-sm-12">
-                    
-                    <%
-                    videos = [ 
-                        [ 
-                            "The Bitcoin Doco", 
-                            "https://player.vimeo.com/video/112223859",
-                            '<p>This video explains how Bitcoin works in 3 minutes. See more of our videos about cryptocurrencies here https://vimeo.com/album/4322275?ref=tw-share</p><p>Directed, Designed and Animated by Duncan Elms.</p>'
-                        ],
-                        [ 
-                            "Bitcoin Explained", 
-                            "https://player.vimeo.com/video/63502573",
-                            '<p>A fascinating story focusing on the emergence of a new world wide currency - now being accepted in Australia and elsewhere around the globe.  This is a snapshot of a time in history that could be very significant in the future.</p>'
-                        ],
-                        [ 
-                            "What is Bitcoin", 
-                            "https://player.vimeo.com/video/225926695",
-                            '<p><strong>Client: Wondros</strong><br /><br />A short commissioned by Wondros in 2015, explaining the history and application of Bitcoin.</p></p>'
-                        ],
-                    ]
-                    %>
-                  
                     <!-- Start: Section Header -->
                     <div class="section-header text-left">
                         <h2 class="section-heading">Latest Videos</h2>
@@ -261,26 +243,19 @@
     
                     <div class="carousel-container margin-b-50 features-content">
                         <div class="carousel-wrapper owl-carousel padding-b-15 background-1 shadow">
-                          
                             <% count = 1
-                            videos.each do |video| 
+                            @videos.each do |video| 
                             if count <= 3 %>
                             <div class="item">
                                 <div class="item-inner text-left">
-                                    
-                                    <!--  Start: Video Area  "PASTE YOUR VIDEO LINK HERE " -->
-                                    <div class="video background-2">
-                                       <iframe class="video-async" data-source="vimeo"  data-color="ffc300" src="<%= video[1] %>?color=ffc300&title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <!--  Video Link Goes Here--> 
-                                    </div>
-                                    <!--  End: Video Area  -->
-                                    <div class="col-xs-12 margin-t-20">
-                                        <h3><%= video[0] %></h3>
-                                        <div class="details">
-                                            <% video_content = video[2].html_safe %>
-                                            <%= video_content %>
+                                    <% if video.link.include? "youtube" %>
+                                        <% str1 = "#{video.link}" %>
+                                        <% str2 = str1.split("=") %>
+                                        <div class="video background-2">
+                                        <%= content_tag(:iframe,'', src: "https://www.youtube.com/embed/#{str2[1]}", class: "video-async") %>
                                         </div>
-                                    </div>
-                                   
+                                    <% end %>
+                                    <!--  End: Video Area  -->
                                 </div>
                             </div> <!-- End: .item -->
                             <%  end 
@@ -304,48 +279,13 @@
     ================================ -->
     <section class="relative video-panel-section bg-cover bg-overlay-dark" style="background-image: url(<%= asset_path 'bitcoins-default.jpg' %>); ">
         <div class="container">
-            
-            <%
-            secVideos = [ 
-                [ 
-                    "https://www.incimages.com/uploaded_files/image/284x160/1940_334982.jpg", 
-                    "https://player.vimeo.com/video/225926695",
-                    'How to Wrap Holiday Gifts Using Only Office Supplie',
-                    '#',
-                    true
-                ],
-                [ 
-                    "https://www.incimages.com/uploaded_files/image/284x160/Inc_Standalone_Gift_Wrapping_Pano_123963.jpg", 
-                    "https://player.vimeo.com/video/112223859",
-                    'Meet the Real-Life Business Woman Behind the Hit Jennifer Lawrence Movie',
-                    '#',
-                    false
-                ],
-                [ 
-                    "https://www.incimages.com/uploaded_files/image/284x160/Inc_Standalone_Gift_Wrapping_Pano_123963.jpg", 
-                    "https://player.vimeo.com/video/63502573",
-                    'You Can\'t Survive on 4 Hours of Sleep and Other Sleep Myths Debunked',
-                    '#',
-                    false
-                ],
-                [ 
-                    "https://www.incimages.com/uploaded_files/image/284x160/1_8prtwi5j_334941.jpg", 
-                    "https://player.vimeo.com/video/225926695",
-                    '4 Holiday Party Tips for Introverts',
-                    '#',
-                    false
-                ],
-                
-            ]
-            %>
-                    
             <div class="row video-panel homepage-section-inner">
                 <div class="player-row clearfix">
                     <div class="col-sm-6">
                         <div class="main-video-meta">
                             <div class="desktop-subheadline">BitCaffe Video</div>
                             <h2 class="main-headline">
-                                <a href="<%= secVideos[0][3] %>"><%= secVideos[0][2] %></a>
+                                Understand Bitcoin in 5 mins
                             </h2>
                             <!--<div class="watch-button"></div>-->
                         </div>
@@ -355,7 +295,7 @@
                         <div class="main-video-player">
                             <!--  Start: Video Area  "PASTE YOUR VIDEO LINK HERE " -->
                             <div class="video" style="background-image: url(<%= asset_path 'spinner.svg' %>);">
-                               <iframe class="video-async" data-source="vimeo"  data-color="ffc300" src="<%= secVideos[0][1] %>?color=ffc300&title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <!--  Video Link Goes Here--> 
+                                <iframe class="video-async" data-color="ffc300" src="https://www.youtube.com/embed/l9jOJk30eQs"></iframe> 
                             </div>
                             <!--  End: Video Area  -->
                         </div>
@@ -364,20 +304,27 @@
                 <div class="videoPanels col-xs-12">
                     
                     <% count = 1
-                    secVideos.each do |video| 
-                    if count <= 4 %>
-                            
-                    <div class="videoPanelThumb <% if video[4] == true %> <%= 'now-playing' %> <% end %>" data-video-id="<%= video[1] %>?color=ffc300&title=0&byline=0&portrait=0">
+                    @videos.each do |video| %>
+                        <% if video.link.include? "youtube" %>
+                            <% str1 = "#{video.link}" %>
+                            <% str2 = str1.split("=") %>
+                            <%= content_tag(:iframe,'', src: "https://www.youtube.com/embed/#{str2[1]}", class: "video-async") %>
+                        <% if count <= 4 %>
+                        <div class="videoPanelThumb <% if count == 1 %> <%= 'now-playing' %> <% end %>" data-video-id="https://www.youtube.com/embed/#{str2[1]}">
                         <div class="relative bg-overlay-dark">
-                            <img src="<%= video[0] %>">
+                            <!--  Start: Video Area  "PASTE YOUR VIDEO LINK HERE " -->
+                            <div class="video">
+                               <iframe class="video-async" data-color="ffc300" src="https://www.youtube.com/embed/#{str2[1]}"></iframe> 
+                            </div>
+                            <!--  End: Video Area  -->
                         </div>
                         <div class="video-color-bar"></div>
-                        <div class="thumb-meta light-text" data-url="<%= video[3] %>">
-                            <h3><%= video[2] %></h3>
+                        <div class="thumb-meta light-text" data-url="https://www.youtube.com/embed/#{str2[1]}">
+                            <h3><%= video.video_type %></h3>
                         </div>
                         <i class="fa fa-play hover-play" aria-hidden="true"></i>
                     </div>
-                    
+                    <% end %>
                     <%  end 
                     count += 1
                     end %>

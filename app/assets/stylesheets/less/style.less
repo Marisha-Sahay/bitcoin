@@ -587,7 +587,11 @@
         overflow: hidden;
         display: block;
         // background-color: @background-1;
-        .box-shadow( 0 1px 3px 0 fade(@shadow-color, 12%) );
+        // .box-shadow( 0 1px 3px 0 fade(@shadow-color, 12%) );
+    }
+    
+    .features-image {
+        border-radius: 10px;
     }
 
     .features-content {
@@ -600,6 +604,10 @@
             background-color: @background-1;
             padding: 35px 27px;
         }
+        
+        // .item-inner {
+        //     margin-left: 15px;
+        // }
     }
 
     .features-image {
@@ -614,6 +622,8 @@
 
     .section-heading {
         font-weight: 700;
+        // line-height: 1;
+        font-size: 18px;
     }
 
     .section-heading-2 {
@@ -685,6 +695,7 @@
     a {
         color: fade(#8a8484, 100%);
         font-weight: 400;
+        font-size: 14px;
     }
 
     a {
@@ -1565,7 +1576,7 @@ blockquote {
  */
 .recent-post {
     li {
-        margin-bottom: 22px;
+        margin-bottom: 10px;
 
         &:last-child {
             margin-bottom: 0px;
@@ -1674,6 +1685,13 @@ blockquote {
     .btn {
         font-size: 17px;
         padding: 0 16px;
+    }
+    
+    &.search-big {
+        .form-control,
+        .btn {
+            height: 40px;
+        }
     }
 }
 
@@ -1940,6 +1958,15 @@ blockquote {
         .tab-pane {
             padding: 40px;
             background-color: @background-1;
+            
+            &.twitter-feed {
+                padding-left: 0px;
+                padding-right: 0px;
+            }
+            
+            &.tab-small {
+                padding: 15px;
+            }
         }
 
         p {
@@ -2511,6 +2538,14 @@ blockquote {
   left: 20px;
   z-index: 11;
 }
+.video-panel .videoPanels .videoPanelThumb .video {
+    padding-top: none !important; 
+    height: 0 !important;
+}
+
+.video-panel .videoPanels .videoPanelThumb .video .video-async {
+    position: inherit !important;
+}
 
 @media (max-width: 767px) {
   .video-panel .videoPanels .videoPanelThumb .thumb-meta {
@@ -2634,3 +2669,199 @@ blockquote {
   top: 0px;
   left: 0px;
 }
+
+
+
+
+
+
+.tag-list {
+    .tag {
+        display: inline-block;
+        border-radius: 10px !important;
+        overflow: hidden;
+        text-transform: uppercase;
+        margin: 3px;
+        
+        
+        > a {
+            font-weight: 600;
+            line-height: 1.1;
+            font-size: 16px;
+            padding: 15px 20px;
+            min-width: 80px;
+            .text-shadow( 0px 1px 1px fade(@dark-color, 60%) );
+        }
+        
+        &:nth-of-type(1n):before {
+          background-color: rgba(255, 82, 82, 0.9);
+        }
+        &:nth-of-type(2n):before {
+          background-color: rgba(82, 184, 255, 0.9);
+        }
+        &:nth-of-type(3n):before {
+          background-color: rgba(255, 200, 82, 0.9);
+        }
+    }
+    
+    .each-item {
+        .inner {
+            padding: 30px 25px;
+            border-radius: 10px !important;
+            overflow: hidden;
+            line-height: 1.1;
+            
+            .title {
+                font-weight: 500;
+                margin: 0px;
+                font-size: 20px;
+                .text-shadow( 0px 1px 1px fade(@dark-color, 60%) );
+            }
+        }
+        
+        &:nth-of-type(1n) .inner:before {
+          background-color: rgba(255, 82, 82, 0.84);
+        }
+        &:nth-of-type(2n) .inner:before {
+          background-color: rgba(82, 184, 255, 0.84);
+        }
+        &:nth-of-type(3n) .inner:before {
+          background-color: rgba(255, 200, 82, 0.84);
+        }
+        
+        > a {
+            display: block;
+        }
+        
+        .meta-option {
+            padding-top: 11px;
+            margin-top: 11px;
+    
+            a {
+                display: inline-block;
+                margin-right: 10px;
+                
+                &.err-hide {
+                    display: none !important;
+                }
+                
+                &:before {
+                    margin-right: 5px;
+                }
+            }
+            
+            &.user-option {
+                border-top: 1px solid rgba(255, 255, 255, 0.3);
+                
+                a {
+                    float: right;
+                }
+            }
+        }
+    }
+    
+    
+}
+
+
+.share {
+    /* border: 1px solid #ddd; */
+    display: inline-block;
+    color: #fff;
+    border-radius: 5px;
+    padding: 0px 13px 0px 0px;
+    font-size: 14px;
+    
+    &.facebook {
+        background-color: #3b5998;
+        border-color: #3b5998;
+    }
+    
+    &.linkedin {
+        background-color: #0077B5;
+        border-color: #0077B5;
+    }
+    
+    &.twitter {
+        background-color: #1da1f2;
+        border-color: #1da1f2;
+    }
+    
+    .fa {
+        padding: 6px 8px 6px 8px;
+        background-color: fade(@shadow-color, 10%);
+        margin-right: 5px;
+    }
+}
+
+
+
+.share-link {
+    a {
+        width: 50%;
+        margin: 0;
+        padding: 3px 4px;
+        float: left;
+        background-color: fade(@shadow-color, 20%);
+        text-align: center;
+        border-right: 1px solid fade(@light-color, 25%);
+        font-size: 14px;
+        
+        .fa {
+            color:  fade(@light-color, 85%);
+        }
+        
+        &:hover {
+            background-color: fade(@shadow-color, 80%);
+        }
+        
+        &:last-child {
+            border-right: 0px solid;
+        }
+    }
+}
+
+
+
+#reddit {
+    &.no-header {
+        .reddit-header {
+            display: none !important;
+        }
+    }
+}
+
+.rembeddit {
+    border: 0px solid !important;
+    font-family: 'Montserrat', sans-serif !important;
+    
+    .reddit-header {
+        padding: 11px 5px 6px 5px !important;
+    }
+    
+    .reddit-link-title {
+        font-size: 15px !important;
+        font-weight: 500 !important;
+        color: #2a3855 !important;
+    }
+    
+    .reddit-link {
+        border-bottom: 1px solid rgba(15,70,100,.12);
+        padding: 12px 10px 12px 10px;
+        
+        &:last-child {
+            border-bottom: 0px solid !important;
+        }
+    }
+    
+    .rembeddit-content {
+        padding: 5px 0px !important;
+    }
+    
+    .rembeddit-content > div {
+        margin-left: 0 !important;
+        margin-top: 0px !important;
+    }
+    
+}
+
