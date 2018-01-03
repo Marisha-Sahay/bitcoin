@@ -1066,7 +1066,8 @@ small,
   color: rgba(35, 35, 35, 0.17);
   padding-right: 0px;
 }
-.single-form textarea {
+.single-form textarea,
+.single-form .textarea {
   height: 200px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -1078,12 +1079,13 @@ small,
 .single-form .select-outer::after {
   content: "";
   position: absolute;
-  top: 23px;
+  top: 20px;
   right: 23px;
   border-width: 7px 6px;
   border-style: solid;
   border-color: #232323 transparent transparent;
   pointer-events: none;
+  z-index: 111;
 }
 .single-form select {
   -moz-appearance: none !important;
@@ -1957,6 +1959,7 @@ small,
 }
 .registration-form .input-group {
   border: 1px solid #ddd;
+  width: 100%;
 }
 /** 
  * --------------------
@@ -3563,7 +3566,7 @@ blockquote {
 }
 .video-panel .videoPanels .videoPanelThumb .bg-overlay-dark:before {
   z-index: 11;
-  background-color: rgba(29, 29, 29, 0.45);
+  background-color: rgba(29, 29, 29, 0.55);
 }
 .video-panel .videoPanels .videoPanelThumb:last-child {
   margin-right: 0px;
@@ -3611,8 +3614,8 @@ blockquote {
   z-index: 11;
 }
 .video-panel .videoPanels .videoPanelThumb .video {
-  padding-top: none !important;
-  height: 0 !important;
+  padding-top: 0 !important;
+  height: auto !important;
 }
 .video-panel .videoPanels .videoPanelThumb .video .video-async {
   position: inherit !important;
@@ -3679,15 +3682,13 @@ blockquote {
     justify-content: flex-end;
   }
   .video-panel .videoPanels .videoPanelThumb:nth-child(4) {
-    display: none;
+    display: block;
   }
   .video-panel .videoPanels .videoPanelThumb:nth-child(3) {
-    display: none;
+    display: block;
   }
   .video-panel .videoPanels .videoPanelThumb .hover-play {
     display: block;
-    bottom: 32%;
-    right: 20px;
   }
 }
 .video-panel .videoPanels .videoPanelThumb .hover-play {
@@ -3707,7 +3708,6 @@ blockquote {
 @media (max-width: 767px) {
   .video-panel .videoPanels .videoPanelThumb .hover-play {
     display: block;
-    bottom: initial;
   }
 }
 .video-panel .videoPanels .videoPanelThumb.now-playing .hover-play {

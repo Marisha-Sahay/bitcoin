@@ -282,7 +282,7 @@
             <div class="row video-panel homepage-section-inner">
                 <div class="player-row clearfix">
                     <div class="col-sm-6">
-                        <div class="main-video-meta">
+                        <div class="main-video-meta light-text">
                             <div class="desktop-subheadline">BitCaffe Video</div>
                             <h2 class="main-headline">
                                 Understand Bitcoin in 5 mins
@@ -293,9 +293,13 @@
                     <div class="col-sm-6">
                         <div class="mobile-subheadline">BitCaffe Video</div>
                         <div class="main-video-player">
+                            
+                            <% str1 = "#{@videos[0].link}" %>
+                            <% str2 = str1.split("=") %>
+                            
                             <!--  Start: Video Area  "PASTE YOUR VIDEO LINK HERE " -->
                             <div class="video" style="background-image: url(<%= asset_path 'spinner.svg' %>);">
-                                <iframe class="video-async" data-color="ffc300" src="https://www.youtube.com/embed/l9jOJk30eQs"></iframe> 
+                               <iframe class="video-async main-video-iframe" data-color="ffc300" src="https://www.youtube.com/embed/<%= str2[1] %>?rel=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
                             </div>
                             <!--  End: Video Area  -->
                         </div>
@@ -308,23 +312,22 @@
                         <% if video.link.include? "youtube" %>
                             <% str1 = "#{video.link}" %>
                             <% str2 = str1.split("=") %>
-                            <%= content_tag(:iframe,'', src: "https://www.youtube.com/embed/#{str2[1]}", class: "video-async") %>
                         <% if count <= 4 %>
-                        <div class="videoPanelThumb <% if count == 1 %> <%= 'now-playing' %> <% end %>" data-video-id="https://www.youtube.com/embed/#{str2[1]}">
-                        <div class="relative bg-overlay-dark">
-                            <!--  Start: Video Area  "PASTE YOUR VIDEO LINK HERE " -->
-                            <div class="video">
-                               <iframe class="video-async" data-color="ffc300" src="https://www.youtube.com/embed/#{str2[1]}"></iframe> 
+                        <div class="videoPanelThumb <% if count == 1 %> <%= 'now-playing' %> <% end %>" data-video-id="https://www.youtube.com/embed/<%= str2[1] %>?rel=0&amp;showinfo=0">
+                            <div class="relative bg-overlay-dark">
+                                <!--  Start: Video Area  "PASTE YOUR VIDEO LINK HERE " -->
+                                <div class="video">
+                                   <iframe class="video-async" data-color="ffc300" src="https://www.youtube.com/embed/<%= str2[1] %>?rel=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                                </div>
+                                <!--  End: Video Area  -->
                             </div>
-                            <!--  End: Video Area  -->
+                            <div class="video-color-bar"></div>
+                            <div class="thumb-meta light-text" data-url="https://www.youtube.com/embed/<%= str2[1] %>">
+                                <h3><%= video.video_type %></h3>
+                            </div>
+                            <i class="fa fa-play hover-play" aria-hidden="true"></i>
                         </div>
-                        <div class="video-color-bar"></div>
-                        <div class="thumb-meta light-text" data-url="https://www.youtube.com/embed/#{str2[1]}">
-                            <h3><%= video.video_type %></h3>
-                        </div>
-                        <i class="fa fa-play hover-play" aria-hidden="true"></i>
-                    </div>
-                    <% end %>
+                        <% end %>
                     <%  end 
                     count += 1
                     end %>

@@ -730,7 +730,8 @@ small, .font_small {font-size: 0.707em;}
         padding-right: 0px;
     }
 
-    textarea {
+    textarea,
+    .textarea {
         height: 200px;
         padding-top: 10px;
         padding-bottom: 10px;
@@ -743,12 +744,13 @@ small, .font_small {font-size: 0.707em;}
         &::after {
             content: "";
             position: absolute;
-            top: 23px;
+            top: 20px;
             right: 23px;
             border-width: 7px 6px;
             border-style: solid;
             border-color: fade(@dark-color, 100%) transparent transparent;
             pointer-events: none;
+            z-index: 111;
         }
     }
 

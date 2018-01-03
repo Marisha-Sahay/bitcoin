@@ -342,7 +342,7 @@
       mainArea.find(videoSection).removeClass('now-playing');
       selector.addClass('now-playing');
         
-      var iframeID = mainArea.find('iframe'),
+      var iframeID = mainArea.find('iframe.main-video-iframe'),
           contentID = mainArea.find('.main-video-meta');
           
       $content = '<div class="desktop-subheadline">BitCaffe. Video</div>\
@@ -352,7 +352,7 @@
                   //<div class="watch-button" data-video-id="' + video + '"></div>';
       
       iframeID.attr('src', video);
-      contentID.html($content);
+      // contentID.html($content);
       
     });
     

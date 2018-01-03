@@ -568,6 +568,7 @@
     
     .input-group {
         border: 1px solid #ddd;
+        width: 100%;
     }
 }
 
@@ -2472,7 +2473,7 @@ blockquote {
       
       &:before {
           z-index: 11;
-          background-color: fade(@background-5, 45%);
+          background-color: fade(@background-5, 55%);
       }
   }
 }
@@ -2539,8 +2540,8 @@ blockquote {
   z-index: 11;
 }
 .video-panel .videoPanels .videoPanelThumb .video {
-    padding-top: none !important; 
-    height: 0 !important;
+    padding-top: 0 !important; 
+    height: auto !important;
 }
 
 .video-panel .videoPanels .videoPanelThumb .video .video-async {
@@ -2617,17 +2618,17 @@ blockquote {
   }
 
   .video-panel .videoPanels .videoPanelThumb:nth-child(4) {
-    display: none;
+    display: block;
   }
 
   .video-panel .videoPanels .videoPanelThumb:nth-child(3) {
-    display: none;
+    display: block;
   }
 
   .video-panel .videoPanels .videoPanelThumb .hover-play {
     display: block;
-    bottom: 32%;
-    right: 20px;
+    // bottom: 32%;
+    // right: 20px;
   }
 }
 
@@ -2649,7 +2650,7 @@ blockquote {
 @media (max-width: 767px) {
   .video-panel .videoPanels .videoPanelThumb .hover-play {
     display: block;
-    bottom: initial;
+    // bottom: initial;
   }
 }
 
