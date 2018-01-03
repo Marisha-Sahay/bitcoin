@@ -7,6 +7,8 @@ class PagesController < ApplicationController
     @posts = News.distinct(:title).order('published DESC, performance_score DESC').limit(13)
     @prices = Unirest.get("https://api.coinmarketcap.com/v1/ticker/?limit=10").body
     @contents = FeaturedContent.all.limit 5
+    @videos = Video.all
+    @first_video = Video.first
   end
   def subscrib
     @prices = Unirest.get("https://api.coinmarketcap.com/v1/ticker/?limit=10").body
