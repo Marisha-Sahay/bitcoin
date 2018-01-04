@@ -24,19 +24,28 @@
             <div class="each-item-big col-xs-12 text-center">
                 <div class="inner">
 
-                    <div class="tag-list light-text">
+                    <div class="tag-list text-center">
                         
-                        <% @coins.each do |coin| %>
-                        <div class="tag relative bg-cover bg-overlay-dark" style="background-image: url(<%= coin.image_url %>);">
+                        <% 
+                        count = 1
+                        @coins.each do |coin|
+                            if count <= 10
+                                count += 1
+                        %>
+                        <div class="tag relative bg-cover bg-overlay-dark shadow" style="background-image: url(<%= coin.image_url %>);">
                             <a href="<%= coin.coin_url %>" title="<%= coin.symbol %>" target="_blank">
-                                <%= coin.symbol %>
+                                <img src="<%= coin.image_url %>" alt="" class="img-responsive">
+                                <p class="margin-t-15"><%= coin.symbol %></p>
                             </a>
-                            <div class="share-link">
-                                <a href="<%= coin.twitter_link %>" title="Twitter Link" target="_blank"><i class="fa fa-twitter"></i></a>  <!---->
-                                <a href="<%= coin.reddit_link %>" title="Reddit Link" target="_blank"><i class="fa fa-reddit-alien"></i></a>
-                            </div>
+                            <!--<div class="share-link">-->
+                            <!--    <a href="<%= coin.twitter_link %>" title="Twitter Link" target="_blank"><i class="fa fa-twitter"></i></a>-->
+                            <!--    <a href="<%= coin.reddit_link %>" title="Reddit Link" target="_blank"><i class="fa fa-reddit-alien"></i></a>-->
+                            <!--</div>-->
                         </div>
-                        <% end %>
+                        <% 
+                            end
+                        end 
+                        %>
             
                     </div>
 

@@ -294,7 +294,7 @@
     testimonialHomeSlider.owlCarousel({
       margin: 30,
       autoPlay : 10000,
-      autoHeight : true,
+      // autoHeight : true,
       stopOnHover : true,
       singleItem : true,
       pagination:false,
@@ -309,7 +309,13 @@
       navigationText : ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
       dragBeforeAnimFinish : false,
       mouseDrag : false,
-      touchDrag : false
+      touchDrag : false,
+      onRefresh: function () {
+            testimonialHomeSlider.find('.owl-item').height('');
+        },
+        onRefreshed: function () {
+            testimonialHomeSlider.find('.owl-item').height(testimonialHomeSlider.height());
+        }
     });
     function syncPosition(el){
       var current = this.currentItem;
@@ -337,7 +343,8 @@
           videoSection = '.videoPanelThumb',
           video = selector.attr('data-video-id'),
           title = selector.find('h3').text(),
-          url = selector.find('h3').attr('data-url');
+          url = selector.find('h3').attr('data-url'),
+          description = selector.find('.description').text();
           
       mainArea.find(videoSection).removeClass('now-playing');
       selector.addClass('now-playing');
@@ -353,6 +360,8 @@
       
       iframeID.attr('src', video);
       // contentID.html($content);
+      contentID.find('.main-headline').html( title );
+      contentID.find('.details p').html( description );
       
     });
     
