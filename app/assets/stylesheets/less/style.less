@@ -373,18 +373,20 @@
     }
 
     .section-separator {
-        padding-top: 55px;
+        padding-top: 75px;
         padding-bottom: 70px;
     }
 }
 
 .note-area {
-    background-color: #0000002e;
+    background-color: fade(@shadow-color, 45%);
     padding: 30px;
     color: #fff;
+    .border-radius(10px);
     
     a {
         color: #fff;
+        text-decoration: underline !important;
         
         &:hover {
             color: @main-color-3 !important;
@@ -398,12 +400,16 @@
             position: relative;
             margin-bottom: 5px;
             
+            a {
+                text-decoration: underline !important;
+            }
+            
             &:last-child {
                 margin-bottom: 0px;
             }
             
             &:before {
-                content: "\f0a4";
+                content: "\f08e";
                 font: normal normal normal 14px/1 FontAwesome;
                 position: absolute;
                 left: -29px;
@@ -475,6 +481,11 @@
             transform: translate3d(0px, 0, 0);
             opacity: 1;
         }
+    }
+    
+    .owl-wrapper {
+        display: flex !important;
+        flex-direction: row !important;
     }
 
     .owl-controls {
@@ -568,6 +579,7 @@
     
     .input-group {
         border: 1px solid #ddd;
+        width: 100%;
     }
 }
 
@@ -1923,7 +1935,7 @@ blockquote {
                 line-height: 58px;
                 width: 100%;
                 height: 55px;
-                margin-top: 7px;
+                // margin-top: 7px;
                 padding: 0 5px;
                 border: 0px solid !important;
                 background-color: @main-color-1;
@@ -1940,7 +1952,7 @@ blockquote {
                     // .box-shadow( 0px -2px 2px 0px fade(@shadow-color, 8%) );
 
                 a {
-                    height: 62px;
+                    // height: 62px;
                     margin: 0px;
                     line-height: 73px;
                     background-color: @background-1;
@@ -2472,7 +2484,7 @@ blockquote {
       
       &:before {
           z-index: 11;
-          background-color: fade(@background-5, 45%);
+          background-color: fade(@background-5, 55%);
       }
   }
 }
@@ -2539,8 +2551,8 @@ blockquote {
   z-index: 11;
 }
 .video-panel .videoPanels .videoPanelThumb .video {
-    padding-top: none !important; 
-    height: 0 !important;
+    padding-top: 0 !important; 
+    height: auto !important;
 }
 
 .video-panel .videoPanels .videoPanelThumb .video .video-async {
@@ -2617,17 +2629,17 @@ blockquote {
   }
 
   .video-panel .videoPanels .videoPanelThumb:nth-child(4) {
-    display: none;
+    display: block;
   }
 
   .video-panel .videoPanels .videoPanelThumb:nth-child(3) {
-    display: none;
+    display: block;
   }
 
   .video-panel .videoPanels .videoPanelThumb .hover-play {
     display: block;
-    bottom: 32%;
-    right: 20px;
+    // bottom: 32%;
+    // right: 20px;
   }
 }
 
@@ -2649,7 +2661,7 @@ blockquote {
 @media (max-width: 767px) {
   .video-panel .videoPanels .videoPanelThumb .hover-play {
     display: block;
-    bottom: initial;
+    // bottom: initial;
   }
 }
 
@@ -2690,17 +2702,25 @@ blockquote {
             font-size: 16px;
             padding: 15px 20px;
             min-width: 80px;
-            .text-shadow( 0px 1px 1px fade(@dark-color, 60%) );
+            // .text-shadow( 0px 1px 1px fade(@dark-color, 60%) );
         }
         
-        &:nth-of-type(1n):before {
-          background-color: rgba(255, 82, 82, 0.9);
+        img {
+            width: 50px;
         }
-        &:nth-of-type(2n):before {
-          background-color: rgba(82, 184, 255, 0.9);
-        }
-        &:nth-of-type(3n):before {
-          background-color: rgba(255, 200, 82, 0.9);
+        
+        // &:nth-of-type(1n):before {
+        //   background-color: rgba(255, 82, 82, 0.9);
+        // }
+        // &:nth-of-type(2n):before {
+        //   background-color: rgba(82, 184, 255, 0.9);
+        // }
+        // &:nth-of-type(3n):before {
+        //   background-color: rgba(255, 200, 82, 0.9);
+        // }
+        
+        &:before {
+          background-color: fade(@background-1, 96%);
         }
     }
     

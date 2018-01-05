@@ -1066,7 +1066,8 @@ small,
   color: rgba(35, 35, 35, 0.17);
   padding-right: 0px;
 }
-.single-form textarea {
+.single-form textarea,
+.single-form .textarea {
   height: 200px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -1078,12 +1079,13 @@ small,
 .single-form .select-outer::after {
   content: "";
   position: absolute;
-  top: 23px;
+  top: 20px;
   right: 23px;
   border-width: 7px 6px;
   border-style: solid;
   border-color: #232323 transparent transparent;
   pointer-events: none;
+  z-index: 111;
 }
 .single-form select {
   -moz-appearance: none !important;
@@ -1768,16 +1770,22 @@ small,
   padding-top: 274px;
 }
 .header-section-1 .section-separator {
-  padding-top: 55px;
+  padding-top: 75px;
   padding-bottom: 70px;
 }
 .note-area {
-  background-color: #0000002e;
+  background-color: rgba(0, 0, 0, 0.45);
   padding: 30px;
   color: #fff;
+  -webkit-border-radius: 10px ;
+  -moz-border-radius: 10px ;
+  -ms-border-radius: 10px ;
+  -o-border-radius: 10px ;
+  border-radius: 10px ;
 }
 .note-area a {
   color: #fff;
+  text-decoration: underline !important;
 }
 .note-area a:hover {
   color: #ffc300 !important;
@@ -1789,11 +1797,14 @@ small,
   position: relative;
   margin-bottom: 5px;
 }
+.note-area .nav li a {
+  text-decoration: underline !important;
+}
 .note-area .nav li:last-child {
   margin-bottom: 0px;
 }
 .note-area .nav li:before {
-  content: "\f0a4";
+  content: "\f08e";
   font: normal normal normal 14px/1 FontAwesome;
   position: absolute;
   left: -29px;
@@ -1866,6 +1877,10 @@ small,
 .carousel-home-slider .synced .btn-form {
   transform: translate3d(0px, 0, 0);
   opacity: 1;
+}
+.carousel-home-slider .owl-wrapper {
+  display: flex !important;
+  flex-direction: row !important;
 }
 .carousel-home-slider .owl-controls {
   margin: 0 !important;
@@ -1957,6 +1972,7 @@ small,
 }
 .registration-form .input-group {
   border: 1px solid #ddd;
+  width: 100%;
 }
 /** 
  * --------------------
@@ -3094,7 +3110,6 @@ blockquote {
   line-height: 58px;
   width: 100%;
   height: 55px;
-  margin-top: 7px;
   padding: 0 5px;
   border: 0px solid !important;
   background-color: #2A3855;
@@ -3117,7 +3132,6 @@ blockquote {
   -moz-osx-font-smoothing: grayscale;
 }
 .tab-item .nav-tabs li.active a {
-  height: 62px;
   margin: 0px;
   line-height: 73px;
   background-color: #FFFFFF;
@@ -3563,7 +3577,7 @@ blockquote {
 }
 .video-panel .videoPanels .videoPanelThumb .bg-overlay-dark:before {
   z-index: 11;
-  background-color: rgba(29, 29, 29, 0.45);
+  background-color: rgba(29, 29, 29, 0.55);
 }
 .video-panel .videoPanels .videoPanelThumb:last-child {
   margin-right: 0px;
@@ -3611,8 +3625,8 @@ blockquote {
   z-index: 11;
 }
 .video-panel .videoPanels .videoPanelThumb .video {
-  padding-top: none !important;
-  height: 0 !important;
+  padding-top: 0 !important;
+  height: auto !important;
 }
 .video-panel .videoPanels .videoPanelThumb .video .video-async {
   position: inherit !important;
@@ -3679,15 +3693,13 @@ blockquote {
     justify-content: flex-end;
   }
   .video-panel .videoPanels .videoPanelThumb:nth-child(4) {
-    display: none;
+    display: block;
   }
   .video-panel .videoPanels .videoPanelThumb:nth-child(3) {
-    display: none;
+    display: block;
   }
   .video-panel .videoPanels .videoPanelThumb .hover-play {
     display: block;
-    bottom: 32%;
-    right: 20px;
   }
 }
 .video-panel .videoPanels .videoPanelThumb .hover-play {
@@ -3707,7 +3719,6 @@ blockquote {
 @media (max-width: 767px) {
   .video-panel .videoPanels .videoPanelThumb .hover-play {
     display: block;
-    bottom: initial;
   }
 }
 .video-panel .videoPanels .videoPanelThumb.now-playing .hover-play {
@@ -3735,20 +3746,12 @@ blockquote {
   font-size: 16px;
   padding: 15px 20px;
   min-width: 80px;
-  -webkit-text-shadow: 0px 1px 1px rgba(35, 35, 35, 0.6) ;
-  -moz-text-shadow: 0px 1px 1px rgba(35, 35, 35, 0.6) ;
-  -ms-text-shadow: 0px 1px 1px rgba(35, 35, 35, 0.6) ;
-  -o-text-shadow: 0px 1px 1px rgba(35, 35, 35, 0.6) ;
-  text-shadow: 0px 1px 1px rgba(35, 35, 35, 0.6) ;
 }
-.tag-list .tag:nth-of-type(1n):before {
-  background-color: rgba(255, 82, 82, 0.9);
+.tag-list .tag img {
+  width: 50px;
 }
-.tag-list .tag:nth-of-type(2n):before {
-  background-color: rgba(82, 184, 255, 0.9);
-}
-.tag-list .tag:nth-of-type(3n):before {
-  background-color: rgba(255, 200, 82, 0.9);
+.tag-list .tag:before {
+  background-color: rgba(255, 255, 255, 0.96);
 }
 .tag-list .each-item .inner {
   padding: 30px 25px;
