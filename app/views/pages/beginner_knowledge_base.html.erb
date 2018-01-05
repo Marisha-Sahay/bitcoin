@@ -90,18 +90,19 @@
                                         
                                         <div class="carousel-container features-content">
                                             <div class="carousel-wrapper owl-carousel">
-                                              
-                                                <% videos[0].each do |video| %>
+                                              <% @videos_two.each do |video| %>
+                                                <% str1 = "#{video.link}" %>
+                                                <% str2 = str1.split("=") %>
                                                 <div class="item">
                                                     <div class="item-inner text-center">
                                     
                                                         <!--  Start: Video Area  "PASTE YOUR VIDEO LINK HERE " -->
                                                         <div class="video background-2">
-                                                           <iframe class="video-async" data-source="vimeo"  data-color="ffc300" src="<%= video[1] %>?color=ffc300&title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <!--  Video Link Goes Here--> 
+                                                           <iframe class="video-async" data-source="vimeo"  data-color="ffc300" src="https://www.youtube.com/embed/<%= str2[1] %>?color=ffc300&title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <!--  Video Link Goes Here--> 
                                                         </div>
                                                         <!--  End: Video Area  -->
                                                         <div class="margin-t-20">
-                                                            <h4><%= video[0] %></h4>
+                                                            <h4></h4>
                                                         </div>
                                                        
                                                     </div>
@@ -117,17 +118,19 @@
                                         <div class="carousel-container features-content">
                                             <div class="carousel-wrapper owl-carousel">
                                               
-                                                <% videos[1].each do |video| %>
+                                                <% @videos_five.each do |video| %>
+                                                    <% str1 = "#{video.link}" %>
+                                                    <% str2 = str1.split("=") %>
                                                 <div class="item">
                                                     <div class="item-inner text-center">
                                     
                                                         <!--  Start: Video Area  "PASTE YOUR VIDEO LINK HERE " -->
                                                         <div class="video background-2">
-                                                           <iframe class="video-async" data-source="vimeo"  data-color="ffc300" src="<%= video[1] %>?color=ffc300&title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <!--  Video Link Goes Here--> 
+                                                           <iframe class="video-async" data-source="vimeo"  data-color="ffc300" src="https://www.youtube.com/embed/<%= str2[1] %>?color=ffc300&title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <!--  Video Link Goes Here--> 
                                                         </div>
                                                         <!--  End: Video Area  -->
                                                         <div class="margin-t-20">
-                                                            <h4><%= video[0] %></h4>
+                                                            <h4></h4>
                                                         </div>
                                                        
                                                     </div>
@@ -143,17 +146,19 @@
                                         <div class="carousel-container features-content">
                                             <div class="carousel-wrapper owl-carousel">
                                               
-                                                <% videos[2].each do |video| %>
+                                                <% @videos_ten.each do |video| %>
+                                                <% str1 = "#{video.link}" %>
+                                                <% str2 = str1.split("=") %>
                                                 <div class="item">
                                                     <div class="item-inner text-center">
                                     
                                                         <!--  Start: Video Area  "PASTE YOUR VIDEO LINK HERE " -->
                                                         <div class="video background-2">
-                                                           <iframe class="video-async" data-source="vimeo"  data-color="ffc300" src="<%= video[1] %>?color=ffc300&title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <!--  Video Link Goes Here--> 
+                                                           <iframe class="video-async" data-source="vimeo"  data-color="ffc300" src="https://www.youtube.com/embed/<%= str2[1] %>?color=ffc300&title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <!--  Video Link Goes Here--> 
                                                         </div>
                                                         <!--  End: Video Area  -->
                                                         <div class="margin-t-20">
-                                                            <h4><%= video[0] %></h4>
+                                                            <h4></h4>
                                                         </div>
                                                        
                                                     </div>

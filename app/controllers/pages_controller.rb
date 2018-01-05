@@ -7,8 +7,8 @@ class PagesController < ApplicationController
     @posts = News.distinct(:title).order('published DESC, performance_score DESC').limit(13)
     @prices = Unirest.get("https://api.coinmarketcap.com/v1/ticker/?limit=10").body
     @contents = FeaturedContent.all.limit 5
-    @videos = Video.all
-    @first_video = Video.first
+    @videos = Video.all.shuffle[0..22]
+    @videos_new = Video.all.shuffle[0..22]
   end
   def subscrib
     @prices = Unirest.get("https://api.coinmarketcap.com/v1/ticker/?limit=10").body
@@ -26,6 +26,9 @@ class PagesController < ApplicationController
   end
   
   def beginner_knowledge_base
+    @videos_two = Video.where("length = 2").limit 3
+    @videos_five = Video.where("length = 5").limit 3
+    @videos_ten = Video.where("length >= 10").limit 3
   end
   
   def trader_investor_lp

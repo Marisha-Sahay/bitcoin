@@ -306,7 +306,7 @@
                 <div class="videoPanels col-xs-12">
                     
                     <% count = 1
-                    @videos.each do |video| %>
+                    @videos_new.each do |video| %>
                         <% if video.link.include? "youtube" %>
                             <% str1 = "#{video.link}" %>
                             <% str2 = str1.split("=") %>
