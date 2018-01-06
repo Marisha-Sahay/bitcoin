@@ -6,7 +6,11 @@ class Api::V1::NewsController < ApplicationController
   end
   
   def index
-    @news = News.all
+    if (params[:filter_key])
+      @news = News.where("lower(title) LIKE ? OR lower(description) LIKE ?", "%#{params[:filter_key].downcase}%", "%#{params[:filter_key].downcase}%")
+    else
+      @news = News.all
+    end
     render json:@news
   end
 
