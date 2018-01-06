@@ -51,7 +51,7 @@ class PagesController < ApplicationController
   def news
     @coins = Coin.all
     key = params[:filter_key]
-    if key.length > 0
+    if key
       @news = Unirest.get("http://www.bitcoincaffe.com/api/v1/news?filter_key=#{key}").body
     else 
       @news = Unirest.get("http://www.bitcoincaffe.com/api/v1/news").body
