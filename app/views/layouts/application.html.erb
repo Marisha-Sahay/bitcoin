@@ -27,61 +27,63 @@
   ============================= -->
   <nav class="navbar nav-theme-4 navbar-fixed-top main-navbar-top"> <!-- id="main-navbar-top" > -->
     <div class="container relative">
-      <div class="navbar-header">
-
-          <!-- Menu Button show Mobile view -->
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-menu" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar icon-bar-top"></span>
-              <span class="icon-bar icon-bar-middle"></span>
-              <span class="icon-bar icon-bar-bottom"></span>
-          </button>
-
-          <!-- TEMPLATE LOGO LIGHT -->
-          <a class="navbar-brand light-logo " href="/"><%= image_tag("bitcaffe-white.png",class: "logo") %></a>
+      <div class="col-xs-12">
+        <div class="navbar-header">
   
-      </div> <!-- End: .container -->
+            <!-- Menu Button show Mobile view -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-menu" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar icon-bar-top"></span>
+                <span class="icon-bar icon-bar-middle"></span>
+                <span class="icon-bar icon-bar-bottom"></span>
+            </button>
   
-      <div class="collapse navbar-collapse" id="js-navbar-menu">
-        <ul id="nav" class="nav navbar-right navbar-nav">
-            <li class="nav-def social-inline text-center">
-                <h6 class="title">Follow Us</h6>
-                <hr/>
-                <div class="">
-                  <a href="http://www.linkedin.com/company/18200105" target="_blank">
-                      <i class="fa fa-linkedin"></i>
-                  </a> 
-                  <a href="//twitter.com/bitcaffe256" target="_blank">
-                      <i class="fa fa-twitter"></i>
-                  </a>
-                  <a href="http://www.facebook.com/bitcaffe" target="_blank">
-                      <i class="fa fa-facebook"></i>
-                  </a>
-                </div>
-            </li>
-            <li class="active">
-                <%= link_to "Home", url_for("/"), class: "nav-links", :data => { :reload => true } %>
-            </li>
-            <li>
-              <%= link_to "News", url_for("/news"), class: "nav-links", :data => { :reload => true } %>
-            </li>
-            <li>
-              <%= link_to "Resources", url_for("/resources"), class: "nav-links", :data => { :reload => true } %>
-            </li>
-            <% if current_user %>
-            <li>
-              <a class="nav-links" data-reload="true" href="/logout"><i class='fa fa-sign-out'></i> &nbsp; Logout</a>
-            </li>
-            <% else %>
-            <li>
-              <a class="nav-links" data-reload="true" href="/signup"><i class='fa fa-user'></i> &nbsp; Sign-Up</a>
-            </li>
-            <li>
-              <a class="nav-links" data-reload="true" href="/login"><i class='fa fa-sign-in'></i> &nbsp; Login</a>
-            </li>
-            <% end %>
-        </ul>
-      </div> <!-- End: .navbar-collapse -->
+            <!-- TEMPLATE LOGO LIGHT -->
+            <a class="navbar-brand light-logo " href="/"><%= image_tag("bitcaffe-white.png",class: "logo") %></a>
+    
+        </div> <!-- End: .container -->
+    
+        <div class="collapse navbar-collapse" id="js-navbar-menu">
+          <ul id="nav" class="nav navbar-right navbar-nav">
+              <li class="nav-def social-inline text-center">
+                  <h6 class="title">Follow Us</h6>
+                  <hr/>
+                  <div class="">
+                    <a href="http://www.linkedin.com/company/18200105" target="_blank">
+                        <i class="fa fa-linkedin"></i>
+                    </a> 
+                    <a href="//twitter.com/bitcaffe256" target="_blank">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                    <a href="http://www.facebook.com/bitcaffe" target="_blank">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                  </div>
+              </li>
+              <li class="active">
+                  <%= link_to "Home", url_for("/"), class: "nav-links", :data => { :reload => true } %>
+              </li>
+              <li>
+                <%= link_to "News", url_for("/news"), class: "nav-links", :data => { :reload => true } %>
+              </li>
+              <li>
+                <%= link_to "Resources", url_for("/resources"), class: "nav-links", :data => { :reload => true } %>
+              </li>
+              <% if current_user %>
+              <li>
+                <a class="nav-links" data-reload="true" href="/logout"><i class='fa fa-sign-out'></i> &nbsp; Logout</a>
+              </li>
+              <% else %>
+              <li>
+                <a class="nav-links" data-reload="true" href="/signup"><i class='fa fa-user'></i> &nbsp; Sign-Up</a>
+              </li>
+              <li>
+                <a class="nav-links" data-reload="true" href="/login"><i class='fa fa-sign-in'></i> &nbsp; Login</a>
+              </li>
+              <% end %>
+          </ul>
+        </div> <!-- End: .navbar-collapse -->
+      </div>
     </div> <!-- End: .navbar-header-outer -->
   </nav>
   <!-- End: Navbar Area
@@ -327,10 +329,10 @@
     }
     
     $(document).ready(function() {
-      $('.header-section-1').find('.carousel-home-slider').css('margin-top', $('.navbar-header').height());
+      $('.header-section-1, .default-home').find('.carousel-home-slider, .default-seperator').css('margin-top', $('.navbar-header').height());
     });
     $(window).resize(function() {
-      $('.header-section-1').find('.carousel-home-slider').css('margin-top', $('.navbar-header').height());
+      $('.header-section-1, .default-home').find('.carousel-home-slider, .default-seperator').css('margin-top', $('.navbar-header').height());
     });
     
     
