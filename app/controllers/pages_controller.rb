@@ -47,19 +47,16 @@ class PagesController < ApplicationController
     response = Unirest.get("http://webhose.io/search?token=c015c400-6e3b-4540-a2c0-d643354db3cc&format=json&q=bitcoin%20cryptocurrency&sort=relevancy").body
     @posts = response['posts']
   end
+  
   def news
-    # response = Unirest.get("http://webhose.io/search?token=d8031f4d-87f0-4722-aef6-180d877ebc6d&format=json&q=bitcoin%20cryptocurrency&sort=relevancy").body
-    # response = Unirest.get("http://webhose.io/search?token=c015c400-6e3b-4540-a2c0-d643354db3cc&format=json&q=bitcoin%20cryptocurrency&sort=relevancy").body
-    # @posts = response['posts']
     if params[:filter_key]
-      @news = Unirest.get("http://www.bitcoincaffe.com/api/v1/news?filter_key=#{params[:filter_key]}")
+      @posts = Unirest.get("http://www.bitcoincaffe.com/api/v1/news?filter_key=#{params[:filter_key]}")
     else 
-      @news = News.distinct(:title).order('published DESC, performance_score DESC')
+      @posts = News.distinct(:title).order('published DESC, performance_score DESC')
     end
-    @posts = News.distinct(:title).order('published DESC, performance_score DESC')
     @coins = Coin.all
   end
-  
+
   def cafe
     response = Unirest.get("https://newsapi.org/v1/sources?category=technology").body
     @posts = response['sources']
