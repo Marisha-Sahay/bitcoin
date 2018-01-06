@@ -49,13 +49,7 @@ class PagesController < ApplicationController
   end
 
   def news
-    @coins = Coin.all
-    key = params[:filter_key]
-    if key
-      @news = Unirest.get("http://www.bitcoincaffe.com/api/v1/news?filter_key=#{key}").body
-    else 
-      @news = Unirest.get("http://www.bitcoincaffe.com/api/v1/news").body
-    end
+    @coins = Coin.all.limit 10
     @posts = News.distinct(:title).order('published DESC, performance_score DESC')
   end
 

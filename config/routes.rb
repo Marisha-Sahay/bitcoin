@@ -58,6 +58,7 @@ Rails.application.routes.draw do
   get '/beginner_knowledge_base', to: 'pages#beginner_knowledge_base'
   get '/trader_investor_lp', to: 'pages#trader_investor_lp'
 
+  get '/coins/:id', to: 'coins#show'
 
   namespace :api do
     namespace :v1 do
