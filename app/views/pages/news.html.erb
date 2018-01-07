@@ -28,14 +28,18 @@
                         
                         <% @coins.each do |coin| %>
                             <div class="tag relative bg-cover bg-overlay-dark shadow" style="background-image: url(<%= coin.image_url %>);">
-                            <%= link_to(image_tag("#{coin.image_url}", :alt => "", :class =>"img-responsive"),"/coins/#{coin.id}", :data => { :reload => true }) %> 
-                                <p class="margin-t-15"><%= coin.symbol %></p>
-                            </a>
-                            <!--<div class="share-link">-->
-                            <!--    <a href="<%= coin.twitter_link %>" title="Twitter Link" target="_blank"><i class="fa fa-twitter"></i></a>-->
-                            <!--    <a href="<%= coin.reddit_link %>" title="Reddit Link" target="_blank"><i class="fa fa-reddit-alien"></i></a>-->
-                            <!--</div>-->
-                        </div>
+         
+                                <%= link_to "/coins/#{coin.id}", :data => { :reload => true } do %>
+                                    <%= image_tag("#{coin.image_url}", :alt => "", :class =>"img-responsive") %>
+                                    <%= content_tag(:p, "#{coin.symbol}", :class =>"margin-t-15") %>
+                                <% end %>
+                                
+                                
+                                <!--<div class="share-link">-->
+                                <!--    <a href="<%= coin.twitter_link %>" title="Twitter Link" target="_blank"><i class="fa fa-twitter"></i></a>-->
+                                <!--    <a href="<%= coin.reddit_link %>" title="Reddit Link" target="_blank"><i class="fa fa-reddit-alien"></i></a>-->
+                                <!--</div>-->
+                            </div>
                         <% end %>
                     </div>
 

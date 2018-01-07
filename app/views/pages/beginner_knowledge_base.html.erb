@@ -1,10 +1,10 @@
 <!-- Start: Header Section
 ================================ -->
-<section class="default-home relative">
+<section class="header-section-1 default-home relative bg-overlay-3 bg-cover" style="background-image: url(<%= asset_path 'bg-3.jpg' %>);">
     <div class="container">
-        <div class="row section-separator">
+        <div class="row section-separator default-seperator">
 
-             <div class="cd-content-animation text-center">
+             <div class="cd-content-animation text-center light-text">
                 <!-- Start: Section Header -->
                 <div class="section-header relative col-md-10 col-md-offset-1 col-sm-12" >
                 
@@ -26,6 +26,8 @@
 </section>
 <!-- End: Header Section
 ================================ -->
+
+
 
 
 
@@ -58,7 +60,7 @@
                                 </ul>
                                 <!-- Tab panes -->
                                 <div class="tab-content">
-                                    <div role="tabpanel" class="tab-pane active" id="2m-video">
+                                    <div role="tabpanel" class="tab-pane tab-small active" id="2m-video">
                                         
                                         <div class="carousel-container features-content">
                                             <div class="carousel-wrapper owl-carousel">
@@ -84,8 +86,8 @@
                                             </div> <!-- End: .carousel-wrapper -->
                                         </div> <!-- End: .carousel-container -->
                                         
-                                    </div> <!-- End: .tab-pane -->
-                                    <div role="tabpanel" class="tab-pane" id="5m-video">
+                                    </div> <!-- End: .tab-pane tab-small -->
+                                    <div role="tabpanel" class="tab-pane tab-small" id="5m-video">
                                         
                                         <div class="carousel-container features-content">
                                             <div class="carousel-wrapper owl-carousel">
@@ -112,8 +114,8 @@
                                             </div> <!-- End: .carousel-wrapper -->
                                         </div> <!-- End: .carousel-container -->
                                         
-                                    </div> <!-- End: .tab-pane -->
-                                    <div role="tabpanel" class="tab-pane" id="10m-video">
+                                    </div> <!-- End: .tab-pane tab-small -->
+                                    <div role="tabpanel" class="tab-pane tab-small" id="10m-video">
                                         
                                         <div class="carousel-container features-content">
                                             <div class="carousel-wrapper owl-carousel">
@@ -140,7 +142,7 @@
                                             </div> <!-- End: .carousel-wrapper -->
                                         </div> <!-- End: .carousel-container -->
                                         
-                                    </div> <!-- End: .tab-pane -->
+                                    </div> <!-- End: .tab-pane tab-small -->
                                 </div> <!-- End: .tab-content -->
 
                             </div>
@@ -169,14 +171,16 @@
                                 <!-- Tab panes -->
                                 <div class="tab-content business-item">
                                     
-                                    <div role="tabpanel" class="tab-pane active" id="business">
+                                    <div role="tabpanel" class="tab-pane tab-small active" id="business">
                                         
                                         <div class="carousel-container features-content">
                                             <div class="carousel-wrapper owl-carousel">
                                               
                                                 <div class="item">
                                                     <div class="item-inner text-left">
-                                                        <iframe src="https://dealbook.nytimes.com/2014/01/21/why-bitcoin-matters/" height="180px" width="475px" name="iframe_a" class="thumbnail bg-cover" ></iframe>
+                                                        <!--<div class="link-live-preview" data-link="https://startupboy.com/2014/04/01/the-fifth-protocol/"></div>-->
+                                                        
+                                                        <iframe src="https://dealbook.nytimes.com/2014/01/21/why-bitcoin-matters/" height="180px" name="iframe_a" class="thumbnail bg-cover" ></iframe>
                                                         <!-- Start: Section Header -->
                                                         <div class="section-header">
                                                             <h4 class="section-heading"><a href="blog-details.html">Why Bitcoin Matters</a></h4>
@@ -199,7 +203,7 @@
                                                 </div> <!-- End: .item -->
                                                 <div class="item">
                                                     <div class="item-inner text-left">
-                                                       <iframe src="http://avc.com/2017/06/icos-and-vcs/" height="180px" width="475px" name="iframe_a" class="thumbnail bg-cover" ></iframe>
+                                                       <iframe src="http://avc.com/2017/06/icos-and-vcs/" height="180px" name="iframe_a" class="thumbnail bg-cover" ></iframe>
                                                         <!-- Start: Section Header -->
                                                         <div class="section-header">
                                                             <h4 class="section-heading"><a href="blog-details.html">ICOs and VCs</a></h4>
@@ -222,7 +226,7 @@
                                                 </div> <!-- End: .item -->
                                                 <div class="item">
                                                     <div class="item-inner text-left">
-                                                        <iframe src="https://startupboy.com/2013/11/07/bitcoin-the-internet-of-money/" height="180px" width="475px" name="iframe_a" class="thumbnail bg-cover" ></iframe>
+                                                        <iframe src="https://startupboy.com/2013/11/07/bitcoin-the-internet-of-money/" height="180px" name="iframe_a" class="thumbnail bg-cover" ></iframe>
                                                         <!-- Start: Section Header -->
                                                         <div class="section-header">
                                                             <h4 class="section-heading"><a href="blog-details.html">Bitcoin – The Internet of Money</a></h4>
@@ -246,15 +250,15 @@
                                                 
                                             </div> <!-- End: .carousel-wrapper -->
                                         </div> <!-- End: .carousel-container -->
-                                    </div> <!-- End: .tab-pane -->
-                                    <div role="tabpanel" class="tab-pane" id="technical">
+                                    </div> <!-- End: .tab-pane tab-small -->
+                                    <div role="tabpanel" class="tab-pane tab-small" id="technical">
                                         
                                         <div class="carousel-container features-content">
                                             <div class="carousel-wrapper owl-carousel">
                                               
                                                 <div class="item">
                                                     <div class="item-inner text-left">
-                                                        <iframe src="https://bitcoin.org/bitcoin.pdf" height="180px" width="475px" name="iframe_a" class="thumbnail bg-cover" ></iframe>
+                                                        <iframe src="https://bitcoin.org/bitcoin.pdf" height="180px" name="iframe_a" class="thumbnail bg-cover" ></iframe>
                                                         <!-- Start: Section Header -->
                                                         <div class="section-header">
                                                             <h4 class="section-heading"><a href="blog-details.html">Bitcoin: A Peer-to-Peer Electronic Cash System</a></h4>
@@ -277,7 +281,7 @@
                                                 </div> <!-- End: .item -->
                                                 <div class="item">
                                                     <div class="item-inner text-left">
-                                                        <iframe src="https://startupboy.com/2014/04/01/the-fifth-protocol/" height="180px" width="475px" name="iframe_a" class="thumbnail bg-cover" ></iframe>
+                                                        <iframe src="https://startupboy.com/2014/04/01/the-fifth-protocol/" height="180px" name="iframe_a" class="thumbnail bg-cover" ></iframe>
                                                         <!-- Start: Section Header -->
                                                         <div class="section-header">
                                                             <h4 class="section-heading"><a href="blog-details.html">The Fifth Protocol</a></h4>
@@ -300,7 +304,7 @@
                                                 </div> <!-- End: .item -->
                                                 <div class="item">
                                                     <div class="item-inner text-left">
-                                                        <iframe src="https://cdn-images-1.medium.com/max/2000/1*GVTJpn1kD0GZdR8n5tTVMg.jpeg" height="180px" width="475px" name="iframe_a" class="thumbnail bg-cover" ></iframe>
+                                                        <iframe src="https://cdn-images-1.medium.com/max/2000/1*GVTJpn1kD0GZdR8n5tTVMg.jpeg" height="180px" name="iframe_a" class="thumbnail bg-cover" ></iframe>
                                     
                                                         <!-- Start: Section Header -->
                                                         <div class="section-header">
@@ -325,7 +329,7 @@
                                                 
                                             </div> <!-- End: .carousel-wrapper -->
                                         </div> <!-- End: .carousel-container -->
-                                    </div> <!-- End: .tab-pane -->
+                                    </div> <!-- End: .tab-pane tab-small -->
                                     
                                 </div> <!-- End: .tab-content -->
 
@@ -354,19 +358,69 @@
 
 <!-- Start: Features Section
 ================================== -->
-<section class="features-section background-1"> 
-    <div class="container">
-        <div class="row">
+<!--<section class="features-section background-1"> -->
+<!--    <div class="container">-->
+<!--        <div class="row">-->
             
-            <div class="col-xs-12"> 
-                <h2 class="contact-button text-center">
-                    <span>Fun Facts</span>
-                    <!--<button class="btn btn-fill-big" data-toggle="modal" data-target=".contact-us-model">Contact Us</button>-->
-                </h2>
-            </div>
+<!--            <div class="col-xs-12"> -->
+<!--                <h2 class="contact-button text-center">-->
+<!--                    <span>Fun Facts</span>-->
+<!--                </h2>-->
+<!--            </div>-->
             
-        </div> <!-- End: .row .section-separator  -->
-    </div> <!-- End: .container  -->
-</section>
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 <!-- End: Features Section
 ================================== -->
+
+
+
+
+<script>
+
+    // $linkLive = $('.link-live-preview');
+    // $linkLive.preview({key: 'c31f5208f04511e0b79e4040d3dc5c07'});
+    
+    // $('#preview_form').on('submit', function(){
+    //     // Preview data.
+    //     var preview = $linkLive.data('preview');
+
+    //     // add the preview data to the form if you are into that sort of thing.
+    //     $linkLive.addInputs(preview,
+    //         ['title', 'description', 'thumbnail_url',
+    //         'favicon_url', 'provider_name', 'provider_url', 'html']);
+
+
+    //     // Close the selector
+    //     $linkLive.trigger('close');
+    //     $linkLive.attr('data-link');
+
+    //     // Create a post using mustache, i.e. the nice way.
+    //     var template = ['<div class="row">',
+    //       '<div class="large-3 columns">',
+    //         '<img class="thumb" src="{{thumbnail_url}}"></img>',
+    //       '</div>',
+    //       '<div class="large-9 column">',
+    //         '<a href="{{original_url}}">{{title}}</a>',
+    //         '<p>{{description}}</p>',
+    //       '</div>',
+    //     '</div>'].join('');
+
+    //     html = $(Mustache.to_html(template, preview));
+    //     html.data('preview', preview);
+    //     html.on('click', function(){
+    //       var data = $(this).data('preview');
+    //       // Insert the video or rich object.
+    //       if (data.media.type === 'video' || data.media.type === 'rich'){
+    //         $(this).html(data.media.html);
+    //         return false;
+    //       }
+    //       return true;
+    //     });
+    //     $linkLive.append(html);
+
+    //     return false;
+    // });
+    
+</script>

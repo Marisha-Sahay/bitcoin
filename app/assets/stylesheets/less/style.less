@@ -498,7 +498,7 @@
                 background-color: rgba(148, 148, 148, 0.4) !important;
                 color: @light-color;
                 font-size: 25px;
-                padding: 4px 0;
+                padding: 3px 0;
                 .transition( 0.3s );
                 height: 45px;
                 width: 45px;
@@ -1249,6 +1249,7 @@ blockquote {
         margin: 0px;
         font-family: @font-2;
         font-style: normal;
+        height: 48px;
     }
 
     .form-control {
@@ -2730,23 +2731,44 @@ blockquote {
             border-radius: 10px !important;
             overflow: hidden;
             line-height: 1.1;
+            background-color: @background-1;
+            border-bottom: 3px solid rgb(150, 150, 149);
+            .box-shadow( 0 3px 30px 0 rgba(0, 0, 0, 0.1) );
+            .transition(0.3s);
             
-            .title {
+            .title,
+            .fa {
                 font-weight: 500;
                 margin: 0px;
                 font-size: 20px;
-                .text-shadow( 0px 1px 1px fade(@dark-color, 60%) );
+                // .text-shadow( 0px 1px 1px fade(@dark-color, 60%) );
+                .transition(0.3s);
             }
         }
         
-        &:nth-of-type(1n) .inner:before {
-          background-color: rgba(255, 82, 82, 0.84);
+        a:hover {
+            .inner {
+                .box-shadow( 0 1px 3px 0 rgba(0, 0, 0, 0.12) );
+                border-bottom-color: @main-color-3;
+                
+                .title,
+                .fa {
+                    color: @main-color-3;
+                }
+            }
         }
-        &:nth-of-type(2n) .inner:before {
-          background-color: rgba(82, 184, 255, 0.84);
-        }
-        &:nth-of-type(3n) .inner:before {
-          background-color: rgba(255, 200, 82, 0.84);
+        
+        // &:nth-of-type(1n) .inner:before {
+        //   background-color: rgba(255, 82, 82, 0.84);
+        // }
+        // &:nth-of-type(2n) .inner:before {
+        //   background-color: rgba(82, 184, 255, 0.84);
+        // }
+        // &:nth-of-type(3n) .inner:before {
+        //   background-color: rgba(255, 200, 82, 0.84);
+        // }
+        .inner:before {
+          background-color: fade(@background-1, 100%);
         }
         
         > a {

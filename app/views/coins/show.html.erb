@@ -27,10 +27,12 @@
                         <div class="tag-list text-center">
 
                             <% @all_coins.each do |coin| %>
-                                    <div class="tag relative bg-cover bg-overlay-dark shadow" style="background-image: url(<%= coin.image_url %>);">
-                                        <%= link_to(image_tag("#{coin.image_url}", :alt => "", :class =>"img-responsive"),"/coins/#{coin.id}", :data => { :reload => true }) %> 
-                                        <p class="margin-t-15"><%= coin.symbol %></p>
-                                    </div>
+                                <div class="tag relative bg-cover bg-overlay-dark shadow" style="background-image: url(<%= coin.image_url %>);">
+                                    <%= link_to "/coins/#{coin.id}", :data => { :reload => true } do %>
+                                        <%= image_tag("#{coin.image_url}", :alt => "", :class =>"img-responsive") %>
+                                        <%= content_tag(:p, "#{coin.symbol}", :class =>"margin-t-15") %>
+                                    <% end %>
+                                </div>
                             <% end %>
                         </div>
                     </div>
