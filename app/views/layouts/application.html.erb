@@ -16,7 +16,7 @@
     <%= csrf_meta_tags %>
   
   <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700|Open+Sans:300,400,600,700" rel="stylesheet">
-   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag    'less/application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -241,10 +241,14 @@
     </div> <!-- End: .container  -->
   </footer>
   
+    <script type="text/javascript" async src="http://guteurls.de/guteurls.js" selector=".myP"></script>
+  
     <!-- Go to www.addthis.com/dashboard to customize your tools --> 
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59bf0f900e22530f"></script> 
   </body>
   </html>
+  
+  
 
   <script type="text/javascript">
     $(function() {
@@ -311,13 +315,7 @@
       navigationText : ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
       dragBeforeAnimFinish : false,
       mouseDrag : false,
-      touchDrag : false,
-      onRefresh: function () {
-            testimonialHomeSlider.find('.owl-item').height('');
-        },
-        onRefreshed: function () {
-            testimonialHomeSlider.find('.owl-item').height(testimonialHomeSlider.height());
-        }
+      touchDrag : false
     });
     function syncPosition(el){
       var current = this.currentItem;
