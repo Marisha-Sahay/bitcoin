@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  
-    <!-- Google ADD -->
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({
-        google_ad_client: "ca-pub-9940359673199194",
-        enable_page_level_ads: true
-      });
-    </script>
-    <!-- end google add -->
+<head>
 
-    <title>BitCaffe</title>
-    <%= csrf_meta_tags %>
+  <!-- Google ADD -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9940359673199194",
+    enable_page_level_ads: true
+    });
+  </script>
+  <!-- end google add -->
+
+  <title>BitCaffe</title>
+  <%= csrf_meta_tags %>
   
+  <!--Google Font-->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700|Open+Sans:300,400,600,700" rel="stylesheet">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag    'less/application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  
+  <!--Template StyleSheet-->
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag    'less/application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  
+  <!--Template Main Sctipt-->
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-  <body>
+</head>
+<body>
   
   <!-- Start: Navbar Area
   ============================= -->
@@ -241,134 +246,147 @@
     </div> <!-- End: .container  -->
   </footer>
   
-    <!-- Go to www.addthis.com/dashboard to customize your tools --> 
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59bf0f900e22530f"></script> 
-  </body>
-  </html>
+  
+  
+  
+  
+  <!-- Go to www.addthis.com/dashboard to customize your tools --> 
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59bf0f900e22530f"></script> 
+  <script type="text/javascript">
+    (function($) {
+      'use strict';
+      
+      $(function() {
+        $(".dropdown").on("mouseover", function() {
+          $(this).addClass("open");
+        });
+        $(".dropdown").on("mouseout", function() {
+          $(this).removeClass("open");
+        });
+        $(".dropdown-toggle, .navbar-brand").on("click", function() {
+          if (window.location.pathname == $(this).attr("href")) {
+            return false;
+          } else {
+            window.location = $(this).attr("href");
+          }
+        });
+      }); 
+      $(function(){
+        $('a[data-reload="true"').on('click', function(e) {
+          window.location = $(e.target).attr('href');
+          window.location.reload(true);
+        });
+      });
+      
+      $(document).ready( function() {
+        
+          /**
+           * -----------------------------
+           * TESTIMONIAL SYNC WITH CLIENTS
+           * -----------------------------
+           */
+          var testimonialSlider = $(".carousel-wrapper"); // client's message
+          testimonialSlider.owlCarousel({
+            margin: 30,
+            autoPlay : 30000,
+            stopOnHover : true,
+            pagination: true,
+            singleItem : true
+          });
+          
+          
+          
+          /**
+           * -----------------------------
+           * TESTIMONIAL SYNC WITH CLIENTS
+           * -----------------------------
+           */
+          var testimonialHomeSlider = $(".carousel-home-slider .carousel-home-wrapper"); // client's message
+          testimonialHomeSlider.owlCarousel({
+            margin: 30,
+            autoPlay : 10000,
+            // autoHeight : true,
+            stopOnHover : true,
+            singleItem : true,
+            pagination:false,
+            slideSpeed : 900,
+            responsiveRefreshRate : 100,
+            afterInit : function(el){
+              el.find(".owl-item").eq(0).addClass("synced");
+            },
+            transitionStyle:"fade",
+            afterAction : syncPosition,
+            navigation : true,
+            navigationText : ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+            dragBeforeAnimFinish : false,
+            mouseDrag : false,
+            touchDrag : false
+          });
+          function syncPosition(el){
+            var current = this.currentItem;
+            testimonialHomeSlider
+              .find(".owl-item")
+              .removeClass("synced")
+              .eq(current)
+              .addClass("synced")
+          }
+          
+          $(document).ready(function() {
+            $('.header-section-1, .default-home').find('.carousel-home-slider, .default-seperator').css('margin-top', $('.navbar-header').height());
+          });
+          $(window).resize(function() {
+            $('.header-section-1, .default-home').find('.carousel-home-slider, .default-seperator').css('margin-top', $('.navbar-header').height());
+          });
+          
+          
+          
+          $('.video-panel').find('.videoPanelThumb').on('click', function(e) {
+            e.preventDefault();
+            
+            var selector = $(this),
+                mainArea = selector.closest('.video-panel'),
+                videoSection = '.videoPanelThumb',
+                video = selector.attr('data-video-id'),
+                title = selector.find('h3').text(),
+                url = selector.find('h3').attr('data-url'),
+                description = selector.find('.description').text();
+                
+            mainArea.find(videoSection).removeClass('now-playing');
+            selector.addClass('now-playing');
+              
+            var iframeID = mainArea.find('iframe.main-video-iframe'),
+                contentID = mainArea.find('.main-video-meta');
+                
+            var content = '<div class="desktop-subheadline">BitCaffe. Video</div>\
+                        <h2 class="main-headline">\
+                            <a href="' + url + '">' + title + '</a>\
+                        </h2>';
+                        //<div class="watch-button" data-video-id="' + video + '"></div>';
+            
+            iframeID.attr('src', video);
+            // contentID.html($content);
+            contentID.find('.main-headline').html( title );
+            contentID.find('.details p').html( description );
+            
+          });
+          
+          
+          /**
+           * -----------------
+           * INIT match height
+           * -----------------
+           */
+          $('.matchHeight .each-item .owl-wrapper-outer,\
+          .matchHeight .each-item .inner').matchHeight();
+    
+      });
+      
+    } (jQuery) );
+  </script>
+  
+</body>
+</html>
   
   
 
-  <script type="text/javascript">
-    $(function() {
-      $(".dropdown").on("mouseover", function() {
-        $(this).addClass("open");
-      });
-      $(".dropdown").on("mouseout", function() {
-        $(this).removeClass("open");
-      });
-      $(".dropdown-toggle, .navbar-brand").on("click", function() {
-        if (window.location.pathname == $(this).attr("href")) {
-          return false;
-        } else {
-          window.location = $(this).attr("href");
-        }
-      });
-    }); 
-    $(function(){
-      $('a[data-reload="true"').on('click', function(e) {
-        window.location = $(e.target).attr('href');
-        window.location.reload(true);
-      });
-    });
-    
-    
-    
-    /**
-     * -----------------------------
-     * TESTIMONIAL SYNC WITH CLIENTS
-     * -----------------------------
-     */
-    var testimonialSlider = $(".carousel-wrapper"); // client's message
-    testimonialSlider.owlCarousel({
-      margin: 30,
-      autoPlay : 30000,
-      stopOnHover : true,
-      pagination: true,
-      singleItem : true
-    });
-    
-    
-    
-    /**
-     * -----------------------------
-     * TESTIMONIAL SYNC WITH CLIENTS
-     * -----------------------------
-     */
-    var testimonialHomeSlider = $(".carousel-home-slider .carousel-home-wrapper"); // client's message
-    testimonialHomeSlider.owlCarousel({
-      margin: 30,
-      autoPlay : 10000,
-      // autoHeight : true,
-      stopOnHover : true,
-      singleItem : true,
-      pagination:false,
-      slideSpeed : 900,
-      responsiveRefreshRate : 100,
-      afterInit : function(el){
-        el.find(".owl-item").eq(0).addClass("synced");
-      },
-      transitionStyle:"fade",
-      afterAction : syncPosition,
-      navigation : true,
-      navigationText : ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
-      dragBeforeAnimFinish : false,
-      mouseDrag : false,
-      touchDrag : false
-    });
-    function syncPosition(el){
-      var current = this.currentItem;
-      testimonialHomeSlider
-        .find(".owl-item")
-        .removeClass("synced")
-        .eq(current)
-        .addClass("synced")
-    }
-    
-    $(document).ready(function() {
-      $('.header-section-1, .default-home').find('.carousel-home-slider, .default-seperator').css('margin-top', $('.navbar-header').height());
-    });
-    $(window).resize(function() {
-      $('.header-section-1, .default-home').find('.carousel-home-slider, .default-seperator').css('margin-top', $('.navbar-header').height());
-    });
-    
-    
-    
-    $('.video-panel').find('.videoPanelThumb').on('click', function(e) {
-      e.preventDefault();
-      
-      var selector = $(this),
-          mainArea = selector.closest('.video-panel'),
-          videoSection = '.videoPanelThumb',
-          video = selector.attr('data-video-id'),
-          title = selector.find('h3').text(),
-          url = selector.find('h3').attr('data-url'),
-          description = selector.find('.description').text();
-          
-      mainArea.find(videoSection).removeClass('now-playing');
-      selector.addClass('now-playing');
-        
-      var iframeID = mainArea.find('iframe.main-video-iframe'),
-          contentID = mainArea.find('.main-video-meta');
-          
-      $content = '<div class="desktop-subheadline">BitCaffe. Video</div>\
-                  <h2 class="main-headline">\
-                      <a href="' + url + '">' + title + '</a>\
-                  </h2>';
-                  //<div class="watch-button" data-video-id="' + video + '"></div>';
-      
-      iframeID.attr('src', video);
-      // contentID.html($content);
-      contentID.find('.main-headline').html( title );
-      contentID.find('.details p').html( description );
-      
-    });
-    
-    
-    /**
-     * -----------------
-     * INIT match height
-     * -----------------
-     */
-    $('.matchHeight .each-item .owl-wrapper-outer,\
-    .matchHeight .each-item .inner').matchHeight();
-  </script>
+

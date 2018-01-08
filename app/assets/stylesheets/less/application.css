@@ -3901,6 +3901,35 @@ blockquote {
   margin-left: 0 !important;
   margin-top: 0px !important;
 }
+.live-link-preview {
+  margin-bottom: 20px;
+}
+.live-link-preview > br,
+.live-link-preview .guteurlsTop {
+  display: none !important;
+}
+.live-link-preview iframe {
+  max-width: 100% !important;
+  min-width: 100% !important;
+  min-height: 479px !important;
+}
+.live-link-preview .guteurlsBox[guteurls-image] {
+  border: 1px solid #ddd;
+}
+.live-link-preview .guteurlsBox[guteurls-image] h1,
+.live-link-preview .guteurlsBox[guteurls-image] p,
+.live-link-preview .guteurlsBox[guteurls-image] .guteurlsBottom {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.live-link-preview .guteurlsBox[guteurls-image] h1,
+.live-link-preview .guteurlsBox[guteurls-image] .guteurlsBottom {
+  margin-top: 20px;
+}
+.live-link-preview .guteurlsBox[guteurls-image] p {
+  line-height: 1.4;
+  margin-top: 10px;
+}
 @media (max-width: 991px) {
   /**
    * ----------- 

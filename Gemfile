@@ -24,7 +24,7 @@ gem 'jquery-rails'
 gem 'autoprefixer-rails'
 
 # OwlCarousel-rails library
-gem 'owlcarousel-rails'
+# gem 'owlcarousel-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 gem 'rails_12factor', group: :production
