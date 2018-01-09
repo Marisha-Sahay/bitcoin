@@ -1,6 +1,6 @@
 namespace :import do
   task content: :environment do
-    # FeaturedContent.delete_all
+    FeaturedContent.delete_all
     response = Unirest.get("http://webhose.io/filterWebContent?token=c015c400-6e3b-4540-a2c0-d643354db3cc&format=json&ts=1508984148544&sort=crawled&q=(title%3A%22Bitcoin%22%20OR%20title%3A%22CryptoCurrency%22%20OR%20title%3A%22Etheruem%22%20OR%20title%3A%22Litecoin%22%20OR%20title%3A%22Ripple%22%20OR%20title%3A%22Monero%22%20OR%20title%3A%22Dash%22%20OR%20title%3A%22NEO%22%20OR%20title%3A%22Blockchain%22%20OR%20title%3A%22Decentralization%22%20OR%20title%3A%22Dapp%22%20OR%20title%3A%22Stellar%22%20OR%20title%3A%22ICO%22%20OR%20title%3A%22Token%22%20)%20(%20site%3A%22hackernoon.com%22%20OR%20site%3A%22aeon.co%22%20OR%20%22thecontrol.co%22)%20language%3Aenglish%20spam_score%3A%3C0.02").body
     posts = response['posts']
     posts.each do |post|
