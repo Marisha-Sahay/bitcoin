@@ -2907,3 +2907,42 @@ blockquote {
     
 }
 
+
+
+
+.live-link-preview {
+    margin-bottom: 20px;
+    
+    > br,
+    .guteurlsTop {
+        display: none !important;
+    }
+    
+    iframe {
+        max-width:100% !important;
+        min-width:100% !important;
+        min-height:479px !important;
+    }
+    
+    .guteurlsBox[guteurls-image] {
+        border: 1px solid #ddd;
+        
+        h1,
+        p,
+        .guteurlsBottom {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        
+        h1,
+        .guteurlsBottom {
+            margin-top: 20px;
+        }
+        
+        p {
+            line-height: 1.4;
+            margin-top: 10px;
+        }
+    }
+}
+
