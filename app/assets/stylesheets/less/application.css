@@ -3633,7 +3633,8 @@ blockquote {
   height: auto !important;
 }
 .video-panel .videoPanels .videoPanelThumb .video .video-async {
-  position: inherit !important;
+  position: relative !important;
+  height: auto !important;
 }
 @media (max-width: 767px) {
   .video-panel .videoPanels .videoPanelThumb .thumb-meta {
@@ -3991,8 +3992,14 @@ blockquote {
    * Features Item Defual Style
    * --------------------------
    */
+  .features-item .each-item {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
   .features-item .each-item:last-child {
     margin-bottom: 30px;
+    border-bottom: 0px solid;
   }
   /**
    * -----------
@@ -4017,6 +4024,7 @@ blockquote {
   .main-navbar-top .navbar-nav > li:not(.nav-def) {
     float: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 0px solid;
     margin-top: 0px;
     padding-top: 10px;
   }
@@ -4027,7 +4035,7 @@ blockquote {
   .main-navbar-top .social-inline {
     padding-right: 0px;
     background-color: #1d1d1d;
-    margin: 0 6px;
+    margin: 0 0px;
     font-size: 1.3em;
   }
   /**
@@ -4056,11 +4064,6 @@ blockquote {
    * Business Item Oute Style
    * -------------------------
    */
-  .business-item > .each-item-inner {
-    max-width: 480px;
-    margin-left: auto;
-    margin-right: auto;
-  }
   /** 
    * -------------------------
    * Business Item Area
@@ -4069,8 +4072,17 @@ blockquote {
   .business-item .features-image.vertical-middle {
     height: 250px;
   }
+  .business-item .share-outer .addthis_toolbox {
+    display: inline-block;
+  }
+  .business-item .features-content {
+    margin-top: 20px;
+  }
   .business-item .features-content .inner {
-    padding: 40px 20px;
+    padding: 20px 20px;
+  }
+  .business-item .features-content .item-inner.margin-l-15 {
+    margin-left: 0px;
   }
   .business-item .triangle-left::before {
     top: auto;
@@ -4278,6 +4290,9 @@ blockquote {
   }
   .subscrive-section .section-heading {
     text-align: center;
+  }
+  .footer-top-section .each-item {
+    margin-top: 0px;
   }
 }
 @media (max-width: 480px) {
