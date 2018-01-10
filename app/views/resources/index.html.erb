@@ -1,4 +1,4 @@
-
+<br><br><br><br>
 <!-- Start: Header Section
 ================================ -->
 <section class="features-section relative subscrive-section background-2">
@@ -54,7 +54,7 @@
                 
                 <% @resources.each do |resource| %>
                 <div class="each-item col-md-3 col-sm-4 col-xs-12">
-                    <a class="err-hide" href="/resources/<%= resource.id %>" title="<%= resource.name %>">
+                    <a class="err-hide" href="/resource/<%= resource.id %>" title="<%= resource.name %>">
                         <div class="inner relative bg-cover bg-overlay-dark" style="background-image: url(<%= asset_path 'resources.png' %>);">
                             <h4 class="title"><%= resource.name %> </h4>
                             <p class="res-description margin-t-15"><%= resource.description %></p>
