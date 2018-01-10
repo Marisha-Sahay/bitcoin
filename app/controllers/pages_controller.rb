@@ -32,6 +32,7 @@ class PagesController < ApplicationController
   end
   
   def trader_investor_lp
+    @posts = News.distinct(:title).order('published DESC, performance_score DESC')
   end
 
   def news_show

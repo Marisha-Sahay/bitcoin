@@ -249,7 +249,6 @@
   
   
   
-  
   <!-- Go to www.addthis.com/dashboard to customize your tools --> 
   <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59bf0f900e22530f"></script> 
   <script type="text/javascript">
@@ -271,12 +270,15 @@
           }
         });
       }); 
-      $(function(){
-        $('a[data-reload="true"').on('click', function(e) {
-          window.location = $(e.target).attr('href');
-          window.location.reload(true);
-        });
-      });
+      
+      // $(function(){
+      //   $('a[data-reload="true"').on('click', function(e) {
+      //     window.location = $(e.target).attr('href');
+      //     window.location.reload(true);
+      //   });
+      // });
+      
+  
       
       $(document).ready( function() {
         

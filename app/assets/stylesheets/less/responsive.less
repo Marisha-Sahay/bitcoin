@@ -98,8 +98,13 @@
    */
   .features-item {
       .each-item {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid fade(@shadow-color, 10%);
+    
           &:last-child {
-              margin-bottom: 30px
+              margin-bottom: 30px;
+              border-bottom: 0px solid;
           }
       }
   }
@@ -131,6 +136,7 @@
           > li:not(.nav-def) {
               float: none;
               border-bottom: 1px solid fade(@light-color, 10%);
+              border-right: 0px solid;
               margin-top: 0px;
               padding-top: 10px;
               
@@ -143,7 +149,7 @@
       .social-inline {
         padding-right: 0px;
           background-color: #1d1d1d;
-          margin: 0 6px;
+          margin: 0 0px;
         font-size: 1.3em;
       }
 
@@ -186,11 +192,11 @@
    * -------------------------
    */
   .business-item {
-    >.each-item-inner {
-      max-width: 480px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+    // >.each-item-inner {
+    //   max-width: 480px;
+    //   margin-left: auto;
+    //   margin-right: auto;
+    // }
   }
 
 
@@ -206,10 +212,22 @@
         height: 250px;
       }
     }
+    
+    .share-outer {
+      .addthis_toolbox {
+        display: inline-block;
+      }
+    }
 
     .features-content { 
+      margin-top: 20px;
+      
       .inner {
-          padding: 40px 20px;
+          padding: 20px 20px;
+      }
+      
+      .item-inner.margin-l-15 {
+        margin-left: 0px;
       }
     }
 
@@ -332,8 +350,8 @@
       .subscribe-form-area-inner {
           padding: 20px;
           max-width: 480px;
-      margin-left: auto;
-      margin-right: auto;
+          margin-left: auto;
+          margin-right: auto;
       }
   }
 
@@ -360,7 +378,7 @@
    */
   .social-icon-area {
     .social-icon-area-inner {
-          max-width: 480px;
+      max-width: 480px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -558,6 +576,14 @@
     .section-heading {
       text-align: center;
     }
+  }
+  
+  
+  
+  .footer-top-section {
+      .each-item {
+        margin-top: 0px;
+      }
   }
 
 
