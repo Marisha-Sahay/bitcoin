@@ -3760,16 +3760,15 @@ blockquote {
 }
 .tag-list .each-item .inner {
   padding: 30px 25px;
-  border-radius: 10px !important;
   overflow: hidden;
   line-height: 1.1;
   background-color: #FFFFFF;
-  border-bottom: 3px solid #969695;
-  -webkit-box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 0.1) ;
-  -moz-box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 0.1) ;
-  -ms-box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 0.1) ;
-  -o-box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 0.1) ;
-  box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 0.1) ;
+  border-left: 3px solid #b1b1b1;
+  -webkit-box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.18) ;
+  -moz-box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.18) ;
+  -ms-box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.18) ;
+  -o-box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.18) ;
+  box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.18) ;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
@@ -3792,16 +3791,11 @@ blockquote {
   -moz-osx-font-smoothing: grayscale;
 }
 .tag-list .each-item a:hover .inner {
-  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12) ;
-  -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12) ;
-  -ms-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12) ;
-  -o-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12) ;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12) ;
-  border-bottom-color: #ffc300;
+  border-left-color: #ffc300;
 }
 .tag-list .each-item a:hover .inner .title,
 .tag-list .each-item a:hover .inner .fa {
-  color: #ffc300;
+  color: #192233;
 }
 .tag-list .each-item .inner:before {
   background-color: #ffffff;

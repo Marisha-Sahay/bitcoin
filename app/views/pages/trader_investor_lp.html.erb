@@ -133,6 +133,115 @@ $(function () {
 });
 </script>
 
+<<<<<<< HEAD
+<!-- Start: Header Section
+================================ -->
+<section class="features-section relative subscrive-section background-2">
+    <div class="container">
+        <div class="row features-item section-separator">
+            
+            <div class="business-item col-md-8 col-md-offset-2 col-sm-12">
+              
+                <!-- Start: Section Header -->
+                <div class="section-header text-left">
+                    <h2 class="section-heading">News</h2>
+                    <!--<hr class="lines">-->
+                </div> <!-- End: Section Header -->
+
+                <div class="carousel-container margin-b-50 features-content">
+                    <div class="inner-small shadow load-more-init">
+                        
+                        <% @posts.each do |post| %>
+                        <div class="each-item load-item business-item">
+                            <div class="each-item-inner">
+                                
+                                <% if post.main_image %>
+                                    <div class="vertical-middle features-image bg-cover col-sm-4 col-xs-12" style="background-image: url(<%= post.main_image %>);"></div>
+                                <% else %>
+                                    <div class="vertical-middle features-image bg-cover col-sm-4 col-xs-12" style="background-image: url(<%= asset_path 'bitcoins-default.jpg' %>);"></div>
+                                <% end %>
+
+                                <div class="vertical-middle features-content col-sm-8 col-xs-12">
+                                    <div class="row">
+                                        <div class="item-inner text-left margin-l-15">
+                                
+                                            <!--<div class="thumbnail bg-cover" style="background-image: url(https://www.incimages.com/uploaded_files/image/284x160/1940_334982.jpg); height: 180px;"></div>-->
+                        
+                                            <!-- Start: Section Header -->
+                                            <div class="section-header">
+                                                <h4 class="section-heading"><a href="<%= post.news_url %>" target="_blank"><%= post.title[0..50] %>...</a></h4>
+                                                <p class="post-meta">
+                                                    By <%= post.author %>, <%= post.published%> 
+                                                </p>
+                                            </div>
+                                            <!-- End: Section Header -->
+        
+                                            <div class="detail small-spacing">
+                                                <p><%= post.description[0..60] %>...</p>
+                                            </div>
+                                            
+                                            <div class="share-outer margin-t-15">
+                                                <!--<div class="addthis_inline_share_toolbox "></div>-->
+                                                <div class="addthis_toolbox addthis_default_style">
+                                                  <a class="addthis_button_facebook"><span class="share facebook"><i class="fa fa-facebook" aria-hidden="true"></i> <%= post.facebook_share %></span></a>
+                                                  <a class="addthis_button_linkedin"><span class="share linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i> <%= post.linkedin_share %></span></a>
+                                                  <a class="addthis_button_twitter"><span class="share twitter"><i class="fa fa-twitter" aria-hidden="true"></i> 0</span></a>
+                                                </div>
+                                            </div>
+        
+                                            <!-- Button Area -->
+                                            <div class="btn-form btn-interest">
+                                                <a href="<%= post.news_url %>" target="_blank" class="btn right-icon">READ MORE <i class="fa fa-long-arrow-right"></i></a>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <% end %>
+                         
+                        <button data-reload="false" class="loadMore btn btn-fill btn-dark full-width">Load More</button>
+                        
+                    </div> <!-- End: .carousel-wrapper -->
+                </div> <!-- End: .carousel-container -->
+                
+            </div> <!-- End: .each-item -->
+                    
+        </div> <!-- End: .row -->
+    </div> <!-- End: .container -->
+</section>
+<!-- End: Header Section
+================================ -->
+
+
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<!--<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59bf0f900e22530f"></script> -->
+
+
+<script>
+$(function () {
+    $loadMoreID = '.load-more-init';
+    $perItemID = '.load-item';
+    $($loadMoreID).find($perItemID).slice(0, 4).show();
+    $(".loadMore").on('click', function (e) {
+        e.preventDefault();
+        $mainID = $(this).closest($loadMoreID);
+        $mainID.find($perItemID+":hidden").slice(0, 4).slideDown();
+        if ($mainID.find($perItemID+":hidden").length == 0) {
+            $(this).fadeOut('slow');
+        }
+        $('html,body').animate({
+            scrollTop: $(this).offset().top
+        }, 1500);
+    });
+});
+</script>
+
 <style>
 .load-more-init .load-item {
     display:none;

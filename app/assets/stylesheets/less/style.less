@@ -2729,12 +2729,11 @@ blockquote {
     .each-item {
         .inner {
             padding: 30px 25px;
-            border-radius: 10px !important;
             overflow: hidden;
             line-height: 1.1;
             background-color: @background-1;
-            border-bottom: 3px solid rgb(150, 150, 149);
-            .box-shadow( 0 3px 30px 0 rgba(0, 0, 0, 0.1) );
+            border-left: 3px solid #b1b1b1;
+            .box-shadow( 0 1px 7px 0 rgba(0, 0, 0, 0.18) );
             .transition(0.3s);
             
             .title,
@@ -2749,12 +2748,11 @@ blockquote {
         
         a:hover {
             .inner {
-                .box-shadow( 0 1px 3px 0 rgba(0, 0, 0, 0.12) );
-                border-bottom-color: @main-color-3;
+                border-left-color: @main-color-3;
                 
                 .title,
                 .fa {
-                    color: @main-color-3;
+                    color: darken(@main-color-1, 10%);
                 }
             }
         }
