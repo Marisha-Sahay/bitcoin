@@ -76,14 +76,14 @@
               </li>
               <% if current_user %>
               <li>
-                <%= link_to "Logout", url_for("/logout"), class: "nav-links", :data => { :reload => true } %><i class='fa fa-sign-out'></i>&nbsp;
+                <a class="nav-links" data-reload="true" href="/logout"><i class='fa fa-sign-out'></i> &nbsp; Logout</a>
               </li>
               <% else %>
               <li>
-                <%= link_to "Sign-Up", url_for("/signup"), class: "nav-links", :data => { :reload => true } %><i class='fa fa-user'></i>&nbsp;
+                <a class="nav-links" data-reload="true" href="/signup"><i class='fa fa-user'></i> &nbsp; Sign-Up</a>
               </li>
               <li>
-                <%= link_to "Login", url_for("/login"), class: "nav-links", :data => { :reload => true } %><i class='fa fa-sign-in'></i>&nbsp;
+                <a class="nav-links" data-reload="true" href="/login"><i class='fa fa-sign-in'></i> &nbsp; Login</a>
               </li>
               <% end %>
           </ul>
