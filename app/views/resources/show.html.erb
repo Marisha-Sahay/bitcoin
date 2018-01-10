@@ -1,14 +1,74 @@
-<div class="res-show-container">
-  <h1 class="res-name-head"><%= link_to "#{@resouce.name}", "#{@resouce.resource_link}", target: :_blank%></h1>
-  <p><i class="fa fa-thumbs-up" aria-hidden="true"></i> : <%= @resouce.get_likes.size %> <i class="fa fa-thumbs-down" aria-hidden="true"></i> : <%= @resouce.get_dislikes.size %></p>
-  <br>
-  <div class="addthis_inline_share_toolbox"></div>
-  <p class="res-name-para"><%= @resouce.description%></p>
-  <% if @resouce.resource_link.include? "youtube" %>
-    <% str1 = "#{@resouce.resource_link}" %>
-    <% str2 = str1.split("=") %>
-    <%= content_tag(:iframe,'', width: 840, height: 630, src: "https://www.youtube.com/embed/#{str2[1]}") %>
-    <% end %>
-</div>
 
-<!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59bf0f900e22530f"></script> 
+<!-- Start: Header Section
+================================ -->
+<section class="features-section default-home relative subscrive-section background-2">
+    <div class="features-item section-separator-small default-seperator sp-top">
+        
+        <div class="container">
+          <div class="row">
+            
+            <div class="col-sm-6 tag-list tag-details">
+              
+              <!-- Start: Section Header -->
+              <div class="section-header text-left">
+                <a class="err-hide" href="<%= @resouce.resource_link %>" title="<%= @resouce.name %>" target="_blank" >
+                  <h1 class="section-heading"><%= @resouce.name %></h1>
+                </a>
+              </div> <!-- End: Section Header -->
+              
+              <div class="share-outer margin-t-20">
+                  <!--<div class="addthis_inline_share_toolbox "></div>-->
+                  <div class="addthis_toolbox addthis_default_style">
+                    <a class="addthis_button_facebook"><span class="share facebook"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</span></a>
+                    <a class="addthis_button_linkedin"><span class="share linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i> Linkedin</span></a>
+                    <a class="addthis_button_twitter"><span class="share twitter"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</span></a>
+                  </div>
+              </div>
+              
+              <div class="meta-option margin-top">
+                  <%= link_to "#{@resouce.get_likes.size}", "", method: :put, class: "fa fa-thumbs-up" %>
+                  <%= link_to "#{@resouce.get_dislikes.size}", "", method: :put, class: "fa fa-thumbs-down" %>
+              </div>
+              
+          
+            </div>
+            <div class="col-sm-6">
+                <% if @resouce.resource_link.include? "youtube" %>
+                  <% str1 = "#{@resouce.resource_link}" %>
+                  <% str2 = str1.split("=") %>
+                  
+                  <!--  Start: Video Area  "PASTE YOUR VIDEO LINK HERE " -->
+                  <div class="video background-2">
+                     <iframe class="video-async" data-source="vimeo"  data-color="ffc300" src="https://www.youtube.com/embed/<%= str2[1] %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <!--  Video Link Goes Here--> 
+                  </div>
+                  <!--  End: Video Area  -->
+                
+                <% end %>
+                
+            </div>
+            
+          </div>
+        </div>
+        
+    </div>
+    <hr class="tag-details-seperator" />
+    <div class="features-item section-separator-small background-1">
+       
+        <div class="container tag-list tag-details">
+            <div class="row">
+              
+                <div class="col-md-8 col-md-offset-2 col-sm-12">
+                    <p class="details"><%= @resouce.description %></p>
+                </div>
+                
+            </div>
+        </div>
+                    
+    </div> <!-- End: .row -->
+</section>
+<!-- End: Header Section
+================================ -->
+
+
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59bf0f900e22530f"></script> 

@@ -551,6 +551,9 @@ small,
 .modal-open {
   overflow-y: auto;
 }
+.color-text {
+  color: #ffc300;
+}
 /**
  * --------------------------------------
  *  Text Letter Spacing
@@ -1988,6 +1991,7 @@ small,
 }
 .business-item .features-image {
   border-radius: 10px;
+  background-color: rgba(255, 195, 0, 0.1);
 }
 .business-item .features-content .inner {
   background-color: #FFFFFF;
@@ -3761,7 +3765,7 @@ blockquote {
 .tag-list .each-item .inner {
   padding: 30px 25px;
   overflow: hidden;
-  line-height: 1.1;
+  line-height: 1.3;
   background-color: #FFFFFF;
   border-left: 3px solid #b1b1b1;
   -webkit-box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.18) ;
@@ -3778,7 +3782,7 @@ blockquote {
   -moz-osx-font-smoothing: grayscale;
 }
 .tag-list .each-item .inner .title,
-.tag-list .each-item .inner .fa {
+.tag-list .each-item .inner .title .fa {
   font-weight: 500;
   margin: 0px;
   font-size: 20px;
@@ -3790,11 +3794,14 @@ blockquote {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.tag-list .each-item a:hover .inner {
+.tag-list .each-item .inner a:hover .title {
+  color: #ffc300;
+}
+.tag-list .each-item .inner:hover {
   border-left-color: #ffc300;
 }
-.tag-list .each-item a:hover .inner .title,
-.tag-list .each-item a:hover .inner .fa {
+.tag-list .each-item .inner:hover .title,
+.tag-list .each-item .inner:hover .title .fa {
   color: #192233;
 }
 .tag-list .each-item .inner:before {
@@ -3803,25 +3810,55 @@ blockquote {
 .tag-list .each-item > a {
   display: block;
 }
-.tag-list .each-item .meta-option {
+.tag-list .meta-option {
   padding-top: 11px;
   margin-top: 11px;
 }
-.tag-list .each-item .meta-option a {
+.tag-list .meta-option a {
   display: inline-block;
   margin-right: 10px;
+  color: rgba(35, 35, 35, 0.7);
 }
-.tag-list .each-item .meta-option a.err-hide {
+.tag-list .meta-option a.err-hide {
   display: none !important;
 }
-.tag-list .each-item .meta-option a:before {
+.tag-list .meta-option a:before {
   margin-right: 5px;
 }
-.tag-list .each-item .meta-option.user-option {
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
+.tag-list .meta-option a:hover {
+  color: #232323;
 }
-.tag-list .each-item .meta-option.user-option a {
+.tag-list .meta-option.user-option {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.tag-list .meta-option.user-option a {
   float: right;
+}
+.tag-list.tag-details .meta-option {
+  margin-top: 20px;
+  padding-top: 20px;
+}
+.tag-list.tag-details .meta-option a {
+  font-size: 20px;
+  margin-right: 20px;
+  color: rgba(0, 0, 0, 0.52);
+}
+.tag-list.tag-details .meta-option a:before {
+  margin-right: 10px;
+}
+.tag-list.tag-details .meta-option a:hover {
+  color: #232323;
+}
+.tag-list.tag-details .margin-top {
+  margin-top: 100px;
+}
+.tag-list.tag-details .details {
+  font-size: 21px;
+  line-height: 1.8;
+}
+.tag-details-seperator {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 .share {
   /* border: 1px solid #ddd; */
@@ -3925,6 +3962,17 @@ blockquote {
   line-height: 1.4;
   margin-top: 10px;
 }
+.live-link-preview .guteurlsGU {
+  display: none !important;
+}
+.display-block {
+  display: block;
+}
+@media (max-width: 1199px) {
+  .tag-list.tag-details .margin-top {
+    margin-top: 51px;
+  }
+}
 @media (max-width: 991px) {
   /**
    * ----------- 
@@ -3978,6 +4026,28 @@ blockquote {
   }
   .footer-section-1 .text {
     margin-top: 10px;
+  }
+  .tag-list.tag-details .meta-option {
+    padding-top: 11px;
+    margin-top: 11px;
+  }
+  .tag-list.tag-details .meta-option a {
+    font-size: 16px;
+    margin-right: 10px;
+    color: rgba(0, 0, 0, 0.7);
+  }
+  .tag-list.tag-details .meta-option a:before {
+    margin-right: 5px;
+  }
+  .tag-list.tag-details .meta-option a:hover {
+    color: #232323;
+  }
+  .tag-list.tag-details .margin-top {
+    margin-top: 10px;
+  }
+  .tag-list.tag-details .details {
+    font-size: 20px;
+    line-height: 1.8;
   }
 }
 @media (max-width: 767px) {
@@ -4174,6 +4244,13 @@ blockquote {
   }
   .social-icon-area .padding-l-40 {
     padding-left: 0;
+  }
+  .tag-list.tag-details .details {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .tag-list.tag-details .share-outer .addthis_toolbox {
+    display: inline-block;
   }
   /** 
    * ----------------------
