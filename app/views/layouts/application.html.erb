@@ -76,14 +76,14 @@
               </li>
               <% if current_user %>
               <li>
-                <a class="nav-links" data-reload="true" href="/logout"><i class='fa fa-sign-out'></i> &nbsp; Logout</a>
+                <%= link_to "Logout", url_for("/logout"), class: "nav-links", :data => { :reload => true } %><i class='fa fa-sign-out'></i>&nbsp;
               </li>
               <% else %>
               <li>
-                <a class="nav-links" data-reload="true" href="/signup"><i class='fa fa-user'></i> &nbsp; Sign-Up</a>
+                <%= link_to "Sign-Up", url_for("/signup"), class: "nav-links", :data => { :reload => true } %><i class='fa fa-user'></i>&nbsp;
               </li>
               <li>
-                <a class="nav-links" data-reload="true" href="/login"><i class='fa fa-sign-in'></i> &nbsp; Login</a>
+                <%= link_to "Login", url_for("/login"), class: "nav-links", :data => { :reload => true } %><i class='fa fa-sign-in'></i>&nbsp;
               </li>
               <% end %>
           </ul>
@@ -271,12 +271,12 @@
         });
       }); 
       
-      $(function(){
-        $('a[data-reload="true"').on('click', function(e) {
-          window.location = $(e.target).attr('href');
-          window.location.reload(true);
-        });
-      });
+      // $(function(){
+      //   $('a[data-reload="true"').on('click', function(e) {
+      //     window.location = $(e.target).attr('href');
+      //     window.location.reload(true);
+      //   });
+      // });
       
   
       
