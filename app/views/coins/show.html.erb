@@ -153,45 +153,39 @@
 
 
 
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-    <!-- Go to www.addthis.com/dashboard to customize your tools --> 
-    <!--<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59bf0f900e22530f"></script> -->
-
-
-    <script>
-        $(function () {
-            $loadMoreID = '.load-more-init';
-            $perItemID = '.load-item';
-            $($loadMoreID).find($perItemID).slice(0, 4).show();
-            $(".loadMore").on('click', function (e) {
-                e.preventDefault();
-                $mainID = $(this).closest($loadMoreID);
-                $mainID.find($perItemID+":hidden").slice(0, 4).slideDown();
-                if ($mainID.find($perItemID+":hidden").length == 0) {
-                    $(this).fadeOut('slow');
-                }
-                $('html,body').animate({
-                    scrollTop: $(this).offset().top
-                }, 1500);
-            });
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<style>.load-more-init .load-item {display:none;}</style>
+<script>
+(function($) {
+    'use strict';
+    
+    $(document).ready( function() {
+        
+        $loadMoreID = '.load-more-init';
+        $perItemID = '.load-item';
+        $($loadMoreID).find($perItemID).slice(0, 4).show();
+        $(".loadMore").on('click', function (e) {
+            e.preventDefault();
+            $mainID = $(this).closest($loadMoreID);
+            $mainID.find($perItemID+":hidden").slice(0, 4).slideDown();
+            if ($mainID.find($perItemID+":hidden").length == 0) {
+                $(this).fadeOut('slow');
+            }
+            $('html,body').animate({
+                scrollTop: $(this).offset().top
+            }, 1500);
         });
-    </script>
+        
+        
+        /* Reddit lazy load hack */
+        var oScript = document.createElement("script");
+        document.write = function(text) {
+            document.getElementById("reddit").innerHTML += text;
+        };
+        oScript.src = $('input').val() + ".embed?limit=9";
+        document.body.appendChild(oScript);
+        
+    });
+} (jQuery) );
+</script>
 
-    <style>
-        .load-more-init .load-item {
-            display:none;
-        }
-    </style>
-    <script>
-        $(document).ready(function() {
-
-            /* Reddit lazy load hack */
-            var oScript = document.createElement("script");
-            document.write = function(text) {
-                document.getElementById("reddit").innerHTML += text;
-            };
-            oScript.src = $('input').val() + ".embed?limit=9";
-            document.body.appendChild(oScript);
-        });
-    </script>
