@@ -7,6 +7,6 @@ class User < ApplicationRecord
                    :confirmation => true,
                    :length => {:within => 6..40}
                    
-  
+
   
 end

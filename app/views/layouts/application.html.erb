@@ -80,7 +80,7 @@
               </li>
               <% else %>
               <li class="<%= current_class?('/signup') %>">
-                <a class="nav-links" data-reload="true" href="/signup"><i class='fa fa-user'></i> &nbsp; Sign-Up</a>
+                <a class="nav-links" data-reload="true" href="/signup"><i class='fa fa-user-o'></i> &nbsp; Sign-Up</a>
               </li>
               <li class="<%= current_class?('/login') %>">
                 <a class="nav-links" data-reload="true" href="/login"><i class='fa fa-sign-in'></i> &nbsp; Login</a>
@@ -117,39 +117,40 @@
                         </div> 
                         <!-- End: Section Header -->
   
-                        <div class="subscribe-form">
-  
+                        <div class="subscribe-form" id="mc_embed_signup">
+                          
                             <!-- Mailchimp Subscriber Form Goes Here  -->
-                            <form id="mailchimp-subscribe" method="post" class="single-form text-center" novalidate="true">
-                                <div class="container-fluid">
+                            <form id="mc-embedded-subscribe-form" method="post" class="single-form text-center validate" target="_blank" novalidate="true" action="https://bitcoincaffe.us17.list-manage.com/subscribe/post?u=634e7336b124158b06bbc1115&amp;id=60c0054ed1" novalidate>
+                                <div class="container-fluid" id="mc_embed_signup_scroll">
   
-                                    <div class="row">
-                                        <p class="subscription-success"></p>
-                                        <p class="subscription-failed"></p>
-                                    </div>
-  
+                                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_634e7336b124158b06bbc1115_60c0054ed1" tabindex="-1" value=""></div>
                                     <div class="row">
                                         <div class="input-group">
   
                                             <div class="outer">
-                                                <input type="email" class="black-text footer-email-bar form-control" placeholder="Email" name="email">
+                                                <input type="email" class="black-text footer-email-bar form-control required email" placeholder="Email" name="EMAIL" id="mce-EMAIL">
                                             </div>
   
                                             <div class="input-group-btn outer">
-                                                <button class="footer-form-submit btn btn-fill">Subscribe</button>
+                                                <button class="footer-form-submit btn btn-fill button" type="submit" name="subscribe" id="mc-embedded-subscribe" >Subscribe</button>
                                             </div>
   
                                         </div>
+                                        
+                                        <div id="mce-responses margin-t-15" class="clear">
+                                            <div class="response subscription-failed" id="mce-error-response" style="display:none"></div>
+                                            <div class="response subscription-success" id="mce-success-response" style="display:none"></div>
+                                        </div>
   
-                                    </div>
-                                    <div class="row">
-                                      <p class="js-subscribe-response subscribe-response"></p>
                                     </div>
                                 </div>
                             </form>
                             
                             
                         </div> <!-- End: .subscribe-form -->
+                        <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+                        <script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+                        
                     </div> <!-- End: .subscribe-form-area-inner -->
                 </div> <!-- End: .subscribe-form-area -->
   
