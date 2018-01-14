@@ -23,6 +23,10 @@
     background-color: #237AA0;
 }
 
+.background-4 {
+    background-color: #f1f1f1;
+}
+
 
 
 
@@ -90,7 +94,7 @@
  * -----------------------
  */
 .shadow {
-    .box-shadow( 0 1px 3px 0 fade(@shadow-color, 12%) );
+    .box-shadow( 0 1px 3px 0 fade(@shadow-color, 12%), ~"!important" );
 }
 
 
@@ -242,9 +246,11 @@
 
             &.active {
                 >a {
-                    &::before {
-                        .transform( translate3d( 0, 0, 0 ) );
-                    }
+                    color: @main-color-3;
+                    
+                    // &::before {
+                    //     .transform( translate3d( 0, 0, 0 ) );
+                    // }
                 }
             }
 
@@ -373,14 +379,14 @@
     }
 
     .section-separator {
-        padding-top: 75px;
-        padding-bottom: 70px;
+        padding-top: 120px;
+        padding-bottom: 120px;
     }
 }
 
 .note-area {
     background-color: fade(@shadow-color, 45%);
-    padding: 30px;
+    padding: 30px 20px;
     color: #fff;
     .border-radius(10px);
     
@@ -411,9 +417,7 @@
             &:before {
                 content: "\f08e";
                 font: normal normal normal 14px/1 FontAwesome;
-                position: absolute;
-                left: -29px;
-                top: 5px;
+                margin-right: 10px;
                 color: @main-color-3;
             }
         }
@@ -455,6 +459,12 @@
     
     .section-heading {
         .transition-delay( 500ms );
+        margin-top: 0;
+        font-size: 42px;
+        letter-spacing: -.12rem;
+        text-transform: uppercase;
+        /* text-shadow: 1px 1px 1px #000; */
+        word-spacing: 5px;
     }
 
     .tag-line,
@@ -1203,6 +1213,11 @@ blockquote {
         padding: 40px;
         border-radius: 10px;
     }
+    
+    .subscribe-form-area-inner-small {
+        padding: 20px;
+        border-radius: 10px;
+    }
 
     .section-header {
         margin-bottom: 19px;
@@ -1221,13 +1236,19 @@ blockquote {
 
     &.dark {
         .subscribe-form-area-inner {
-            background: fade(@background-3, 100%);
+            background: fade(@background-1, 100%);
         }
     }
 
     &.semi-dark {
         .subscribe-form-area-inner {
             background: fade(@background-3, 80%);
+        }
+    }
+    
+    &.white {
+        .form-control {
+            background-color: #e4e4e4;
         }
     }
 }
@@ -1268,7 +1289,7 @@ blockquote {
     }
 
     .outer {
-        padding: 10px;
+        padding: 0 10px;
 
         &:last-child {
             padding-right: 0px;
@@ -2762,6 +2783,41 @@ blockquote {
             }
         }
         
+        .inner-2 {
+            padding: 30px 30px;
+            overflow: hidden;
+            line-height: 1.3;
+            background-color: @background-1;
+            // border-left: 3px solid #b1b1b1;
+            // .box-shadow( 0 1px 7px 0 rgba(0, 0, 0, 0.18) );
+            .border-radius(10px);
+            .transition(0.3s);
+            
+            .title,
+            .title .fa {
+                font-weight: 500;
+                margin: 0px;
+                font-size: 20px;
+                // .text-shadow( 0px 1px 1px fade(@dark-color, 60%) );
+                .transition(0.3s);
+            }
+            
+            a {
+                &:hover .title {
+                    color: @main-color-3;
+                }
+            }
+            
+            &:hover {
+                border-left-color: @main-color-3;
+                
+                .title,
+                .title .fa {
+                    color: darken(@main-color-1, 10%);
+                }
+            }
+        }
+        
         
         // &:nth-of-type(1n) .inner:before {
         //   background-color: rgba(255, 82, 82, 0.84);
@@ -2810,6 +2866,15 @@ blockquote {
                 float: right;
             }
         }
+        
+        &.like-option {
+            a {
+                margin-right: 10px;
+                border-radius: 30px;
+                border: 1px solid #ccc;
+                padding: 10px 18px;
+            }
+        }
     }
     
     
@@ -2820,9 +2885,9 @@ blockquote {
             padding-top: 20px;
             
             a {
-                font-size: 20px;
+                font-size: 18px;
                 margin-right: 20px;
-                color: fade(@shadow-color, 52%);
+                color: fade(@shadow-color, 62%);
                 
                 &:before {
                     margin-right: 10px;
@@ -2830,6 +2895,12 @@ blockquote {
                 
                 &:hover {
                     color: @dark-color;
+                }
+            }
+            
+            &.like-option {
+                a {
+                    margin-right: 10px;
                 }
             }
         }
@@ -2906,6 +2977,23 @@ blockquote {
         
         &:last-child {
             border-right: 0px solid;
+        }
+    }
+}
+
+
+.share-outer {
+    &.share-text {
+        .addthis_toolbox {
+            &:before {
+                content: 'Share\:';
+                float: left;
+                margin-right: 15px;
+                text-transform: uppercase;
+                font-weight: 600;
+                position: relative;
+                top: 3px;
+            }
         }
     }
 }
@@ -3002,3 +3090,29 @@ blockquote {
     display: block;
 }
 
+
+
+.features-2-col {
+    
+    .middle-seperator {
+        margin: 0;
+        border-top: 0px solid;
+        border-left: 1px solid #ddd;
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        left: 50%;
+        top: 0;
+    }
+    
+    .each-item {
+        .inner-2-col {
+            &:first-child {
+                padding-right: 40px;
+            }
+            &:last-child {
+                padding-left: 40px;
+            }
+        }
+    }
+}

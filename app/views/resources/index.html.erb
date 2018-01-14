@@ -61,7 +61,7 @@
                             
                             <div class="meta-option">
                                 <%= link_to "upvote", "/resources/#{resource.id}/like", method: :put, class: "fa fa-thumbs-up" %>-->
-                                <%= link_to "downvote", "/resources/#{resource.id}/dislike", method: :put, class: "fa fa-thumbs-down" %>
+                                <!-- link_to "downvote", "/resources/#{resource.id}/dislike", method: :put, class: "fa fa-thumbs-down" -->
                             </div>
                             
                             <% if current_user && current_user.admin %>
