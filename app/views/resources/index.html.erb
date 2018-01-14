@@ -47,12 +47,10 @@
 
             <% if @resources.length > 0 %>
             <div class="clearfix"></div>
-            <div class="tag-list light-text text-left">
+            <div class="tag-list light-text text-left col-sm-8 col-sm-offset-2 col-xs-12">
+                <div class="row">
                 
-                
-                
-                
-                <% @resources.each do |resource| %>
+                    <% @resources.each do |resource| %>
                     <div class="each-item col-xs-12 ">
                         <div class="inner-2 relative">
                             <a class="err-hide" href="/resource/<%= resource.id %>" title="<%= resource.name %>">
@@ -74,7 +72,8 @@
                         </div>
                     </div>
                     <% end %>
-            
+                    
+                </div>
             </div>
             <% end %>
                     
