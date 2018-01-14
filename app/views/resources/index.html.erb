@@ -1,4 +1,4 @@
-<br><br><br><br>
+
 <!-- Start: Header Section
 ================================ -->
 <section class="features-section relative subscrive-section background-2">
@@ -49,29 +49,26 @@
             <div class="clearfix"></div>
             <div class="tag-list light-text text-left">
                 
-                
-                
-                
                 <% @resources.each do |resource| %>
-                <div class="each-item col-md-3 col-sm-4 col-xs-12">
-                    <a class="err-hide" href="/resource/<%= resource.id %>" title="<%= resource.name %>">
-                        <div class="inner relative bg-cover bg-overlay-dark" style="background-image: url(<%= asset_path 'resources.png' %>);">
+                <div class="each-item col-xs-12 --">
+                    <div class="inner-2 relative">
+                        <a class="err-hide" href="/resource/<%= resource.id %>" title="<%= resource.name %>">
                             <h4 class="title"><%= resource.name %> </h4>
-                            <p class="res-description margin-t-15"><%= resource.description %></p>
-                            
-                            <div class="meta-option">
-                                <%= link_to "upvote", "/resources/#{resource.id}/like", method: :put, class: "fa fa-thumbs-up" %>-->
-                                <!-- link_to "downvote", "/resources/#{resource.id}/dislike", method: :put, class: "fa fa-thumbs-down" -->
-                            </div>
-                            
-                            <% if current_user && current_user.admin %>
-                            <div class="meta-option user-option">
-                                <%= link_to "Edit", "/resources/#{resource.id}/edit" %>
-                                <%= link_to "Delete", "/resources/#{resource.id}", method: :delete %>
-                            </div>
-                            <% end %>
+                        </a>
+                        <p class="res-description margin-t-15"><%= resource.description[0..220] %>...</p>
+                        
+                        <div class="meta-option like-option">
+                            <%= link_to "Upvote", "/resources/#{resource.id}/like", method: :put, class: "fa fa-long-arrow-up", title: "Like" %>
+                            <% link_to "Downvote", "/resources/#{resource.id}/dislike", method: :put, class: "fa fa-long-arrow-down", title: "Dislike" %>
                         </div>
-                    </a>
+                        
+                        <% if current_user && current_user.admin %>
+                            <div class="meta-option user-option">
+                                <%= link_to "Edit", "/resources/#{resource.id}/edit", class: "fa fa-pencil-square" %>
+                                <%= link_to "Delete", "/resources/#{resource.id}", method: :delete, class: "fa fa-trash" %>
+                            </div>
+                        <% end %>
+                    </div>
                 </div>
                 <% end %>
             
