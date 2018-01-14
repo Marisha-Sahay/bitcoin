@@ -65,24 +65,24 @@
                     </a>
                   </div>
               </li>
-              <li class="active">
+              <li class="<%= current_class?('/') %>">
                   <%= link_to "Home", url_for("/"), class: "nav-links", :data => { :reload => true } %>
               </li>
-              <li>
+              <li class="<%= current_class?('/news') %>">
                 <%= link_to "News", url_for("/news"), class: "nav-links", :data => { :reload => true } %>
               </li>
-              <li>
+              <li class="<%= current_class?('/resources') %>">
                 <%= link_to "Resources", url_for("/resources"), class: "nav-links", :data => { :reload => true } %>
               </li>
               <% if current_user %>
-              <li>
+              <li class="<%= current_class?('/logout') %>">
                 <a class="nav-links" data-reload="true" href="/logout"><i class='fa fa-sign-out'></i> &nbsp; Logout</a>
               </li>
               <% else %>
-              <li>
+              <li class="<%= current_class?('/signup') %>">
                 <a class="nav-links" data-reload="true" href="/signup"><i class='fa fa-user'></i> &nbsp; Sign-Up</a>
               </li>
-              <li>
+              <li class="<%= current_class?('/login') %>">
                 <a class="nav-links" data-reload="true" href="/login"><i class='fa fa-sign-in'></i> &nbsp; Login</a>
               </li>
               <% end %>
@@ -109,7 +109,7 @@
                     <div class="subscribe-form-area-inner light-text">
                         
                         <!-- Start: Section Header -->
-                        <div class="section-header text-center">
+                        <div class="section-header text-left">
                         
                             <h2 class="section-heading">Sign up for our newsletter</h2>
                             <!--<p class="sub-heading">Stay current with our latest insights</p>-->

@@ -1,15 +1,15 @@
 <!-- Start: Header Section
 ================================ -->
-<section class="header-section-1 default-home relative bg-overlay-3 bg-cover" style="background-image: url(<%= asset_path 'bg-1.jpg' %>);">
+<section class="default-home relative background-4">
     <div class="container">
-        <div class="row section-separator default-seperator light-text">
+        <div class="row section-separator-small default-seperator">
 
              <div class="cd-content-animation text-center">
                 <!-- Start: Section Header -->
-                <div class="section-header relative col-md-10 col-md-offset-1 col-sm-12" >
+                <div class="section-header relative col-md-8 col-md-offset-2 col-sm-12" >
                 
-                    <h4 class="section-heading">Crypto has grown 5000% (20B to 600B) this year, and it is just a beginning.  We thank you for being an early supporter of the technology. You deserve to make money.</h4>
-                    <h4 class="section-heading margin-t-25">And, we, at Bitcaffe, are here to help you with the best tools to understand the extremely volatile crypto market.</h4>
+                    <p class="section-heading">Bitcaffe thanks you for being an early supporter of the technology. Crypto grew 4000% ($20B to $800B) in 2017. Experts believe that year 2018 is for crypto what 1997-99 was for Dotcom era. Don’t miss the chance to invest and help accelerate the innovation. Have fun and make some $ along the way. We, at Bitcaffe, are here to help you with the best tools to understand and ride this extremely volatile crypto market.</p>
+                    <!--<hr class="lines margin-t-15" style="display: inline-block">-->
                     
                 </div> <!-- End: Section Header -->
 
@@ -31,23 +31,82 @@
 
 <!-- Start: Header Section
 ================================ -->
-<section class="features-section relative subscrive-section background-2">
+<section class="features-section features-2-col relative subscrive-section background-2">
     <div class="container">
         <div class="row features-item section-separator">
-            <h4 class="section-heading margin-t-25">Understand the price in context of news, social conversation, google trend and social sentiments.</h4>
-        </div>
-        <!-- <div class="row features-item section-separator"> -->
-            <div class="each-item-big col-md-8 col-md-offset-2 col-sm-12">
-              
-               <div class="shadow">
-                    <%= link_to( image_tag("#{asset_path "ImageForInvestorLP.jpg"}", :alt => "", :class =>"img-responsive"), "/news", :data => { :reload => true }, class: "display-block" )%>
-                </div>                 
-            </div> <!-- End: .each-item -->
-            
-<!--        <div class="col-md-8 col-md-offset-2 col-sm-12">
-                <div class="live-link-preview">http://www.bitcoincaffe.com/news</div>
-            </div> -->
+          
+            <div class="relative overflow">
+                
+                <hr class="middle-seperator hidden-sm hidden-xs"/>
+                <div class="each-item col-md-6 col-sm-12">
+                    <div class="inner-2-col">
+                        
+                        <!--<h4 class="margin-b-30 "></h4>-->
+                        <div class="subscribe-form-area white">
+                            <div class="subscribe-form-area-inner-small background-1 shadow">
+                                    
+                                <!-- Start: Section Header -->
+                                <div class="section-header">
+                                    <p class="section-heading">Sign-up to get exclusive access of the Bitcaffe CryptoAI. The AI tool can help you in making buy/sell decisions.  It will help you understand the market and social media sentiment.</p>
+                                </div> 
+                                <!-- End: Section Header -->
+        
+                                <div class="subscribe-form">
+        
+                                    <!-- Mailchimp Subscriber Form Goes Here  -->
+                                    <form id="mailchimp-subscribe" method="post" class="single-form text-center" novalidate="true">
+                                        <div class="container-fluid">
+        
+                                            <div class="row">
+                                                <p class="subscription-success"></p>
+                                                <p class="subscription-failed"></p>
+                                            </div>
+        
+                                            <div class="row">
+                                                <div class="input-group">
+          
+                                                    <div class="outer">
+                                                        <input type="email" class="black-text footer-email-bar form-control" placeholder="Email" name="email">
+                                                    </div>
+          
+                                                    <div class="input-group-btn outer">
+                                                        <button class="footer-form-submit btn btn-fill">Subscribe</button>
+                                                    </div>
+          
+                                                </div>
+          
+                                            </div>
+                                        </div>
+                                    </form>
+                       
+                                </div> <!-- End: .subscribe-form -->
+                            </div>
+                        </div>
+                        
+                        <!-- Start: Section Header -->
+                        <div class="section-header margin-t-30">
+                            <p class="section-heading">Please sign-up for these exchanges to get access of the cool ICO’s and new coins.</p>
+                        </div> 
+                        <!-- End: Section Header -->
+                        <ul class="nav side-navbar light margin-t-20">
+                            <li><a class="btn btn-fill btn-dark" data-reload="true" href="https://www.coinbase.com/join/56d7437a25cbc8005d000647">Coinbase</a></li>
+                            <li><a class="btn btn-fill btn-dark" data-reload="true" href="https://www.kucoin.com/#/?r=28tHc">Kucoin</a></li>
+                            <li><a class="btn btn-fill btn-dark" data-reload="true" href="https://www.binance.com/?ref=13291055">Binance</a></li>
+                        </ul>
+                        
+                    </div>
+                </div> <!-- End: .each-item -->
+                <div class="each-item col-md-6 col-sm-12 text-left">
+                    <div class="inner-2-col">
+                        
+                        <h4 class="margin-b-30">For now, understand the price in context of news, social conversation, google trend and social sentiments.</h4>
+                        <%= link_to( image_tag("#{asset_path "ImageForInvestorLP.jpg"}", :alt => "", :class =>"img-responsive"), "/news", :data => { :reload => true }, class: "display-block shadow" )%>
                     
+                    </div>
+                </div> <!-- End: .each-item -->
+                
+            </div>
+               
         </div> <!-- End: .row -->
     </div> <!-- End: .container -->
 </section>
