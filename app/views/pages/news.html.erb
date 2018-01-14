@@ -162,31 +162,36 @@
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
 <!--<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59bf0f900e22530f"></script> -->
 
-
-<script>
-$(function () {
-    $loadMoreID = '.load-more-init';
-    $perItemID = '.load-item';
-    $($loadMoreID).find($perItemID).slice(0, 4).show();
-    $(".loadMore").on('click', function (e) {
-        e.preventDefault();
-        $mainID = $(this).closest($loadMoreID);
-        $mainID.find($perItemID+":hidden").slice(0, 4).slideDown();
-        if ($mainID.find($perItemID+":hidden").length == 0) {
-            $(this).fadeOut('slow');
-        }
-        $('html,body').animate({
-            scrollTop: $(this).offset().top
-        }, 1500);
-    });
-});
-</script>
-
 <style>
 .load-more-init .load-item {
     display:none;
 }
 </style>
+<script>
+(function($) {
+    'use strict';
+    
+    $(document).ready( function() {
+        var loadMoreID = '.load-more-init',
+            perItemID = '.load-item';
+        // $($loadMoreID).find($perItemID).hide();
+        $(loadMoreID).find(perItemID).slice(0, 4).show();
+        $(loadMoreID).find(".loadMore").on('click', function (e) {
+            e.preventDefault();
+            var mainID = $(this).closest(loadMoreID);
+            mainID.find(perItemID+":hidden").slice(0, 4).slideDown();
+            if (mainID.find(perItemID+":hidden").length == 0) {
+                $(this).fadeOut('slow');
+            }
+            $('html,body').animate({
+                scrollTop: $(this).offset().top
+            }, 1500);
+        });
+    });
+} (jQuery) );
+</script>
+
+
 <script>
 $(document).ready(function() {
     

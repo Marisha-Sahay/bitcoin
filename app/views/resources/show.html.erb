@@ -11,12 +11,10 @@
               
               <!-- Start: Section Header -->
               <div class="section-header text-left">
-                <a class="err-hide" href="<%= @resouce.resource_link %>" title="<%= @resouce.name %>" target="_blank" >
-                  <h1 class="section-heading"><%= @resouce.name %></h1>
-                </a>
+                <h1 class="section-heading"><%= link_to "#{@resouce.name}", "http://#{@resouce.resource_link}", target: "_blank" %></h1>
               </div> <!-- End: Section Header -->
               
-              <div class="share-outer margin-t-20">
+              <div class="share-outer share-text margin-t-20">
                   <!--<div class="addthis_inline_share_toolbox "></div>-->
                   <div class="addthis_toolbox addthis_default_style">
                     <a class="addthis_button_facebook"><span class="share facebook"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</span></a>
@@ -25,15 +23,15 @@
                   </div>
               </div>
               
-              <div class="meta-option margin-top">
-                  <%= link_to "#{@resouce.get_likes.size}", "", method: :put, class: "fa fa-thumbs-up" %>
-                  <%= link_to "#{@resouce.get_dislikes.size}", "", method: :put, class: "fa fa-thumbs-down" %>
+              <div class="meta-option like-option margin-top">
+                  <%= link_to "#{@resouce.get_likes.size}", "", class: "fa fa-long-arrow-up", title: "Like" %>
+                  <% link_to "#{@resouce.get_dislikes.size}", "", class: "fa fa-long-arrow-down", title: "Dislike" %>
               </div>
               
           
             </div>
             <div class="col-sm-6">
-                <% if @resouce.resource_link.include? "youtube" %>
+               <% if @resouce.resource_link.include? "youtube" %>
                   <% str1 = "#{@resouce.resource_link}" %>
                   <% str2 = str1.split("=") %>
                   
@@ -44,7 +42,6 @@
                   <!--  End: Video Area  -->
                 
                 <% end %>
-                
             </div>
             
           </div>
