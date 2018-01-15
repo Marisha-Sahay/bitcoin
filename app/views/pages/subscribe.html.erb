@@ -155,17 +155,17 @@
                                     
                                   <% array_of_items.each do |post|%>
                                     <li>
-                                        <a href="<%= post.news_url %>">
+                                        <a href="<%= post['url'] %>" target="_blank">
                                             <div class="media">
                                                 <div class="media-left">
-                                                  <% if post.main_image %>
-                                                    <div class="image-container bg-cover" style="background-image: url(<%= post.main_image %>); height: 80px;width: 110px; "></div>
+                                                  <% if post['urlToImage'] %>
+                                                    <div class="image-container bg-cover" style="background-image: url(<%= post['urlToImage'] %>); height: 80px;width: 110px; "></div>
                                                   <% else %>
                                                     <div class="image-container bg-cover" style="background-image: url(<%= asset_path 'bitcoins-default.jpg' %>); height: 80px;width: 110px;"></div>
                                                   <% end %>
                                                 </div>
                                                 <div class="media-body">
-                                                    <p class="post-title"><%= post.title %></p>
+                                                    <p class="post-title"><%= post['title'] %></p>
                                                 </div>
                                             </div>
                                         </a>
