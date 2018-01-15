@@ -22,16 +22,18 @@
                     <a class="addthis_button_twitter"><span class="share twitter"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</span></a>
                   </div>
               </div>
-              
               <div class="meta-option like-option margin-top">
                   <%= link_to "#{@resouce.get_likes.size}", "", class: "fa fa-long-arrow-up", title: "Like" %>
                   <% link_to "#{@resouce.get_dislikes.size}", "", class: "fa fa-long-arrow-down", title: "Dislike" %>
               </div>
               
+              <div class="btn-form margin-t-20">
+                  <%= link_to "Visit website", "http://#{@resouce.resource_link}", class: "btn btn-fill btn-dark", title: "Visit website", target: "_blank" %>
+              </div>
           
             </div>
             <div class="col-sm-6">
-               <% if @resouce.resource_link.include? "youtube" %>
+               <% if @resouce.resource_link.include? "youtube" %> 
                   <% str1 = "#{@resouce.resource_link}" %>
                   <% str2 = str1.split("=") %>
                   
@@ -40,9 +42,10 @@
                      <iframe class="video-async" data-source="vimeo"  data-color="ffc300" src="https://www.youtube.com/embed/<%= str2[1] %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <!--  Video Link Goes Here--> 
                   </div>
                   <!--  End: Video Area  -->
-                
+                <% else %>
+                    <div class="live-link-preview"><%= @resouce.resource_link %></div> 
                 <% end %>
-            </div>
+            </div> 
             
           </div>
         </div>
