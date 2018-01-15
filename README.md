@@ -37,3 +37,6 @@ rake import:coins
 
 * Server run
 sudo service postgresql start 
+
+
+// = require turbolinks

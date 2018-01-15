@@ -895,7 +895,9 @@ b {
   box-shadow: 0 2px 1px rgba(0, 0, 0, 0.14) ;
 }
 .btn.btn-fill:hover,
-.btn.btn-fill-big:hover {
+.btn.btn-fill-big:hover,
+.btn.btn-fill:focus,
+.btn.btn-fill-big:focus {
   background-color: #2A3855;
   border-color: #2A3855;
   color: #FFFFFF;
@@ -917,7 +919,9 @@ b {
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.14) ;
 }
 .btn.btn-border:hover,
-.btn.btn-border-big:hover {
+.btn.btn-border-big:hover,
+.btn.btn-border:focus,
+.btn.btn-border-big:focus {
   border-color: #ffffff;
   -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.14) ;
   -moz-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.14) ;
@@ -937,7 +941,8 @@ b {
   border-color: #2A3855;
   background-color: #2A3855;
 }
-.btn.btn-dark:hover {
+.btn.btn-dark:hover,
+.btn.btn-dark:focus {
   background-color: #192233;
   border-color: #192233;
   color: #FFFFFF;
@@ -947,7 +952,8 @@ b {
   border-color: #ffc300;
   background-color: #ffc300;
 }
-.btn.btn-color:hover {
+.btn.btn-color:hover,
+.btn.btn-color:focus {
   background-color: #e6b000;
   border-color: #e6b000;
   color: #FFFFFF;
@@ -2069,7 +2075,8 @@ b {
   border-color: #F8F8F8;
   background-color: #F8F8F8;
 }
-.business-item .read-more .btn:hover {
+.business-item .read-more .btn:hover,
+.business-item .read-more .btn:focus {
   background-color: #2A3855;
   border-color: #2A3855;
   color: #FFFFFF;
@@ -2611,7 +2618,8 @@ blockquote {
   border-color: #ffc300;
   background-color: #ffc300;
 }
-.subscribe-form .btn:hover {
+.subscribe-form .btn:hover,
+.subscribe-form .btn:focus {
   background-color: #e6b000;
   border-color: #e6b000;
   color: #FFFFFF;

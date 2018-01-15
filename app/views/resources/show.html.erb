@@ -11,7 +11,7 @@
               
               <!-- Start: Section Header -->
               <div class="section-header text-left">
-                <h1 class="section-heading"><%= link_to "#{@resouce.name}", "http://#{@resouce.resource_link}", target: "_blank" %></h1>
+                <h1 class="section-heading"><%= @resouce.name %></h1>
               </div> <!-- End: Section Header -->
               
               <div class="share-outer share-text margin-t-20">
@@ -21,6 +21,10 @@
                     <a class="addthis_button_linkedin"><span class="share linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i> Linkedin</span></a>
                     <a class="addthis_button_twitter"><span class="share twitter"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</span></a>
                   </div>
+              </div>
+              
+              <div class="btn-form">
+                  <%= link_to "Visit website", "", class: "btn btn-fill btn-dark", title: "Visit website", target: "_blank" %>
               </div>
               
               <div class="meta-option like-option margin-top">

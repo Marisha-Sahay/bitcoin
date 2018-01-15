@@ -58,4 +58,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # gem 'gibbon', git: 'git://github.com/amro/gibbon.git'
-gem 'gibbon'
+# gem 'gibbon'

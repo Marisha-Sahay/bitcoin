@@ -572,7 +572,8 @@ b {
         background-color: @background-1;
         .box-shadow( 0 2px 1px fade(@shadow-color, 14%) );
 
-        &:hover {
+        &:hover,
+        &:focus {
             background-color: @main-color-1;
             border-color: @main-color-1;
             color: @light-color;
@@ -587,7 +588,8 @@ b {
         color: fade(@dark-color, 85%);
         .box-shadow( 0 0 0 0 fade(@shadow-color, 14%) );
 
-        &:hover {
+        &:hover,
+        &:focus {
             border-color: fade(@background-1, 100%);
             .box-shadow( 0 2px 1px fade(@shadow-color, 14%) );
         }
