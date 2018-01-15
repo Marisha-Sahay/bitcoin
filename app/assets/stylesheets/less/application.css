@@ -3951,7 +3951,7 @@ blockquote {
   margin-right: 10px;
 }
 .tag-list.tag-details .margin-top {
-  margin-top: 100px;
+  margin-top: 60px;
 }
 .tag-list.tag-details .details {
   font-size: 21px;
@@ -4074,6 +4074,9 @@ blockquote {
 }
 .live-link-preview .guteurlsGU {
   display: none !important;
+}
+.live-link-preview.box-transparent .guteurlsBox {
+  background-color: transparent !important;
 }
 .display-block {
   display: block;
