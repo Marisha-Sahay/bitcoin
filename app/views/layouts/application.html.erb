@@ -72,7 +72,7 @@
                 <%= link_to "News", url_for("/news"), class: "nav-links", :data => { :reload => true } %>
               </li>
               <li class="<%= current_class?('/resources') %>">
-                <%= link_to "Resources", url_for("/resources"), class: "nav-links", :data => { :reload => true } %>
+                <%= link_to "Resources", url_for("/resources"), class: "nav-links", :data => { :reload => false } %>
               </li>
               <% if current_user %>
               <li class="<%= current_class?('/logout') %>">

@@ -9,7 +9,7 @@
                 <div class="section-header relative col-md-8 col-md-offset-2 col-sm-12" >
                 
                     <p class="section-heading margin-b-15">Bitcaffe thanks you for being an early supporter of the technology. Crypto grew 4000% ($20B to $800B) in 2017. Experts believe that year 2018 is for crypto what 1997-99 was for Dotcom era. </p>
-                    <p class="section-heading margin-b-15">Don’t miss the chance to invest and help accelerate the innovation. Have fun and make some $ along the way. </p>
+                    <p class="section-heading margin-b-15">Don’t miss the chance to invest and help accelerate the innovation. Have fun and make some $ along the way.</p>
                     <p class="section-heading">We, at Bitcaffe, are here to help you with the best tools to understand and ride this extremely volatile crypto market.</p>
                     <!--<hr class="lines margin-t-15" style="display: inline-block">-->
                     
@@ -35,7 +35,7 @@
 ================================ -->
 <section class="features-section features-2-col relative subscrive-section background-2">
     <div class="container">
-        <div class="row features-item section-separator">
+        <div class="row features-item section-separator-small">
           
             <div class="relative overflow">
                 
@@ -43,8 +43,28 @@
                 <div class="each-item col-md-6 col-sm-12">
                     <div class="inner-2-col">
                         
+                         <!-- Start: Section Header -->
+                        <div class="section-header text-center">
+                            <h4 class="section-heading">Please sign-up for these exchanges to get access of the cool ICO’s and new coins.</h4>
+                        </div> 
+                        <!-- End: Section Header -->
+                        <ul class="nav light margin-t-20 text-center">
+                            <li class="margin-b-20" >
+                                <span class="display-block margin-b-10"><strong>The best exchange to get started </strong></span>
+                                <a class="btn btn-fill btn-dark" data-reload="true" href="https://www.coinbase.com/join/56d7437a25cbc8005d000647">Sign-up for Coinbase</a>
+                            </li>
+                            <li class="margin-b-20" >
+                                <span class="display-block margin-b-10"><strong>Get access to smaller cap coins and ICOS </strong></span>
+                                <a class="btn btn-fill btn-dark" data-reload="true" href="https://www.kucoin.com/#/?r=28tHc">Sign-up for Kucoin</a>
+                            </li>
+                            <li><span class="display-block margin-b-10">
+                                <strong>Join the fastest growing exchange </strong></span>
+                                <a class="btn btn-fill btn-dark" data-reload="true" href="https://www.binance.com/?ref=13291055">Sign-up for Binance</a>
+                            </li>
+                        </ul>
+                        
                         <!--<h4 class="margin-b-30 "></h4>-->
-                        <div class="subscribe-form-area white">
+                        <div class="subscribe-form-area white margin-t-30">
                             <div class="subscribe-form-area-inner-small background-1 shadow">
                                     
                                 <!-- Start: Section Header -->
@@ -87,23 +107,12 @@
                             </div>
                         </div>
                         
-                        <!-- Start: Section Header -->
-                        <div class="section-header margin-t-30">
-                            <p class="section-heading">Please sign-up for these exchanges to get access of the cool ICO’s and new coins.</p>
-                        </div> 
-                        <!-- End: Section Header -->
-                        <ul class="nav side-navbar light margin-t-20">
-                            <li><a class="btn btn-fill btn-dark" data-reload="true" href="https://www.coinbase.com/join/56d7437a25cbc8005d000647">Coinbase</a></li>
-                            <li><a class="btn btn-fill btn-dark" data-reload="true" href="https://www.kucoin.com/#/?r=28tHc">Kucoin</a></li>
-                            <li><a class="btn btn-fill btn-dark" data-reload="true" href="https://www.binance.com/?ref=13291055">Binance</a></li>
-                        </ul>
-                        
                     </div>
                 </div> <!-- End: .each-item -->
                 <div class="each-item col-md-6 col-sm-12 text-left">
                     <div class="inner-2-col">
                         
-                        <h4 class="margin-b-30">For now, understand the price in context of news, social conversation, google trend and social sentiments.</h4>
+                        <h4 class="margin-b-30"> Understand prices in the context of news, social conversation & sentiment, and google trends.</h4>
                         <%= link_to( image_tag("#{asset_path "ImageForInvestorLP.jpg"}", :alt => "", :class =>"img-responsive"), "/news", :data => { :reload => true }, class: "display-block shadow" )%>
                     
                     </div>
@@ -127,27 +136,4 @@
 
 
 <script async src="https://guteurls.de/guteurls.js" selector=".live-link-preview"></script>
-<script>
-$(function () {
-    $loadMoreID = '.load-more-init';
-    $perItemID = '.load-item';
-    $($loadMoreID).find($perItemID).slice(0, 4).show();
-    $(".loadMore").on('click', function (e) {
-        e.preventDefault();
-        $mainID = $(this).closest($loadMoreID);
-        $mainID.find($perItemID+":hidden").slice(0, 4).slideDown();
-        if ($mainID.find($perItemID+":hidden").length == 0) {
-            $(this).fadeOut('slow');
-        }
-        $('html,body').animate({
-            scrollTop: $(this).offset().top
-        }, 1500);
-    });
-});
-</script>
 
-<style>
-.load-more-init .load-item {
-    display:none;
-}
-</style>

@@ -504,6 +504,10 @@ small,
 .font_small {
   font-size: 0.707em;
 }
+strong,
+b {
+  font-weight: 600;
+}
 /**
  * ---------------------
  *  Defult Helping Class
@@ -874,6 +878,11 @@ small,
   min-width: 250px;
   height: 52px;
 }
+.btn.btn-xs {
+  padding: 3px 13px;
+  min-width: auto;
+  height: auto;
+}
 .btn.btn-fill,
 .btn.btn-fill-big {
   color: rgba(35, 35, 35, 0.85);
@@ -1243,6 +1252,30 @@ small,
  *  Defult Margin Class
  * --------------------
  */
+.margin-t-5 {
+  margin-top: 5px;
+}
+.margin-r-5 {
+  margin-right: 5px;
+}
+.margin-b-5 {
+  margin-bottom: 5px;
+}
+.margin-l-5 {
+  margin-left: 5px;
+}
+.margin-t-10 {
+  margin-top: 10px;
+}
+.margin-r-10 {
+  margin-right: 10px;
+}
+.margin-b-10 {
+  margin-bottom: 10px;
+}
+.margin-l-10 {
+  margin-left: 10px;
+}
 .margin-t-15 {
   margin-top: 15px;
 }
@@ -1775,8 +1808,8 @@ small,
   padding-top: 274px;
 }
 .header-section-1 .section-separator {
-  padding-top: 90px;
-  padding-bottom: 90px;
+  padding-top: 70px;
+  padding-bottom: 70px;
 }
 .note-area {
   background-color: rgba(0, 0, 0, 0.45);
@@ -1852,7 +1885,7 @@ small,
   -o-transition-delay: 500ms ;
   transition-delay: 500ms ;
   margin-top: 0;
-  font-size: 42px;
+  font-size: 36px;
   letter-spacing: -0.12rem;
   text-transform: uppercase;
   /* text-shadow: 1px 1px 1px #000; */
@@ -4074,7 +4107,7 @@ blockquote {
    * -------------------
    */
   .carousel-home-slider .section-heading {
-    font-size: 51px;
+    font-size: 36px;
   }
   .footer-top-section .each-item {
     margin-top: 30px;
@@ -4222,7 +4255,7 @@ blockquote {
    * -------------------
    */
   .carousel-home-slider .section-heading {
-    font-size: 45px;
+    font-size: 36px;
   }
   /** 
    * -------------------------
@@ -4482,7 +4515,7 @@ blockquote {
    * -------------------
    */
   .carousel-home-slider .section-heading {
-    font-size: 35px;
+    font-size: 32px;
   }
   /**
    * ----------------
