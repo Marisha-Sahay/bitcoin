@@ -2872,6 +2872,10 @@ blockquote {
   font-weight: 600;
   text-align: left;
 }
+.recent-post .details {
+  font-size: 14px;
+  margin-top: 5px;
+}
 .recent-post .date {
   color: rgba(35, 35, 35, 0.65);
   font-weight: 400;
