@@ -39,10 +39,10 @@
                                     <p class="res-description margin-t-15"><%= resource.description[0..220] %>...</p>
                                     
                                     <div class="meta-option like-option">
-                                        <% if current_user && current_user.admin %>
+                                        <% if current_user %>
                                             <%= link_to "Upvote", "/resources/#{resource.id}/like", method: :put, class: "fa fa-long-arrow-up", title: "Like" %>
                                         <% else %>
-                                            <%= link_to "Upvote", "#", method: :put, class: "fa fa-long-arrow-up", title: "Like", :data => { :toggle => 'modal', :target => '#user-login-model' } %>
+                                            <%= link_to "Upvote", "#", class: "fa fa-long-arrow-up", title: "Like", :data => { :toggle => 'modal', :target => '#user-login-model' } %>
                                         <% end %>
                                         
                                         <% link_to "Downvote", "/resources/#{resource.id}/dislike", method: :put, class: "fa fa-long-arrow-down", title: "Dislike" %>
