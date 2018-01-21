@@ -168,20 +168,20 @@
                             <li>
                                 <a href="http://www.linkedin.com/company/18200105" target="_blank">
                                     <i class="fa fa-linkedin"></i>
-                                    <span class="name">LINKDIN</span>
+                                    <span class="name">Linkedin</span>
                                 </a>
                                 
                             </li>
                             <li>
                                 <a href="http://www.facebook.com/bitcaffe" target="_blank">
                                     <i class="fa fa-facebook"></i>
-                                    <span class="name">FACEBOOK</span>
+                                    <span class="name">Facebook</span>
                                 </a>                                    
                             </li>
                             <li>
                                 <a href="//twitter.com/bitcaffe256" target="_blank">
                                     <i class="fa fa-twitter"></i>
-                                    <span class="name">TWITTER</span>
+                                    <span class="name">Twitter</span>
                                 </a>                                    
                             </li>
                         </ul>
@@ -247,6 +247,81 @@
     </div> <!-- End: .container  -->
   </footer>
   
+  
+  
+  <!-- Start: Login Popup
+  =====================================-->
+  <div class=" modal fade contact-us-model" id="user-login-model" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+          <div class="modal-content background-2 display-table">
+
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              
+              <div class="model-content col-xs-12">
+                  <div class="row">
+                      <div class="inner clearfix">
+                      
+                          <!-- Start: Section Header -->
+                          <div class="section-header text-center">
+                              
+                              <h4 class="section-heading">Login With BitCaffe</h4>
+                              <hr class="full-line">
+
+                          </div>
+                          <!-- End: Section Header -->
+
+                          <div class="registration-form ">
+                              <div class="">
+                                  
+                                  <%=form_tag '/login', method: :post, class: "single-form" do%>
+      
+                                      <div class="input-outer">
+                                          <div class="form-group">
+                                              <div class="input-group">
+                                                  <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                                  <!-- <input name="username" class="form-control" type="text" placeholder="Username" required=""> -->
+                                                  <%= text_field_tag :email, "", placeholder: "Email", class:"form-control" %>
+                                              </div>
+                                          </div>
+                                      </div> <!-- End: input -->
+      
+                                      <div class="input-outer">
+                                          <div class="form-group">
+                                              <div class="input-group">
+                                                  <div class="input-group-addon"><i class="fa fa-lock"></i></div>
+                                                  <!-- <input name="pass" class="form-control" type="password" placeholder="Password" required=""> -->
+                                                  <%= password_field_tag :password, "", placeholder: "Password", class:"form-control" %>
+                                              </div>
+                                          </div>
+                                      </div> <!-- End: input -->
+      
+                                      <!-- Subject Button -->
+                                      <div class="btn-form input-outer">
+                                          <div class="button-outer relative">
+                                              <%= button_tag "Login".html_safe, class: "btn btn-fill full-width"%>
+                                          </div>
+                                      </div>
+                                  <%end%>
+                                  
+                                  <div class="text-center">
+                                    <%= link_to "Register new User".html_safe, "/signup", class: "btn"%>
+                                  </div>
+      
+                              </div> <!-- /#-1 -->
+                          </div>
+
+                          <!--<p class="margin-t-15">We will share the qutation &amp; detail with you soon</p>-->
+
+                      </div>
+                  </div>
+              </div> <!-- End: .model-content -->
+
+          </div>
+      </div> <!-- End: .modal-dialog -->
+  </div>
+  <!-- End: Login Popup
+  =====================================-->
+  
 
   
 </body>
@@ -300,6 +375,18 @@
             singleItem : true
           });
           
+          
+          
+          /**
+           * -----------------------------
+           * Bootstrap Select INIT
+           * -----------------------------
+           */
+          $('.selectpicker').selectpicker({
+            style: 'btn-info',
+            size: 4
+          });
+
           
           
           /**

@@ -37,6 +37,42 @@
                         </div>
                     </div>
                 </div>
+                
+                
+                <div class="clearfix"></div>
+            
+                <!-- Start: Coin Dropdown -->
+                <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12 margin-t-20 margin-b-40">
+                    
+                    <div class="subscribe-form">
+                        <form method="" class="single-form text-center" action="" id="coins-dropdown">
+                            <div class="container-fluid" >
+                                
+                                <input type="hidden" value="<% request.env['HTTP_HOST']%>/coins/" id="coin_link" />
+    
+                                <div class="row">
+                                    <div class="input-group">
+    
+                                        <div class="outer">
+                                            <select class="selectpicker shadow background-1" id="coin-select" data-live-search="true" data-style="btn-warning">
+                                                <% @coinsAll.each do |coin| %>
+                                                <option value="<%= coin.id %>"><%= coin.name %> (<%= coin.symbol %>)</option>
+                                                <% end %>
+                                            </select>
+                                        </div>
+    
+                                        <div class="input-group-btn outer">
+                                            <button class="footer-form-submit btn btn-fill button" type="submit" name="subscribe">Search</button>
+                                        </div>
+    
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </form>
+                    </div>
+                        
+                </div> <!-- End: Coin Dropdown -->
 
                 <div class="clearfix"></div>
                 
@@ -189,6 +225,17 @@
         };
         oScript.src = $('input').val() + ".embed?limit=9";
         document.body.appendChild(oScript);
+        
+        
+        
+        $( "#coins-dropdown" ).submit(function( event ) {
+          event.preventDefault();
+          
+          var coin = $(this).find("#coin-select").val(),
+              url  = $(this).find("#coin_link").val();
+          console.log(coin, url);
+          self.location = url + coin;
+        });
         
     });
 } (jQuery) );
