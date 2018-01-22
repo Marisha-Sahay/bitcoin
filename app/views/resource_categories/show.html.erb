@@ -40,9 +40,9 @@
                                     
                                     <div class="meta-option like-option">
                                         <% if current_user %>
-                                            <%= link_to "Upvote", "/resources/#{resource.id}/like", method: :put, class: "fa fa-long-arrow-up", title: "Like" %>
+                                            <%= link_to "#{@resouce.get_likes.size}", "/resources/#{@resouce.id}/like", method: :put, class: "icon arrow_up current_user like", title: "Like" %>
                                         <% else %>
-                                            <%= link_to "Upvote", "#", class: "fa fa-long-arrow-up", title: "Like", :data => { :toggle => 'modal', :target => '#user-login-model' } %>
+                                            <%= link_to "#{@resouce.get_likes.size}", "#", class: "icon arrow_up", title: "Like", :data => { :toggle => 'modal', :target => '#user-login-model' } %>
                                         <% end %>
                                         
                                         <% link_to "Downvote", "/resources/#{resource.id}/dislike", method: :put, class: "fa fa-long-arrow-down", title: "Dislike" %>

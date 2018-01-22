@@ -162,7 +162,7 @@
                             <div role="tabpanel" class="tab-pane no-padding active" id="reddit-tab">
 
                                 <div id="reddit" class="text-left no-header">
-                                <input type="hidden" value="<%= @coin.reddit_link %>" name="input" />
+                                <input type="hidden" value="<%= @coin.reddit_link %>" name="input" id="reddit-id"/>
                                 </div> 
 
                             </div> <!-- End: .tab-pane -->
@@ -223,7 +223,7 @@
         document.write = function(text) {
             document.getElementById("reddit").innerHTML += text;
         };
-        oScript.src = $('input').val() + ".embed?limit=9";
+        oScript.src = $('#reddit-id').val() + ".embed?limit=9";
         document.body.appendChild(oScript);
         
         

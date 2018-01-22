@@ -145,7 +145,7 @@
                             
                             <% 
                             count = 1 
-                            @posts.each_slice(4) do |array_of_items| 
+                            @posts.each_slice(3) do |array_of_items| 
                                 if count <= 3
                                     count += 1
                             %>
@@ -166,7 +166,7 @@
                                                 </div>
                                                 <div class="media-body">
                                                     <p class="post-title"><%= post['title'] %></p>
-                                                    <p class="details"><%= post['description'][0..23] %>...</p>
+                                                    <p class="details"><%= post['description'][0..60] %>...</p>
                                                 </div>
                                             </div>
                                         </a>
