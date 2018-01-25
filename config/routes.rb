@@ -60,6 +60,8 @@ Rails.application.routes.draw do
 
   get '/coins/:id', to: 'coins#show'
 
+  get '/prices', to: 'prices#index'
+  
   namespace :api do
     namespace :v1 do
       get '/news', to: 'news#index'

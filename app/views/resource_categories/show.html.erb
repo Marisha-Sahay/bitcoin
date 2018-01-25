@@ -40,7 +40,7 @@
                                     
                                     <div class="meta-option like-option">
                                         <% if current_user %>
-                                            <%= link_to "#{resource.get_likes.size}", "/resources/#{resource.id}/like", method: :put, class: "icon arrow_up current_user like", title: "Like" %>
+                                            <%= link_to "#{resource.get_likes.size}", "/resources/#{resource.id}/like", method: :put, class: "icon arrow_up current_user like active", title: "Like" %>
                                         <% else %>
                                             <%= link_to "#{resource.get_likes.size}", "#", class: "icon arrow_up", title: "Like", :data => { :toggle => 'modal', :target => '#user-login-model' } %>
                                         <% end %>
