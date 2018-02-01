@@ -53,6 +53,7 @@ class PagesController < ApplicationController
 
   def news
     @coins = Coin.all.limit 10
+    @coinsAll = Coin.all
     @posts = News.distinct(:title).order('published DESC, performance_score DESC')
   end
 

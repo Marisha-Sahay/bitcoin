@@ -23,11 +23,16 @@
                   </div>
               </div>
               <div class="meta-option like-option margin-top">
-                  <%= link_to "#{@resouce.get_likes.size}", "", class: "fa fa-long-arrow-up", title: "Like" %>
-                  <% link_to "#{@resouce.get_dislikes.size}", "", class: "fa fa-long-arrow-down", title: "Dislike" %>
+                    <% if current_user %>
+                        <%= link_to "#{@resouce.get_likes.size}", "/resources/#{@resouce.id}/like", method: :put, class: "icon arrow_up current_user like", title: "Like" %>
+                    <% else %>
+                        <%= link_to "#{@resouce.get_likes.size}", "#", class: "icon arrow_up", title: "Like", :data => { :toggle => 'modal', :target => '#user-login-model' } %>
+                    <% end %>
+                    
+                    <% link_to "#{@resouce.get_dislikes.size}", "", class: "fa fa-long-arrow-down", title: "Dislike" %>
               </div>
               
-              <div class="btn-form margin-t-20">
+              <div class="btn-form margin-t-30">
                   <%= link_to "Visit website", "#{@resouce.resource_link}", class: "btn btn-fill btn-dark", title: "Visit website", target: "_blank" %>
               </div>
           

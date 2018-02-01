@@ -4,10 +4,10 @@
     <div class="container">
         <div class="row features-item section-separator-small default-seperator">
           
-            <div class="each-item-big col-sm-8 col-sm-offset-2 col-xs-12">
+            <div class="col-sm-8 col-sm-offset-2 col-xs-12">
                 <div class="inner">
-                <h1 align="center">Choose a coin to get its info</h1>
-<!--                     <forn class="single-form search-form search-big" action="" method="POST">
+                <h4 align="center" style="font-weight: 600;">Choose a coin to get its info</h1>
+                    <!-- <forn class="single-form search-form search-big" action="" method="POST">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Search...">
                             <span class="input-group-btn">
@@ -21,7 +21,7 @@
             
             <div class="clearfix"></div>
             
-            <div class="each-item-big col-xs-12 text-center">
+            <div class="margin-b-20 col-xs-12 text-center">
                 <div class="inner">
 
                     <div class="tag-list text-center">
@@ -31,7 +31,7 @@
          
                                 <%= link_to "/coins/#{coin.id}", :data => { :reload => true } do %>
                                     <%= image_tag("#{coin.image_url}", :alt => "", :class =>"img-responsive") %>
-                                    <%= content_tag(:p, "#{coin.symbol}", :class =>"margin-t-15") %>
+                                    <%= content_tag(:p, "#{coin.symbol}", :class =>"margin-t-10") %>
                                 <% end %>
                                 
                                 
@@ -45,6 +45,41 @@
 
                 </div>
             </div>
+            
+            <div class="clearfix"></div>
+            
+            <!-- Start: Coin Dropdown -->
+            <div class="each-item-big col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
+                
+                <div class="subscribe-form">
+                    <form method="" class="single-form text-center" action="" id="coins-dropdown">
+                        <div class="container-fluid" >
+                            
+                            <input type="hidden" value="<% request.env['HTTP_HOST']%>/coins/" id="coin_link" />
+
+                            <div class="row">
+                                <div class="input-group">
+
+                                    <div class="outer">
+                                        <select class="selectpicker shadow background-1" id="coin-select" data-live-search="true" data-style="btn-warning">
+                                            <% @coinsAll.each do |coin| %>
+                                            <option value="<%= coin.id %>"><%= coin.name %> (<%= coin.symbol %>)</option>
+                                            <% end %>
+                                        </select>
+                                    </div>
+
+                                    <div class="input-group-btn outer">
+                                        <button class="footer-form-submit btn btn-fill button" type="submit" name="subscribe">Search</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </form>
+                </div>
+                    
+            </div> <!-- End: Coin Dropdown -->
             
             <div class="clearfix"></div>
             
@@ -66,12 +101,12 @@
                             <div class="each-item-inner">
                                 
                                 <% if post.main_image %>
-                                    <div class="vertical-middle features-image bg-cover col-sm-4 col-xs-12" style="background-image: url(<%= post.main_image %>);"></div>
+                                    <div class="vertical-middle features-image bg-cover col-sm-3 col-xs-12" style="background-image: url(<%= post.main_image %>);"></div>
                                 <% else %>
-                                    <div class="vertical-middle features-image bg-cover col-sm-4 col-xs-12" style="background-image: url(<%= asset_path 'bitcoins-default.jpg' %>);"></div>
+                                    <div class="vertical-middle features-image bg-cover col-sm-3 col-xs-12" style="background-image: url(<%= asset_path 'bitcoins-default.jpg' %>);"></div>
                                 <% end %>
 
-                                <div class="vertical-middle features-content col-sm-8 col-xs-12">
+                                <div class="vertical-middle features-content col-sm-9 col-xs-12">
                                     <div class="row">
                                         <div class="item-inner text-left margin-l-15">
                                 
@@ -79,7 +114,7 @@
                         
                                             <!-- Start: Section Header -->
                                             <div class="section-header">
-                                                <h4 class="section-heading"><a href="<%= post.news_url %>" target="_blank"><%= post.title[0..50] %>...</a></h4>
+                                                <h4 class="section-heading"><a href="<%= post.news_url %>" target="_blank"><%= post.title %></a></h4>
                                                 <p class="post-meta">
                                                     By <%= post.author %>, <%= post.published%> 
                                                 </p>
@@ -87,17 +122,17 @@
                                             <!-- End: Section Header -->
         
                                             <div class="detail small-spacing">
-                                                <p><%= post.description[0..60] %>...</p>
+                                                <p><%= post.description[0..100] %>...</p>
                                             </div>
                                             
-                                            <div class="share-outer margin-t-15">
+                                            <!--<div class="share-outer margin-t-15">-->
                                                 <!--<div class="addthis_inline_share_toolbox "></div>-->
-                                                <div class="addthis_toolbox addthis_default_style">
-                                                  <a class="addthis_button_facebook"><span class="share facebook"><i class="fa fa-facebook" aria-hidden="true"></i> <%= post.facebook_share %></span></a>
-                                                  <a class="addthis_button_linkedin"><span class="share linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i> <%= post.linkedin_share %></span></a>
-                                                  <a class="addthis_button_twitter"><span class="share twitter"><i class="fa fa-twitter" aria-hidden="true"></i> 0</span></a>
-                                                </div>
-                                            </div>
+                                            <!--    <div class="addthis_toolbox addthis_default_style">-->
+                                            <!--      <a class="addthis_button_facebook"><span class="share facebook"><i class="fa fa-facebook" aria-hidden="true"></i> <%= post.facebook_share %></span></a>-->
+                                            <!--      <a class="addthis_button_linkedin"><span class="share linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i> <%= post.linkedin_share %></span></a>-->
+                                            <!--      <a class="addthis_button_twitter"><span class="share twitter"><i class="fa fa-twitter" aria-hidden="true"></i> 0</span></a>-->
+                                            <!--    </div>-->
+                                            <!--</div>-->
         
                                             <!-- Button Area -->
                                             <div class="btn-form btn-interest">
@@ -187,6 +222,18 @@
                 scrollTop: $(this).offset().top
             }, 1500);
         });
+        
+        
+        $( "#coins-dropdown" ).submit(function( event ) {
+          event.preventDefault();
+          
+          var coin = $(this).find("#coin-select").val(),
+              url  = $(this).find("#coin_link").val();
+          console.log(coin, url);
+          self.location = url + coin;
+        });
+
+
     });
 } (jQuery) );
 </script>

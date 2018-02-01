@@ -1,4 +1,4 @@
-<br><br><br><br>
+
 <!-- Start: Header Section
 ================================ -->
 <section class="features-section relative subscrive-section background-2">
@@ -59,8 +59,13 @@
                             <p class="res-description margin-t-15"><%= resource.description[0..220] %>...</p>
                             
                             <div class="meta-option like-option">
-                                <%= link_to "Upvote", "/resources/#{resource.id}/like", method: :put, class: "fa fa-long-arrow-up", title: "Like" %>
-                                <%= link_to "Downvote", "/resources/#{resource.id}/dislike", method: :put, class: "fa fa-long-arrow-down", title: "Dislike" %>
+                                <% if current_user %>
+                                    <%= link_to "#{@resouce.get_likes.size}", "/resources/#{@resouce.id}/like", method: :put, class: "icon arrow_up current_user like", title: "Like" %>
+                                <% else %>
+                                    <%= link_to "#{@resouce.get_likes.size}", "#", class: "icon arrow_up", title: "Like", :data => { :toggle => 'modal', :target => '#user-login-model' } %>
+                                <% end %>
+                                
+                                <% link_to "Downvote", "/resources/#{resource.id}/dislike", method: :put, class: "fa fa-long-arrow-down", title: "Dislike" %>
                             </div>
                             
                             <% if current_user && current_user.admin %>
