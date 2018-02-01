@@ -4,9 +4,9 @@
         <div class="container">
             <div class="row features-item section-separator">
 
-                <div class="each-item-big col-sm-8 col-sm-offset-2 col-xs-12">
+                <div class="col-sm-8 col-sm-offset-2 col-xs-12">
                     <div class="inner">
-                        <h1 align="center">Choose a coin to get its info</h1>
+                        <h4 align="center" style="font-weight: 600;">Choose a coin to get its info</h1>
 <!--                     <forn class="single-form search-form search-big" action="" method="POST">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Search...">
@@ -21,7 +21,7 @@
 
                 <div class="clearfix"></div>
 
-                <div class="each-item-big col-xs-12 text-center">
+                <div class="margin-b-20 col-xs-12 text-center">
                     <div class="inner">
 
                         <div class="tag-list text-center">
@@ -30,7 +30,7 @@
                                 <div class="tag relative bg-cover bg-overlay-dark shadow" style="background-image: url(<%= coin.image_url %>);">
                                     <%= link_to "/coins/#{coin.id}", :data => { :reload => true } do %>
                                         <%= image_tag("#{coin.image_url}", :alt => "", :class =>"img-responsive") %>
-                                        <%= content_tag(:p, "#{coin.symbol}", :class =>"margin-t-15") %>
+                                        <%= content_tag(:p, "#{coin.symbol}", :class =>"margin-t-10") %>
                                     <% end %>
                                 </div>
                             <% end %>
@@ -42,7 +42,7 @@
                 <div class="clearfix"></div>
             
                 <!-- Start: Coin Dropdown -->
-                <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12 margin-t-20 margin-b-40">
+                <div class="each-item-big col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
                     
                     <div class="subscribe-form">
                         <form method="" class="single-form text-center" action="" id="coins-dropdown">
@@ -94,12 +94,12 @@
                                 <div class="each-item-inner">
 
                                     <% if post['main_image'] %>
-                                    <div class="vertical-middle features-image bg-cover col-sm-4 col-xs-12" style="background-image: url(<%= post['main_image'] %>);"></div>
+                                    <div class="vertical-middle features-image bg-cover col-sm-3 col-xs-12" style="background-image: url(<%= post['main_image'] %>);"></div>
                                     <% else %>
-                                    <div class="vertical-middle features-image bg-cover col-sm-4 col-xs-12" style="background-image: url(<%= asset_path 'bitcoins-default.jpg' %>);"></div>
+                                    <div class="vertical-middle features-image bg-cover col-sm-3 col-xs-12" style="background-image: url(<%= asset_path 'bitcoins-default.jpg' %>);"></div>
                                     <% end %>
 
-                                    <div class="vertical-middle features-content col-sm-8 col-xs-12">
+                                    <div class="vertical-middle features-content col-sm-9 col-xs-12">
                                         <div class="row">
                                             <div class="item-inner text-left margin-l-15">
 
@@ -117,15 +117,6 @@
                                                 <div class="detail small-spacing">
                                                     <p><%= post['description'][0..60] %>...</p>
                                                 </div>
-
-                                                <div class="share-outer margin-t-15">
-                                                    <!--<div class="addthis_inline_share_toolbox "></div>-->
-                                                    <div class="addthis_toolbox addthis_default_style">
-                                                      <a class="addthis_button_facebook"><span class="share facebook"><i class="fa fa-facebook" aria-hidden="true"></i> <%= post['facebook_share'] %></span></a>
-                                                      <a class="addthis_button_linkedin"><span class="share linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i> <%= post['linkedin_share'] %></span></a>
-                                                      <a class="addthis_button_twitter"><span class="share twitter"><i class="fa fa-twitter" aria-hidden="true"></i> 0</span></a>
-                                                  </div>
-                                              </div>
 
                                               <!-- Button Area -->
                                               <div class="btn-form btn-interest">

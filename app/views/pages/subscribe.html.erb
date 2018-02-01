@@ -159,9 +159,9 @@
                                             <div class="media">
                                                 <div class="media-left">
                                                   <% if post['urlToImage'] %>
-                                                    <div class="image-container bg-cover" style="background-image: url(<%= post['urlToImage'] %>); height: 80px;width: 110px; "></div>
+                                                    <div class="image-container bg-cover" style="background-image: url(<%= post['urlToImage'] %>); height: 59px;width: 80px;"></div>
                                                   <% else %>
-                                                    <div class="image-container bg-cover" style="background-image: url(<%= asset_path 'bitcoins-default.jpg' %>); height: 80px;width: 110px;"></div>
+                                                    <div class="image-container bg-cover" style="background-image: url(<%= asset_path 'bitcoins-default.jpg' %>); height: 59px;width: 80px;"></div>
                                                   <% end %>
                                                 </div>
                                                 <div class="media-body">
@@ -200,11 +200,11 @@
                             @contents.each do |content| 
                             if count <= 3 %>
                             <div class="item">
-                                <div class="item-inner text-left">
+                                <div class="item-inner content-small text-left">
                                     
                                   <!-- Start: Section Header -->
                                   <div class="section-header no-margin">
-                                      <a href="<%= content.news_url %>"><h3><%= content.title %></h3></a>
+                                      <a href="<%= content.news_url %>"><h3 class="title"><%= content.title %></h3></a>
                                       <!--<p class="post-meta">-->
                                       <!--    By <a href="#">thomas been</a>, <a href="#">May 15, 2015</a> -->
                                       <!--</p>-->

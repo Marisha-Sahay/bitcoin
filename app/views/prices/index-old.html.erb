@@ -70,15 +70,15 @@
 				</coins-filter>
 				
 				<div class="coins-list margin-t-30" style="overflow: hidden;">
-					<table id="myTable1" class="table table-striped table-coins display dataTable">
-					<!--<table id="myTable1" class="table">-->
+					<!--<table id="myTable1" class="table table-hover table-coins display dataTable">-->
+					<table id="myTable1" class="table">
 						<thead>
 							<tr>
 								<th class="place">#</th>
 								<th class="flag">Flag</th>
 								<th class="flag">#</th>
-								<th class="thumb "></th>
-								<th class="name " >Name</th>
+								<th class="thumb col-selected"></th>
+								<th class="name col-selected" >Name</th>
 								<th class="price">Current Marketcap</th>
 								<th class="volume">24<sup>hr</sup> Change vs USD (%)</th>
 								<th class="algorithm">Price USD</th>
@@ -99,8 +99,7 @@
 							</tr>
 						</thead>			
 						<tbody infinite-scroll="" scroll-controller-object="allData" class="ng-isolate-scope">
-							<!--<tr class="ng-scope item-special">-->
-							<tr class="ng-scope">
+							<tr class="ng-scope item-special">
 								<td class="place " data-href="/coins/prg/overview/BTC">
 									<div class="ng-binding">1</div>
 								</td>
@@ -114,12 +113,12 @@
 										<i style="color: #F79A35;font-style: normal;font-size: 20px;" class="ng-binding table-favorite fa fa-heart-o"></i>
 									</span>
 								</td>
-								<td class="thumb ">
+								<td class="thumb col-selected">
 									<a title="" href="">
 										<img src="https://onchainfx.com/images/asset_logos/bitcoin.png?width=25">
 									</a>
 								</td>		
-								<td class="name ">
+								<td class="name col-selected">
 									<a title="" href="">
 										<h3>
 											<span class="desktop-name ng-binding">
@@ -147,7 +146,7 @@
 									</div>
 								</td>
 								<td class="volume">
-									<div class="current-price-value ng-binding value-down">
+									<div class="current-price-value ng-binding value-up">
 										$185,179,263,197
 									</div>
 								</td>
@@ -157,7 +156,7 @@
 									</div>
 								</td>
 								<td class="proof-type">
-									<div class="current-price-value ng-binding value-down">
+									<div class="current-price-value ng-binding value-up">
 										$175.25
 									</div>							
 								</td>
@@ -187,11 +186,6 @@
 									</div>
 								</td>
 								<td class="market-cap">
-									<div class="current-price-value ng-binding value-down">
-										$185,179,263,197
-									</div>
-								</td>
-								<td class="market-cap">
 									<div class="current-price-value ng-binding value-up">
 										$185,179,263,197
 									</div>
@@ -212,7 +206,12 @@
 									</div>
 								</td>
 								<td class="market-cap">
-									<div class="current-price-value ng-binding value-down">
+									<div class="current-price-value ng-binding value-up">
+										$185,179,263,197
+									</div>
+								</td>
+								<td class="market-cap">
+									<div class="current-price-value ng-binding value-up">
 										$185,179,263,197
 									</div>
 								</td>
@@ -228,7 +227,7 @@
 								</td>
 								<td class="flag">
 									<span class="desktop-name ng-binding">
-										<i style="color: #F79A35;font-style: normal;font-size: 20px;" class="ng-binding table-flag active-flag fa fa-flag-o"></i>
+										<i style="color: #F79A35;font-style: normal;font-size: 20px;" class="ng-binding table-flag fa fa-flag-o"></i>
 									</span>
 								</td>
 								<td class="flag">
@@ -236,12 +235,12 @@
 										<i style="color: #F79A35;font-style: normal;font-size: 20px;" class="ng-binding table-favorite fa fa-heart-o"></i>
 									</span>
 								</td>
-								<td class="thumb ">
+								<td class="thumb col-selected">
 									<a title="" href="">
 										<img src="https://onchainfx.com/images/asset_logos/ripple.png?width=25">
 									</a>
 								</td>		
-								<td class="name ">
+								<td class="name col-selected">
 									<a title="" href="">
 										<h3>
 											<span class="desktop-name ng-binding">
@@ -259,17 +258,17 @@
 									</a>
 								</td>
 								<td class="market-cap">
-									<div class="current-price-value ng-binding value-down">
+									<div class="current-price-value ng-binding value-up">
 										$18,179,263,197
 									</div>
 								</td>
 								<td class="price ">
-									<div class="current-price-value ng-binding value-up">
+									<div class="current-price-value ng-binding value-down">
 										$20,900,285,015	
 									</div>
 								</td>
 								<td class="volume">
-									<div class="current-price-value ng-binding value-down">
+									<div class="current-price-value ng-binding value-up">
 										$85,179,263,197
 									</div>
 								</td>
@@ -358,12 +357,12 @@
 										<i style="color: #F79A35;font-style: normal;font-size: 20px;" class="ng-binding table-favorite fa fa-heart-o"></i>
 									</span>
 								</td>
-								<td class="thumb ">
+								<td class="thumb col-selected">
 									<a title="" href="">
 										<img src="https://onchainfx.com/images/asset_logos/neo.png?width=25">
 									</a>
 								</td>		
-								<td class="name ">
+								<td class="name col-selected">
 									<a title="" href="">
 										<h3>
 											<span class="desktop-name ng-binding">
@@ -477,15 +476,15 @@
 								</td>
 								<td class="flag">
 									<span class="desktop-name ng-binding">
-										<i style="color: #F79A35;font-style: normal;font-size: 20px;" class="ng-binding table-favorite active-favorite fa fa-heart-o"></i>
+										<i style="color: #F79A35;font-style: normal;font-size: 20px;" class="ng-binding table-favorite fa fa-heart-o"></i>
 									</span>
 								</td>
-								<td class="thumb ">
+								<td class="thumb col-selected">
 									<a title="" href="">
 										<img src="https://onchainfx.com/images/asset_logos/dash.png?width=25">
 									</a>
 								</td>		
-								<td class="name ">
+								<td class="name col-selected">
 									<a title="" href="">
 										<h3>
 											<span class="desktop-name ng-binding">
@@ -503,17 +502,17 @@
 									</a>
 								</td>
 								<td class="market-cap">
-									<div class="current-price-value ng-binding value-down">
+									<div class="current-price-value ng-binding value-up">
 										$15,179,263,197
 									</div>
 								</td>
 								<td class="price ">
-									<div class="current-price-value ng-binding value-up">
+									<div class="current-price-value ng-binding value-down">
 										$230,980,285,015	
 									</div>
 								</td>
 								<td class="volume">
-									<div class="current-price-value ng-binding value-down">
+									<div class="current-price-value ng-binding value-up">
 										$1,179,263,197
 									</div>
 								</td>
@@ -548,7 +547,7 @@
 									</div>
 								</td>
 								<td class="market-cap">
-									<div class="current-price-value ng-binding value-down">
+									<div class="current-price-value ng-binding value-up">
 										$185,179,263,197
 									</div>
 								</td>
@@ -602,12 +601,12 @@
 										<i style="color: #F79A35;font-style: normal;font-size: 20px;" class="ng-binding table-favorite fa fa-heart-o"></i>
 									</span>
 								</td>
-								<td class="thumb ">
+								<td class="thumb col-selected">
 									<a title="" href="">
 										<img src="https://onchainfx.com/images/asset_logos/stellar.png?width=25">
 									</a>
 								</td>		
-								<td class="name ">
+								<td class="name col-selected">
 									<a title="" href="">
 										<h3>
 											<span class="desktop-name ng-binding">
@@ -709,7 +708,97 @@
 										$185,179,263,197
 									</div>
 								</td>
-							</tr>				
+							</tr>
+							
+							<!--<tr class="ng-scope item-special">-->
+							<!--	<td class="place " data-href="/coins/prg/overview/BTC">-->
+							<!--		<div class="ng-binding">451</div>-->
+							<!--	</td>-->
+							<!--	<td class=" ">-->
+							<!--		<h3>-->
+							<!--			<span class="desktop-name ng-binding">-->
+							<!--				<i style="color: #F79A35;font-style: normal;font-size: 20px;" class="ng-binding fa fa-flag-o"></i>-->
+							<!--			</span>-->
+							<!--		</h3>-->
+							<!--	</td>-->
+							<!--	<td class="thumb">-->
+							<!--		<a title="See full markets and forum for Paragon" href="/coins/prg/overview/BTC">-->
+							<!--			<img src="/media/1384033/prg.png?width=25">-->
+							<!--		</a>-->
+							<!--	</td>		-->
+							<!--	<td class="name">-->
+							<!--		<a title="See full markets and forum for Paragon" href="/coins/prg/overview/BTC">-->
+							<!--			<h3>-->
+							<!--				<span class="desktop-name ng-binding">-->
+							<!--					Paragon<br>-->
+							<!--					<i style="color: #F79A35; font-style: normal; font-size: 14px;" class="ng-binding">PRG</i>-->
+							<!--				</span>-->
+							<!--				<span class="mobile-name ng-binding">PRG</span>-->
+							<!--				<span class="special-text ng-scope">-->
+							<!--					Sponsored-->
+							<!--				</span>-->
+							<!--			</h3>-->
+							<!--		</a>-->
+							<!--	</td>-->
+							<!--	<td class="price col-selected">-->
+							<!--		<div class="current-price-value ng-binding value-up">-->
+							<!--			Ƀ 0.00003800-->
+							<!--		</div>-->
+							<!--	</td>-->
+							<!--	<td class="volume">-->
+							<!--		<div class="ng-binding">-->
+							<!--			PRG 152,413.84-->
+							<!--		</div>-->
+							<!--		<div class="ng-binding">-->
+							<!--			Ƀ 6.15-->
+							<!--		</div>-->
+							<!--	</td>-->
+							<!--	<td class="algorithm">-->
+							<!--		<div class="ng-binding">N/A</div>-->
+							<!--	</td>-->
+								
+							<!--	<td class="proof-type">-->
+							<!--		<div class="ng-binding">N/A</div>							-->
+							<!--	</td>-->
+							<!--	<td class="market-cap">-->
+							<!--		<div class="ng-binding">-->
+							<!--			Ƀ 6,267.59-->
+							<!--		</div>-->
+							<!--	</td>-->
+							<!--	<td class="last-trade">-->
+							<!--		<div class="ng-binding">-->
+							<!--			13 min ago-->
+							<!--		</div>-->
+							<!--		<div>-->
+							<!--			<a title="See all coins on HitBTC" class="ng-binding" href="/exchanges/HitBTC/overview/BTC">HitBTC</a>-->
+							<!--		</div>-->
+							<!--	</td>							-->
+							<!--	<td class="change" ng-class="{'col-selected':allData.getSorterOptions(1).Applied}">-->
+							<!--		<div class="change-normal">-->
+							<!--			<span class="current-change-currency ng-binding up-text">-->
+							<!--				11.76%-->
+							<!--				<i class="change-indicator-xs">-->
+							<!--					<span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>-->
+							<!--					<span class="glyphicon glyphicon-chevron-down ng-hide" aria-hidden="true"></span>-->
+							<!--				</i>										-->
+							<!--			</span>-->
+							<!--		</div>-->
+							<!--		<div class="change-mobile is-up">										-->
+							<!--			<span class="current-change-currency ng-binding up-text">-->
+							<!--				11.76%-->
+							<!--				<i class="change-indicator-xs">-->
+							<!--					<span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>-->
+							<!--					<span class="glyphicon glyphicon-chevron-down ng-hide" aria-hidden="true"></span>-->
+							<!--				</i>										-->
+							<!--			</span>-->
+							<!--		</div>-->
+							<!--		<div class="change-indicator-md">-->
+							<!--			<span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>-->
+							<!--			<span class="glyphicon glyphicon-chevron-down ng-hide" aria-hidden="true"></span>-->
+							<!--		</div>									-->
+							<!--	</td>									-->
+							<!--</tr>-->
+														
 						</tbody>
 					</table>
 				</div>
@@ -736,8 +825,13 @@
 	    
 	    if (el.prop('checked')==true) {
 	    	column.visible( true );
+	    	
+	    	console.log('Checked');
 	    }else {
 	    	column.visible( false );
+	    	
+	    	// $(this).prop('checked', true);
+	    	console.log('Unchecked');
 	    }
 	}
 	

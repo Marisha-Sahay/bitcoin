@@ -57,3 +57,6 @@ remove:function(){this.$newElement.remove(),this.$element.remove()},destroy:func
 
 
 
+
+
+

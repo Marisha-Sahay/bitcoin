@@ -792,6 +792,8 @@ b {
 
     input[type=checkbox] {
         visibility: hidden;
+        position: absolute !important;
+        opacity: 0;
     }
 
     .checkbox {
@@ -800,7 +802,7 @@ b {
         label {
             padding-left: 35px;
             font-size: 13px;
-            color: fade(@dark-color, 45%);
+            color: fade(@dark-color, 65%);
             font-weight: 600;
 
             &::after,

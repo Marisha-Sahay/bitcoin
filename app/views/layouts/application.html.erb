@@ -15,6 +15,12 @@
   <title>BitCaffe</title>
   <%= csrf_meta_tags %>
   
+  <!-- FAV AND TOUCH ICONS   -->
+  <link rel="icon" href="<%= asset_path 'favicon.ico' %>">
+  <link rel="apple-touch-icon" href="<%= asset_path 'apple-touch-icon.png' %>">
+  <link rel="apple-touch-icon" sizes="72x72" href="<%= asset_path 'apple-touch-icon-72x72.png' %>">
+  <link rel="apple-touch-icon" sizes="114x114" href="<%= asset_path 'apple-touch-icon-114x114.png' %>">
+  
   <!--Google Font-->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700|Open+Sans:300,400,600,700" rel="stylesheet">
   
@@ -368,13 +374,15 @@
            * -----------------------------
            */
           var testimonialSlider = $(".carousel-wrapper"); // client's message
-          testimonialSlider.owlCarousel({
-            margin: 30,
-            autoPlay : 30000,
-            stopOnHover : true,
-            pagination: true,
-            singleItem : true
-          });
+          if( testimonialSlider.length ) {
+            testimonialSlider.owlCarousel({
+              margin: 30,
+              autoPlay : 30000,
+              stopOnHover : true,
+              pagination: true,
+              singleItem : true
+            });
+          }
           
           
           
@@ -383,10 +391,12 @@
            * Bootstrap Select INIT
            * -----------------------------
            */
-          $('.selectpicker').selectpicker({
-            style: 'btn-info',
-            size: 4
-          });
+          if( $('.selectpicker').length ) {
+            $('.selectpicker').selectpicker({
+              style: 'btn-info',
+              size: 4
+            });
+          }
 
           
           
@@ -396,41 +406,43 @@
            * -----------------------------
            */
           var testimonialHomeSlider = $(".carousel-home-slider .carousel-home-wrapper"); // client's message
-          testimonialHomeSlider.owlCarousel({
-            margin: 30,
-            autoPlay : 10000,
-            // autoHeight : true,
-            stopOnHover : true,
-            singleItem : true,
-            pagination:false,
-            slideSpeed : 900,
-            responsiveRefreshRate : 100,
-            afterInit : function(el){
-              el.find(".owl-item").eq(0).addClass("synced");
-            },
-            transitionStyle:"fade",
-            afterAction : syncPosition,
-            navigation : true,
-            navigationText : ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
-            dragBeforeAnimFinish : false,
-            mouseDrag : false,
-            touchDrag : false
-          });
-          function syncPosition(el){
-            var current = this.currentItem;
-            testimonialHomeSlider
-              .find(".owl-item")
-              .removeClass("synced")
-              .eq(current)
-              .addClass("synced")
+          if( testimonialHomeSlider.length ) {
+            testimonialHomeSlider.owlCarousel({
+              margin: 30,
+              autoPlay : 10000,
+              // autoHeight : true,
+              stopOnHover : true,
+              singleItem : true,
+              pagination:false,
+              slideSpeed : 900,
+              responsiveRefreshRate : 100,
+              afterInit : function(el){
+                el.find(".owl-item").eq(0).addClass("synced");
+              },
+              transitionStyle:"fade",
+              afterAction : syncPosition,
+              navigation : true,
+              navigationText : ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+              dragBeforeAnimFinish : false,
+              mouseDrag : false,
+              touchDrag : false
+            });
+            function syncPosition(el){
+              var current = this.currentItem;
+              testimonialHomeSlider
+                .find(".owl-item")
+                .removeClass("synced")
+                .eq(current)
+                .addClass("synced")
+            }
           }
           
-          $(document).ready(function() {
-            $('.header-section-1, .default-home').find('.carousel-home-slider, .default-seperator').css('margin-top', $('.navbar-header').height());
-          });
-          $(window).resize(function() {
-            $('.header-section-1, .default-home').find('.carousel-home-slider, .default-seperator').css('margin-top', $('.navbar-header').height());
-          });
+          // $(document).ready(function() {
+          //   $('.header-section-1, .default-home').find('.carousel-home-slider, .default-seperator').css('margin-top', $('.navbar-header').height());
+          // });
+          // $(window).resize(function() {
+          //   $('.header-section-1, .default-home').find('.carousel-home-slider, .default-seperator').css('margin-top', $('.navbar-header').height());
+          // });
           
           
           
