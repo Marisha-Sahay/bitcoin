@@ -18,13 +18,14 @@ createuser --skip-
 
 * Configuration
 
-* Database creation - rails db:create
+* Database creation - 
+  rails db:create
 
 * Database initialization - 
-rake db:seed
-rake import:data
-rake import:content
-rake import:coins
+  rake db:seed
+  rake import:data
+  rake import:content
+  rake import:coins
 
 * How to run the test suite
 
@@ -36,7 +37,7 @@ rake import:coins
 * 
 
 * Server run
-sudo service postgresql start 
+  sudo service postgresql start 
 
 
 // = require turbolinks

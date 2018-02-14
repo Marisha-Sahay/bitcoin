@@ -36,6 +36,9 @@ class PagesController < ApplicationController
   def trader_investor_lp
     @posts = News.distinct(:title).order('published DESC, performance_score DESC')
   end
+  def videos
+    @videos = Video.all
+  end
 
   def news_show
   end
@@ -52,7 +55,7 @@ class PagesController < ApplicationController
   end
 
   def news
-    @coins = Coin.all.limit 10
+    @coins = Coin.all.limit 15
     @coinsAll = Coin.all
     @posts = News.distinct(:title).order('published DESC, performance_score DESC')
   end

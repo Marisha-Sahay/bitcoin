@@ -54,13 +54,16 @@ Rails.application.routes.draw do
   put 'resources/:id/like', to: "resources#upvote"
   put 'resources/:id/dislike', to: "resources#downvote"
   post '/resources/search', to: 'resources#search'
+  get '/videos', to: 'pages#videos'
 
   get '/beginner_knowledge_base', to: 'pages#beginner_knowledge_base'
   get '/trader_investor_lp', to: 'pages#trader_investor_lp'
 
   get '/coins/:id', to: 'coins#show'
+  get '/coins/search', to: 'coins#search'
 
   get '/prices', to: 'prices#index'
+  get '/prices/:id', to: 'prices#show'
   
   namespace :api do
     namespace :v1 do
