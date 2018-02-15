@@ -1,128 +1,120 @@
 <!-- Start: Header Section
-    ================================ -->
-    <section class="features-section relative subscrive-section background-2">
-        <div class="container">
-            <div class="row features-item section-separator">
-
-                <div class="col-sm-8 col-sm-offset-2 col-xs-12">
-                    <div class="inner">
-                        <h4 align="center" style="font-weight: 600;">Choose a coin to get its info</h1>
-<!--                     <forn class="single-form search-form search-big" action="" method="POST">
+================================ -->
+<section class="features-section relative default-home subscrive-section background-2">
+    <div class="container">
+        <div class="row features-item section-separator-smallest padding-t-20 default-seperator">
+          
+            <div class="col-sm-8 col-sm-offset-2 col-xs-12">
+                <div class="inner">
+                <h4 align="center" style="font-weight: 600;">Choose a coin to get its info</h1>
+                    <!-- <forn class="single-form search-form search-big" action="" method="POST">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Search...">
                             <span class="input-group-btn">
                                 <button class="btn" type="button"><i class="fa fa-search"></i></button>
                             </span>
                         </div><!-- /.input-group -->
-                        <!-- </form> -->
+                    <!-- </form> -->
 
-                    </div>
                 </div>
+            </div>
 
-                <div class="clearfix"></div>
+            <div class="clearfix"></div>
 
-                <div class="margin-b-20 col-xs-12 text-center">
-                    <div class="inner">
+            <div class="margin-b-10 col-xs-12 text-center">
+                <div class="inner">
 
-                        <div class="tag-list text-center">
+                    <div class="tag-list text-center">
 
-                            <% @all_coins.each do |coin| %>
-                                <div class="tag relative bg-cover bg-overlay-dark shadow" style="background-image: url(<%= coin.image_url %>);">
-                                    <%= link_to "/coins/#{coin.id}", :data => { :reload => true } do %>
-                                        <%= image_tag("#{coin.image_url}", :alt => "", :class =>"img-responsive") %>
-                                        <%= content_tag(:p, "#{coin.symbol}", :class =>"margin-t-10") %>
-                                    <% end %>
-                                </div>
-                            <% end %>
-                        </div>
-                    </div>
-                </div>
-                
-                
-                <div class="clearfix"></div>
-            
-                <!-- Start: Coin Dropdown -->
-                <div class="each-item-big col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
-                    
-                    <div class="subscribe-form">
-                        <form method="" class="single-form text-center" action="" id="coins-dropdown">
-                            <div class="container-fluid" >
-                                
-                                <input type="hidden" value="<% request.env['HTTP_HOST']%>/coins/" id="coin_link" />
-    
-                                <div class="row">
-                                    <div class="input-group">
-    
-                                        <div class="outer">
-                                            <select class="selectpicker shadow background-1" id="coin-select" data-live-search="true" data-style="btn-warning">
-                                                <% @coinsAll.each do |coin| %>
-                                                <option value="<%= coin.id %>"><%= coin.name %> (<%= coin.symbol %>)</option>
-                                                <% end %>
-                                            </select>
-                                        </div>
-    
-                                        <div class="input-group-btn outer">
-                                            <button class="footer-form-submit btn btn-fill button" type="submit" name="subscribe">Search</button>
-                                        </div>
-    
-                                    </div>
-                                </div>
-                                
+                        <% @all_coins.each do |coin| %>
+                            <div class="tag relative bg-cover bg-overlay-dark" style="background-image: url(<%= coin.image_url %>);">
+                                <%= link_to "/coins/#{coin.id}", :data => { :reload => true } do %>
+                                    <%= image_tag("#{coin.image_url}", :alt => "", :class =>"img-responsive") %>
+                                    <%= content_tag(:p, "#{coin.symbol}", :class =>"title") %>
+                                <% end %>
                             </div>
-                        </form>
+                        <% end %>
                     </div>
-                        
-                </div> <!-- End: Coin Dropdown -->
-
-                <div class="clearfix"></div>
+                </div>
+            </div>
+            
+            
+            <div class="clearfix"></div>
+        
+            <!-- Start: Coin Dropdown -->
+            <div class="margin-b-20 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
                 
-                <!-- Start: Section Header -->
-                <div class="section-header business-item text-left col-xs-12 margin-b-15">
-                    <h2 class="section-heading">News of <%=link_to "#{@coin.name}", "#{@coin.coin_url}", target: "_blank", :style=>'color:#f5922f;'%></h2>
-                        <!--<hr class="lines">-->
-                </div> <!-- End: Section Header -->
-                
-                <div class="clearfix"></div>
+                <div class="subscribe-form">
+                    <form method="" class="single-form text-center" action="" id="coins-dropdown">
+                        <div class="container-fluid" >
+                            
+                            <input type="hidden" value="<% request.env['HTTP_HOST']%>/coins/" id="coin_link" />
 
-                <div class="each-item business-item col-md-6 col-sm-12">
+                            <div class="row">
+                                <div class="input-group">
 
-                    <div class="load-more-init carousel-container margin-b-50 features-content">
-                        <div class="inner-small shadow">
+                                    <div class="outer">
+                                        <input class="form-control typeahead shadow" id="coin-select" type="text" placeholder="Search Coin" value="<%= @coin.name %>"  data-id="<%= @coin.id %>"  data-name="<%= @coin.name %>">
+                                        <!--<select class="selectpicker shadow background-1" id="coin-select" data-live-search="true" data-style="btn-warning">
+                                            <% @coinsAll.each do |coin| %>
+                                            <option value="<%= coin.id %>"><%= coin.name %> (<%= coin.symbol %>)</option>
+                                            <% #allvalue = allvalue + "[#{coin.id}, '#{coin.name}', '#{coin.symbol}']" %>
+                                            <% end %>
+                                        </select>-->
+                                    </div>
 
-                            <% @posts.each do |post| %>
-                            <div class="each-item load-item business-item">
-                                <div class="each-item-inner">
+                                    <div class="input-group-btn outer">
+                                        <button class="footer-form-submit btn btn-fill button" type="submit" name="subscribe" disabled="disabled">Search</button>
+                                    </div>
 
-                                    <% if post['main_image'] %>
-                                    <div class="vertical-middle features-image bg-cover col-sm-3 col-xs-12" style="background-image: url(<%= post['main_image'] %>);"></div>
-                                    <% else %>
-                                    <div class="vertical-middle features-image bg-cover col-sm-3 col-xs-12" style="background-image: url(<%= asset_path 'bitcoins-default.jpg' %>);"></div>
-                                    <% end %>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </form>
+                </div>
+                    
+            </div> <!-- End: Coin Dropdown -->
 
-                                    <div class="vertical-middle features-content col-sm-9 col-xs-12">
-                                        <div class="row">
-                                            <div class="item-inner text-left margin-l-15">
+            <div class="clearfix"></div>
+            
+            <!-- Start: Section Header -->
+            <div class="section-header business-item text-left col-xs-12 margin-b-15">
+                <h2 class="section-heading">News of <%=link_to "#{@coin.name}", "#{@coin.coin_url}", target: "_blank", :style=>'color:#f5922f;'%></h2>
+                    <!--<hr class="lines">-->
+            </div> <!-- End: Section Header -->
+            
+            <div class="clearfix"></div>
 
-                                                <!--<div class="thumbnail bg-cover" style="background-image: url(https://www.incimages.com/uploaded_files/image/284x160/1940_334982.jpg); height: 180px;"></div>-->
+            <div class="each-item business-item col-md-6 col-sm-12">
 
-                                                <!-- Start: Section Header -->
-                                                <div class="section-header">
-                                                    <h4 class="section-heading"><a href="<%= post['news_url'] %>" target="_blank"><%= post['title'][0..50] %>...</a></h4>
-                                                    <p class="post-meta">
-                                                        By <%= post['author'] %>, <%= post['published']%> 
-                                                    </p>
-                                                </div>
-                                                <!-- End: Section Header -->
+                <div class="load-more-init carousel-container margin-b-50 features-content">
+                    <div class="inner-small shadow">
 
-                                                <div class="detail small-spacing">
-                                                    <p><%= post['description'][0..60] %>...</p>
-                                                </div>
+                        <% @posts.each do |post| %>
+                        <div class="each-item load-item business-item">
+                            <div class="each-item-inner">
+                                
+                                <% if post['main_image'] %>
+                                    <div class="vertical-middle features-image bg-cover col-sm-2 col-xs-12" style="background-image: url(<%= post['main_image'] %>);"></div>
+                                <% else %>
+                                    <div class="vertical-middle features-image bg-cover col-sm-2 col-xs-12" style="background-image: url(<%= asset_path 'bitcoins-default.jpg' %>);"></div>
+                                <% end %>
 
-                                              <!-- Button Area -->
-                                              <div class="btn-form btn-interest">
-                                                <a href="<%= post['news_url'] %>" target="_blank" class="btn right-icon">READ MORE <i class="fa fa-long-arrow-right"></i></a>
+                                <div class="vertical-middle features-content col-sm-10 col-xs-12">
+                                    <div class="row">
+                                        <div class="item-inner text-left margin-l-15">
+                                
+                                            <!-- Start: Section Header -->
+                                            <div class="section-header">
+                                                <h4 class="section-heading small-text"><a href="<%= post['news_url'] %>" target="_blank" title="Read More"><%= post['title'] %></a></h4>
                                             </div>
-
+                                            <!-- End: Section Header -->
+        
+                                            <div class="detail small-spacing">
+                                                <p><%= post['description'][0..200] %> <a href="<%= post['news_url'] %>" target="_blank" title="Read More" class="color-text">[ More ]</a></p>
+                                            </div>
+                                           
                                         </div>
                                     </div>
                                 </div>
@@ -131,7 +123,9 @@
                         </div>
                         <% end %>
 
-                        <button data-reload="false" class="loadMore btn btn-fill btn-dark full-width">Load More</button>
+                        <div class="text-center">
+                            <button data-reload="false" class="loadMore btn btn-fill btn-dark btn-xs">Load More</button>
+                        </div>
 
                     </div> <!-- End: .carousel-wrapper -->
                 </div> <!-- End: .carousel-container -->
@@ -219,16 +213,78 @@
         
         
         
+        // $( "#coins-dropdown" ).submit(function( event ) {
+        //   event.preventDefault();
+          
+        //   var coin = $(this).find("#coin-select").val(),
+        //       id = $(this).find("#coin-select").attr('data-id'),
+        //       url  = $(this).find("#coin_link").val();
+        // //   console.log(coin, url, id);
+        //   self.location = url + id + '&id='+ id +'&coin='+ coin;
+        // });
         $( "#coins-dropdown" ).submit(function( event ) {
           event.preventDefault();
           
           var coin = $(this).find("#coin-select").val(),
+            //   id = $(this).find("#coin-select").attr('data-id'),
               url  = $(this).find("#coin_link").val();
-          console.log(coin, url);
-          self.location = url + coin;
+        //   console.log(coin, url, id);
+          self.location = url +'search&s='+ coin;
         });
         
     });
 } (jQuery) );
 </script>
 
+<script>
+    var substringMatcher = function(strs) {
+      return function findMatches(q, cb) {
+        var matches, substringRegex;
+    
+        // an array that will be populated with substring matches
+        matches = [];
+    
+        // regex used to determine if a string contains the substring `q`
+        substrRegex = new RegExp(q, 'i');
+    
+        // iterate through the pool of strings and for any string that
+        // contains the substring `q`, add it to the `matches` array
+        $.each(strs, function(i, str) {
+          if (substrRegex.test(str.name)) {
+            matches.push(str);
+          }
+        });
+    
+        cb(matches);
+      };
+    };
+    
+    var coinList = []; // [{value : 'Barcelona',country : 'Spain',},]
+    
+    <% @coinsAll.each do |coin| %>
+    coinList.push({name:'<%= coin.name %>', symbol:'<%= coin.symbol %>', imgUrl:'<%= coin.image_url %>', id:'<%= coin.id %>'});
+    <% end %>
+    
+    // console.log(coinList);
+    
+    // var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California','Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii','Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana','Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota','Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire','New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota','Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island','South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont','Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
+    
+    $('#coin-select').typeahead({
+      hint: true,
+      highlight: true,
+      minLength: 1
+    },
+    {
+      name: 'coinList',
+      display: 'name',
+      source: substringMatcher(coinList),
+      templates: {
+        suggestion: function(data) {
+        return '<p><img src="'+data.imgUrl+'" class="image"><span class="name" >' + data.name + ' (' + data.symbol + ')</span></p>';
+    }
+      }
+    }).on('typeahead:selected', function(event, datum) {
+         var url = $( "#coins-dropdown" ).find("#coin_link").val();
+        self.location = url + datum.id;
+      });
+</script>

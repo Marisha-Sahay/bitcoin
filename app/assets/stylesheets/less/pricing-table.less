@@ -20,8 +20,8 @@
                 height: 22px;
     
                 &::after {
-                    background: #c5ceda;
-                    border-radius: 0px;
+                    // background: #c5ceda;
+                    // border-radius: 0px;
                 }
             }
         }
@@ -31,9 +31,13 @@
     .sub-title {
         margin-top: 5px;
         font-weight: 600;
-        color: #6a6a6a;
+        color: #000;
         margin-bottom: 5px;
         line-height: 1;
+        
+        small {
+            font-size: 13px;
+        }
         
         &:first-child {
             margin-top: 0px;
@@ -51,15 +55,24 @@
 
 .pricing-panel {
     .pricing-panel-body {
-        display: table;
-        width: 100%;
+        // display: table;
+        // width: 100%;
         
         .panel-header-inline,
         .pricing-form {
-            display: table-cell;
+            // display: table-cell;
             // float: left;
         }
     }
+}
+
+.pricing-panel {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    
+    // .pricing-panel-body {
+    //     padding: 0;
+    // }
 }
 
 
@@ -151,6 +164,7 @@
 }
 .panel.panel-block.panel-filters .panel-body{
     border-radius:5px 5px 0 0;
+    padding: 0; //10px 0px;
 }
 .panel.panel-block.panel-filters .panel-footer{
     font-size:12px;
@@ -251,7 +265,7 @@
     border-radius:4px;
 }
 .table.table-coins>tbody>tr>td.name{
-    width:210px;
+    // width:210px;
     border-right:1px solid rgba(221, 221, 221, 0.38);
     overflow:hidden;
     text-overflow:ellipsis;
@@ -305,38 +319,38 @@
     width:25px;
 }
 .change{
-    width:100px;
+    // width:100px;
 }
 .table.table-coins>tbody>tr>td.price,.table.table-coins>tbody>tr>th.price{
-    width:160px;
-    min-width:160px;
-    max-width:160px;
+    // width:100px;
+    // min-width:100px;
+    // max-width:100px;
 }
 .last-trade{
-    width:120px;
-    text-align:right;
+    // width:120px;
+    // text-align:right;
 }
 .table.table-coins>tbody>tr>td.volume,.table.table-coins>thead>tr>th.volume{
-    width:170px;
-    min-width:170px;
+        // width:120px;
+        // min-width:120px;
 }
 .market-cap{
-    text-align:right;
-    width:110px;
-    min-width:110px;
+    // text-align:right;
+    // width:110px;
+    // min-width:110px;
 }
 .proof-type{
-    width:100px;
-    max-width:100px;
-    text-align:right;
+    // width:100px;
+    // max-width:100px;
+    // text-align:right;
     // overflow:hidden;
     // text-overflow:ellipsis;
     // white-space:nowrap;
 }
 .algorithm{
-    width:110px;
-    max-width:110px;
-    text-align:right;
+    // width:110px;
+    // max-width:110px;
+    // text-align:right;
     overflow:hidden;
     text-overflow:ellipsis;
     white-space:nowrap;
@@ -392,9 +406,9 @@
     width:30px;
     padding-right:10px;
 }
-.coin-item .name{
-    width:220px;
-}
+// .coin-item .name{
+//     width:220px;
+// }
 .coin-item .name img{
     margin-right:5px;
 }
@@ -436,11 +450,12 @@
     display:none;
 }
 .panel-filters .panel-header-inline{
-    float:left;
+    // float:left;
     font-weight:bold;
-    width:100px;
+    // width:100px;
     margin-right:15px;
     line-height:1.8;
+    margin-bottom: 5px;
 }
 .panel-filters .block-filter{
     float:left;
@@ -456,7 +471,7 @@
     // padding-right:10px;
     // border-radius:4px;
     // border:1px solid #EEE;
-    text-align:right;
+    // text-align:right;
     font-size:13px;
 }
 .item-special .current-price-value{
@@ -469,23 +484,23 @@
 }
 .value-down,
 .down-text{
-    color:#A11B0A;
+    color:#ff0000;
 }
 .value-up,
 .up-text{
-    color:#3D9400;
+    color:#008000;
 }
 
 .value-unchanged{
     color:#324F79;
 }
 [class$="is-up"] .current-price-value,[class$="is-up"] .current-change-currency{
-    background:#3D9400;
+    background:#008000;
     color:#FFF;
     border:0;
 }
 [class$="is-down"] .current-price-value,[class$="is-down"] .current-change-currency{
-    background:#A11B0A;
+    background:#ff0000;
     color:#FFF;
     border:0;
 }
@@ -513,11 +528,11 @@
     background:#F9ECEB;
 }
 .table.table-coins tr[class$="highlight-row-down"] td.place{
-    background:#A11B0A;
+    background:#ff0000;
     color:#FFF;
 }
 .table.table-coins tr[class$="highlight-row-up"] td.place{
-    background:#3D9400;
+    background:#008000;
     color:#FFF;
 }
 .table.table-coins tr[class$="highlight-row-unchanged"] td.place{
@@ -535,11 +550,11 @@
     font-size:8px;
 }
 .table.table-coins .change .glyphicon-chevron-up,.table.table-coins .name .glyphicon-chevron-up{
-    background:#3D9400;
+    background:#008000;
     color:white;
 }
 .table.table-coins .change .glyphicon-chevron-down,.table.table-coins .name .glyphicon-chevron-down{
-    background:#A11B0A;
+    background:#ff0000;
     color:white;
 }
 .table.table-coins .name .glyphicon{
@@ -562,72 +577,72 @@
 .th-change-mobile{
     display:none;
 }
-.table.table-coins>tbody>tr>td.last-trade{
-    width:110px;
-}
-.table.table-coins>tbody>tr>td.market-cap{
-    // padding-left:0;
-}
-td.ico-date,th.ico-date{
-    width:270px;
-    text-align:right;
-}
-td.ico-end-date,th.ico-end-date{
-    width:270px;
-    text-align:right;
-}
-td.ico-funds-raised,th.ico-funds-raised{
-    width:265px;
-    text-align:right;
-}
-.table-icos td.current-price,.table-icos th.current-price{
-    text-align:center;
-}
-.table-icos-past th.ico-end-date{
-    width:150px;
-}
-td.ico-end-date.ico-end-date-past,th.ico-end-date.ico-end-date-past{
-    width:inherit;
-    text-align:right;
-}
-td.ico-funding-target,th.ico-funding-target{
-    text-align:right;
-}
-td.ico-funding-cap,th.ico-funding-cap{
-    text-align:right;
-}
-td.ico-coins-offered,th.ico-coins-offered{
-    text-align:right;
-}
-td.ico-start-price,th.ico-start-price{
-    text-align:center;
-    width:125px;
-}
-td.ico-current-price,th.ico-current-price{
-    text-align:center;
-    width:135px;
-}
-td.ico-market-cap,th.ico-market-cap{
-    text-align:center;
-    width:125px;
-}
-td.ico-funds-raised-usd,th.ico-funds-raised{
-    text-align:center;
-    width:100px;
-}
-td.roi,th.roi{
-    text-align:center;
-    width:100px;
-}
-td.ico-price,th.ico-price{
-    text-align:center;
-    width:125px;
-}
-.table-icos-past td.ico-price,.table-icos-past th.ico-price{
-    text-align:center;
-    width:inherit;
-    min-width:100px;
-}
+// .table.table-coins>tbody>tr>td.last-trade{
+//     width:110px;
+// }
+// .table.table-coins>tbody>tr>td.market-cap{
+//     // padding-left:0;
+// }
+// td.ico-date,th.ico-date{
+//     width:270px;
+//     text-align:right;
+// }
+// td.ico-end-date,th.ico-end-date{
+//     width:270px;
+//     text-align:right;
+// }
+// td.ico-funds-raised,th.ico-funds-raised{
+//     width:265px;
+//     text-align:right;
+// }
+// .table-icos td.current-price,.table-icos th.current-price{
+//     text-align:center;
+// }
+// .table-icos-past th.ico-end-date{
+//     width:150px;
+// }
+// td.ico-end-date.ico-end-date-past,th.ico-end-date.ico-end-date-past{
+//     width:inherit;
+//     text-align:right;
+// }
+// td.ico-funding-target,th.ico-funding-target{
+//     text-align:right;
+// }
+// td.ico-funding-cap,th.ico-funding-cap{
+//     text-align:right;
+// }
+// td.ico-coins-offered,th.ico-coins-offered{
+//     text-align:right;
+// }
+// td.ico-start-price,th.ico-start-price{
+//     text-align:center;
+//     width:125px;
+// }
+// td.ico-current-price,th.ico-current-price{
+//     text-align:center;
+//     width:135px;
+// }
+// td.ico-market-cap,th.ico-market-cap{
+//     text-align:center;
+//     width:125px;
+// }
+// td.ico-funds-raised-usd,th.ico-funds-raised{
+//     text-align:center;
+//     width:100px;
+// }
+// td.roi,th.roi{
+//     text-align:center;
+//     width:100px;
+// }
+// td.ico-price,th.ico-price{
+//     text-align:center;
+//     width:125px;
+// }
+// .table-icos-past td.ico-price,.table-icos-past th.ico-price{
+//     text-align:center;
+//     width:inherit;
+//     min-width:100px;
+// }
 td .header-time-downcounter{
     margin:0;
 }
@@ -674,6 +689,140 @@ td .header-time-downcounter .timer-counter-separator{
         }
     }
 }
+
+.small-text-t {
+    font-size: 10px !important;
+}
+
+.table {
+    th,
+    td {
+        // width: 50px;
+        // min-width: 50px;
+        // max-width: 120px;
+        text-align: center !important;
+        
+        &.name {
+            text-align: left !important;
+        }
+    }
+    
+    thead {
+        > tr {
+            > th {
+                &.sorting_asc,
+                &.sorting_desc {
+                    background-color: #fffcd6;
+                    
+                    &:after {
+                        opacity: 1 !important;
+                    }
+                }
+            }
+        }
+    }
+    
+    .usd,
+    .inr,
+    .eur,
+    .btc {
+        display: none;
+    }
+    
+    &.show-usd {
+        .usd {
+            display: block;
+        }
+    }
+    &.show-inr {
+        .inr {
+            display: block;
+        }
+    }
+    &.show-eur {
+        .eur {
+            display: block;
+        }
+    }
+    &.show-btc {
+        .btc {
+            display: block;
+        }
+    }
+}
+
+// Sorting Code
+table {
+    &.dataTable {
+        &.order-column,
+        &.display {
+            tbody {
+                tr {
+                    > .sorting_1 {
+                        background-color:#fafafa;
+                    }
+                    
+                    &.selected {
+                        > .sorting_1 {
+                            background-color:#acbad5;
+                        } 
+                    }
+                }
+            }
+        }
+        &.order-column.stripe,
+        &.display {
+            tbody {
+                tr {
+                    &.odd {
+                        > .sorting_1 {
+                            background-color:#f1f1f1;
+                        } 
+                        
+                        &.selected {
+                            > .sorting_1 {
+                                background-color:#a6b4cd;
+                            }
+                        }
+                    }
+                    &.even {
+                        > .sorting_1 {
+                            background-color:#fafafa;
+                        } 
+                        
+                        &.selected {
+                            > .sorting_1 {
+                                background-color:#acbad5;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.order-column.hover,
+        &.display {
+            tbody {
+                tr {
+                    &:hover {
+                        > .sorting_1 {
+                            background-color:#eaeaea;
+                        }
+                        
+                        &.selected {
+                            > .sorting_1 {
+                                background-color:#a2aec7;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
 @media only screen and (max-width:1200px){
     .table-coins .algorithm{
         // display:none;
@@ -707,19 +856,19 @@ td .header-time-downcounter .timer-counter-separator{
         // display:none;
     }
     .table.table-coins>tbody>tr>td.name,.table.table-coins>tbody>tr>th.name{
-        width:107px;
-        max-width:107px;
+        // width:107px;
+        // max-width:107px;
     }
     .table.table-coins>tbody>tr>td.change{
-        width:102px;
+        // width:102px;
         padding:0;
     }
     .table.table-coins>tbody>tr>td.last-trade{
         padding:0;
         padding-right:8px;
-        width:92px;
-        max-width:92px;
-        min-width:92px;
+        // width:92px;
+        // max-width:92px;
+        // min-width:92px;
     }
     .current-change-currency{
         border-radius:4px;
@@ -746,26 +895,26 @@ td .header-time-downcounter .timer-counter-separator{
         margin-top:-10px;
         line-height:16px;
     }
-    .table.table-coins>tbody>tr>td.price,.table.table-coins>tbody>tr>th.price{
-        width:130px;
-        max-width:130px;
-        min-width:130px;
-    }
-    .table.table-coins>tbody>tr>td.market-cap,.table.table-coins>tbody>tr>th.market-cap{
-        max-width:115px;
-        min-width:115px;
-        width:115px;
-    }
-    .table.table-coins>tbody>tr>td.volume,.table.table-coins>thead>tr>th.volume{
-        width:120px;
-        width:120px;
-        min-width:120px;
-    }
-    .table.table-coins>tbody>tr>td.mkt-cap,.table.table-coins>thead>tr>th.mkt-cap{
-        width:100px;
-        width:100px;
-        min-width:100px;
-    }
+    // .table.table-coins>tbody>tr>td.price,.table.table-coins>tbody>tr>th.price{
+    //     width:130px;
+    //     max-width:130px;
+    //     min-width:130px;
+    // }
+    // .table.table-coins>tbody>tr>td.market-cap,.table.table-coins>tbody>tr>th.market-cap{
+    //     max-width:115px;
+    //     min-width:115px;
+    //     width:115px;
+    // }
+    // .table.table-coins>tbody>tr>td.volume,.table.table-coins>thead>tr>th.volume{
+    //     width:120px;
+    //     width:120px;
+    //     min-width:120px;
+    // }
+    // .table.table-coins>tbody>tr>td.mkt-cap,.table.table-coins>thead>tr>th.mkt-cap{
+    //     width:100px;
+    //     width:100px;
+    //     min-width:100px;
+    // }
     td .header-time-downcounter{
         margin-top:6px;
     }
@@ -776,26 +925,26 @@ td .header-time-downcounter .timer-counter-separator{
     td .header-time-downcounter .timer-counter-separator{
         font-size:7px;
     }
-    .table.table-icos>thead>tr>th.ico-market-cap,.table.table-icos>tbody>tr>td.ico-market-cap{
-        // display:none;
-    }
-    .table.table-icos>thead>tr>th.ico-funds-raised,.table.table-icos>tbody>tr>td.ico-funds-raised-usd{
-        // display:none;
-    }
-    .table.table-icos>thead>tr>th.ico-price,.table.table-icos>tbody>tr>td.ico-price{
-        // display:none;
-    }
-    .table.table-icos>thead>tr>th.roi,.table.table-icos>tbody>tr>td.roi{
-        // display:none;
-    }
+    // .table.table-icos>thead>tr>th.ico-market-cap,.table.table-icos>tbody>tr>td.ico-market-cap{
+    //     display:none;
+    // }
+    // .table.table-icos>thead>tr>th.ico-funds-raised,.table.table-icos>tbody>tr>td.ico-funds-raised-usd{
+    //     display:none;
+    // }
+    // .table.table-icos>thead>tr>th.ico-price,.table.table-icos>tbody>tr>td.ico-price{
+    //     display:none;
+    // }
+    // .table.table-icos>thead>tr>th.roi,.table.table-icos>tbody>tr>td.roi{
+    //     display:none;
+    // }
 }
 @media only screen and (max-width:800px){
-    .table-coins .last-trade{
-        // display:none;
-    }
-    .table-coins .proof-type{
-        // display:none;
-    }
+    // .table-coins .last-trade{
+    //     display:none;
+    // }
+    // .table-coins .proof-type{
+    //     display:none;
+    // }
     td .header-time-downcounter{
         margin-top:9px;
         border-right:1px solid #ddd;
@@ -809,21 +958,23 @@ td .header-time-downcounter .timer-counter-separator{
         font-size:15px;
         line-height:20px;
     }
-    .table.table-icos>thead>tr>th.ico-upcoming-aggcols,.table.table-icos>tbody>tr>td.ico-upcoming-aggcols{
+    .table.table-icos>thead>tr>th.ico-upcoming-aggcols,
+    .table.table-icos>tbody>tr>td.ico-upcoming-aggcols{
         display:table-cell;
     }
-    .table.table-icos>thead>tr>th.ico-ongoing-aggcols,.table.table-icos>tbody>tr>td.ico-ongoing-aggcols{
+    .table.table-icos>thead>tr>th.ico-ongoing-aggcols,
+    .table.table-icos>tbody>tr>td.ico-ongoing-aggcols{
         display:table-cell;
     }
-    .table.table-icos:not(.table-icos-past)>thead>tr>th.ico-end-date,.table.table-icos:not(.table-icos-past)>tbody>tr>td.ico-end-date{
-        // display:none;
-    }
-    .table.table-icos>thead>tr>th.ico-date,.table.table-icos>tbody>tr>td.ico-date{
-        // display:none;
-    }
-    .table.table-icos>thead>tr>th.ico-start-price,.table.table-icos>tbody>tr>td.ico-start-price{
-        // display:none;
-    }
+    // .table.table-icos:not(.table-icos-past)>thead>tr>th.ico-end-date,.table.table-icos:not(.table-icos-past)>tbody>tr>td.ico-end-date{
+    //     display:none;
+    // }
+    // .table.table-icos>thead>tr>th.ico-date,.table.table-icos>tbody>tr>td.ico-date{
+    //     display:none;
+    // }
+    // .table.table-icos>thead>tr>th.ico-start-price,.table.table-icos>tbody>tr>td.ico-start-price{
+    //     display:none;
+    // }
     .timer-counter-unit{
         display:inline-block;
     }
@@ -843,17 +994,17 @@ td .header-time-downcounter .timer-counter-separator{
     }
 }
 @media only screen and (max-width:670px){
-    .table-coins .market-cap{
-        // display:none;
-    }
+    // .table-coins .market-cap{
+    //     display:none;
+    // }
 }
 @media only screen and (max-width:750px){
-    td.ico-funding-target,th.ico-funding-target{
-        // display:none;
-    }
-    td.ico-funding-cap,th.ico-funding-cap{
-        // display:none;
-    }
+    // td.ico-funding-target,th.ico-funding-target{
+    //     display:none;
+    // }
+    // td.ico-funding-cap,th.ico-funding-cap{
+    //     display:none;
+    // }
 }
 @media only screen and (max-width:600px){
     .panel-filters .block-filter{
@@ -861,15 +1012,15 @@ td .header-time-downcounter .timer-counter-separator{
         width:auto;
         margin-right:0;
     }
-    .table-coins .volume{
-        // display:none;
-    }
-    td.ico-coins-offered,th.ico-coins-offered{
-        // display:none;
-    }
-    td.ico-start-price{
-        width:160px;
-    }
+    // .table-coins .volume{
+    //     display:none;
+    // }
+    // td.ico-coins-offered,th.ico-coins-offered{
+    //     display:none;
+    // }
+    // td.ico-start-price{
+    //     width:160px;
+    // }
     td .header-time-downcounter .timer-counter-value{
         font-size:10px;
     }
@@ -878,21 +1029,21 @@ td .header-time-downcounter .timer-counter-separator{
     }
 }
 @media only screen and (max-width:571px){
-    .table.table-coins>tbody>tr>td.name{
-        width:150px;
-        max-width:150px;
-    }
+    // .table.table-coins>tbody>tr>td.name{
+    //     width:150px;
+    //     max-width:150px;
+    // }
 }
 @media only screen and (max-width:450px){
-    .table.table-coins>tbody>tr>td.name{
-        width:150px;
-        max-width:150px;
-    }
+    // .table.table-coins>tbody>tr>td.name{
+    //     width:150px;
+    //     max-width:150px;
+    // }
 }
 @media only screen and (max-width:416px){
-    .table-coins .place{
-        // display:none;
-    }
+    // .table-coins .place{
+    //     display:none;
+    // }
     .desktop-name{
         display:none;
     }
@@ -902,9 +1053,9 @@ td .header-time-downcounter .timer-counter-separator{
     .mobile-name{
         display:block;
     }
-    .table.table-coins>thead>tr>th.name{
-        text-align:center;
-    }
+    // .table.table-coins>thead>tr>th.name{
+    //     text-align:center;
+    // }
     .table.table-coins>tbody>tr>td.name{
         text-align:left;
         height:63px;
@@ -940,7 +1091,7 @@ td .header-time-downcounter .timer-counter-separator{
         color:inherit;
     }
     .table.table-coins>tbody>tr>td.price{
-        text-align:right;
+        // text-align:right;
         padding-left:0;
         padding-right:0;
         border-right:0;
@@ -949,13 +1100,13 @@ td .header-time-downcounter .timer-counter-separator{
         display:inline-block;
         border-radius:4px 0 0 4px;
     }
-    .table.table-coins>tbody>tr>td.change{
-        text-align:left;
-        padding-left:0;
-        max-width:113px;
-        width:113px;
-        padding-right:0;
-    }
+    // .table.table-coins>tbody>tr>td.change{
+    //     text-align:left;
+    //     padding-left:0;
+    //     max-width:113px;
+    //     width:113px;
+    //     padding-right:0;
+    // }
     .current-change-currency{
         display:inline-block;
         border-radius:0 4px 4px 0;
@@ -964,9 +1115,9 @@ td .header-time-downcounter .timer-counter-separator{
         position:relative;
         width:70px;
     }
-    .table.table-coins>tbody>tr>td.change.change-past{
-        width:104px;
-    }
+    // .table.table-coins>tbody>tr>td.change.change-past{
+    //     width:104px;
+    // }
     .change-indicator-xs{
         display:block;
     }
@@ -990,14 +1141,14 @@ td .header-time-downcounter .timer-counter-separator{
     }
 }
 @media only screen and (max-width:425px){
-    .table.table-coins>tbody>tr>td.name{
-        width:90px;
-        max-width:90px;
-    }
-    .table.table-coins>tbody>tr>td.price,.table.table-coins>tbody>tr>th.price{
-        max-width:160px;
-        min-width:160px;
-    }
+    // .table.table-coins>tbody>tr>td.name{
+    //     width:90px;
+    //     max-width:90px;
+    // }
+    // .table.table-coins>tbody>tr>td.price,.table.table-coins>tbody>tr>th.price{
+    //     max-width:160px;
+    //     min-width:160px;
+    // }
 }
 @media only screen and (max-width:410px){
     .table-coins .thumb{
@@ -1028,46 +1179,122 @@ td .header-time-downcounter .timer-counter-separator{
     }
 }
 @media only screen and (max-width:372px){
-    .table.table-coins>tbody>tr>td.name{
-        max-width:60px;
-    }
-    .table-coins .place{
-        // display:none;
-    }
-    .table-icos td.ico-current-price{
-        width:120px!important;
-    }
+    // .table.table-coins>tbody>tr>td.name{
+    //     max-width:60px;
+    // }
+    // .table-coins .place{
+    //     // display:none;
+    // }
+    // .table-icos td.ico-current-price{
+    //     width:120px!important;
+    // }
 }
 @media only screen and (max-width:360px){
-    .table.table-coins>tbody>tr>td.name img{
-        width:20px;
-        top:25px;
-    }
+    // .table.table-coins>tbody>tr>td.name img{
+    //     width:20px;
+    //     top:25px;
+    // }
     .table.table-coins>tbody>tr>td.name h3 a{
         font-size:15px;
     }
-    .table.table-icos>tbody>tr>td.ico-date{
-        width:100px;
-    }
+    // .table.table-icos>tbody>tr>td.ico-date{
+    //     width:100px;
+    // }
 }
 @media only screen and (max-width:350px){
-    .table.table-coins>tbody>tr>td.name{
-        width:80px;
+    // .table.table-coins>tbody>tr>td.name{
+    //     width:80px;
+    // }
+    // .table.table-coins>tbody>tr>td.price,.table.table-coins>tbody>tr>th.price{
+    //     width:126px;
+    //     max-width:126px;
+    //     min-width:126px;
+    // }
+    // .table.table-coins>tbody>tr>td.change,.table.table-coins>tbody>tr>th.change{
+    //     width:inherit;
+    //     max-width:inherit;
+    //     min-width:inherit;
+    // }
+    // .table-icos td.thumb img{
+    //     // display:none;
+    // }
+}
+
+
+.metric_box {
+    .metric_callout_box {
+        display: inline-block;
+        min-width: 100px;
+        margin-left: 8px;
+        margin-bottom: 10px;
+        
+        &:first-child {
+            margin-left: 8px;
+        }
+        
+        .mcb_two_item_spacing {
+            padding: 10px 15px;
+            color: #3e3e3e;
+        }
+        
+        .mcb_title {
+            p {
+                padding: 6px 10px;
+                background-color: #E3E3E3;
+                font-weight: 600;
+                font-size: 13px;
+                // color: #383838;
+            }
+        }
     }
-    .table.table-coins>tbody>tr>td.price,.table.table-coins>tbody>tr>th.price{
-        width:126px;
-        max-width:126px;
-        min-width:126px;
-    }
-    .table.table-coins>tbody>tr>td.change,.table.table-coins>tbody>tr>th.change{
-        width:inherit;
-        max-width:inherit;
-        min-width:inherit;
-    }
-    .table-icos td.thumb img{
-        // display:none;
+    
+    @media (max-width:991px) {
+        float: none !important;
     }
 }
 
+.list-group {
+    .list-group-item {
+        font-size: 14px;
+        // overflow: hidden;
+        &:before, 
+        &:after {
+          content: " ";
+          display: table;
+        }
+        &:after {
+          clear: both;
+        }
+        
+        .col-xs-6 {
+            &:first-child {
+                text-align: right;
+            }
+            &:last-child {
+                text-align: left;
+            }
+        }
+        
+    }
+    
+    .list-group-title {
+        font-size: 16px;
+        font-weight: 600;
+    }
+}
+
+
+.asset_name_bar {
+    &.media {
+        @media (max-width:991px) {
+            margin-bottom: 20px;
+            display: inline-block;
+            
+            .media-body {
+                width: auto;
+            }
+        }
+    }
+}
 
 

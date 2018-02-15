@@ -81,6 +81,9 @@
               <li class="<%= current_class?('/resources') %>">
                 <%= link_to "Resources", url_for("/resources"), class: "nav-links", :data => { :reload => true } %>
               </li>
+              <li class="<%= current_class?('/prices') %>">
+                <%= link_to "Prices", url_for("/prices"), class: "nav-links", :data => { :reload => true } %>
+              </li>
               <% if current_user %>
               <li class="<%= current_class?('/logout') %>">
                 <a class="nav-links" data-reload="true" href="/logout"><i class='fa fa-sign-out'></i> &nbsp; Logout</a>
@@ -340,6 +343,11 @@
   <script type="text/javascript">
     (function($) {
       'use strict';
+    
+      $(window).load(function() {
+          console.log('work disabled');
+          $("[data-dr]").prop("disabled", false).addClass('work-disabled');
+      });
       
       $(function() {
         $(".dropdown").on("mouseover", function() {
@@ -393,10 +401,38 @@
            */
           if( $('.selectpicker').length ) {
             $('.selectpicker').selectpicker({
-              style: 'btn-info',
-              size: 4
+              // style: 'btn-info',
+              size: 5
             });
           }
+          
+          
+          /**
+           * =======================================
+           * COLLAPSE SECTION
+           * =======================================
+           */
+          var faq = $('.faq-group');
+      
+          faq.find('.each-faq').each(function() {
+            if( !$(this).hasClass('open') ) {
+              $(this).find('.faq-content').hide();
+            }else {
+              $(this).find('.faq-content').show();
+            }
+          });
+      
+          faq.find('.faq-trigger').on('click', function(el) {
+            el.preventDefault();
+      
+            var openFaq = $(this).closest('.each-faq');
+      
+            openFaq.toggleClass('open').find('.faq-content').slideToggle( 300 );
+            openFaq.siblings('.each-faq:visible').each(function() {
+              $(this).removeClass('open').find('.faq-content').slideUp( 300 );
+            });
+      
+          });
 
           
           
