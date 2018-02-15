@@ -1,7 +1,11 @@
 class CoinsController < ApplicationController
+  
+  def search
     
+  end
+  
   def show
-    @all_coins = Coin.order(:rank).limit 10
+    @all_coins = Coin.order(:rank).limit 15
     @coinsAll = Coin.all
     @coin = Coin.find_by(id: params[:id])
     @posts = Unirest.get("http://www.bitcoincaffe.com/api/v1/news?filter_key=#{@coin.name}").body

@@ -1,0 +1,66 @@
+/**
+ * --------------
+ * FAQ Area Style
+ * --------------
+ */
+.faq-group {
+    &.dark-faq .each-faq {
+        background-color: @background-2;
+    }
+    &.light-faq .each-faq {
+        background-color: @background-1;
+    }
+
+
+    .faq-trigger {
+        display: block;
+        color: fade(@dark-color, 100%);
+        padding: 15px 15px 15px 35px;
+
+        &:before {
+            content: "\f00d";
+            font-family: "FontAwesome";
+            position: absolute;
+            left: 17px;
+            top: 21px;
+            font-size: 12px;
+            line-height: 1;
+            .transition(0.3s);
+            transform: rotate(45deg);
+        }
+
+        h4 {
+            margin: 0;
+            font-weight: 400;
+            color: fade(@dark-color, 82%);
+        }
+    }
+
+    .faq-content {
+        padding: 15px 15px 15px 15px;
+        border-top: 1px solid #ddd;
+
+        p {
+            &:last-child {
+                margin-bottom: 0px;
+            }
+        }
+    }
+    
+    .each-faq {
+        margin-bottom: 10px;
+        .transition( 0.4s );
+        position: relative;
+        .shadow();
+
+        &.open {
+            .box-shadow( 0 7px 30px 0 fade(@shadow-color, 15%) );
+            
+            .faq-trigger {
+                &:before {
+                   transform: rotate(0deg);
+                }
+            }
+        }
+    }
+}

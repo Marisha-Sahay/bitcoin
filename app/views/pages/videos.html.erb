@@ -1,0 +1,306 @@
+<!-- Start: Section
+================================ -->
+<section class="relative default-home background-2">
+    <div class="default-seperator video-section-wrapper">
+        <div class="main-video-player" style="display: none;">
+            <div class="" style="background-color: #000;">
+                <div class="container">
+                    <div class="">
+                        
+                        <div class="col-md-9 col-sm-12">
+                            <div class="row">
+                                <!--  Start: Video Area  "PASTE YOUR VIDEO LINK HERE " -->
+                                <div class="video" style="background-image: url(<%= asset_path 'spinner.svg' %>); background-repeat:  no-repeat;background-position: center center;">
+                                   <iframe class="video-async main-video-iframe" data-color="ffc300" src="" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                                    <!--<div id="O1RHkPGb31Q" class="video-async main-video-iframe"></div>-->
+                                </div>
+                                <!--  End: Video Area  -->
+                            </div>
+                        </div>
+                        <div class="col-md-3 ">
+                            <div class="row">
+                                <div class="list-group playlist light-text">
+        			                <div class="list-group-item list-group-title background-3">
+        			                    Recently Played 
+        			                    <!--Playlist-->
+                                    </div>
+                                    <div class="list-add-area">
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="video-content-meta">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9 col-sm-12">
+                            
+                            <!-- Start: Section Header -->
+                            <div class="section-header text-left">
+                                <h4 class="section-heading"><strong></strong></h4>
+                                <p class="sub-heading"><span class="view"></span> views</p>
+                            </div> <!-- End: Section Header -->
+                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="videoPanelThumb-list">
+            <div class="container">
+                <div class="row margin-b-40">
+                    <div class="col-sm-12">
+                        <div class="row videoPanels">
+                            
+                            <% @videos.each do |video| %>
+                                <% if video.link.include? "youtube" %>
+                                    <% str1 = "#{video.link}" %>
+                                    <% str2 = str1.split("=") %>
+                                    
+                            <div class="videoPanelThumb-outer col-md-3 col-xs-4">
+                                <div class="videoPanelThumb" data-video-id="https://www.youtube.com/embed/<%= str2[1] %>?rel=0&amp;showinfo=0&autoplay=1&enablejsapi=1" data-content="">
+                                    <div class="relative loader">
+                                        <div class="relative bg-overlay-dark image-box" style="" data-image="">
+                                        </div>
+                                        <div class="video-color-bar"></div>
+                                        <div class="thumb-meta light-text" data-url="<%= video.link %>">
+                                            <p class="hidden description"></p>
+                                        </div>
+                                        <i class="fa fa-play hover-play" aria-hidden="true"></i>
+                                    </div>
+                                    <h5 class="title"></h5> 
+                                </div>
+                            </div>
+                            
+                                <% end %>
+                            <% end %>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End: Section
+================================ -->
+<!--<div id="player"></div>-->
+<!--<script src="https://www.youtube.com/player_api"></script>-->
+<script>
+
+    var Youtube_API_Key = 'AIzaSyDcQndyqHck04abJeoqhm7lnNWFBejNoUs';
+
+    function youtuneLinkToYTId ( src ) {
+        var youtube_video_id = src.match(/youtube\.com.*(\?v=|\/embed\/)(.{11})/).pop();
+        return (youtube_video_id.length == 11) ? youtube_video_id : '';
+    }
+    
+    // function youtuneLinkToYTContent ( src ) {
+    //     var youtube_video_id = youtuneLinkToYTId( src );
+    //     var youtube_video_details = [];
+        
+    //     // console.log(iframe_src, youtube_video_id);
+        
+    //     if (youtube_video_id.length == 11) {
+    //         $.getJSON('https://www.googleapis.com/youtube/v3/videos?id='+youtube_video_id+'&key=AIzaSyDcQndyqHck04abJeoqhm7lnNWFBejNoUs&part=snippet,contentDetails,statistics,status',
+    //         function(data,status,xhr){
+    //             youtube_video_details = {
+    //                 title: data.items[0].snippet.title, 
+    //                 view: data.items[0].statistics.viewCount, 
+    //                 desc: data.items[0].snippet.description,
+    //             }
+                
+    //             return youtube_video_details;
+    //         });
+    //     }
+    // }
+
+    // $('.videoPanelThumb-list').find('.videoPanelThumb').each(function() {
+    //     var iframe           = $(this);
+    //     var iframe_src       = iframe.attr('data-video-id');
+        
+    //     var youtube_video_id = youtuneLinkToYTId(iframe_src);
+    //     var youtube_video_details = youtuneLinkToYTContent(iframe_src);
+        
+    //     iframe.find('.bg-overlay-dark').css('background-image', 'url(//img.youtube.com/vi/'+youtube_video_id+'/0.jpg');
+    //     iframe.find('h5.title').text( youtube_video_details[0]['title'] );
+    //     iframe.attr('data-content', JSON.stringify(youtube_video_details) );
+        
+    // });
+    
+    // create youtube player
+    // var player;
+    // function onYouTubePlayerAPIReady() {
+    //     player = new YT.Player('player', {
+    //       height: '390',
+    //       width: '640',
+    //       videoId: '0Bmhjf0rKe8',
+    //       events: {
+    //         'onReady': onPlayerReady,
+    //         'onStateChange': onPlayerStateChange
+    //       }
+    //     });
+    // }
+
+    // // autoplay video
+    // function onPlayerReady(event) {
+    //     event.target.playVideo();
+    // }
+
+    // // when video ends
+    // function onPlayerStateChange(event) {        
+    //     if(event.data === 0) {            
+    //         alert('done');
+    //     }
+    // }
+    
+    // var tag = document.createElement('script');
+    // tag.src = "https://www.youtube.com/iframe_api";
+    // // tag.id = "youtubePlayerScript";
+    // var firstScriptTag = document.getElementsByTagName('script')[0];
+    // firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    
+    // players = {};
+    // function onYouTubeIframeAPIReady() {
+    //     players['1'] = new YT.Player('O1RHkPGb31Q', {
+    //         videoId: 'O1RHkPGb31Q',
+    //         events: {
+    //             'onReady': onPlayerReady,
+    //             'onStateChange': onPlayerStateChange
+    //         }
+    //     });
+    // };
+    // window.onYouTubeIframeAPIReady = function(){
+    //     $('.video-section-wrapper').find('.videoPanelThumb').on('click', function(e) {
+    //         var videoId = youtuneLinkToYTId($(this).attr('data-video-id')),
+    //             el_number = $(players[videoId]).parent().parent().index();
+                
+    //         players[videoId] = new YT.Player('O1RHkPGb31Q', { 
+    //             videoId: videoId, 
+    //             playerVars: { 
+    //                 'autoplay': 1, 
+    //                 'controls': 1,  
+    //                 'widgetid': 0,
+    //                 'rel': 0,
+    //                 'showinfo': 0,
+    //                 'enablejsapi': 1,
+    //             },
+    //             events: {
+    //                 'onReady': onPlayerReady,
+    //                 'onStateChange': onPlayerStateChange(videoId),
+    //             }
+    //         });
+    //         players[videoId].el_number = el_number;
+    //     });
+    
+    // };
+
+    // // autoplay video
+    // function onPlayerReady(event) {
+    //     // event.target.playVideo();
+    //     // event.target.setVolume(100);
+    // }
+
+    // // when video ends
+    // function onPlayerStateChange(event) {  
+    //     var id = $('.videoPanelThumb-list').find('.videoPanelThumb.now-playing');
+    //     if(event.data === 0) {            
+    //         alert('done');
+    //         id.closest('div').next('div').find('.videoPanelThumb').trigger('click');
+            
+    //     }
+    // }
+    
+    
+    
+    
+    $('.videoPanelThumb-list').find('.videoPanelThumb').each(function() {
+        var iframe           = $(this);
+        var iframe_src       = iframe.attr('data-video-id');
+        var youtube_video_id = iframe_src.match(/youtube\.com.*(\?v=|\/embed\/)(.{11})/).pop();
+        var youtube_video_details = [];
+        
+        if (youtube_video_id.length == 11) {
+            $.getJSON('https://www.googleapis.com/youtube/v3/videos?id='+youtube_video_id+'&key='+Youtube_API_Key+'&part=snippet,contentDetails,statistics,status',function(data,status,xhr){
+                // console.log(data.items);
+                // youtube_video_title = data.items[0].snippet.title;
+                youtube_video_details = {
+                    title: data.items[0].snippet.title, 
+                    view: data.items[0].statistics.viewCount, 
+                    desc: data.items[0].snippet.description,
+                }
+                
+                imageLink = '//img.youtube.com/vi/'+youtube_video_id+'/0.jpg';
+                iframe.find('.image-box').css('background-image', 'url('+imageLink+')').attr('data-image', imageLink);
+                iframe.find('h5.title').text( youtube_video_details['title'] );
+                iframe.attr('data-content', JSON.stringify(youtube_video_details) );
+            });
+        }
+        
+        
+    });
+    
+    
+    $('.video-section-wrapper').find('.videoPanelThumb').on('click', function(e) {
+        e.preventDefault();
+        if ( $(this).hasClass('now-playing') ) return;
+        
+        var selector     = $(this),
+            mainArea     = selector.closest('.video-section-wrapper'),
+            videoSection = '.videoPanelThumb',
+            playerArea   = mainArea.find('.main-video-player'),
+            iframeID     = mainArea.find('iframe.main-video-iframe'),
+            contentID    = playerArea.find('.section-header'),
+            video        = selector.attr('data-video-id'),
+            videoContent = JSON.parse( selector.attr('data-content') );
+            
+        playerArea.slideDown('first'); // .find('.video').html('<div id="O1RHkPGb31Q" class="video-async main-video-iframe"></div>');;
+        mainArea.find(videoSection).removeClass('now-playing');
+        selector.addClass('now-playing');
+        
+        
+        
+        // Video View to convert Number('12,345') format
+        x1 = videoContent['view']; 
+        var rgx = /(\d+)(\d{3})/; 
+        while (rgx.test(x1)) { 
+            x1 = x1.replace(rgx, '$1' + ',' + '$2'); 
+        } 
+            
+        iframeID.attr('src', video);
+        contentID.find('.section-heading strong').text( videoContent['title'] );
+        contentID.find('.sub-heading .view').text( x1 );
+        
+        playlistContent = '<div class="list-group-item">\
+                                <div class="media">\
+                                    <div class="media-left">\
+                                        <div class="tumb-image" style="background-image: url('+selector.find('.image-box').attr('data-image')+');"></div>\
+                                    </div>\
+                                    <div class="media-body">\
+                                        <h6 class="media-heading">'+videoContent['title']+'</h6>\
+                                        <span class="btn btn-fill btn-dark btn-xs">Play Video</span>\
+                                    </div>\
+                                </div>\
+                            </div>';
+        mainArea.find('.playlist').find('.list-add-area').prepend(playlistContent);
+        
+      });
+      
+    (function($) {
+        'use strict';
+        
+        $(document).ready( function() {
+            $('.videoPanels .videoPanelThumb').matchHeight();
+        });
+        
+        $(window).load(function(){
+            $('.video-section-wrapper').find('.videoPanels > div:first').find('.videoPanelThumb').trigger('click');
+        });
+    
+    } (jQuery) );
+    
+</script>

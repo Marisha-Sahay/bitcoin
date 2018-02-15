@@ -616,12 +616,12 @@ b {
 
 
 .btn-text-link {
-    padding: 50px 0 0 0;
-    text-align: center;
-    color: fade(@dark-color, 85%);
+    // padding: 50px 0 0 0;
+    // text-align: center;
+    // color: fade(@dark-color, 85%);
 
     a {
-        color: @main-color-1;
+        color: @main-color-3;
         margin-left: 10px;
     }
 }
@@ -747,8 +747,12 @@ b {
     .input-group-addon {
         border: 0px solid;
         background-color: @form-input-background;
-        color: fade(@dark-color, 17%);
+        color: fade(@dark-color, 55%);
         padding-right: 0px;
+    }
+    
+    .input-group {
+        border: 1px solid #ddd;
     }
 
     textarea,
@@ -771,7 +775,7 @@ b {
             border-style: solid;
             border-color: fade(@dark-color, 100%) transparent transparent;
             pointer-events: none;
-            z-index: 111;
+            z-index: 1;
         }
     }
 
@@ -817,8 +821,12 @@ b {
                 width: 20px;
                 left: 0;
                 top: 3px;
-                background: @form-input-background;
-                .border-radius( 3px );
+                // background: @form-input-background;
+                // .border-radius( 3px );
+                background: transparent;
+                border-radius: 0px;
+                border: 2px solid #c5ceda;
+                border-width: 1px 2px 1px 2px;
             }
 
             &::before {
@@ -837,10 +845,13 @@ b {
             + label::before {
                 border-color: transparent fade(@dark-color, 100%) fade(@dark-color, 100%) transparent;
             }
+            + label::after {
+                border-color: #c5ceda;
+                background-color: #c5ceda;
+            }
         }
     }
 
-    .squaredFour 
 
     .btn {
         margin-top: 25px;
