@@ -1,7 +1,7 @@
 namespace :import do
   task prices: :environment do
-    # Price.delete_all
-    coins = Coin.all
+    Price.delete_all
+    coins = Coin.where("rank < 101")
     markets = ["Bitfinex","Poloniex","Kraken","Coinbase","HitBTC","gemini","bittrex"]
     coins.each do |coin|
       markets.each do |market|
