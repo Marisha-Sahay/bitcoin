@@ -704,7 +704,7 @@ select.selectpicker {
  *   https://datatables.net/download
  *
  * To rebuild or modify this file with the latest versions of the included
- * software please visit:
+ * software pleas7px 15pxe visit:
  *   https://datatables.net/download/#bs/dt-1.10.16
  *
  * Included libraries:
@@ -4728,14 +4728,11 @@ blockquote {
   border-radius: 0;
   background-color: transparent;
   border: 0px solid;
-  padding: 15px 15px 0px 15px;
-}
-.list-group.playlist .list-group-item:last-child {
-  padding-bottom: 15px;
+  padding: 7px 15px;
 }
 .list-group.playlist .list-group-title {
   font-size: 14px;
-  background-color: #2A3855;
+  background-color: #1d1d1d;
   padding: 8px 15px;
 }
 .list-group.playlist .tumb-image {
@@ -4750,12 +4747,27 @@ blockquote {
   font-size: 10px;
   text-transform: inherit;
 }
+.list-group.playlist .btn.btn-xs .played {
+  display: none;
+}
 .list-group.playlist .list-add-area {
   overflow-y: auto;
   height: 426px;
 }
 .list-group.playlist .media .media-heading {
   font-weight: 500;
+}
+.list-group.playlist .list-group-item.active {
+  background-color: #151414;
+}
+.list-group.playlist .list-group-item.active .btn.btn-xs {
+  background-color: #ffc300;
+}
+.list-group.playlist .list-group-item.active .btn.btn-xs .play {
+  display: none;
+}
+.list-group.playlist .list-group-item.active .btn.btn-xs .played {
+  display: block;
 }
 .coin-form .form-control,
 .coin-form .selectize-control {
