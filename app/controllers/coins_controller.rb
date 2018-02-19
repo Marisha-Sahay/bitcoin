@@ -1,6 +1,5 @@
 class CoinsController < ApplicationController
  
-  
   def show
     @all_coins = Coin.order(:rank).limit 15
     @coinsAll = Coin.all
