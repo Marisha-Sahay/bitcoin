@@ -63,6 +63,7 @@ Rails.application.routes.draw do
   get '/search/:search', to: 'search#show'
 
   get '/prices', to: 'prices#index'
+  get '/prices/:price/:market', to: 'prices#search'
   get '/prices/:id', to: 'prices#show'
   
   namespace :api do

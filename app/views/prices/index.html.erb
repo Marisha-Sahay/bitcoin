@@ -407,7 +407,7 @@
           
           var type = $(this).find("[name=coin-type]").val(),
               market = $(this).find("[name=coin-market]").val();
-          self.location = 'prices/'+ type +'/'+ market;
+          window.location.href = <%= request.protocol + request.host %> +'prices/'+ type +'/'+ market;
         });
         
         

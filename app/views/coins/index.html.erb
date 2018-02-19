@@ -1,0 +1,288 @@
+<!-- Start: Header Section
+================================ -->
+<section class="features-section relative default-home subscrive-section background-2">
+    <div class="container">
+        <div class="row features-item section-separator-smallest padding-t-20 default-seperator">
+          
+            <div class="col-sm-8 col-sm-offset-2 col-xs-12">
+                <div class="inner">
+                <h4 align="center" style="font-weight: 600;">Choose a coin to get its info</h1>
+                    <!-- <forn class="single-form search-form search-big" action="" method="POST">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search...">
+                            <span class="input-group-btn">
+                                <button class="btn" type="button"><i class="fa fa-search"></i></button>
+                            </span>
+                        </div><!-- /.input-group -->
+                    <!-- </form> -->
+
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="margin-b-10 col-xs-12 text-center">
+                <div class="inner">
+
+                    <div class="tag-list text-center">
+
+                        <% @all_coins.each do |coin| %>
+                            <div class="tag relative bg-cover bg-overlay-dark" style="background-image: url(<%= coin.image_url %>);">
+                                <%= link_to "/coins/#{coin.id}", :data => { :reload => true } do %>
+                                    <%= image_tag("#{coin.image_url}", :alt => "", :class =>"img-responsive") %>
+                                    <%= content_tag(:p, "#{coin.symbol}", :class =>"title") %>
+                                <% end %>
+                            </div>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="clearfix"></div>
+        
+            <!-- Start: Coin Dropdown -->
+            <div class="margin-b-20 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
+                
+                <div class="subscribe-form">
+                    <form method="" class="single-form text-center" action="" id="coins-dropdown">
+                        <div class="container-fluid" >
+                            
+                            <input type="hidden" value="<%= request.protocol + request.host %>/" id="coin_link" />
+
+                            <div class="row">
+                                <div class="input-group">
+
+                                    <div class="outer">
+                                        <input class="form-control typeahead shadow" id="coin-select" type="text" placeholder="Search Coin" value="<%= @coin.name %>"  data-id="<%= @coin.id %>"  data-name="<%= @coin.name %>">
+                                        <!--<select class="selectpicker shadow background-1" id="coin-select" data-live-search="true" data-style="btn-warning">
+                                            <% @coinsAll.each do |coin| %>
+                                            <option value="<%= coin.id %>"><%= coin.name %> (<%= coin.symbol %>)</option>
+                                            <% #allvalue = allvalue + "[#{coin.id}, '#{coin.name}', '#{coin.symbol}']" %>
+                                            <% end %>
+                                        </select>-->
+                                    </div>
+
+                                    <div class="input-group-btn outer">
+                                        <button class="footer-form-submit btn btn-fill button" type="submit" name="subscribe" disabled="disabled" data-dr="remove">Search</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </form>
+                </div>
+                    
+            </div> <!-- End: Coin Dropdown -->
+
+            <div class="clearfix"></div>
+            
+            <!-- Start: Section Header -->
+            <div class="section-header business-item text-left col-xs-12 margin-b-15">
+                <h2 class="section-heading">News of <%=link_to "#{@coin.name}", "#{@coin.coin_url}", target: "_blank", :style=>'color:#f5922f;'%></h2>
+                    <!--<hr class="lines">-->
+            </div> <!-- End: Section Header -->
+            
+            <div class="clearfix"></div>
+
+            <div class="each-item business-item col-md-6 col-sm-12">
+
+                <div class="load-more-init carousel-container margin-b-50 features-content">
+                    <div class="inner-small shadow">
+
+                        <% @posts.each do |post| %>
+                        <div class="each-item load-item business-item">
+                            <div class="each-item-inner">
+                                
+                                <% if post['main_image'] %>
+                                    <div class="vertical-middle features-image bg-cover col-sm-2 col-xs-12" style="background-image: url(<%= post['main_image'] %>);"></div>
+                                <% else %>
+                                    <div class="vertical-middle features-image bg-cover col-sm-2 col-xs-12" style="background-image: url(<%= asset_path 'bitcoins-default.jpg' %>);"></div>
+                                <% end %>
+
+                                <div class="vertical-middle features-content col-sm-10 col-xs-12">
+                                    <div class="row">
+                                        <div class="item-inner text-left margin-l-15">
+                                
+                                            <!-- Start: Section Header -->
+                                            <div class="section-header">
+                                                <h4 class="section-heading small-text"><a href="<%= post['news_url'] %>" target="_blank" title="Read More"><%= post['title'] %></a></h4>
+                                            </div>
+                                            <!-- End: Section Header -->
+        
+                                            <div class="detail small-spacing">
+                                                <p><%= post['description'][0..200] %> <a href="<%= post['news_url'] %>" target="_blank" title="Read More" class="color-text">[ More ]</a></p>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <% end %>
+
+                        <div class="text-center">
+                            <button data-reload="false" class="loadMore btn btn-fill btn-dark btn-xs">Load More</button>
+                        </div>
+
+                    </div> <!-- End: .carousel-wrapper -->
+                </div> <!-- End: .carousel-container -->
+
+            </div> <!-- End: .each-item -->
+            <div class="each-item tab-item col-md-6 col-sm-12">
+                <div class="tab-inner">
+
+                    <div role="tabpanel">
+
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#reddit-tab" data-toggle="tab">Reddit</a></li>
+                            <li role="presentation"><a href="#twitter" data-toggle="tab">Twitter</a></li>
+                        </ul>
+
+                        <!-- Tab panes -->
+                        <div class="tab-content ">
+                            <div role="tabpanel" class="tab-pane no-padding active" id="reddit-tab">
+
+                                <div id="reddit" class="text-left no-header">
+                                <input type="hidden" value="<%= @coin.reddit_link %>" name="input" id="reddit-id"/>
+                                </div> 
+
+                            </div> <!-- End: .tab-pane -->
+                            <div role="tabpanel" class="tab-pane twitter-feed" id="twitter">
+                                <% if @coin.twitter_link == "NA" %>
+                                <a class="twitter-timeline" href="https://twitter.com/bitcaffe256">Tweets by <%= @coin.name %></a>
+                                <% else %>
+                                <a class="twitter-timeline" data-tweet-limit=5 href="<%= @coin.twitter_link %>">Tweets by <%= @coin.name %> </a>
+                                <% end %>
+                            </div> <!-- End: .tab-pane -->
+
+                        </div> <!-- End: .tab-content -->
+
+                    </div>
+
+                </div>
+            </div> <!-- End: .each-item -->
+
+        </div> <!-- End: .row -->
+    </div> <!-- End: .container -->
+</section>
+<!-- End: Header Section
+    ================================ -->
+
+
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<style>
+.load-more-init .load-item {
+    display:none;
+}
+</style>
+<script>
+(function($) {
+    'use strict';
+    
+    $(document).ready( function() {
+        
+        var loadMoreID = '.load-more-init',
+            perItemID = '.load-item';
+        // $($loadMoreID).find($perItemID).hide();
+        $(loadMoreID).find(perItemID).slice(0, 4).show();
+        $(loadMoreID).find(".loadMore").on('click', function (e) {
+            e.preventDefault();
+            var mainID = $(this).closest(loadMoreID);
+            mainID.find(perItemID+":hidden").slice(0, 4).slideDown();
+            if (mainID.find(perItemID+":hidden").length == 0) {
+                $(this).fadeOut('slow');
+            }
+            $('html,body').animate({
+                scrollTop: $(this).offset().top
+            }, 1500);
+        });
+        
+        
+        /* Reddit lazy load hack */
+        var oScript = document.createElement("script");
+        document.write = function(text) {
+            document.getElementById("reddit").innerHTML += text;
+        };
+        oScript.src = $('#reddit-id').val() + ".embed?limit=9";
+        document.body.appendChild(oScript);
+        
+        
+        
+        // $( "#coins-dropdown" ).submit(function( event ) {
+        //   event.preventDefault();
+          
+        //   var coin = $(this).find("#coin-select").val(),
+        //       id = $(this).find("#coin-select").attr('data-id'),
+        //       url  = $(this).find("#coin_link").val();
+        // //   console.log(coin, url, id);
+        //   self.location = url + id + '&id='+ id +'&coin='+ coin;
+        // });
+        $( "#coins-dropdown" ).submit(function( event ) {
+          event.preventDefault();
+          
+          var coin = $(this).find("#coin-select").val(),
+              url  = $(this).find("#coin_link").val();
+          window.location.href = url +'search/'+ coin;
+        });
+        
+    });
+} (jQuery) );
+</script>
+
+<script>
+    var substringMatcher = function(strs) {
+      return function findMatches(q, cb) {
+        var matches, substringRegex;
+    
+        // an array that will be populated with substring matches
+        matches = [];
+    
+        // regex used to determine if a string contains the substring `q`
+        substrRegex = new RegExp(q, 'i');
+    
+        // iterate through the pool of strings and for any string that
+        // contains the substring `q`, add it to the `matches` array
+        $.each(strs, function(i, str) {
+          if (substrRegex.test(str.name)) {
+            matches.push(str);
+          }
+        });
+    
+        cb(matches);
+      };
+    };
+    
+    var coinList = []; // [{value : 'Barcelona',country : 'Spain',},]
+    
+    <% @coinsAll.each do |coin| %>
+    coinList.push({name:'<%= coin.name %>', symbol:'<%= coin.symbol %>', imgUrl:'<%= coin.image_url %>', id:'<%= coin.id %>'});
+    <% end %>
+    
+    // console.log(coinList);
+    
+    // var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California','Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii','Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana','Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota','Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire','New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota','Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island','South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont','Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
+    
+    $('#coin-select').typeahead({
+      hint: true,
+      highlight: true,
+      minLength: 1
+    },
+    {
+      name: 'coinList',
+      display: 'name',
+      source: substringMatcher(coinList),
+      templates: {
+        suggestion: function(data) {
+        return '<p><img src="'+data.imgUrl+'" class="image"><span class="name" >' + data.name + ' (' + data.symbol + ')</span></p>';
+    }
+      }
+    }).on('typeahead:selected', function(event, datum) {
+        var url = $( "#coins-dropdown" ).find("#coin_link").val();
+        window.location.href =  url + 'coins/' +  datum.id;
+    });
+</script>
