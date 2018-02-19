@@ -1,842 +1,360 @@
 
 <section class="features-section relative default-home background-2">
-	<div class="container">
-		<div class="row default-seperator margin-b-40 padding-t-15">
-			<!--<div class="col-md-6"></div>-->
-			<div class="col-md-12">
-				<div class="row">
-					
-					<div class="col-md-6">
-						<div class="faq-group text-left light-faq">
-	                        <div class="each-faq">
-	                            <a class="faq-trigger fa" href="#" data-left-icon="\f1fe"><h4>Add or Remove Filters</h4></a>
-	                            <div class="faq-content no-padding" style="display: none;">
-	                                
-	                                <div class="coin-form padding-t-15">
-	                                	<form class="single-form">
-	                                		<div class="input-outer col-xs-12">
-	                                			<h6 class="title">Coin Type</h6>
-	                                			<select class="multipleSelect shadow" multiple name="coin-type">
-												    <option value="platform">Platform</option>
-												    <option value="currency">Currency</option>
-												    <option value="utility">Utility</option>
-												</select>
-	                                		</div>
-	                                		<div class="input-outer col-sm-6">
-	                                			<h6 class="title">Country</h6>
-	                                            <select class="multipleSelect shadow" multiple name="coin-country">
-	                                                <option value="us">Us</option>
-		                                            <option value="jp">JP</option>
-		                                            <option value="kw">KW</option>
-		                                            <option value="china">china</option>
-	                                            </select>
-	                                		</div>
-	                                		<div class="input-outer col-sm-6">
-	                                			<h6 class="title">Consensus Algorithm</h6>
-	                                            <select class="multipleSelect shadow" multiple name="coin-algo">
-	                                                <option value="pow">POW</option>
-	                                            	<option value="pos">POS</option>
-	                                            </select>
-	                                		</div>
-	                                		<div class="input-outer col-sm-6">
-	                                			<h6 class="title">Sector</h6>
-	                                            <select class="multipleSelect shadow" multiple name="coin-country">
-	                                                <option value="fin">Financial</option>
-		                                            <option value="helc">Healthcare</option>
-		                                            <option value="sc">Supply Chain</option>
-	                                            </select>
-	                                		</div>
-	                                		<div class="input-outer col-sm-6">
-	                                			<h6 class="title">Product</h6>
-	                                            <select class="multipleSelect shadow" multiple name="coin-product">
-	                                                <option value="cp">Consumer Product</option>
-	                                            <option value="bp">Business Product</option>
-	                                            </select>
-	                                		</div>
-		                                	
-		                                </form>
-	                                </div>
-		                                
-	                            </div> <!-- End: faq-content -->
-	                        </div>
-	                    </div>
-					</div>
-					<div class="col-md-6">
-						<div class="faq-group text-left light-faq">
-	                        <div class="each-faq">
-	                            <a class="faq-trigger fa" href="#" data-left-icon="\f1fe"><h4>Add or Remove Column</h4></a>
-	                            <div class="faq-content" style="display: none;">
-	                                <div class="panel panel-block panel-filters pricing-panel">
-										<div class="panel-body pricing-panel-body">
-											<!--<div class="panel-header-inline hidden-xs hidden-sm">-->
-												<!--<i class="fa fa-filter"></i> -->
-											<!--	Filters: -->
-											<!--</div>-->
-											<div class="relative">
-												<%
-												 table_columns = [
-												 	# ['title', id, 'selected']
-												 	
-												 	# ['Standard', 'title'],
-												 	['Flag', 1, true],
-												 	['Favorite', 2, false],
-												 	['Logo', 3, false],
-												 	# ['Name', 4, true],
-												 	['Current Marketcap', 5, true],
-												 	['24hr Change vs USD (%)', 6, true],
-												 	['Price USD', 7, true],
-												 	['24th Vol', 8, true],
-												 	['Supply % Issued', 9, true],
-												 	['1hr Change', 10, false],
-												 	['7day Change', 11, false],
-												 	['liquidity', 12, false],
-												 	['Y2050 Marketcap (implied)', 13, false],
-												 	
-												 	['All time high', 'title'],
-												 	['ATH (USD)', 14, false],
-												 	['Days Since ATH', 15, false],
-												 	['% Down Form ATH', 16, false],
-												 	
-												 	['On-Chain Data', 'title'],
-												 	['TX Vol (24hr, USD)', 17, false],
-												 	['NVT Ratio', 18, false],
-												 	['Num Transactions (24hr)', 19, false],
-												 	['New Issuance (24hr, USD)', 20, false],
-												 	['Fees (24hr, USD)', 21, false],
-												 ]
-												%>
-												<div class="form-inline single-form pricing-form">
-													<% table_columns.each do |column| %>
-														<% if column[1] == 'title' %>
-														<p class="sub-title">
-															<small><%= column[0] %></small>
-														</p>
-														<% else %>
-														<div class="checkbox">
-															<input type="checkbox" id="toggle-vis-<%= column[1] %>" value="<%= column[1] %>" class="toggle-vis" <% if column[2] == true %> <%= "checked" %> <% end %> >
-															<label for="toggle-vis-<%= column[1] %>"><%= column[0] %></label>
-														</div>
-														<% end %>
-													<% end %>
-												</div>
-											</div>
-											
-										</div>
-										<!--<div ng-hide="hideInfo" class="panel-footer">-->
-										<!--	<span class="fa fa-info-circle"></span> <a href="#" data-featherlight="#overall_help">What are these columns?</a>-->
-										<!--</div>-->
-									</div>
-	                            </div> <!-- End: faq-content -->
-	                        </div>
-	                    </div> <!-- End: faq-group text-left-fix -->
-					</div>
-					
-					<div class="clearfix"></div>
-					
-					<div class="col-xs-12 coins-list margin-t-15 overflow">
-						<table id="myTable1" class="table table-striped table-coins display dataTable show-usd" width="100%">
-						<!--<table id="myTable1" class="table">-->
-							<thead>
-								<tr>
-									<th class="place">#</th>
-									<th class="flag">Flag</th>
-									<th class="flag">#</th>
-									<th class="thumb "></th>
-									<th class="name " >Name</th>
-									<th class="price">Current Marketcap</th>
-									<th class="volume small-text-t">24<sup>hr</sup> Change vs USD (%)</th>
-									<th class="price">Price 
-										<select class="">
-	                                        <option value="show-usd" selected>USD</option>
-	                                        <option value="show-inr">INR</option>
-	                                        <option value="show-eur">EUR</option>
-	                                        <option value="show-btc">BTC</option>
-	                                    </select>
-	                                </th>
-									<th class="proof-type">24<sup>hr</sup> Vol</th>			
-									<th class="market-cap">Supply % Issued</th>
-									<th class="market-cap">1hr Change</th>
-									<th class="market-cap">7day Change</th>
-									<th class="market-cap">liquidity</th>
-									<th class="last-trade text-center small-text-t">Y2050 Marketcap (implied)</th>
-									<th class="market-cap">ATH (USD)</th>
-									<th class="market-cap">Days Since ATH</th>
-									<th class="market-cap">% Down Form ATH</th>
-									<th class="market-cap">TX Vol (24hr, USD)</th>
-									<th class="market-cap">NVT Ratio</th>
-									<th class="market-cap small-text-t">Num Transactions (24hr)</th>
-									<th class="market-cap small-text-t">New Issuance (24hr, USD)</th>
-									<th class="market-cap">Fees (24hr, USD)</th>
-								</tr>
-							</thead>			
-							<tbody infinite-scroll="" scroll-controller-object="allData" class="ng-isolate-scope">
-								<!--<tr class="ng-scope item-special">-->
-								<tr class="ng-scope">
-									<td class="place " data-href="/coins/prg/overview/BTC">
-										<div class="ng-binding">1</div>
-									</td>
-									<td class="flag">
-										<span class="desktop-name ng-binding">
-											<i style="color: #F79A35;font-style: normal;font-size: 20px;" class="ng-binding table-flag fa fa-flag-o"></i>
-										</span>
-									</td>
-									<td class="flag">
-										<span class="desktop-name ng-binding">
-											<i style="color: #F79A35;font-style: normal;font-size: 20px;" class="ng-binding table-favorite fa fa-heart-o"></i>
-										</span>
-									</td>
-									<td class="thumb ">
-										<a title="" href="/prices/1">
-											<img src="https://onchainfx.com/images/asset_logos/bitcoin.png?width=25">
-										</a>
-									</td>		
-									<td class="name ">
-										<a title="" href="/prices/1">
-											<h3>
-												<span class="desktop-name ng-binding">
-													Bitcoin
-													<span class="table_asset_sym">(BTC)</span>
-												</span>
-												<span class="mobile-name ng-binding">BTC</span>
-	
-												<!-- ngIf: item.Sponsored === true -->
-												<!-- <span class="special-text ng-scope">
-													Sponsored
-												</span> -->
-												<!-- end ngIf: item.Sponsored === true -->
-											</h3>
-										</a>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="price ">
-										<div class="current-price-value ng-binding value-down">
-											$230,900,285,015	
-										</div>
-									</td>
-									<td class="volume">
-										<div class="usd value-down">
-											$185,179,263,197
-										</div>
-										<div class="inr value-down">
-											$185,179
-										</div>
-										<div class="eur value-down">
-											123,179
-										</div>
-										<div class="btc value-down">
-											$185,123,456
-										</div>
-									</td>
-									<td class="price">
-										<div class="current-price-value ng-binding down-text text-bold">
-											-4.19%
-										</div>
-									</td>
-									<td class="proof-type">
-										<div class="current-price-value ng-binding value-down">
-											$175.25
-										</div>							
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="last-trade">
-										<div class="ng-binding text-bold">
-											56%
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-down">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-down">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-								</tr>
-								<tr class="ng-scope">
-									<td class="place " data-href="/coins/prg/overview/BTC">
-										<div class="ng-binding">2</div>
-									</td>
-									<td class="flag">
-										<span class="desktop-name ng-binding">
-											<i style="color: #F79A35;font-style: normal;font-size: 20px;" class="ng-binding table-flag active-flag fa fa-flag-o"></i>
-										</span>
-									</td>
-									<td class="flag">
-										<span class="desktop-name ng-binding">
-											<i style="color: #F79A35;font-style: normal;font-size: 20px;" class="ng-binding table-favorite fa fa-heart-o"></i>
-										</span>
-									</td>
-									<td class="thumb ">
-										<a title="" href="/prices/1">
-											<img src="https://onchainfx.com/images/asset_logos/ripple.png?width=25">
-										</a>
-									</td>		
-									<td class="name ">
-										<a title="" href="/prices/1">
-											<h3>
-												<span class="desktop-name ng-binding">
-													Ripple
-													<span class="table_asset_sym">(XRP)</span>
-												</span>
-												<span class="mobile-name ng-binding">XRP</span>
-	
-												<!-- ngIf: item.Sponsored === true -->
-												<!-- <span class="special-text ng-scope">
-													Sponsored
-												</span> -->
-												<!-- end ngIf: item.Sponsored === true -->
-											</h3>
-										</a>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-down">
-											$18,179,263,197
-										</div>
-									</td>
-									<td class="price ">
-										<div class="current-price-value ng-binding value-up">
-											$20,900,285,015	
-										</div>
-									</td>
-									<td class="volume">
-										<div class="usd value-down">
-											$185,179,263,197
-										</div>
-										<div class="inr value-down">
-											$185,179
-										</div>
-										<div class="eur value-down">
-											123,179
-										</div>
-										<div class="btc value-down">
-											$185,123,456
-										</div>
-									</td>
-									<td class="price">
-										<div class="current-price-value ng-binding up-text text-bold">
-											11.19%
-										</div>
-									</td>
-									<td class="proof-type">
-										<div class="current-price-value ng-binding value-up">
-											$175.25
-										</div>							
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="last-trade">
-										<div class="ng-binding text-bold">
-											56%
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-								</tr>
-								<tr class="ng-scope">
-									<td class="place " data-href="/coins/prg/overview/BTC">
-										<div class="ng-binding">3</div>
-									</td>
-									<td class="flag">
-										<span class="desktop-name ng-binding">
-											<i style="color: #F79A35;font-style: normal;font-size: 20px;" class="ng-binding table-flag fa fa-flag-o"></i>
-										</span>
-									</td>
-									<td class="flag">
-										<span class="desktop-name ng-binding">
-											<i style="color: #F79A35;font-style: normal;font-size: 20px;" class="ng-binding table-favorite fa fa-heart-o"></i>
-										</span>
-									</td>
-									<td class="thumb ">
-										<a title="" href="/prices/1">
-											<img src="https://onchainfx.com/images/asset_logos/neo.png?width=25">
-										</a>
-									</td>		
-									<td class="name ">
-										<a title="" href="/prices/1">
-											<h3>
-												<span class="desktop-name ng-binding">
-													NEO
-													<span class="table_asset_sym">(NEO)</span>
-												</span>
-												<span class="mobile-name ng-binding">NEO</span>
-	
-												<!-- ngIf: item.Sponsored === true -->
-												<!-- <span class="special-text ng-scope">
-													Sponsored
-												</span> -->
-												<!-- end ngIf: item.Sponsored === true -->
-											</h3>
-										</a>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="price ">
-										<div class="current-price-value ng-binding value-down">
-											$230,900,285,015	
-										</div>
-									</td>
-									<td class="volume">
-										<div class="usd value-down">
-											$185,179,263,197
-										</div>
-										<div class="inr value-down">
-											$185,179
-										</div>
-										<div class="eur value-down">
-											123,179
-										</div>
-										<div class="btc value-down">
-											$185,123,456
-										</div>
-									</td>
-									<td class="price">
-										<div class="current-price-value ng-binding down-text text-bold">
-											-4.19%
-										</div>
-									</td>
-									<td class="proof-type">
-										<div class="current-price-value ng-binding value-down">
-											$175.25
-										</div>							
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="last-trade">
-										<div class="ng-binding text-bold">
-											56%
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-down">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-down">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-								</tr>
-								<tr class="ng-scope">
-									<td class="place " data-href="/coins/prg/overview/BTC">
-										<div class="ng-binding">4</div>
-									</td>
-									<td class="flag">
-										<span class="desktop-name ng-binding">
-											<i style="color: #F79A35;font-style: normal;font-size: 20px;" class="ng-binding table-flag fa fa-flag-o"></i>
-										</span>
-									</td>
-									<td class="flag">
-										<span class="desktop-name ng-binding">
-											<i style="color: #F79A35;font-style: normal;font-size: 20px;" class="ng-binding table-favorite active-favorite fa fa-heart-o"></i>
-										</span>
-									</td>
-									<td class="thumb ">
-										<a title="" href="/prices/1">
-											<img src="https://onchainfx.com/images/asset_logos/dash.png?width=25">
-										</a>
-									</td>		
-									<td class="name ">
-										<a title="" href="/prices/1">
-											<h3>
-												<span class="desktop-name ng-binding">
-													Dash
-													<span class="table_asset_sym">(DASH)</span>
-												</span>
-												<span class="mobile-name ng-binding">DASH</span>
-	
-												<!-- ngIf: item.Sponsored === true -->
-												<!-- <span class="special-text ng-scope">
-													Sponsored
-												</span> -->
-												<!-- end ngIf: item.Sponsored === true -->
-											</h3>
-										</a>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-down">
-											$18,179,263,197
-										</div>
-									</td>
-									<td class="price ">
-										<div class="current-price-value ng-binding value-up">
-											$20,900,285,015	
-										</div>
-									</td>
-									<td class="volume">
-										<div class="usd value-down">
-											$185,179,263,197
-										</div>
-										<div class="inr value-down">
-											$185,179
-										</div>
-										<div class="eur value-down">
-											123,179
-										</div>
-										<div class="btc value-down">
-											$185,123,456
-										</div>
-									</td>
-									<td class="price">
-										<div class="current-price-value ng-binding up-text text-bold">
-											11.19%
-										</div>
-									</td>
-									<td class="proof-type">
-										<div class="current-price-value ng-binding value-up">
-											$175.25
-										</div>							
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="last-trade">
-										<div class="ng-binding text-bold">
-											56%
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-								</tr>
-								<tr class="ng-scope">
-									<td class="place " data-href="/coins/prg/overview/BTC">
-										<div class="ng-binding">5</div>
-									</td>
-									<td class="flag">
-										<span class="desktop-name ng-binding">
-											<i style="color: #F79A35;font-style: normal;font-size: 20px;" class="ng-binding table-flag fa fa-flag-o"></i>
-										</span>
-									</td>
-									<td class="flag">
-										<span class="desktop-name ng-binding">
-											<i style="color: #F79A35;font-style: normal;font-size: 20px;" class="ng-binding table-favorite fa fa-heart-o"></i>
-										</span>
-									</td>
-									<td class="thumb ">
-										<a title="" href="/prices/1">
-											<img src="https://onchainfx.com/images/asset_logos/stellar.png?width=25">
-										</a>
-									</td>		
-									<td class="name ">
-										<a title="" href="/prices/1">
-											<h3>
-												<span class="desktop-name ng-binding">
-													Stellar Lumens
-													<span class="table_asset_sym">(XLM)</span>
-												</span>
-												<span class="mobile-name ng-binding">XLM</span>
-	
-												<!-- ngIf: item.Sponsored === true -->
-												<!-- <span class="special-text ng-scope">
-													Sponsored
-												</span> -->
-												<!-- end ngIf: item.Sponsored === true -->
-											</h3>
-										</a>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="price ">
-										<div class="current-price-value ng-binding value-down">
-											$230,900,285,015	
-										</div>
-									</td>
-									<td class="volume">
-										<div class="usd value-down">
-											$185,179,263,197
-										</div>
-										<div class="inr value-down">
-											$185,179
-										</div>
-										<div class="eur value-down">
-											123,179
-										</div>
-										<div class="btc value-down">
-											$185,123,456
-										</div>
-									</td>
-									<td class="price">
-										<div class="current-price-value ng-binding down-text text-bold">
-											-4.19%
-										</div>
-									</td>
-									<td class="proof-type">
-										<div class="current-price-value ng-binding value-up">
-											$175.25
-										</div>							
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="last-trade">
-										<div class="ng-binding text-bold">
-											56%
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-									<td class="market-cap">
-										<div class="current-price-value ng-binding value-up">
-											$185,179,263,197
-										</div>
-									</td>
-								</tr>				
-							</tbody>
-						</table>
-					</div>
+    <div class="container">
+        <div class="row default-seperator margin-b-40 padding-t-15">
+            <!--<div class="col-md-6"></div>-->
+            <div class="col-md-12">
+                <div class="row">
+                    
+                    <div class="col-md-6">
+                        <div class="faq-group text-left light-faq">
+                            <div class="each-faq">
+                                <a class="faq-trigger fa" href="#" data-left-icon="\f1fe"><h4>Add or Remove Filters</h4></a>
+                                <div class="faq-content no-padding" style="display: none;">
+                                    
+                                    <div class="coin-form padding-t-15">
+                                        <form class="single-form" id="price-filter">
+               <!--                             <div class="input-outer col-xs-12">-->
+               <!--                                 <h6 class="title">Coin Type</h6>-->
+               <!--                                 <select class="multipleSelect shadow" multiple name="coin-type">-->
+                                                    <!--<option value="platform">Platform</option>-->
+                                                    <!--<option value="currency">Currency</option>-->
+                                                    <!--<option value="utility">Utility</option>-->
+                                                <!--    <option value="USD">USD</option>-->
+                                                <!--    <option value="BTC">BTC</option>-->
+                                                <!--</select>-->
+               <!--                             </div>-->
+                                            <div class="input-outer col-md-6">
+                                                <h6 class="title">Coin Type</h6>
+                                                <div class="select-outer">
+                                                    <select class="form-control shadow" name="coin-type">
+                                                        <option value="USD">USD</option>
+                                                        <option value="BTC">BTC</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <!--<div class="input-outer col-sm-6">-->
+                                            <!--    <h6 class="title">Country</h6>-->
+                                      <!--          <select class="multipleSelect shadow" multiple name="coin-country">-->
+                                      <!--              <option value="us">Us</option>-->
+                                         <!--           <option value="jp">JP</option>-->
+                                         <!--           <option value="kw">KW</option>-->
+                                         <!--           <option value="china">china</option>-->
+                                      <!--          </select>-->
+                                            <!--</div>-->
+                                            <!--<div class="input-outer col-sm-6">-->
+                                            <!--    <h6 class="title">Consensus Algorithm</h6>-->
+                                      <!--          <select class="multipleSelect shadow" multiple name="coin-algo">-->
+                                      <!--              <option value="pow">POW</option>-->
+                                      <!--              <option value="pos">POS</option>-->
+                                      <!--          </select>-->
+                                            <!--</div>-->
+                                            <!--<div class="input-outer col-sm-6">-->
+                                            <!--    <h6 class="title">Sector</h6>-->
+                                      <!--          <select class="multipleSelect shadow" multiple name="coin-country">-->
+                                      <!--              <option value="fin">Financial</option>-->
+                                         <!--           <option value="helc">Healthcare</option>-->
+                                         <!--           <option value="sc">Supply Chain</option>-->
+                                      <!--          </select>-->
+                                            <!--</div>-->
+                                            <!--<div class="input-outer col-sm-6">-->
+                                            <!--    <h6 class="title">Product</h6>-->
+                                      <!--          <select class="multipleSelect shadow" multiple name="coin-product">-->
+                                      <!--              <option value="cp">Consumer Product</option>-->
+                                      <!--              <option value="bp">Business Product</option>-->
+                                      <!--          </select>-->
+                                            <!--</div>-->
+                                            <!--<div class="input-outer col-sm-6">-->
+                                            <!--    <h6 class="title">Product</h6>-->
+                                      <!--          <select class="multipleSelect shadow" multiple name="coin-product">-->
+                                      <!--              <option value="cp">Consumer Product</option>-->
+                                      <!--              <option value="bp">Business Product</option>-->
+                                      <!--          </select>-->
+                                            <!--</div>-->
+                                            <div class="input-outer col-md-6">
+                                                <h6 class="title">Coin Market</h6>
+                                                <div class="select-outer">
+                                                    <select class="form-control shadow" name="coin-market">
+                                                        <option value="BitTrex">BitTrex</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="input-outer col-sm-12">
+                                                <button type="submit" class="btn btn-fill btn-dark pull-right">Filter</button>
+                                            </div>
+                                            
+                                        </form>
+                                    </div>
+                                        
+                                </div> <!-- End: faq-content -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="faq-group text-left light-faq">
+                            <div class="each-faq">
+                                <a class="faq-trigger fa" href="#" data-left-icon="\f1fe"><h4>Add or Remove Column</h4></a>
+                                <div class="faq-content" style="display: none;">
+                                    <div class="panel panel-block panel-filters pricing-panel">
+                                        <div class="panel-body pricing-panel-body">
+                                            <!--<div class="panel-header-inline hidden-xs hidden-sm">-->
+                                                <!--<i class="fa fa-filter"></i> -->
+                                            <!--    Filters: -->
+                                            <!--</div>-->
+                                            <div class="relative">
+                                                <%
+                                                 table_columns = [
+                                                    # ['title', id, 'selected']
+                                                    
+                                                    # ['Standard', 'title'],
+                                                    ['Flag', 1, true],
+                                                    ['Favorite', 2, false],
+                                                    ['Logo', 3, false],
+                                                    # ['Name', 4, true],
+                                                    ['Current Marketcap', 5, true],
+                                                    ['24hr Change vs USD (%)', 6, true],
+                                                    ['Price USD', 7, true],
+                                                    ['24th Vol', 8, true],
+                                                    ['Supply % Issued', 9, true],
+                                                    ['1hr Change', 10, false],
+                                                    ['7day Change', 11, false],
+                                                    ['liquidity', 12, false],
+                                                    ['Y2050 Marketcap (implied)', 13, false],
+                                                    
+                                                    ['All time high', 'title'],
+                                                    ['ATH (USD)', 14, false],
+                                                    ['Days Since ATH', 15, false],
+                                                    ['% Down Form ATH', 16, false],
+                                                    
+                                                    ['On-Chain Data', 'title'],
+                                                    ['TX Vol (24hr, USD)', 17, false],
+                                                    ['NVT Ratio', 18, false],
+                                                    ['Num Transactions (24hr)', 19, false],
+                                                    ['New Issuance (24hr, USD)', 20, false],
+                                                    ['Fees (24hr, USD)', 21, false],
+                                                 ]
+                                                %>
+                                                <div class="form-inline single-form pricing-form">
+                                                    <% table_columns.each do |column| %>
+                                                        <% if column[1] == 'title' %>
+                                                        <p class="sub-title">
+                                                            <small><%= column[0] %></small>
+                                                        </p>
+                                                        <% else %>
+                                                        <div class="checkbox">
+                                                            <input type="checkbox" id="toggle-vis-<%= column[1] %>" value="<%= column[1] %>" class="toggle-vis" <% if column[2] == true %> <%= "checked" %> <% end %> >
+                                                            <label for="toggle-vis-<%= column[1] %>"><%= column[0] %></label>
+                                                        </div>
+                                                        <% end %>
+                                                    <% end %>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        <!--<div ng-hide="hideInfo" class="panel-footer">-->
+                                        <!--    <span class="fa fa-info-circle"></span> <a href="#" data-featherlight="#overall_help">What are these columns?</a>-->
+                                        <!--</div>-->
+                                    </div>
+                                </div> <!-- End: faq-content -->
+                            </div>
+                        </div> <!-- End: faq-group text-left-fix -->
+                    </div>
+                    
+                    <div class="clearfix"></div>
+                    
+                    <div class="col-xs-12 coins-list margin-t-15 overflow">
+                        <table id="myTable1" class="table table-striped table-coins display dataTable show-usd" width="100%">
+                        <!--<table id="myTable1" class="table">-->
+                            <thead>
+                                <tr>
+                                    <th class="1 place">#</th>
+                                    <th class="2 flag">Flag</th>
+                                    <th class="3 flag">#</th>
+                                    <th class="4 thumb "></th>
+                                    <th class="5 name " >Name</th>
+                                    <th class="6 price">Current Marketcap</th>
+                                    <th class="7 volume small-text-t">24<sup>hr</sup> Change vs USD (%)</th>
+                                    <th class="8 price">Price USD
+                                        <!--<select class="">-->
+             <!--                               <option value="show-usd" selected>USD</option>-->
+             <!--                               <option value="show-inr">INR</option>-->
+             <!--                               <option value="show-eur">EUR</option>-->
+             <!--                               <option value="show-btc">BTC</option>-->
+             <!--                           </select>-->
+                                    </th>
+                                    <th class="9 proof-type">24<sup>hr</sup> Vol</th>           
+                                    <th class="10 market-cap">Supply % Issued</th>
+                                    <th class="11 market-cap">1hr Change</th>
+                                    <th class="12 market-cap">7day Change</th>
+                                    <th class="13 market-cap">liquidity</th>
+                                    <th class="14 last-trade text-center small-text-t">Y2050 Marketcap (implied)</th>
+                                    <th class="15 market-cap">ATH (USD)</th>
+                                    <th class="16 market-cap">Days Since ATH</th>
+                                    <th class="17 market-cap">% Down Form ATH</th>
+                                    <th class="18 market-cap">TX Vol (24hr, USD)</th>
+                                    <th class="19 market-cap">NVT Ratio</th>
+                                    <th class="20 market-cap small-text-t">Num Transactions (24hr)</th>
+                                    <th class="21 market-cap small-text-t">New Issuance (24hr, USD)</th>
+                                    <th class="22 market-cap">Fees (24hr, USD)</th>
+                                </tr>
+                            </thead>            
+                            <tbody infinite-scroll="" scroll-controller-object="allData" class="ng-isolate-scope">
+                                <!--<tr class="ng-scope item-special">--> 
+                                
+                                <% @prices.each do |price| %>
+                                <tr class="ng-scope">
+                                    <td class="1 place " data-href="/coins/prg/overview/BTC">
+                                        <div class="ng-binding"><%= price.id %></div>
+                                    </td>
+                                    <td class="2 flag">
+                                        <span class="desktop-name ng-binding">
+                                            <i style="color: #F79A35;font-style:normal;font-size: 20px;" class="ng-binding table-flag fa fa-flag-o"></i>
+                                        </span>
+                                    </td>
+                                    <td class="3 flag">
+                                        <span class="desktop-name ng-binding">
+                                            <i style="color: #F79A35;font-style:normal;font-size: 20px;" class="ng-binding table-favorite fa fa-heart-o"></i>
+                                        </span>
+                                    </td>
+                                    <td class="4 thumb ">
+                                        <a title="" href="/prices/1">
+                                            <img src="<%= price.coin.image_url %>?width=25">
+                                        </a>
+                                    </td>       
+                                    <td class="5 name ">
+                                        <a title="" href="/prices/1">
+                                            <h3>
+                                                <span class="desktop-name ng-binding">
+                                                    <%= price.coin.name %>
+                                                    <span class="table_asset_sym">(<%= price.coin.symbol %>)</span>
+                                                </span>
+                                                <span class="mobile-name ng-binding"><%= price.coin.symbol %></span>
+    
+                                                <!-- ngIf: item.Sponsored === true -->
+                                                <!-- <span class="special-text ng-scope">
+                                                    Sponsored
+                                                </span> -->
+                                                <!-- end ngIf: item.Sponsored === true -->
+                                            </h3>
+                                        </a>
+                                    </td>
+                                    <td class="6 market-cap">
+                                        <div class="current-price-value ng-binding ">
+                                            <%= number_to_currency(price.market_cap, unit: "$", separator: ".", delimiter: ",") %>
+                                        </div>
+                                    </td>
+                                    <td class="7 price ">
+                                        <% 
+                                        notClass = ''
+                                        if price.change_percent >= 0
+                                            notClass = ''
+                                        else
+                                            notClass = 'value-down'
+                                        end
+                                        %>
+                                        <div class="current-price-value ng-binding <%= notClass %>">
+                                            <%= number_to_percentage(price.change_percent, precision: 2) %>
+                                        </div>
+                                    </td>
+                                    <td class="8 volume">
+                                        <div class="usd ">
+                                            <%= number_to_currency(price.price , unit: "$", separator: ".", delimiter: ",") %>
+                                        </div>
+                                        <!--<div class="inr ">-->
+                                            
+                                        <!--</div>-->
+                                        <!--<div class="eur">-->
+                                            
+                                        <!--</div>-->
+                                        <!--<div class="btc ">-->
+                                            
+                                        <!--</div>-->
+                                    </td>
+                                    <td class="9 price">
+                                        <div class="current-price-value ng-binding  text-bold">
+                                            <%= number_to_currency(price.volume24hourto, unit: "$", separator: ".", delimiter: ",") %>
+                                        </div>
+                                    </td>
+                                    <td class="10 proof-type">
+                                        <div class="current-price-value ng-binding">
+                                            <%= number_to_currency(price.supply, unit: "$", separator: ".", delimiter: ",") %>
+                                        </div>                          
+                                    </td>
+                                    <td class="11 market-cap">
+                                        <div class="current-price-value ng-binding value-up">
+                                            $185,179,263,197
+                                        </div>
+                                    </td>
+                                    <td class="12 last-trade">
+                                        <div class="ng-binding text-bold">
+                                            56%
+                                        </div>
+                                    </td>
+                                    <td class="13 market-cap">
+                                        <div class="current-price-value ng-binding value-up">
+                                            $185,179,263,197
+                                        </div>
+                                    </td>
+                                    <td class="14 market-cap">
+                                        <div class="current-price-value ng-binding value-up">
+                                            $185,179,263,197
+                                        </div>
+                                    </td>
+                                    <td class="15 market-cap">
+                                        <div class="current-price-value ng-binding value-up">
+                                            $185,179,263,197
+                                        </div>
+                                    </td>
+                                    <td class="16 market-cap">
+                                        <div class="current-price-value ng-binding value-down">
+                                            $185,179,263,197
+                                        </div>
+                                    </td>
+                                    <td class="17 market-cap">
+                                        <div class="current-price-value ng-binding value-up">
+                                            $185,179,263,197
+                                        </div>
+                                    </td>
+                                    <td class="18 market-cap">
+                                        <div class="current-price-value ng-binding value-up">
+                                            $185,179,263,197
+                                        </div>
+                                    </td>
+                                    <td class="29 market-cap">
+                                        <div class="current-price-value ng-binding value-up">
+                                            $185,179,263,197
+                                        </div>
+                                    </td>
+                                    <td class="20 market-cap">
+                                        <div class="current-price-value ng-binding value-up">
+                                            $185,179,263,197
+                                        </div>
+                                    </td>
+                                    <td class="21 market-cap">
+                                        <div class="current-price-value ng-binding value-down">
+                                            $185,179,263,197
+                                        </div>
+                                    </td>
+                                    <td class="22 market-cap">
+                                        <div class="current-price-value ng-binding value-up">
+                                            $185,179,263,197
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                                <% end %>
+                                        
+                            </tbody>
+                        </table>
+                    </div>
                     <div class="col-md-3">
                         <p class="meta_last_updated_str">More assets added regularly.<br>Data last updated: 28 Jan 2018 8:19:59</p>
                     </div>
                 </div>  
-			</div>
+            </div>
 
-		</div>
-	</div>
+        </div>
+    </div>
 </section>
 
 
@@ -847,43 +365,52 @@
 <script>
 
 
-	function tableColumnVisibility( e, table ) {
-		var el = e,
-			column = table.column( el.attr('value') );
-	    
-	    if (el.prop('checked')==true) {
-	    	column.visible( true );
-	    }else {
-	    	column.visible( false );
-	    }
-	}
-	
-	$('.multipleSelect').selectize({});
-	
-	$(document).ready(function() {
-	    var table = $('#myTable1').DataTable( {
-	        // "scrollY": "200px",
-	        "paging": false,
-	        "scrollX": true,
-	    });
-	    
-	    // Apply a search to the second table for the demo
-    	// $('#myTable1').DataTable().search( 'New York' ).draw();
-	 	
-	 	$('input.toggle-vis').each(function(){
-	    	// console.log( $(this).val() );
-	 		tableColumnVisibility( $(this), table );
-	 	});
-	    $('input.toggle-vis').on( 'click', function (e) {
-        	tableColumnVisibility( $(this), table );
-	    });
-	    
-	    $('select').change( function(e) {
-	    	e.preventDefault();
-	    	$('#myTable1').removeClass('show-usd show-inr show-eur show-btc').addClass( $(this).val() );
-	    })
-	    
-	    
-	});
+    function tableColumnVisibility( e, table ) {
+        var el = e,
+            column = table.column( el.attr('value') );
+        
+        if (el.prop('checked')==true) {
+            column.visible( true );
+        }else {
+            column.visible( false );
+        }
+    }
+    
+    $('.multipleSelect').selectize({});
+    
+    $(document).ready(function() {
+        var table = $('#myTable1').DataTable( {
+            // "scrollY": "200px",
+            "paging": false,
+            "scrollX": true,
+        });
+        
+        // Apply a search to the second table for the demo
+        // $('#myTable1').DataTable().search( 'New York' ).draw();
+        
+        $('input.toggle-vis').each(function(){
+            // console.log( $(this).val() );
+            tableColumnVisibility( $(this), table );
+        });
+        $('input.toggle-vis').on( 'click', function (e) {
+            tableColumnVisibility( $(this), table );
+        });
+        
+        $('select').change( function(e) {
+            e.preventDefault();
+            $('#myTable1').removeClass('show-usd show-inr show-eur show-btc').addClass( $(this).val() );
+        });
+        
+        
+        $( "#price-filter" ).submit(function( event ) {
+          event.preventDefault();
+          
+          var type = $(this).find("[name=coin-type]").val(),
+              market = $(this).find("[name=coin-market]").val();
+          self.location = 'prices/'+ type +'/'+ market;
+        });
+        
+        
+    });
 
 </script>
