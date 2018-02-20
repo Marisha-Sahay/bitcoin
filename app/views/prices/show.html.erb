@@ -10,13 +10,13 @@
 				    <div class="col-md-4 col-sm-12 text-center">
                         <div class="media asset_name_bar">
                             <div class="media-left">
-                                <img class="media-object" src="https://www.cryptocompare.com/media/19633/btc.png" alt="..." width="50px;">
+                                <img class="media-object" src="<%= @price.coin.image_url %>" alt="..." width="50px;">
                             </div>
                             <div class="media-body">
                                 <!--<h4 class="media-heading">Media heading</h4>-->
                                 <!-- Start: Section Header -->
                                 <div class="section-header text-left">
-                                    <h4 class="section-heading text-bold">Bitcoin (BTC)</h4>
+                                    <h4 class="section-heading text-bold"><%= @price.coin.name %> (<%= @price.coin.symbol %>)</h4>
                                     <p class="sub-heading btn-text-link margin-t-5">
                                         Sector(s): 
                                         <a class="" href="#">Currency</a>
@@ -76,7 +76,8 @@
 			<div class="col-xs-12 margin-t-10">
 			    <div class="row">
 			        
-			        <div class="col-md-4 col-sm-6 col-xs-12">
+			        <div class="col-md-4 col-sm-6 col-xs-12 no-padding">
+			            <div class="col-xs-12">
 			            
 			            <div class="list-group asset_propset shadow">
 			                <div class="list-group-item list-group-title background-3 light-text">
@@ -84,221 +85,68 @@
                             </div>
                             <div class="list-group-item">
                                 <div class="col-xs-6">Age</div>
-                                <div class="col-xs-6">9yrs 1mo</div>
+                                <div class="col-xs-6">
+                                    <!--9yrs 1mo-->
+                                </div>
                             </div>
                             <div class="list-group-item">
                                 <div class="col-xs-6">Marketcap (current)</div>
-                                <div class="col-xs-6">$167.6B</div>
+                                <div class="col-xs-6">
+                                    <%= number_to_currency(@price.market_cap, unit: "$", separator: ".", delimiter: ",") %>
+                                </div>
                             </div>
                             <div class="list-group-item">
                                 <div class="col-xs-6">Marketcap (Y2050)</div>
-                                <div class="col-xs-6">$208.8B</div>
+                                <div class="col-xs-6">
+                                    <!--$208.8B-->
+                                    </div>
                             </div>
                             <div class="list-group-item">
                                 <div class="col-xs-6">Price (USD)</div>
-                                <div class="col-xs-6">$9,953</div>
+                                <div class="col-xs-6">
+                                    <%= number_to_currency(@price.price , unit: "$", separator: ".", delimiter: ",") %>
+                                </div>
                             </div>
                             <div class="list-group-item">
                                 <div class="col-xs-6">24hr Change (%)</div>
-                                <div class="col-xs-6 down-text text-bold">-2.61%</div>
+                                <div class="col-xs-6 text-bold <%= (@price.change_percent >= 0)? 'value-up': 'value-down' %>">
+                                    <%= number_to_percentage(@price.change_percent, precision: 2) %>
+                                </div>
                             </div>
                             <div class="list-group-item">
                                 <div class="col-xs-6">24hr Trade Volume</div>
-                                <div class="col-xs-6">$7.0B</div>
+                                <div class="col-xs-6">
+                                    <%= number_to_currency(@price.volume24hourto, unit: "$", separator: ".", delimiter: ",") %>
+                                </div>
                             </div>
                             <div class="list-group-item">
                                 <div class="col-xs-6">All Time High</div>
-                                <div class="col-xs-6">$20,089</div>
+                                <div class="col-xs-6">
+                                    <!--$20,089-->
+                                    </div>
                             </div>
                             <div class="list-group-item">
                                 <div class="col-xs-6">All Time High Date</div>
-                                <div class="col-xs-6">2017-12-17</div>
+                                <div class="col-xs-6">
+                                    <!--2017-12-17-->
+                                    </div>
                             </div>
                             <div class="list-group-item">
                                 <div class="col-xs-6">% down from ATH</div>
-                                <div class="col-xs-6">50.46%</div>
+                                <div class="col-xs-6">
+                                    <!--50.46%-->
+                                    </div>
                             </div>
                             <div class="list-group-item">
                                 <div class="col-xs-6">Vladimir Club Cost</div>
-                                <div class="col-xs-6">$20.88M</div>
+                                <div class="col-xs-6">
+                                    <!--$20.88M-->
+                                    </div>
                             </div>
                         </div>
 
 			        </div> <!-- /.col-md-4-->
-			        <div class="col-md-4 col-sm-6 col-xs-12">
-			            <div class="list-group asset_propset shadow">
-			                <div class="list-group-item list-group-title background-3 light-text">
-			                    Bitcoin Historical Price Lookup
-                            </div>
-                            <div class="list-group-item">
-                                <p class="margin-b-5">Check the price of Bitcoin on:</p>
-                                <form class="single-form">
-                                    <div class="input-outer">
-                                        <div class="form-group">
-                                            <div class="input-group">
-                                                <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                                                <input type="date" name="" id="" value="" placeholder="" class="form-control">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form> <!-- /form -->
-                            </div>
-                        </div>
-			        </div> <!-- /.col-md-4-->
-			        <div class="col-md-4 col-sm-6 col-xs-12">
-			            <div class="list-group asset_propset shadow">
-			                <div class="list-group-item list-group-title background-3 light-text">
-			                    Bitcoin ROI
-                            </div>
-                            <div class="list-group-item">
-                                <div class="col-xs-6">1 week</div>
-                                <div class="col-xs-6 down-text text-bold">-13%</div>
-                            </div>
-                            <div class="list-group-item">
-                                <div class="col-xs-6">1 Month</div>
-                                <div class="col-xs-6 down-text text-bold">-29%</div>
-                            </div>
-                            <div class="list-group-item">
-                                <div class="col-xs-6">3 Months</div>
-                                <div class="col-xs-6 up-text text-bold">37%</div>
-                            </div>
-                            <div class="list-group-item">
-                                <div class="col-xs-6">1 year</div>
-                                <div class="col-xs-6 up-text text-bold">876%</div>
-                            </div>
-                            <div class="list-group-item">
-                                <div class="col-xs-6">3 years</div>
-                                <div class="col-xs-6 up-text text-bold">4,138%</div>
-                            </div>
-                        </div>
-			        </div> <!-- /.col-md-4-->
-			        <div class="col-md-8 col-sm-12">
-			            <div class="list-group asset_propset shadow">
-			                <div class="list-group-item list-group-title background-3 light-text">
-			                    Bitcoin Price Chart
-                            </div>
-                            <div class="list-group-item" style="min-height: 150px;">
-                                <!--<p class="margin-b-5">Overlay Another Asset:</p>-->
-                                
-                                <!--<button id="add2">add chart</button>-->
-                                <!--<div class="input-group">-->
-                                    <!--<label><input type="radio" name="date-select" value="1" class="">Day</label>-->
-                                    <!--<label><input type="radio" name="date-select" value="2" class="">Month</label>-->
-                                    <!--<label><input type="radio" name="date-select" value="3" class="">Year</label>-->
-                                <!--</div>-->
-                             <!--   <select id="category_faq">-->
-                    	        <!--     <option value="1">Days</option>-->
-                    	        <!--     <option value="2">Months</option>-->
-                    	        <!--     <option value="3">Years</option>-->
-                    	        <!--</select>-->
-                                <form class="single-form subscribe-form small-box">
-                                    <div class="col-sm-5">
-                                        <div class="row">
-        
-                                            <div class="outer">
-                                                
-                                                <%  
-                                                coinsAll = [
-                                                    ["optgroup", "Traditional Assets"],
-                                                    ["gold", "Gold"],
-                                                    ["sp500", "S&amp;P 500"],
-                                                    ["usd_tw", "US Dollar (trade weighted index)"],
-                                                    ["ust_10yr", "10yr US Treasury"],
-                                                    ["crude_oil_opec", "Crude Oil (OPEC)"],
-                                                    ["/optgroup", ''],
-                                                    ["optgroup", "Crypto Assets"],
-                                                    ["0x", "0x (ZRX)"],
-                                                    ["ardor", "Ardor (ARDR) "],
-                                                    ["ark", "Ark (ARK) "],
-                                                    ["augur", "Augur (REP) "],
-                                                    ["basic-attention-token", "Basic Attention Token (BAT) "],
-                                                    ["binance-coin", "Binance Coin (BNB) "],
-                                                    ["bitconnect", "BitConnect (BCC) "],
-                                                    ["bitshares", "BitShares (BTS) "],
-                                                    ["bitcoin-cash", "Bitcoin Cash (BCH) "],
-                                                    ["bitcoin-gold", "Bitcoin Gold (BTG) "],
-                                                    ["byteball", "Byteball (GBYTE) "],
-                                                    ["bytecoin", "Bytecoin (BCN) "],
-                                                    ["cardano", "Cardano (ADA) "],
-                                                    ["civic", "Civic (CVC) "],
-                                                    ["dash", "Dash (DASH) "],
-                                                    ["decred", "Decred (DCR) "],
-                                                    ["digibyte", "Digibyte (DGB) "],
-                                                    ["digixdao", "DigixDAO (DGD) "],
-                                                    ["dogecoin", "Dogecoin (DOGE) "],
-                                                    ["eos", "EOS (EOS) "],
-                                                    ["einsteinium", "Einsteinium (EMC2)"],
-                                                    ["ethereum", "Ethereum (ETH) "],
-                                                    ["ethereum-classic", "Ethereum Classic (ETC) "],
-                                                    ["factom", "Factom (FCT) "],
-                                                    ["gamecredits", "GameCredits (GAME) "],
-                                                    ["gnosis", "Gnosis (GNO) "],
-                                                    ["golem", "Golem (GNT) "],
-                                                    ["hcash", "Hcash (HSR) "],
-                                                    ["icon", "Icon (ICX) "],
-                                                    ["iconomi", "Iconomi (ICN) "],
-                                                    ["iota", "Iota (IOT) "],
-                                                    ["komodo", "Komodo (KMD) "],
-                                                    ["kyber-network", "Kyber Network (KNC) "],
-                                                    ["lbry", "LBRY Credits (LBC) "],
-                                                    ["lisk", "Lisk (LSK) "],
-                                                    ["litecoin", "Litecoin (LTC) "],
-                                                    ["maidsafe", "MaidSafeCoin (MAID) "],
-                                                    ["metal", "Metal (MTL) "],
-                                                    ["monacoin", "Monacoin (MONA) "],
-                                                    ["monero", "Monero (XMR) "],
-                                                    ["neo", "NEO (NEO) "],
-                                                    ["neo-gas", "NEO GAS (GAS) "],
-                                                    ["raiblocks", "Nano / Raiblocks (XRB)"],
-                                                    ["nem", "New Economy Movement (XEM) "],
-                                                    ["omisego", "OmiseGO (OMG) "],
-                                                    ["pivx", "PIVX (PIVX) "],
-                                                    ["populous", "Populous (PPT) "],
-                                                    ["qtum", "Qtum (QTUM) "],
-                                                    ["ripple", "Ripple (XRP) "],
-                                                    ["salt", "SALT (SALT) "],
-                                                    ["siacoin", "Siacoin (SC) "],
-                                                    ["steem", "Steem (STEEM) "],
-                                                    ["stellar", "Stellar Lumens (XLM) "],
-                                                    ["stratis", "Stratis (STRAT) "],
-                                                    ["syscoin", "Syscoin (SYS) "],
-                                                    ["tenx", "TenX (PAY) "],
-                                                    ["tron", "Tron (TRX) "],
-                                                    ["vechain", "VeChain (VEN) "],
-                                                    ["verge", "Verge (XVG) "],
-                                                    ["vertcoin", "Vertcoin (VTC) "],
-                                                    ["waves", "Waves (WAVES) "],
-                                                    ["zcash", "ZCash (ZEC) "],
-                                                    ["/optgroup", '']
-                                                ]
-                                                %>
-                                                <select class="selectpicker shadow background-4" id="coin-select-chart" data-live-search="false" data-style="btn-warning">
-                                                    <option value="--">-- select --</option>
-                                                    
-                                                    <% coinsAll.each do |coin| %>
-                                                        <% if coin[0] == 'optgroup' || coin[0] == '/optgroup' %>
-                                                            <% if coin[0] == 'optgroup' %>
-                                                            <optgroup label="<%= coin[1] %>">
-                                                            <% else %>
-                                                            </optgroup>
-                                                            <% end %>
-                                                        <% else %>
-                                                        <option value="<%= coin[0] %>"><%= coin[1] %></option>
-                                                        <% end %>
-                                                    <% end %>
-                                                    
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form> <!-- /form -->
-                                
-                                <!--<div class="views-row-1 hid"> <canvas id="chart1" height="150"></canvas></div>-->
-                                <div id="container" style="height: auto; min-width: 310px; width: 100%;"></div>
-                            </div>
-                        </div>
-			        </div> <!-- /.col-md-8 -->
-			        <div class="col-md-4 col-sm-6 col-xs-12">
+			        <div class="col-xs-12">
 			            <div class="list-group asset_propset shadow">
 			                <div class="list-group-item list-group-title background-3 light-text">
 			                    What is Bitcoin?
@@ -308,6 +156,183 @@
                             </div>
                         </div>
 			        </div> <!-- /.col-md-4 -->
+			        </div>
+			        
+			        <div class="col-md-8 col-sm-6 col-xs-12 no-padding">
+    			        <div class="col-sm-6 col-xs-12">
+    			            <div class="list-group asset_propset shadow">
+    			                <div class="list-group-item list-group-title background-3 light-text">
+    			                    Bitcoin Historical Price Lookup
+                                </div>
+                                <div class="list-group-item">
+                                    <p class="margin-b-5">Check the price of Bitcoin on:</p>
+                                    <form class="single-form">
+                                        <div class="input-outer">
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                                    <input type="date" name="" id="" value="" placeholder="" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form> <!-- /form -->
+                                </div>
+                            </div>
+    			        </div> <!-- /.col-md-4-->
+    			        <div class="col-sm-6 col-xs-12">
+    			            <div class="list-group asset_propset shadow">
+    			                <div class="list-group-item list-group-title background-3 light-text">
+    			                    Bitcoin ROI
+                                </div>
+                                <div class="list-group-item">
+                                    <div class="col-xs-6">1 week</div>
+                                    <div class="col-xs-6 down-text text-bold">-13%</div>
+                                </div>
+                                <div class="list-group-item">
+                                    <div class="col-xs-6">1 Month</div>
+                                    <div class="col-xs-6 down-text text-bold">-29%</div>
+                                </div>
+                                <div class="list-group-item">
+                                    <div class="col-xs-6">3 Months</div>
+                                    <div class="col-xs-6 up-text text-bold">37%</div>
+                                </div>
+                                <div class="list-group-item">
+                                    <div class="col-xs-6">1 year</div>
+                                    <div class="col-xs-6 up-text text-bold">876%</div>
+                                </div>
+                                <div class="list-group-item">
+                                    <div class="col-xs-6">3 years</div>
+                                    <div class="col-xs-6 up-text text-bold">4,138%</div>
+                                </div>
+                            </div>
+    			        </div> <!-- /.col-md-4-->
+    			        <div class="col-xs-12">
+    			            <div class="list-group asset_propset shadow">
+    			                <div class="list-group-item list-group-title background-3 light-text">
+    			                    Bitcoin Price Chart
+                                </div>
+                                <div class="list-group-item" style="min-height: 150px;">
+                                    <!--<p class="margin-b-5">Overlay Another Asset:</p>-->
+                                    
+                                    <!--<button id="add2">add chart</button>-->
+                                    <!--<div class="input-group">-->
+                                        <!--<label><input type="radio" name="date-select" value="1" class="">Day</label>-->
+                                        <!--<label><input type="radio" name="date-select" value="2" class="">Month</label>-->
+                                        <!--<label><input type="radio" name="date-select" value="3" class="">Year</label>-->
+                                    <!--</div>-->
+                                 <!--   <select id="category_faq">-->
+                        	        <!--     <option value="1">Days</option>-->
+                        	        <!--     <option value="2">Months</option>-->
+                        	        <!--     <option value="3">Years</option>-->
+                        	        <!--</select>-->
+                                    <form class="single-form subscribe-form small-box">
+                                        <div class="col-sm-5">
+                                            <div class="row">
+            
+                                                <div class="outer">
+                                                    
+                                                    <%  
+                                                    coinsAll = [
+                                                        ["optgroup", "Traditional Assets"],
+                                                        ["gold", "Gold"],
+                                                        ["sp500", "S&amp;P 500"],
+                                                        ["usd_tw", "US Dollar (trade weighted index)"],
+                                                        ["ust_10yr", "10yr US Treasury"],
+                                                        ["crude_oil_opec", "Crude Oil (OPEC)"],
+                                                        ["/optgroup", ''],
+                                                        ["optgroup", "Crypto Assets"],
+                                                        ["0x", "0x (ZRX)"],
+                                                        ["ardor", "Ardor (ARDR) "],
+                                                        ["ark", "Ark (ARK) "],
+                                                        ["augur", "Augur (REP) "],
+                                                        ["basic-attention-token", "Basic Attention Token (BAT) "],
+                                                        ["binance-coin", "Binance Coin (BNB) "],
+                                                        ["bitconnect", "BitConnect (BCC) "],
+                                                        ["bitshares", "BitShares (BTS) "],
+                                                        ["bitcoin-cash", "Bitcoin Cash (BCH) "],
+                                                        ["bitcoin-gold", "Bitcoin Gold (BTG) "],
+                                                        ["byteball", "Byteball (GBYTE) "],
+                                                        ["bytecoin", "Bytecoin (BCN) "],
+                                                        ["cardano", "Cardano (ADA) "],
+                                                        ["civic", "Civic (CVC) "],
+                                                        ["dash", "Dash (DASH) "],
+                                                        ["decred", "Decred (DCR) "],
+                                                        ["digibyte", "Digibyte (DGB) "],
+                                                        ["digixdao", "DigixDAO (DGD) "],
+                                                        ["dogecoin", "Dogecoin (DOGE) "],
+                                                        ["eos", "EOS (EOS) "],
+                                                        ["einsteinium", "Einsteinium (EMC2)"],
+                                                        ["ethereum", "Ethereum (ETH) "],
+                                                        ["ethereum-classic", "Ethereum Classic (ETC) "],
+                                                        ["factom", "Factom (FCT) "],
+                                                        ["gamecredits", "GameCredits (GAME) "],
+                                                        ["gnosis", "Gnosis (GNO) "],
+                                                        ["golem", "Golem (GNT) "],
+                                                        ["hcash", "Hcash (HSR) "],
+                                                        ["icon", "Icon (ICX) "],
+                                                        ["iconomi", "Iconomi (ICN) "],
+                                                        ["iota", "Iota (IOT) "],
+                                                        ["komodo", "Komodo (KMD) "],
+                                                        ["kyber-network", "Kyber Network (KNC) "],
+                                                        ["lbry", "LBRY Credits (LBC) "],
+                                                        ["lisk", "Lisk (LSK) "],
+                                                        ["litecoin", "Litecoin (LTC) "],
+                                                        ["maidsafe", "MaidSafeCoin (MAID) "],
+                                                        ["metal", "Metal (MTL) "],
+                                                        ["monacoin", "Monacoin (MONA) "],
+                                                        ["monero", "Monero (XMR) "],
+                                                        ["neo", "NEO (NEO) "],
+                                                        ["neo-gas", "NEO GAS (GAS) "],
+                                                        ["raiblocks", "Nano / Raiblocks (XRB)"],
+                                                        ["nem", "New Economy Movement (XEM) "],
+                                                        ["omisego", "OmiseGO (OMG) "],
+                                                        ["pivx", "PIVX (PIVX) "],
+                                                        ["populous", "Populous (PPT) "],
+                                                        ["qtum", "Qtum (QTUM) "],
+                                                        ["ripple", "Ripple (XRP) "],
+                                                        ["salt", "SALT (SALT) "],
+                                                        ["siacoin", "Siacoin (SC) "],
+                                                        ["steem", "Steem (STEEM) "],
+                                                        ["stellar", "Stellar Lumens (XLM) "],
+                                                        ["stratis", "Stratis (STRAT) "],
+                                                        ["syscoin", "Syscoin (SYS) "],
+                                                        ["tenx", "TenX (PAY) "],
+                                                        ["tron", "Tron (TRX) "],
+                                                        ["vechain", "VeChain (VEN) "],
+                                                        ["verge", "Verge (XVG) "],
+                                                        ["vertcoin", "Vertcoin (VTC) "],
+                                                        ["waves", "Waves (WAVES) "],
+                                                        ["zcash", "ZCash (ZEC) "],
+                                                        ["/optgroup", '']
+                                                    ]
+                                                    %>
+                                                    <select class="selectpicker shadow background-4" id="coin-select-chart" data-live-search="false" data-style="btn-warning">
+                                                        <option value="--">-- select --</option>
+                                                        
+                                                        <% coinsAll.each do |coin| %>
+                                                            <% if coin[0] == 'optgroup' || coin[0] == '/optgroup' %>
+                                                                <% if coin[0] == 'optgroup' %>
+                                                                <optgroup label="<%= coin[1] %>">
+                                                                <% else %>
+                                                                </optgroup>
+                                                                <% end %>
+                                                            <% else %>
+                                                            <option value="<%= coin[0] %>"><%= coin[1] %></option>
+                                                            <% end %>
+                                                        <% end %>
+                                                        
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form> <!-- /form -->
+                                    
+                                    <!--<div class="views-row-1 hid"> <canvas id="chart1" height="150"></canvas></div>-->
+                                    <div id="container" style="height: auto; min-width: 310px; width: 100%;"></div>
+                                </div>
+                            </div>
+    			        </div> <!-- /.col-md-8 -->
+			        </div>
 			        
 			    </div>
 			</div>

@@ -1355,9 +1355,9 @@ b {
 }
 .btn.btn-fill,
 .btn.btn-border {
-  padding: 13px 20px;
-  min-width: 190px;
-  height: 48px;
+  padding: 10px 20px;
+  min-width: 150px;
+  height: 42px;
 }
 .btn.btn-fill-big,
 .btn.btn-border-big {

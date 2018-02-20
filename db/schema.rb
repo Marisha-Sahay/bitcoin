@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180210050319) do
+ActiveRecord::Schema.define(version: 20180216050059) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -125,6 +125,25 @@ ActiveRecord::Schema.define(version: 20180210050319) do
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
     t.integer  "user_id"
+  end
+
+  create_table "prices", force: :cascade do |t|
+    t.string   "market"
+    t.string   "from_symbol"
+    t.string   "to_symbol"
+    t.decimal  "price",          precision: 100, scale: 50
+    t.decimal  "volume24hour",   precision: 100, scale: 50
+    t.decimal  "volume24hourto", precision: 100, scale: 50
+    t.decimal  "high24hour",     precision: 100, scale: 50
+    t.decimal  "low24hour",      precision: 100, scale: 50
+    t.decimal  "change_percent", precision: 100, scale: 50
+    t.decimal  "supply",         precision: 100, scale: 50
+    t.decimal  "market_cap",     precision: 100, scale: 50
+    t.decimal  "totalvol24hr",   precision: 100, scale: 50
+    t.decimal  "totalvol24hrto", precision: 100, scale: 50
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
+    t.integer  "coin_id"
   end
 
   create_table "products", force: :cascade do |t|

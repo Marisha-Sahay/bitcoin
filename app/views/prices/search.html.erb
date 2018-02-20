@@ -1,7 +1,7 @@
 
 <section class="features-section relative default-home background-2">
     <div class="container">
-        <div class="row default-seperator margin-b-40 padding-t-15">
+        <div class="row default-seperator margin-b-40 padding-t-15 padding-b-15">
             <!--<div class="col-md-6"></div>-->
             <div class="col-md-12">
                 <div class="row">
@@ -9,10 +9,14 @@
                     <div class="col-md-6">
                         <div class="faq-group text-left light-faq">
                             <div class="each-faq">
-                                <a class="faq-trigger fa" href="#" data-left-icon="\f1fe"><h4>Add or Remove Filters</h4></a>
+                                <a class="faq-trigger fa" href="#" data-left-icon="\f1fe"><h4>Add or Remove Filters 
+                                <span>
+                                    <small style="font-size: 14px;font-weight: 600;color: #ffc300;text-shadow: 1px 1px 0px #000000a6;"><%= @coin['price'] %></small>, 
+                                    <small style="font-size: 14px;font-weight: 600;color: #ffc300;text-shadow: 1px 1px 0px #000000a6;"><%= @coin['market'] %></small>
+                                </span></h4></a>
                                 <div class="faq-content no-padding" style="display: none;">
                                     
-                                    <div class="coin-form padding-t-15">
+                                    <div class="coin-form padding-t-15 padding-b-15">
                                         <form class="single-form" id="price-filter">
                <!--                             <div class="input-outer col-xs-12">-->
                <!--                                 <h6 class="title">Coin Type</h6>-->
@@ -28,8 +32,8 @@
                                                 <h6 class="title">Coin Type</h6>
                                                 <div class="select-outer">
                                                     <select class="form-control shadow" name="coin-type">
-                                                        <option value="USD">USD</option>
-                                                        <option value="BTC">BTC</option>
+                                                        <option value="USD" <%= (@coin['price'] == "USD") ? "selected" : "" %>>USD</option>
+                                                        <option value="BTC" <%= (@coin['price'] == "BTC") ? "selected" : "" %>>BTC</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -75,12 +79,12 @@
                                                 <h6 class="title">Coin Market</h6>
                                                 <div class="select-outer">
                                                     <select class="form-control shadow" name="coin-market">
-                                                        <option value="BitTrex">BitTrex</option>
+                                                        <option value="BitTrex" <%= (@coin['market'] == "BitTrex") ? "selected" : "" %>>BitTrex</option>
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="input-outer col-sm-12">
-                                                <button type="submit" class="btn btn-fill btn-dark pull-right">Filter</button>
+                                            <div class="input-outer col-sm-12 text-center">
+                                                <button type="submit" class="btn btn-fill btn-dark no-margin">Filter</button>
                                             </div>
                                             
                                         </form>
@@ -112,8 +116,8 @@
                                                     ['Logo', 3, false],
                                                     # ['Name', 4, true],
                                                     ['Current Marketcap', 5, true],
-                                                    ['24hr Change vs USD (%)', 6, true],
-                                                    ['Price USD', 7, true],
+                                                    ['24hr Change vs '+ @coin["price"]+' (%)', 6, true],
+                                                    ['Price '+ @coin["price"], 7, true],
                                                     ['24th Vol', 8, true],
                                                     ['Supply % Issued', 9, true],
                                                     ['1hr Change', 10, false],
@@ -122,16 +126,16 @@
                                                     ['Y2050 Marketcap (implied)', 13, false],
                                                     
                                                     ['All time high', 'title'],
-                                                    ['ATH (USD)', 14, false],
+                                                    ['ATH ('+ @coin["price"]+')', 14, false],
                                                     ['Days Since ATH', 15, false],
                                                     ['% Down Form ATH', 16, false],
                                                     
                                                     ['On-Chain Data', 'title'],
-                                                    ['TX Vol (24hr, USD)', 17, false],
+                                                    ['TX Vol (24hr, '+ @coin["price"]+')', 17, false],
                                                     ['NVT Ratio', 18, false],
                                                     ['Num Transactions (24hr)', 19, false],
-                                                    ['New Issuance (24hr, USD)', 20, false],
-                                                    ['Fees (24hr, USD)', 21, false],
+                                                    ['New Issuance (24hr, '+ @coin["price"]+')', 20, false],
+                                                    ['Fees (24hr, '+ @coin["price"]+')', 21, false],
                                                  ]
                                                 %>
                                                 <div class="form-inline single-form pricing-form">
@@ -173,8 +177,8 @@
                                     <th class="4 thumb "></th>
                                     <th class="5 name " >Name</th>
                                     <th class="6 price">Current Marketcap</th>
-                                    <th class="7 volume small-text-t">24<sup>hr</sup> Change vs USD (%)</th>
-                                    <th class="8 price">Price USD
+                                    <th class="7 volume small-text-t">24<sup>hr</sup> Change vs <%= @coin["price"] %> (%)</th>
+                                    <th class="8 price">Price <%= @coin["price"] %>
                                         <!--<select class="">-->
              <!--                               <option value="show-usd" selected>USD</option>-->
              <!--                               <option value="show-inr">INR</option>-->
@@ -188,14 +192,14 @@
                                     <th class="12 market-cap">7day Change</th>
                                     <th class="13 market-cap">liquidity</th>
                                     <th class="14 last-trade text-center small-text-t">Y2050 Marketcap (implied)</th>
-                                    <th class="15 market-cap">ATH (USD)</th>
+                                    <th class="15 market-cap">ATH (<%= @coin["price"] %>)</th>
                                     <th class="16 market-cap">Days Since ATH</th>
                                     <th class="17 market-cap">% Down Form ATH</th>
-                                    <th class="18 market-cap">TX Vol (24hr, USD)</th>
+                                    <th class="18 market-cap">TX Vol (24hr, <%= @coin["price"] %>)</th>
                                     <th class="19 market-cap">NVT Ratio</th>
                                     <th class="20 market-cap small-text-t">Num Transactions (24hr)</th>
-                                    <th class="21 market-cap small-text-t">New Issuance (24hr, USD)</th>
-                                    <th class="22 market-cap">Fees (24hr, USD)</th>
+                                    <th class="21 market-cap small-text-t">New Issuance (24hr, <%= @coin["price"] %>)</th>
+                                    <th class="22 market-cap">Fees (24hr, <%= @coin["price"] %>)</th>
                                 </tr>
                             </thead>            
                             <tbody infinite-scroll="" scroll-controller-object="allData" class="ng-isolate-scope">
@@ -217,12 +221,12 @@
                                         </span>
                                     </td>
                                     <td class="4 thumb ">
-                                        <a title="" href="<%= request.protocol + request.host %>/prices/<%= price.id %>">
+                                        <a title="" href="/prices/<%= price.id %>">
                                             <img src="<%= price.coin.image_url %>?width=25">
                                         </a>
                                     </td>       
                                     <td class="5 name ">
-                                        <a title="" href="<%= request.protocol + request.host %>/prices/<%= price.id %>">
+                                        <a title="" href="/prices/<%= price.id %>">
                                             <h3>
                                                 <span class="desktop-name ng-binding">
                                                     <%= price.coin.name %>
@@ -244,7 +248,15 @@
                                         </div>
                                     </td>
                                     <td class="7 price ">
-                                        <div class="current-price-value ng-binding <%= (price.change_percent >= 0)? '': 'value-down' %>">
+                                        <% 
+                                        notClass = ''
+                                        if price.change_percent >= 0
+                                            notClass = ''
+                                        else
+                                            notClass = 'value-down'
+                                        end
+                                        %>
+                                        <div class="current-price-value ng-binding <%= notClass %>">
                                             <%= number_to_percentage(price.change_percent, precision: 2) %>
                                         </div>
                                     </td>

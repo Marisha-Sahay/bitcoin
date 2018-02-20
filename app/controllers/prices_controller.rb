@@ -1,21 +1,22 @@
 class PricesController < ApplicationController
 
   def index 
-    @prices = Price.where(["to_symbol = ? and market = ?", "USD", "BitTrex"])
+    @coin = { 'price' => 'USD', 'market' => 'BitTrex' }
+    @prices = Price.where(["to_symbol = ? and market = ?", "#{@coin['price']}", "#{@coin['market']}" ])
     # @prices_btc = Price.where(["to_symbol = ? and market = ?", "BTC", "BitTrex"])
   end
   def search 
-    price = params[:price];
-    market = params[:market];
-    if price == ''
-      price = 'USD'
+    @coin = { 'price' => params[:price], 'market' => params[:market] }
+    if @coin['price'] == ''
+      @coin['price'] = 'USD'
     end
-    if market == ''
-      price = 'BitTrex'
+    if @coin['market'] == ''
+      @coin['market'] = 'BitTrex'
     end
-    @prices = Price.where(["to_symbol = ? and market = ?", "#{price}", "#{market}"])
+    
+    @prices = Price.where(["to_symbol = ? and market = ?", "#{@coin['price']}", "#{@coin['market']}" ])
     # @prices_btc = Price.where(["to_symbol = ? and market = ?", "BTC", "BitTrex"])
-    render :index
+    # render :index
   end
   def show
     @price      = Price.find_by(id: params[:id])
