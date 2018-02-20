@@ -1,3 +1,22 @@
+<% 
+    oneCoin = {
+        'id' => '', 
+        'name' => '', 
+        'coin_url' => '', 
+        'twitter_link' => '', 
+        'reddit_link' => ''
+    }
+    @coin.each do |coin|  
+        oneCoin = {
+            'id' => coin.id, 
+            'name' => coin.name, 
+            'coin_url' => coin.coin_url, 
+            'twitter_link' => coin.twitter_link, 
+            'reddit_link' => coin.reddit_link
+        }
+    end 
+%>
+
 <!-- Start: Header Section
 ================================ -->
 <section class="features-section relative default-home subscrive-section background-2">
@@ -37,10 +56,8 @@
                     </div>
                 </div>
             </div>
-            
-            
             <div class="clearfix"></div>
-        
+            
             <!-- Start: Coin Dropdown -->
             <div class="margin-b-20 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
                 
@@ -54,7 +71,8 @@
                                 <div class="input-group">
 
                                     <div class="outer">
-                                        <input class="form-control typeahead shadow" id="coin-select" type="text" placeholder="Search Coin" value="<%= @coin.name %>"  data-id="<%= @coin.id %>"  data-name="<%= @coin.name %>">
+                                        <input class="form-control typeahead shadow" id="coin-select" type="text" placeholder="Search Coin" value="<%= oneCoin['name'] %>" data-id="<%= oneCoin['id'] %>" data-name="<%= oneCoin['name'] %>">
+                                        
                                         <!--<select class="selectpicker shadow background-1" id="coin-select" data-live-search="true" data-style="btn-warning">
                                             <% @coinsAll.each do |coin| %>
                                             <option value="<%= coin.id %>"><%= coin.name %> (<%= coin.symbol %>)</option>
@@ -75,15 +93,15 @@
                 </div>
                     
             </div> <!-- End: Coin Dropdown -->
-
             <div class="clearfix"></div>
+            
+            
+        <% if oneCoin['name'] != "" && oneCoin['id'] != "" %>
             
             <!-- Start: Section Header -->
             <div class="section-header business-item text-left col-xs-12 margin-b-15">
-                <h2 class="section-heading">News of <%=link_to "#{@coin.name}", "#{@coin.coin_url}", target: "_blank", :style=>'color:#f5922f;'%></h2>
-                    <!--<hr class="lines">-->
+                <h2 class="section-heading">News of <%=link_to "#{oneCoin['name']}", "#{oneCoin['coin_url']}", target: "_blank", :style=>'color:#f5922f;'%></h2>
             </div> <!-- End: Section Header -->
-            
             <div class="clearfix"></div>
 
             <div class="each-item business-item col-md-6 col-sm-12">
@@ -147,15 +165,15 @@
                             <div role="tabpanel" class="tab-pane no-padding active" id="reddit-tab">
 
                                 <div id="reddit" class="text-left no-header">
-                                <input type="hidden" value="<%= @coin.reddit_link %>" name="input" id="reddit-id"/>
+                                <input type="hidden" value="<%= oneCoin['reddit_link'] %>" name="input" id="reddit-id"/>
                                 </div> 
 
                             </div> <!-- End: .tab-pane -->
                             <div role="tabpanel" class="tab-pane twitter-feed" id="twitter">
-                                <% if @coin.twitter_link == "NA" %>
-                                <a class="twitter-timeline" href="https://twitter.com/bitcaffe256">Tweets by <%= @coin.name %></a>
+                                <% if oneCoin['twitter_link'] == "NA" %> 
+                                <a class="twitter-timeline" href="https://twitter.com/bitcaffe256">Tweets by <%= oneCoin['name'] %></a>
                                 <% else %>
-                                <a class="twitter-timeline" data-tweet-limit=5 href="<%= @coin.twitter_link %>">Tweets by <%= @coin.name %> </a>
+                                <a class="twitter-timeline" data-tweet-limit=5 href="<%= oneCoin['twitter_link'] %>">Tweets by <%= oneCoin['name'] %> </a>
                                 <% end %>
                             </div> <!-- End: .tab-pane -->
 
@@ -165,12 +183,22 @@
 
                 </div>
             </div> <!-- End: .each-item -->
+            <div class="clearfix"></div>
+            
+        <% else %>
+            <!-- Start: Section Header -->
+            <div class="section-header text-center col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12 margin-t-50 margin-b-50">
+                <h3 class="section-heading">Search Results for <sup class="small">"</sup><span class="text-bold" style="color:#f5922f;"><%= @search %></span><sup class="small">"</sup></h3>
+                <p class="sub-heading margin-t-10" style="color: #FF5400;">No items matched that search criteria. Please try again.</p>
+            </div> <!-- End: Section Header -->
+            <div class="clearfix"></div>
+        <% end %>
 
         </div> <!-- End: .row -->
     </div> <!-- End: .container -->
 </section>
 <!-- End: Header Section
-    ================================ -->
+================================ -->
 
 
 

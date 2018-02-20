@@ -60,9 +60,10 @@ Rails.application.routes.draw do
   get '/trader_investor_lp', to: 'pages#trader_investor_lp'
 
   get '/coins/:id', to: 'coins#show'
-  get '/coins/search', to: 'coins#search'
+  get '/search/:search', to: 'search#show'
 
   get '/prices', to: 'prices#index'
+  get '/prices/:price/:market', to: 'prices#search'
   get '/prices/:id', to: 'prices#show'
   
   namespace :api do
