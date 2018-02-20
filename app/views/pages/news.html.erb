@@ -55,7 +55,7 @@
                     <form method="" class="single-form text-center" action="" id="coins-dropdown">
                         <div class="container-fluid" >
                             
-                            <input type="hidden" value="<% request.env['HTTP_HOST']%>/coins/" id="coin_link" />
+                            <input type="hidden" value="<%= request.protocol + request.host %>/" id="coin_link" />
 
                             <div class="row">
                                 <div class="input-group">
@@ -235,10 +235,8 @@
           event.preventDefault();
           
           var coin = $(this).find("#coin-select").val(),
-            //   id = $(this).find("#coin-select").attr('data-id'),
               url  = $(this).find("#coin_link").val();
-        //   console.log(coin, url, id);
-          self.location = url +'search&s='+ coin;
+          window.location.href = url +'search/'+ coin;
         });
 
 
@@ -363,7 +361,7 @@ var polyglot = new Polyglot({phrases: PHRASES});
       }
     }).on('typeahead:selected', function(event, datum) {
         var url = $( "#coins-dropdown" ).find("#coin_link").val();
-        self.location = url + datum.id;
+        window.location.href =  url + 'coins/' +  datum.id;
     });
 </script>
 
