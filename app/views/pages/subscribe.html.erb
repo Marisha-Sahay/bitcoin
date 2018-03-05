@@ -154,19 +154,22 @@
                                   <ul class="nav recent-post text-left">
                                     
                                   <% array_of_items.each do |post|%>
+                                    <% arr = []
+                                       img = []
+                                       desc = []
+                                       arr = post[:description].split("<p>")
+                                       img = arr[0].split('"')[1]
+                                       desc = arr[1].split("#")[0] 
+                                    %>
                                     <li>
-                                        <a href="<%= post['url'] %>" target="_blank">
+                                        <a href="<%= post[:link] %>" target="_blank">
                                             <div class="media">
                                                 <div class="media-left">
-                                                  <% if post['urlToImage'] %>
-                                                    <div class="image-container bg-cover" style="background-image: url(<%= post['urlToImage'] %>); height: 59px;width: 80px;"></div>
-                                                  <% else %>
-                                                    <div class="image-container bg-cover" style="background-image: url(<%= asset_path 'bitcoins-default.jpg' %>); height: 59px;width: 80px;"></div>
-                                                  <% end %>
+                                                    <div class="image-container bg-cover" style="background-image: url(<%= img %>); height: 59px;width: 80px;"></div>
                                                 </div>
                                                 <div class="media-body">
-                                                    <p class="post-title"><%= post['title'] %></p>
-                                                    <p class="details"><%= post['description'][0..60] %>...</p>
+                                                    <p class="post-title"><%= post[:title] %></p>
+                                                    <p class="details"><%= desc %></p>
                                                 </div>
                                             </div>
                                         </a>
