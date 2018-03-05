@@ -81,9 +81,9 @@
               <li class="<%= current_class?('/resources') %>">
                 <%= link_to "Resources", url_for("/resources"), class: "nav-links", :data => { :reload => true } %>
               </li>
-              <li class="<%= current_class?('/prices') %>">
+              <!-- <li class="<%= current_class?('/prices') %>">
                 <%= link_to "Prices", url_for("/prices"), class: "nav-links", :data => { :reload => true } %>
-              </li>
+              </li> -->
               <% if current_user %>
               <li class="<%= current_class?('/logout') %>">
                 <a class="nav-links" data-reload="true" href="/logout"><i class='fa fa-sign-out'></i> &nbsp; Logout</a>
