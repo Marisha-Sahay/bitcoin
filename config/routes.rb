@@ -65,6 +65,7 @@ Rails.application.routes.draw do
   get '/prices', to: 'prices#index'
   get '/prices/:id', to: 'prices#show'
   
+  get '/latest_news', to: 'latest_news#index'
   namespace :api do
     namespace :v1 do
       get '/news', to: 'news#index'

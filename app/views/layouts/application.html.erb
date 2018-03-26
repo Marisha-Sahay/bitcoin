@@ -75,8 +75,14 @@
               <li class="<%= current_class?('/') %>">
                   <%= link_to "Home", url_for("/"), class: "nav-links", :data => { :reload => true } %>
               </li>
+              <li class="<%= current_class?('/latest_news') %>">
+                <%= link_to "News", url_for("/latest_news"), class: "nav-links", :data => { :reload => true } %>
+              </li>
+              <li class="<%= current_class?('/videos') %>">
+                <%= link_to "Videos", url_for("/videos"), class: "nav-links", :data => { :reload => true } %>
+              </li>
               <li class="<%= current_class?('/news') %>">
-                <%= link_to "News", url_for("/news"), class: "nav-links", :data => { :reload => true } %>
+                <%= link_to "Coins", url_for("/news"), class: "nav-links", :data => { :reload => true } %>
               </li>
               <li class="<%= current_class?('/resources') %>">
                 <%= link_to "Resources", url_for("/resources"), class: "nav-links", :data => { :reload => true } %>

@@ -1,0 +1,44 @@
+// Place all the styles related to the latest_news controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+  .news-cointainer{
+    padding: 30px;
+    font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+  .news-article {
+    padding-bottom: 20px;
+    border-bottom: 1px dotted black;
+  }
+  .news-title{
+    font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+  .news-button{
+    // background-color: #FEC22D;
+    padding-right: 20px;
+    padding-left: 20px;
+    border-right: 1px dotted black;
+    // border: none;
+    // color: white;
+    // padding: 10px 20px;
+    // text-align: center;
+    // text-decoration: none;
+    // display: inline-block;
+    // font-size: 16px;
+    // position:relative;
+    // // position: fixed;
+    // box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+  .news-tabs{
+    background-color: #FEC22D;
+    -webkit-align-content: center;
+    align: center;
+    border: none;
+    color: white;
+    position: fixed;
+    padding: 10px 20px 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
