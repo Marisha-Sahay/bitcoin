@@ -1,16 +1,16 @@
 <div class="news-cointainer">
-  <br><br><br><br>
+  <br>
   <div class="news-tabs">
-    <%= link_to "BITCOIN","#bitcoin", class: 'news-button' %>
-    <%= link_to "ALTCOIN","#altcoin", class: 'news-button' %>
-    <%= link_to "BLOCKCHAIN","#blockchain", class: 'news-button' %>
-    <%= link_to "ICOs","#ico", class: 'news-button' %>
+    <%= link_to "BITCOIN NEWS","#bitcoin", class: 'news-button' %>
+    <%= link_to "ALTCOIN NEWS","#altcoin", class: 'news-button' %>
+    <%= link_to "BLOCKCHAIN NEWS","#blockchain", class: 'news-button' %>
+    <%= link_to "ICOs NEWS","#ico", class: 'news-button' %>
   </div>
 
   <!-- bitcoin -->
   <section id="bitcoin" class="bitcoin">
-    <br><br><br>
-    <h1>BITCOIN</h1>
+    <br><br><br><br><br><br>
+    <h1>BITCOIN NEWS</h1>
     <% @news_bitcoin.each do |news|%>
     <br>
     <div class="news-article">
@@ -26,8 +26,8 @@
 
   <!-- altcoin -->
   <section id="altcoin" class="altcoin">
-    <br><br><br>
-    <h1>ALTCOIN</h1>
+    <br><br><br><br><br>
+    <h1>ALTCOIN NEWS</h1>
     <% @news_altcoin.each do |news|%>
     <br>
     <div class="news-article">
@@ -43,8 +43,8 @@
 
   <!-- blockchain -->
   <section id="blockchain" class="blockchain">
-    <br><br><br>
-    <h1>BLOCKCHAIN</h1>
+    <br><br><br><br><br>
+    <h1>BLOCKCHAIN NEWS</h1>
     <% @news_blockchain.each do |news|%>
     <br>
     <div class="news-article">
@@ -60,8 +60,8 @@
 
   <!-- ico -->
   <section id="ico" class="ico">
-    <br><br><br>
-    <h1>ICOs</h1>
+    <br><br><br><br><br>
+    <h1>ICOs NEWS</h1>
     <% @news_ico.each do |news|%>
     <br>
     <div class="news-article">
